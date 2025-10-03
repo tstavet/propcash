@@ -70,43 +70,37 @@
 
     /* Mascot */
     
-.mascot { 
-  margin-top: 18px; 
-  display: flex; 
-  align-items: center; 
-  gap: 14px; 
-  position: relative;   /* needed for the ground shadow */
+.mascot {
+  margin-top: 18px;
+  display: inline-block;   /* instead of flex */
+  position: relative;
+  text-align: center;      /* keeps caption centered */
 }
 
-.mascot img { 
-  width: 235px; 
-  height: auto; 
-  display: block; 
-  filter: drop-shadow(0px 4px 8px rgba(0,0,0,.25)); /* soft edge shadow */
+.mascot img {
+  width: 235px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0px 4px 8px rgba(0,0,0,.25));
 }
 
 /* ground shadow oval */
 .mascot::after {
   content: "";
   position: absolute;
-  bottom: -12px;         /* place shadow just below mascot */
+  bottom: -14px;        /* slightly lower */
   left: 50%;
   transform: translateX(-50%);
-  width: 60%;            /* relative width of the shadow */
-  height: 16px;          /* height of the oval */
-  background: radial-gradient(
-    ellipse at center,
+  width: 70%;           /* shadow spans under image */
+  height: 20px;
+  background: radial-gradient(ellipse at center,
     rgba(0,0,0,.25) 0%,
-    transparent 80%
-  );
+    transparent 80%);
   border-radius: 50%;
-  z-index: -1;           /* keep behind mascot */
+  z-index: -1;
 }
 
-.mascot .caption { 
-  font-size:14px; 
-  color: var(--muted); 
-}
 
 
     /* Trust Bar */
