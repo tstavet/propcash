@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact Propcash | Get Your Cash Offer Today</title>
   <meta name="description" content="Contact Propcash for a fast, fair cash offer on your home. Call (856) 938-5550, text us, or fill out our simple form. Available nationwide. Response within 24 hours guaranteed." />
-  <link rel="canonical" href="https://tstavet.github.io/propcash/contact.html" />
+  <link rel="canonical" href="https://tstavet.github.io/propcash/contact" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Contact Propcash | Get Your Cash Offer Today" />
   <meta property="og:description" content="Ready to sell? Contact Propcash today for a no-obligation cash offer. Call, text, or fill out our form." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tstavet.github.io/propcash/contact.html" />
+  <meta property="og:url" content="https://tstavet.github.io/propcash/contact" />
   <meta property="og:image" content="https://tstavet.github.io/propcash/assets/og-mascot.jpg" />
 
   <!-- Favicon -->
@@ -37,7 +37,7 @@
       <nav class="desktop-nav">
         <a href="/propcash/">Home</a>
         <a href="/propcash/about.html">About Us</a>
-        <a href="/propcash/contact.html" style="color: var(--accent); font-weight: 700;">Contact</a>
+        <a href="/propcash/contact" style="color: var(--accent); font-weight: 700;">Contact</a>
       </nav>
       <div class="header-ctas">
         <a href="tel:8569385550" class="cta-phone">📞 (856) 938-5550</a>
