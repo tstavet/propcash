@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Propcash | Our Story & Mission</title>
   <meta name="description" content="Learn about Propcash - a trusted nationwide real estate investment firm helping homeowners sell quickly and fairly. Meet our team and discover our commitment to transparency." />
-  <link rel="canonical" href="https://tstavet.github.io/propcash/about.html" />
+  <link rel="canonical" href="https://tstavet.github.io/propcash/about" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="About Propcash | Our Story & Mission" />
   <meta property="og:description" content="Meet the team behind Propcash and learn how we're changing the home selling experience across America." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tstavet.github.io/propcash/about.html" />
+  <meta property="og:url" content="https://tstavet.github.io/propcash/about" />
   <meta property="og:image" content="https://tstavet.github.io/propcash/assets/og-mascot.jpg" />
 
   <!-- Favicon -->
@@ -36,7 +36,7 @@
       </a>
       <nav class="desktop-nav">
         <a href="/propcash/">Home</a>
-        <a href="/propcash/about.html" style="color: var(--accent); font-weight: 700;">About Us</a>
+        <a href="/propcash/about" style="color: var(--accent); font-weight: 700;">About Us</a>
         <a href="/propcash/contact.html">Contact</a>
       </nav>
       <div class="header-ctas">
@@ -306,7 +306,7 @@
       <div style="border-top:1px solid var(--line); margin:24px 0; padding-top:24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;">
         <div>© <span id="year"></span> Propcash. All rights reserved.</div>
         <div>
-          <a href="/propcash/about.html">About</a> • 
+          <a href="/propcash/about">About</a> • 
           <a href="/propcash/contact.html">Contact</a> • 
           <a href="/propcash/privacy.html">Privacy</a> • 
           <a href="/propcash/terms.html">Terms</a> • 
