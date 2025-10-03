@@ -1201,3 +1201,79 @@ footer a:hover {
     padding: 24px;
   }
 }
+
+
+/* ==========================================
+   NASHVILLE LANDING PAGE SPECIFIC STYLES
+   ========================================== */
+
+/* Neighborhoods Grid */
+.neighborhoods-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.neighborhood-item {
+  background: rgba(139,94,60,.04);
+  border: 1px solid var(--line);
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.neighborhood-item:hover {
+  background: rgba(139,94,60,.08);
+  border-color: var(--accent);
+  transform: translateX(4px);
+}
+
+/* Market Info Box */
+.market-info-box {
+  background: linear-gradient(135deg, rgba(139,94,60,.04), rgba(196,154,108,.04));
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.market-info-box h2 {
+  margin-bottom: 20px;
+}
+
+.benefit-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.benefit-list li {
+  padding: 12px 0 12px 32px;
+  position: relative;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.benefit-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 900;
+  font-size: 18px;
+}
+
+/* ==========================================
+   LANDING PAGE RESPONSIVE
+   ========================================== */
+
+@media (max-width: 900px) {
+  .neighborhoods-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .market-info-box {
+    padding: 24px;
+  }
+}
