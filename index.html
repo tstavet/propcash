@@ -68,29 +68,11 @@
     .btn:hover { transform: translateY(-1px); }
     .secure { display:flex; gap:10px; align-items:center; color: var(--muted); font-size: 12px; margin-top: 6px; }
 
-                 /* Mascot with ground shadow */
-.mascot {
-  position: relative;
-  display: inline-block;
-}
-
-.mascot::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;                /* move the shadow a little below */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70%;                   /* width relative to mascot */
-  height: 14px;                 /* thickness of the oval */
-  background: radial-gradient(
-    ellipse at center,
-    rgba(0,0,0,.25) 0%,
-    transparent 80%
-  );
-  border-radius: 50%;
-  z-index: -1;                   /* keep behind the mascot */
-}
-
+    /* Mascot */
+    
+       .mascot { margin-top: 18px; display:flex; align-items:center; gap:14px; }
+    .mascot img { width: 235px; height:auto; display:block; filter: drop-shadow(0 12px 12px rgba(0,0,0,.33));
+          
  }
     .mascot .caption { font-size:14px; color: var(--muted); }
 
