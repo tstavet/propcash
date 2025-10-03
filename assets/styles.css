@@ -1,4 +1,4 @@
- /* ==========================================
+/* ==========================================
    PROPCASH STYLES - IMPROVED VERSION
    Save this as: /propcash/assets/styles.css
    ========================================== */
@@ -326,4 +326,493 @@ textarea {
 
 select {
   cursor: pointer;
+}
+
+/* BUTTONS */
+.btn { 
+  background: linear-gradient(135deg, var(--accent), var(--accent2)); 
+  color: #ffffff; 
+  font-weight: 700; 
+  padding: 14px 20px; 
+  border-radius: 14px; 
+  border: none; 
+  cursor: pointer; 
+  box-shadow: 0 12px 24px rgba(139,94,60,.20);
+  font-size: 16px;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.btn:hover { 
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(139,94,60,.30);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--accent);
+  font-weight: 700;
+  padding: 14px 24px;
+  border-radius: 14px;
+  border: 2px solid var(--accent);
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.secure { 
+  display: flex; 
+  gap: 8px; 
+  align-items: flex-start; 
+  color: var(--muted); 
+  font-size: 12px; 
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+/* ==========================================
+   MASCOT (JULIAN)
+   ========================================== */
+
+.mascot {
+  margin-top: 24px;
+  display: inline-block;
+  position: relative;
+  max-width: 280px;
+}
+
+.mascot img {
+  width: 100%;
+  max-width: 235px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0px 4px 12px rgba(0,0,0,.15));
+}
+
+/* Ground shadow effect under Julian */
+.mascot::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 16px;
+  background: radial-gradient(ellipse at center,
+    rgba(0,0,0,.2) 0%,
+    transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* NEW: Speech bubble for Julian */
+.speech-bubble {
+  background: white;
+  border: 2px solid var(--accent);
+  border-radius: 16px;
+  padding: 14px 18px;
+  margin-top: 16px;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.5;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+.speech-bubble::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 30px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid var(--accent);
+}
+
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 32px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white;
+}
+
+/* Mascot on form card (top right corner) */
+.form-mascot { 
+  position: absolute; 
+  top: -28px; 
+  right: -28px; 
+  width: 90px; 
+  height: auto; 
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,.15)); 
+  pointer-events: none;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* NEW: Floating animation for form mascot */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ==========================================
+   TRUST ELEMENTS
+   ========================================== */
+
+.trust { 
+  display: flex; 
+  gap: 12px; 
+  flex-wrap: wrap; 
+  align-items: center; 
+  margin-top: 18px;
+}
+
+.pill { 
+  padding: 8px 14px; 
+  border: 1px solid var(--line); 
+  border-radius: 999px; 
+  background: rgba(139,94,60,.04); 
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ==========================================
+   STATS SECTION
+   ========================================== */
+
+.stats-section {
+  background: linear-gradient(135deg, rgba(139,94,60,.04), rgba(196,154,108,.04));
+  border-radius: 20px;
+  padding: 40px 20px;
+  margin: 40px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 20px;
+}
+
+.stat-number {
+  font-size: 42px;
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* ==========================================
+   SECTIONS & CARDS
+   ========================================== */
+
+section { 
+  padding: clamp(40px, 6vw, 80px) 0; 
+}
+
+.grid-3 { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+}
+
+.card { 
+  background: var(--card); 
+  border: 1px solid var(--line); 
+  border-radius: 18px; 
+  padding: 24px; 
+  box-shadow: 0 4px 12px rgba(0,0,0,.04);
+  transition: all 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  transform: translateY(-2px);
+}
+
+.num { 
+  width: 40px; 
+  height: 40px; 
+  border-radius: 12px; 
+  background: linear-gradient(135deg, var(--accent), var(--accent2)); 
+  display: grid; 
+  place-items: center; 
+  color: #ffffff; 
+  font-weight: 900; 
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+/* NEW: Icon badges for cards */
+.icon-badge {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+/* ==========================================
+   JULIAN CALLOUT SECTION
+   ========================================== */
+
+.julian-callout {
+  background: linear-gradient(135deg, rgba(139,94,60,.04), rgba(196,154,108,.04));
+  border: 2px solid var(--accent);
+  border-radius: 20px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.julian-large {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,.12));
+}
+
+/* ==========================================
+   FAQ SECTION
+   ========================================== */
+
+details { 
+  background: var(--card); 
+  border: 1px solid var(--line); 
+  border-radius: 16px; 
+  padding: 18px 20px;
+  transition: all 0.2s;
+}
+
+details:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,.06);
+}
+
+summary { 
+  cursor: pointer; 
+  font-weight: 600;
+  font-size: 16px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+summary::before {
+  content: "▶";
+  color: var(--accent);
+  font-size: 12px;
+  transition: transform 0.2s;
+}
+
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+details p {
+  margin-top: 12px;
+  padding-left: 24px;
+}
+
+details + details { 
+  margin-top: 12px; 
+}
+
+/* ==========================================
+   FINAL CTA SECTION
+   ========================================== */
+
+.final-cta {
+  text-align: center;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  padding: 60px 40px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(139,94,60,.25);
+}
+
+.final-cta h2 {
+  color: white;
+}
+
+.final-cta .sub {
+  color: rgba(255,255,255,.9);
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+footer { 
+  border-top: 1px solid var(--line); 
+  padding: 40px 0 80px; 
+  color: var(--muted); 
+  background: #fafafa; 
+}
+
+footer a {
+  color: var(--muted);
+}
+
+footer a:hover {
+  color: var(--accent);
+}
+
+/* ==========================================
+   STICKY HELPER MASCOT
+   ========================================== */
+
+.helper { 
+  position: fixed; 
+  right: 24px; 
+  bottom: 24px; 
+  width: 70px; 
+  height: 70px; 
+  border-radius: 50%; 
+  background: #fff; 
+  border: 2px solid var(--accent); 
+  display: grid; 
+  place-items: center; 
+  box-shadow: 0 12px 32px rgba(0,0,0,.15); 
+  cursor: pointer; 
+  z-index: 999; 
+  text-decoration: none;
+  transition: all 0.3s;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.helper img { 
+  width: 50px; 
+  height: auto; 
+  display: block; 
+}
+
+.helper:hover { 
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 16px 40px rgba(0,0,0,.2);
+  text-decoration: none;
+}
+
+/* NEW: Bounce animation for helper */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (MOBILE)
+   ========================================== */
+
+@media (max-width: 900px) {
+  .hero { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .hero-card {
+    position: static;
+  }
+  
+  .row { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .grid-3 { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .julian-callout {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .julian-large {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  
+  .mascot { 
+    justify-content: center;
+    margin: 24px auto;
+  }
+  
+  .mascot img { 
+    width: 180px; 
+  }
+  
+  .desktop-nav {
+    display: none;
+  }
+  
+  .header-ctas {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .cta-phone,
+  .cta-header {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  
+  .form-mascot {
+    width: 70px;
+    top: -20px;
+    right: -20px;
+  }
+  
+  h1 {
+    font-size: 32px;
+  }
+  
+  h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .helper {
+    width: 60px;
+    height: 60px;
+    right: 16px;
+    bottom: 16px;
+  }
+  
+  .helper img {
+    width: 40px;
+  }
+  
+  .final-cta {
+    padding: 40px 24px;
+  }
 }
