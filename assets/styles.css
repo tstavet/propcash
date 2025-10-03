@@ -1056,3 +1056,148 @@ footer a:hover {
     padding: 40px 24px;
   }
 }
+
+/* ==========================================
+   CONTACT PAGE SPECIFIC STYLES
+   ========================================== */
+
+/* Contact Options Grid */
+.contact-options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 40px 0;
+}
+
+.contact-option-card {
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: 20px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: block;
+}
+
+.contact-option-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 12px 32px rgba(139,94,60,.15);
+  transform: translateY(-4px);
+  text-decoration: none;
+}
+
+.contact-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.contact-option-card h3 {
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.contact-detail {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 16px 0 12px;
+}
+
+.contact-hours {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Contact Form Wrapper */
+.contact-form-wrapper {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 48px;
+  background: linear-gradient(135deg, rgba(139,94,60,.02), rgba(196,154,108,.02));
+  padding: 48px;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+}
+
+.form-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-left h2 {
+  margin-bottom: 12px;
+}
+
+.contact-features {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.feature-check {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.feature-item strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 16px;
+}
+
+.feature-item .sub {
+  font-size: 14px;
+}
+
+/* Contact Form Styling */
+.form-right {
+  background: white;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+.contact-form {
+  display: grid;
+  gap: 16px;
+}
+
+/* ==========================================
+   CONTACT PAGE RESPONSIVE
+   ========================================== */
+
+@media (max-width: 900px) {
+  .contact-options-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-form-wrapper {
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+  }
+  
+  .form-left img {
+    max-width: 160px;
+    margin: 0 auto 16px;
+  }
+  
+  .form-right {
+    padding: 24px;
+  }
+}
