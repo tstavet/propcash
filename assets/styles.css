@@ -3,6 +3,9 @@
    Save this as: /propcash/assets/styles.css
    ========================================== */
 
+/* GLACIAL INDIFFERENCE FONT */
+@import url('https://fonts.cdnfonts.com/css/glacial-indifference-2');
+
 /* CSS VARIABLES - Makes it easy to change colors throughout the site */
 :root {
   --bg: #ffffff;             /* white background */
@@ -27,7 +30,7 @@
 html, body { 
   margin: 0; 
   padding: 0; 
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; 
+  font-family: 'Glacial Indifference', Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; 
   color: var(--text); 
   background: var(--bg);
   line-height: 1.6;
