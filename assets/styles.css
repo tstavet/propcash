@@ -771,14 +771,18 @@ footer a:hover {
   }
   
   .header-ctas {
-    flex-direction: column;
+    flex-direction: row;
     gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
   
+  /* MAKE BUTTONS IDENTICAL SIZE ON ALL DEVICES */
   .cta-phone,
   .cta-header {
     font-size: 14px;
-    padding: 8px 12px;
+    padding: 10px 14px;
+    white-space: nowrap;
   }
   
   .form-mascot {
@@ -1201,7 +1205,6 @@ footer a:hover {
     padding: 24px;
   }
 }
-
 
 /* ==========================================
    NASHVILLE LANDING PAGE SPECIFIC STYLES
