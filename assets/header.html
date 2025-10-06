@@ -1,28 +1,23 @@
- <header>
+<header>
   <div class="container nav">
-    <!-- Brand -->
     <a href="/propcash/" class="brand">
       <div class="logo">PC</div>
       Propcash
     </a>
 
-    <!-- Desktop Navigation -->
     <nav class="desktop-nav">
       <a href="/propcash/">Home</a>
       <a href="/propcash/about">About</a>
       <a href="/propcash/contact">Contact</a>
     </nav>
 
-    <!-- CTA (Visible on Desktop Only) -->
     <div class="header-ctas">
       <a href="/propcash/#lead" class="cta-header">Get My Offer</a>
     </div>
 
-    <!-- Mobile Menu Button -->
     <button class="mobile-menu-toggle" aria-label="Toggle Menu">☰</button>
   </div>
 
-  <!-- Mobile Navigation Drawer -->
   <div class="mobile-nav" id="mobileNav">
     <a href="/propcash/">Home</a>
     <a href="/propcash/about">About</a>
@@ -31,19 +26,8 @@
   </div>
 </header>
 
-<script>
-  // Mobile menu toggle logic
-  const toggleBtn = document.querySelector('.mobile-menu-toggle');
-  const mobileNav = document.getElementById('mobileNav');
-
-  toggleBtn.addEventListener('click', () => {
-    mobileNav.classList.toggle('open');
-    toggleBtn.textContent = mobileNav.classList.contains('open') ? '✕' : '☰';
-  });
-</script>
-
 <style>
-/* ====== MOBILE NAVIGATION ====== */
+/* Mobile nav styles (can live here or in your main CSS) */
 .mobile-menu-toggle {
   display: none;
   background: none;
@@ -56,7 +40,7 @@
 .mobile-nav {
   display: none;
   flex-direction: column;
-  background: white;
+  background: #fff;
   position: absolute;
   top: 68px;
   left: 0;
@@ -74,14 +58,11 @@
   text-decoration: none;
   border-bottom: 1px solid rgba(0,0,0,.05);
 }
-
-.mobile-nav a:last-child {
-  border-bottom: none;
-}
+.mobile-nav a:last-child { border-bottom: none; }
 
 .mobile-nav .mobile-cta {
   background: linear-gradient(135deg, var(--accent), var(--accent2));
-  color: white;
+  color: #fff;
   border-radius: 10px;
   padding: 12px 16px;
   text-align: center;
@@ -90,21 +71,13 @@
   box-shadow: 0 8px 20px rgba(139,94,60,.15);
 }
 
-/* Toggle open/close */
-.mobile-nav.open {
-  display: flex;
-}
+/* Open state */
+.mobile-nav.open { display: flex; }
 
-/* ====== RESPONSIVE BEHAVIOR ====== */
+/* Responsive: hide desktop bits & show hamburger */
 @media (max-width: 900px) {
   .desktop-nav,
-  .header-ctas {
-    display: none;
-  }
-
-  .mobile-menu-toggle {
-    display: block;
-  }
+  .header-ctas { display: none; }
+  .mobile-menu-toggle { display: block; }
 }
 </style>
-
