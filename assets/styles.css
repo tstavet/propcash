@@ -1298,39 +1298,3 @@ footer a:hover {
     padding: 24px;
   }
 }
-
-TOP CTA
-
-.top-cta {
-  position: sticky;
-  top: 0;
-  z-index: 9999;
-  background: linear-gradient(90deg, #8b5e3c, #c49a6c);
-  text-align: center;
-  padding: 12px 0;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-
-.text-btn {
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-decoration: none;
-  padding: 10px 26px;
-  border-radius: 50px;
-  background: rgba(255, 255, 255, 0.15);
-  transition: all 0.2s ease;
-}
-
-.text-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.03);
-}
-
-@media (max-width: 600px) {
-  .text-btn {
-    display: inline-block;
-    font-size: 1rem;
-    padding: 12px 22px;
-  }
-}
