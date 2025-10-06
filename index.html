@@ -30,15 +30,26 @@
 <body>
   <!-- Header - IMPROVED: Added phone number prominently -->
 
-  <div id="header"></div>
+<div id="header"></div>
 <script>
-  fetch('/propcash/assets/header.html')
-    .then(response => response.text())
-    .then(html => {
-      document.getElementById('header').innerHTML = html;
-    })
-    .catch(err => console.error('Header failed to load:', err));
+  (async () => {
+    const mount = document.getElementById('header');
+    const res = await fetch('/propcash/assets/header.html', { cache: 'no-store' });
+    const html = await res.text();
+    mount.innerHTML = html;
+
+    // Now that the header is in the DOM, attach the toggle
+    const btn = mount.querySelector('.mobile-menu-toggle');
+    const menu = mount.querySelector('#mobileNav');
+    if (btn && menu) {
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('open');
+        btn.textContent = menu.classList.contains('open') ? '✕' : '☰';
+      });
+    }
+  })();
 </script>
+
 
   <main class="container">
     <!-- HERO SECTION -->
