@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -50,187 +51,244 @@
   })();
 </script>
 
+<main class="container">
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div>
+      <span class="badge">🇺🇸 Nationwide Real Estate Buyers</span>
+      <h1>Propcash is the best way to sell your property fast and "as-is," for cash.</h1>
+      <p class="sub">No inspections, repairs, or stressful negotiations. Just an attractive offer based on your local market and a fast, smooth closing process.</p>
 
-  <main class="container">
-    <!-- HERO SECTION -->
-    <section class="hero">
-      <div>
-        <span class="badge">🇺🇸 Nationwide Real Estate Buyers</span>
-        <h1>Propcash is the best way to sell your property fast and "as-is," for cash.</h1>
-        <p class="sub">No inspections, repairs, or stressful negotiations. Just an attractive offer based on your local market and a fast, smooth closing process.</p>
-
-         <!-- NEW: Mobile-friendly text CTA button -->
-    <div style="margin: 24px 0;">
-      <a href="sms:8569385550?&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20cash%20offer%20on%20my%20home." 
-         class="btn" 
-         style="display: inline-block; text-decoration: none; text-align: center; max-width: 400px; width: 100%;">
-        Text Us to Get Started
-      </a>
-      <p style="font-size: 13px; color: var(--muted); margin-top: 8px; text-align: center;">
-        Quick, no pressure, and we respond within the hour.
-      </p>
+      <!-- NEW: Mobile-friendly text CTA button -->
+      <div style="margin: 24px 0;">
+        <a href="sms:8569385550?&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20cash%20offer%20on%20my%20home." 
+           class="btn" 
+           style="display: inline-block; text-decoration: none; text-align: center; max-width: 400px; width: 100%;">
+          Text Us to Get Started
+        </a>
+        <p style="font-size: 13px; color: var(--muted); margin-top: 8px; text-align: center;">
+          Quick, no pressure, and we respond within the hour.
+        </p>
+      </div>
     </div>
-  
- 
- <!-- NEW: Stats section for credibility -->
-    <section class="stats-section">
-      <div class="stats-grid">
-            <div class="stat-card">
-          <div class="stat-number"> <1 Hr</div>
-          <div class="stat-label">Average Response Time</div>
-        </div>
-        <div class="stats-grid">
-            <div class="stat-card">
-          <div class="stat-number">24 Hrs</div>
-          <div class="stat-label">Average Time for an Offer</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">7-14 Days</div>
-          <div class="stat-label">Average Days to Close</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">98%</div>
-          <div class="stat-label">Satisfaction Rate</div>
-        </div>
-      </div>
-    </section>
 
+    <!-- FORM CARD -->
+    <div class="hero-card" id="lead">
+      <h3 style="margin:6px 0 14px; text-align:center;">
+        Ready to get a cash offer on your home?<br>
+        Just text us to get the conversation started
+        <a href="sms:8569385550?&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20cash%20offer%20on%20my%20home."
+           style="color: var(--accent); text-decoration: none; font-weight: 800;">
+          856-938-5550
+        </a>
+      </h3>
 
-    <!-- HOW IT WORKS -->
-    <section>
-      <h2 style="text-align:center; margin-bottom:12px;">How Propcash Works</h2>
-      <p class="sub" style="text-align:center; max-width:700px; margin:0 auto 32px;">Our simple 3-step process gets you from "thinking about selling" to "cash in hand" faster than traditional methods.</p>
-      
-      <div class="grid-3">
-        <div class="card">
-          <div class="num">1</div>
-          <h3>Contact Us</h3>
-          <p class="sub">Get the conversation started by giving us a text, call, or filling out the form above. We just need to learn about your property and goals. There's no pressure, and no obligation.</p>
-        </div>
-        <div class="card">
-          <div class="num">2</div>
-          <h3>Get Your Offer</h3>
-          <p class="sub">We'll evaluate your property and present you with a fair, no-obligation cash offer within 24 hours. No hidden fees or surprises.</p>
-        </div>
-        <div class="card">
-          <div class="num">3</div>
-          <h3>Close & Get Paid</h3>
-          <p class="sub">Choose your closing date (as soon as 7 days or on your timeline). Walk away with cash in hand and zero stress.</p>
-        </div>
-      </div>
-    </section>
+      <div class="divider"><span>OR FILL OUT THIS FORM</span></div>
 
-    <section class="container" style="padding-top:0;">
-  <img 
-    src="/propcash/assets/home-sold.png" 
-    alt="Sell your home the simple way with Propcash" 
-    style="width:100%; height:auto; border-radius:20px; box-shadow:0 8px 24px rgba(0,0,0,.08);" 
-    loading="eager" decoding="async" />
-</section>
-
-
-    <!-- WHY CHOOSE PROPCASH -->
-    <section>
-      <h2>Why Homeowners Choose Propcash</h2>
-      <p class="sub">We've helped hundreds of families across America sell their homes quickly and fairly. Our experienced team is dedicated to providing transparent service and expert guidance every step of the way.</p>
-      
-      <div class="grid-3" style="margin-top:20px">
-        <div class="card">
-          <div class="icon-badge">🎯</div>
-          <h3>Our Mission</h3>
-          <p class="sub">To simplify the home-selling process nationwide, making it fast, fair, and stress-free for every homeowner who needs to sell.</p>
+      <form class="form" id="contactForm">
+        <input type="hidden" name="page" id="pageName" value="" />
+        
+        <div class="row">
+          <div>
+            <label for="name">Full Name *</label>
+            <input id="name" name="name" placeholder="Your Name" required />
+          </div>
+          <div>
+            <label for="phone">Phone Number *</label>
+            <input id="phone" name="phone" type="tel" placeholder="(856) 938-5550" required />
+          </div>
         </div>
-        <div class="card">
-          <div class="icon-badge">🤝</div>
-          <h3>Our Commitment</h3>
-          <p class="sub">We treat every seller with honesty and respect. No hidden fees, no low-ball tactics, and no fine print. Just transparency and trust.</p>
+        
+        <div class="row">
+          <div>
+            <label for="email">Email Address</label>
+            <input id="email" type="email" name="email" placeholder="you@example.com" />
+          </div>
+          <div>
+            <label for="address">Property Address *</label>
+            <input id="address" name="address" placeholder="123 Main St, Nashville, TN" required />
+          </div>
         </div>
-        <div class="card">
-          <div class="icon-badge">⭐</div>
-          <h3>Our Team</h3>
-          <p class="sub">Led by industry veterans with decades of combined experience, we combine local market knowledge with national resources.</p>
-        </div>
-      </div>
-    </section>
 
-    <!-- JULIAN REASSURANCE SECTION -->
-    <section>
-      <div class="julian-callout">
-        <img src="/propcash/assets/mascot.png" alt="Julian the Propcash Pinecone" class="julian-large" />
         <div>
-          <h2>No Pressure, Just Honest Guidance</h2>
-          <p class="sub">I know selling your home can feel overwhelming — especially if you're dealing with repairs, financial stress, or time pressure. That's exactly why Propcash exists. We're here to give you a fair offer and a simple path forward. No games, no gimmicks, just people who care about helping you move on to your next chapter. 🌲</p>
-          <p class="sub" style="margin-top:12px;"><strong>— Julian, your Propcash guide</strong></p>
+          <label for="timeline">When are you looking to sell?</label>
+          <select id="timeline" name="timeline">
+            <option value="">Select a timeframe...</option>
+            <option value="asap">ASAP (Within 2 weeks)</option>
+            <option value="1month">Within 1 month</option>
+            <option value="3months">Within 3 months</option>
+            <option value="just-looking">Just exploring options</option>
+          </select>
         </div>
+
+        <div>
+          <label for="message">Tell us about your situation (optional)</label>
+          <textarea id="message" name="message" placeholder="Any details that might help us serve you better..."></textarea>
+        </div>
+
+        <button class="btn" type="submit">Request My Cash Offer →</button>
+        <div class="secure">🔒 Your information is 100% confidential. We'll never share it. By submitting, you agree to be contacted by phone, text, or email.</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- STATS SECTION (NOW PROPERLY OUTSIDE HERO) -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">&lt;1 Hr</div>
+        <div class="stat-label">Average Response Time</div>
       </div>
-    </section>
-
-    <!-- WHO WE HELP -->
-    <section>
-      <h2 style="text-align:center;">Who We Help</h2>
-      <p class="sub" style="text-align:center; max-width:700px; margin:0 auto 32px;">Every situation is unique. Here are just a few scenarios where Propcash can help:</p>
-      
-      <div class="grid-3">
-        <div class="card">
-          <h4>🏚️ Inherited Property</h4>
-          <p class="sub">Inherited a house you don't want to maintain? We'll take it off your hands, as-is.</p>
-        </div>
-        <div class="card">
-          <h4>⚡ Need to Sell Fast</h4>
-          <p class="sub">Job relocation? Divorce? Financial hardship? We can close in as little as 7 days.</p>
-        </div>
-        <div class="card">
-          <h4>🔧 Major Repairs Needed</h4>
-          <p class="sub">Don't want to deal with expensive repairs? We buy houses in any condition.</p>
-        </div>
-        <div class="card">
-          <h4>🏘️ Problem Tenants</h4>
-          <p class="sub">Tired of dealing with rental property headaches? Sell to us, tenants and all.</p>
-        </div>
-        <div class="card">
-          <h4>💰 Behind on Payments</h4>
-          <p class="sub">Facing foreclosure? We can help you avoid it and walk away with cash.</p>
-        </div>
-        <div class="card">
-          <h4>📍 Any Location</h4>
-          <p class="sub">Rural, urban, or suburban — we buy properties in all 50 states.</p>
-        </div>
+      <div class="stat-card">
+        <div class="stat-number">24 Hrs</div>
+        <div class="stat-label">Average Time for an Offer</div>
       </div>
-    </section>
+      <div class="stat-card">
+        <div class="stat-number">7-14 Days</div>
+        <div class="stat-label">Average Days to Close</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">98%</div>
+        <div class="stat-label">Satisfaction Rate</div>
+      </div>
+    </div>
+  </section>
 
-    <!-- FAQ -->
-    <section>
-      <h2>Frequently Asked Questions</h2>
-      <details>
-        <summary>Do you really buy houses nationwide?</summary>
-        <p class="sub">Yes! We work with homeowners in all 50 states. Whether you're in Nashville, Los Angeles, or a small town in Montana, we can help.</p>
-      </details>
-      <details>
-        <summary>How fast can I close on my house?</summary>
-        <p class="sub">Most sellers close in 7–14 days, but we can work with your timeline. Need more time? No problem. Want to close in 5 days? We can make it happen.</p>
-      </details>
-      <details>
-        <summary>Will I need to make any repairs before selling?</summary>
-        <p class="sub">Absolutely not. We buy houses as-is, which means you don't need to spend a single dollar on repairs, cleaning, or staging.</p>
-      </details>
-      <details>
-        <summary>How do I know I'll get a fair price?</summary>
-        <p class="sub">Our offers are based on current local market data, property condition, and comparable sales. We're transparent about how we arrive at our numbers, and there's never any obligation to accept.</p>
-      </details>
-      <details>
-        <summary>Are there any fees or commissions?</summary>
-        <p class="sub">Zero fees. Zero commissions. Zero closing costs. The offer we give you is the amount you'll receive at closing.</p>
-      </details>
-      <details>
-        <summary>What if I'm behind on mortgage payments?</summary>
-        <p class="sub">We can often help homeowners who are behind on payments avoid foreclosure. Give us a call to discuss your specific situation.</p>
-      </details>
-      <details>
-        <summary>Is this a legitimate business?</summary>
-        <p class="sub">Yes! We're a registered real estate investment company. We're happy to provide references, testimonials, and proof of funds.</p>
-      </details>
-    </section>
+  <!-- HOW IT WORKS -->
+  <section>
+    <h2 style="text-align:center; margin-bottom:12px;">How Propcash Works</h2>
+    <p class="sub" style="text-align:center; max-width:700px; margin:0 auto 32px;">Our simple 3-step process gets you from "thinking about selling" to "cash in hand" faster than traditional methods.</p>
+    
+    <div class="grid-3">
+      <div class="card">
+        <div class="num">1</div>
+        <h3>Contact Us</h3>
+        <p class="sub">Get the conversation started by giving us a text, call, or filling out the form above. We just need to learn about your property and goals. There's no pressure, and no obligation.</p>
+      </div>
+      <div class="card">
+        <div class="num">2</div>
+        <h3>Get Your Offer</h3>
+        <p class="sub">We'll evaluate your property and present you with a fair, no-obligation cash offer within 24 hours. No hidden fees or surprises.</p>
+      </div>
+      <div class="card">
+        <div class="num">3</div>
+        <h3>Close & Get Paid</h3>
+        <p class="sub">Choose your closing date (as soon as 7 days or on your timeline). Walk away with cash in hand and zero stress.</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- IMAGE SECTION (REMOVED EXTRA CONTAINER CLASS) -->
+  <section style="padding-top:0;">
+    <img 
+      src="/propcash/assets/home-sold.png" 
+      alt="Sell your home the simple way with Propcash" 
+      style="width:100%; height:auto; border-radius:20px; box-shadow:0 8px 24px rgba(0,0,0,.08);" 
+      loading="eager" decoding="async" />
+  </section>
+
+  <!-- WHY CHOOSE PROPCASH -->
+  <section>
+    <h2>Why Homeowners Choose Propcash</h2>
+    <p class="sub">We've helped hundreds of families across America sell their homes quickly and fairly. Our experienced team is dedicated to providing transparent service and expert guidance every step of the way.</p>
+    
+    <div class="grid-3" style="margin-top:20px">
+      <div class="card">
+        <div class="icon-badge">🎯</div>
+        <h3>Our Mission</h3>
+        <p class="sub">To simplify the home-selling process nationwide, making it fast, fair, and stress-free for every homeowner who needs to sell.</p>
+      </div>
+      <div class="card">
+        <div class="icon-badge">🤝</div>
+        <h3>Our Commitment</h3>
+        <p class="sub">We treat every seller with honesty and respect. No hidden fees, no low-ball tactics, and no fine print. Just transparency and trust.</p>
+      </div>
+      <div class="card">
+        <div class="icon-badge">⭐</div>
+        <h3>Our Team</h3>
+        <p class="sub">Led by industry veterans with decades of combined experience, we combine local market knowledge with national resources.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- JULIAN REASSURANCE SECTION -->
+  <section>
+    <div class="julian-callout">
+      <img src="/propcash/assets/mascot.png" alt="Julian the Propcash Pinecone" class="julian-large" />
+      <div>
+        <h2>No Pressure, Just Honest Guidance</h2>
+        <p class="sub">I know selling your home can feel overwhelming — especially if you're dealing with repairs, financial stress, or time pressure. That's exactly why Propcash exists. We're here to give you a fair offer and a simple path forward. No games, no gimmicks, just people who care about helping you move on to your next chapter.</p>
+        <p class="sub" style="margin-top:12px;"><strong>— Julian, your Propcash guide</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE HELP -->
+  <section>
+    <h2 style="text-align:center;">Who We Help</h2>
+    <p class="sub" style="text-align:center; max-width:700px; margin:0 auto 32px;">Every situation is unique. Here are just a few scenarios where Propcash can help:</p>
+    
+    <div class="grid-3">
+      <div class="card">
+        <h4>🏚️ Inherited Property</h4>
+        <p class="sub">Inherited a house you don't want to maintain? We'll take it off your hands, as-is.</p>
+      </div>
+      <div class="card">
+        <h4>⚡ Need to Sell Fast</h4>
+        <p class="sub">Job relocation? Divorce? Financial hardship? We can close in as little as 7 days.</p>
+      </div>
+      <div class="card">
+        <h4>🔧 Major Repairs Needed</h4>
+        <p class="sub">Don't want to deal with expensive repairs? We buy houses in any condition.</p>
+      </div>
+      <div class="card">
+        <h4>🏘️ Problem Tenants</h4>
+        <p class="sub">Tired of dealing with rental property headaches? Sell to us, tenants and all.</p>
+      </div>
+      <div class="card">
+        <h4>💰 Behind on Payments</h4>
+        <p class="sub">Facing foreclosure? We can help you avoid it and walk away with cash.</p>
+      </div>
+      <div class="card">
+        <h4>📍 Any Location</h4>
+        <p class="sub">Rural, urban, or suburban — we buy properties in all 50 states.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <h2>Frequently Asked Questions</h2>
+    <details>
+      <summary>Do you really buy houses nationwide?</summary>
+      <p class="sub">Yes! We work with homeowners in all 50 states. Whether you're in Nashville, Los Angeles, or a small town in Montana, we can help.</p>
+    </details>
+    <details>
+      <summary>How fast can I close on my house?</summary>
+      <p class="sub">Most sellers close in 7–14 days, but we can work with your timeline. Need more time? No problem. Want to close in 5 days? We can make it happen.</p>
+    </details>
+    <details>
+      <summary>Will I need to make any repairs before selling?</summary>
+      <p class="sub">Absolutely not. We buy houses as-is, which means you don't need to spend a single dollar on repairs, cleaning, or staging.</p>
+    </details>
+    <details>
+      <summary>How do I know I'll get a fair price?</summary>
+      <p class="sub">Our offers are based on current local market data, property condition, and comparable sales. We're transparent about how we arrive at our numbers, and there's never any obligation to accept.</p>
+    </details>
+    <details>
+      <summary>Are there any fees or commissions?</summary>
+      <p class="sub">Zero fees. Zero commissions. Zero closing costs. The offer we give you is the amount you'll receive at closing.</p>
+    </details>
+    <details>
+      <summary>What if I'm behind on mortgage payments?</summary>
+      <p class="sub">We can often help homeowners who are behind on payments avoid foreclosure. Give us a call to discuss your specific situation.</p>
+    </details>
+    <details>
+      <summary>Is this a legitimate business?</summary>
+      <p class="sub">Yes! We're a registered real estate investment company. We're happy to provide references, testimonials, and proof of funds.</p>
+    </details>
+  </section>
+</main>
         <!-- FORM CARD - IMPROVED: Multiple contact options -->
 <div class="hero-card" id="lead">
   
