@@ -306,17 +306,31 @@
     </section>
 
     <!-- FINAL CTA -->
-    <section>
-      <div class="final-cta">
-        <h2>Ready to Get Your Cash Offer?</h2>
-        <p class="sub">Take the first step. No obligation, no pressure — just a fair offer and honest guidance.</p>
-        <div style="display:flex; gap:16px; justify-content:center; margin-top:24px; flex-wrap:wrap;">
-          <a href="tel:8569385550" class="btn-secondary">📞 Call (856) 938-5550</a>
-          <button class="btn" onclick="document.querySelector('#lead').scrollIntoView({behavior:'smooth'})">Get My Cash Offer →</button>
-        </div>
-      </div>
-    </section>
-  </main>
+  <section>
+  <div class="final-cta" 
+       style="background: var(--accent); color: #fff; padding: 60px 40px; border-radius: 24px; box-shadow: 0 20px 40px rgba(139,94,60,.25); text-align:center;">
+       
+    <h2 style="color:#fff;">Ready to Get Your Cash Offer?</h2>
+    <p class="sub" style="color:rgba(255,255,255,.9);">
+      Take the first step. No obligation, no pressure — just a fair offer and honest guidance.
+    </p>
+
+    <div style="display:flex; gap:16px; justify-content:center; margin-top:24px; flex-wrap:wrap;">
+      <!-- TEXT MESSAGE CTA -->
+      <a href="sms:8569385550?&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20cash%20offer%20on%20my%20home."
+         style="background:#fff; color:var(--accent); font-weight:700; padding:12px 20px; border-radius:14px; border:2px solid #fff; text-decoration:none; transition:all .2s; box-shadow:0 8px 20px rgba(0,0,0,.15);">
+        💬 Text Us
+      </a>
+
+      <!-- SCROLL TO FORM CTA -->
+      <button onclick="document.querySelector('#lead').scrollIntoView({behavior:'smooth'})"
+              style="background:#fff; color:var(--accent); font-weight:700; padding:12px 20px; border-radius:14px; border:2px solid #fff; cursor:pointer; transition:all .2s; box-shadow:0 8px 20px rgba(0,0,0,.15);">
+        Get My Cash Offer →
+      </button>
+    </div>
+  </div>
+</section>
+
 
   <!-- Footer -->
   <footer>
