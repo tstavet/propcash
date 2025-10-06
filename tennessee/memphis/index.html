@@ -61,24 +61,26 @@
   <link rel="stylesheet" href="/propcash/assets/styles.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container nav">
-      <a href="/propcash/" class="brand">
-        <div class="logo">PC</div>
-        Propcash
-      </a>
-      <nav class="desktop-nav">
-        <a href="/propcash/">Home</a>
-        <a href="/propcash/about">About Us</a>
-        <a href="/propcash/contact">Contact</a>
-      </nav>
-      <div class="header-ctas">
-        <a href="tel:8569385550" class="cta-phone">📞 (856) 938-5550</a>
-        <button class="cta-header" onclick="document.querySelector('#lead').scrollIntoView({behavior:'smooth'})">Get Cash Offer</button>
-      </div>
-    </div>
-  </header>
+ 
+<div id="header"></div>
+<script>
+  (async () => {
+    const mount = document.getElementById('header');
+    const res = await fetch('/propcash/assets/header.html', { cache: 'no-store' });
+    const html = await res.text();
+    mount.innerHTML = html;
+
+    // Now that the header is in the DOM, attach the toggle
+    const btn = mount.querySelector('.mobile-menu-toggle');
+    const menu = mount.querySelector('#mobileNav');
+    if (btn && menu) {
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('open');
+        btn.textContent = menu.classList.contains('open') ? '✕' : '☰';
+      });
+    }
+  })();
+</script>
 
   <main class="container">
     <!-- LOCAL HERO SECTION -->
