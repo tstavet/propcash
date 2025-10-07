@@ -1228,6 +1228,67 @@ footer a:hover {
   }
 }
 
+/* COMPACT CONTACT OPTIONS */
+.contact-option-card.compact {
+  padding: 20px 18px;
+  text-align: left;
+  border-radius: 14px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.contact-info h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.contact-detail {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 2px 0;
+}
+
+.sub.small {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+/* Responsive tweaks for mobile */
+@media (max-width: 700px) {
+  .contact-options-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .contact-option-card.compact {
+    padding: 14px 16px;
+  }
+  .contact-icon {
+    font-size: 26px;
+  }
+  .contact-info h3 {
+    font-size: 16px;
+  }
+  .contact-detail {
+    font-size: 14px;
+  }
+  .sub.small {
+    font-size: 12px;
+  }
+}
+
+
 /* ==========================================
    LANDING PAGE SPECIFIC STYLES
    ========================================== */
