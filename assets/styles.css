@@ -1087,207 +1087,82 @@ footer a:hover {
   }
 }
 
-/* ==========================================
-   CONTACT PAGE SPECIFIC STYLES
-   ========================================== */
-
-.contact-options-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  margin: 50px 0;
+CONTACT US CARDS STYLES
+/* Tighter spacing so header + cards fit on one screen */
+.contact-options-grid.tight {
+  margin: 20px 0 12px;   /* was 50px 0 */
+  gap: 20px;             /* was 28px */
 }
 
-.contact-option-card {
-  background: var(--card);
-  border: 1.5px solid var(--line);
-  border-radius: 12px;
-  padding: 36px 28px;
-  text-align: center;
-  transition: all 0.4s;
-  text-decoration: none;
-  display: block;
-}
-
-.contact-option-card:hover {
-  border-color: var(--accent);
-  box-shadow: 0 8px 28px rgba(107, 68, 35, .12);
-  transform: translateY(-4px);
-  text-decoration: none;
-}
-
-.contact-icon {
-  font-size: 48px;
-  margin-bottom: 18px;
-}
-
-.contact-option-card h3 {
-  color: var(--text);
-  margin-bottom: 10px;
-}
-
-.contact-detail {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--accent);
-  margin: 18px 0 14px;
-  letter-spacing: -.01em;
-}
-
-.contact-hours {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-.contact-form-wrapper {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 52px;
-  background: rgba(107, 68, 35, .02);
-  padding: 52px;
-  border-radius: 12px;
-  border: 1px solid var(--line);
-}
-
-.form-left {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-left h2 {
-  margin-bottom: 14px;
-}
-
-.contact-features {
-  margin-top: 36px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.feature-item {
-  display: flex;
-  gap: 18px;
-  align-items: flex-start;
-}
-
-.feature-check {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: white;
-  display: grid;
-  place-items: center;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-.feature-item strong {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.feature-item .sub {
-  font-size: 15px;
-}
-
-.form-right {
-  background: white;
-  padding: 36px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(107, 68, 35, .08);
-}
-
-.contact-form {
-  display: grid;
-  gap: 18px;
-}
-
-@media (max-width: 900px) {
-  .contact-options-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .contact-form-wrapper {
-    grid-template-columns: 1fr;
-    padding: 36px 28px;
-  }
-  
-  .form-left img {
-    max-width: 160px;
-    margin: 0 auto 18px;
-  }
-  
-  .form-right {
-    padding: 28px;
-  }
-}
-
-/* COMPACT CONTACT OPTIONS */
+/* Compact card overrides */
 .contact-option-card.compact {
-  padding: 20px 18px;
-  text-align: left;
-  border-radius: 14px;
+  padding: 16px 16px;    /* was 36px 28px */
+  text-align: left;      /* row layout */
+  border-radius: 12px;
 }
 
+/* Make the row layout work nicely */
 .contact-row {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
-.contact-icon {
-  font-size: 32px;
+/* Override the big icon and remove bottom margin from your original .contact-icon */
+.contact-option-card.compact .contact-icon {
+  font-size: 28px;       /* was 48px */
+  margin: 0;             /* remove bottom gap from centered layout */
   flex-shrink: 0;
 }
 
-.contact-info h3 {
+/* Tighten text sizing/spacing in compact layout */
+.contact-option-card.compact .contact-info h3 {
   margin: 0;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
 }
 
-.contact-detail {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--accent);
-  margin: 2px 0;
+.contact-option-card.compact .contact-detail {
+  font-size: 14px;       /* was 22px */
+  margin: 2px 0 0 0;     /* was 18px 0 14px */
+  letter-spacing: 0;     /* normalize from Playfair style */
 }
 
-.sub.small {
-  font-size: 13px;
+.contact-option-card.compact .sub.small {
+  font-size: 12.5px;
   line-height: 1.4;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.contact-option-card.compact .contact-hours {
+  font-size: 12px;
+  margin-top: 4px;
   color: var(--muted);
 }
 
-/* Responsive tweaks for mobile */
+/* Mobile: single column, even tighter spacing */
 @media (max-width: 700px) {
   .contact-options-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;           /* was 12px */
   }
   .contact-option-card.compact {
-    padding: 14px 16px;
+    padding: 14px 14px;
   }
-  .contact-icon {
-    font-size: 26px;
+  .contact-option-card.compact .contact-icon {
+    font-size: 24px;
   }
-  .contact-info h3 {
-    font-size: 16px;
+  .contact-option-card.compact .contact-info h3 {
+    font-size: 15px;
   }
-  .contact-detail {
-    font-size: 14px;
+  .contact-option-card.compact .contact-detail {
+    font-size: 13.5px;
   }
-  .sub.small {
+  .contact-option-card.compact .sub.small {
     font-size: 12px;
   }
 }
-
 
 /* ==========================================
    LANDING PAGE SPECIFIC STYLES
