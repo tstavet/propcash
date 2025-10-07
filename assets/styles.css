@@ -223,6 +223,24 @@ h4 {
   gap: 40px; 
   padding: clamp(40px, 7vw, 90px) 0; 
   align-items: start;
+  background: #3d2f1f;
+  margin: 0 -50vw;
+  padding-left: 50vw;
+  padding-right: 50vw;
+}
+
+.hero h1 {
+  color: #ffffff;
+}
+
+.hero .sub {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero .badge {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
 }
 
 .badge { 
