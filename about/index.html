@@ -412,19 +412,68 @@
 
 </section>
 
-    <!-- FINAL CTA -->
-    <section>
-      <div class="final-cta">
-        <h2>Ready to Work With Us?</h2>
-        <p class="sub">Let's start a conversation about your property. No pressure, no obligation — just honest guidance.</p>
-        <div style="display:flex; gap:16px; justify-content:center; margin-top:24px; flex-wrap:wrap;">
-          <a href="tel:8569385550" class="btn-secondary">📞 Call (856) 938-5550</a>
-          <a href="/propcash/#lead" class="btn" style="text-decoration: none;">Get My Cash Offer →</a>
+  <!-- FORM SECTION - UPDATED -->
+<section>
+  <div class="hero-card" id="lead" style="max-width: 600px; margin: 0 auto;">
+    <h3 style="margin: 6px 0 10px; text-align: center;">
+      Ready to get your cash offer? 
+      <a href="sms:8569385550?&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20cash%20offer%20on%20my%20home."
+         style="color: var(--accent); text-decoration: underline; font-weight: 800;">
+        Text us
+      </a> 
+      to get started
+    </h3>
+
+    <div class="divider"><span>OR FILL OUT THIS FORM</span></div>
+
+    <form class="form" id="contactForm">
+      <input type="hidden" name="page" id="pageName" value="" />
+      
+      <div class="row">
+        <div>
+          <label for="name">Full Name *</label>
+          <input id="name" name="name" placeholder="Your Name" required />
+        </div>
+        <div>
+          <label for="phone">Phone Number *</label>
+          <input id="phone" name="phone" type="tel" placeholder="(856) 938-5550" required />
         </div>
       </div>
-    </section>
-  </main>
-  
+      
+      <div class="row">
+        <div>
+          <label for="email">Email Address</label>
+          <input id="email" type="email" name="email" placeholder="you@example.com" />
+        </div>
+        <div>
+          <label for="address">Property Address *</label>
+          <input id="address" name="address" placeholder="123 Main St, Nashville, TN" required />
+        </div>
+      </div>
+
+      <div>
+        <label for="timeline">When are you looking to sell?</label>
+        <select id="timeline" name="timeline">
+          <option value="">Select a timeframe...</option>
+          <option value="asap">ASAP (Within 2 weeks)</option>
+          <option value="1month">Within 1 month</option>
+          <option value="3months">Within 3 months</option>
+          <option value="just-looking">Just exploring options</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="message">Tell us about your situation (optional)</label>
+        <textarea id="message" name="message" placeholder="Any details that might help us serve you better..."></textarea>
+      </div>
+
+      <button class="btn" type="submit">Request My Cash Offer →</button>
+      <div class="secure">🔒 Your information is 100% confidential. We'll never share it. By submitting, you agree to be contacted by phone, text, or email.</div>
+    </form>
+  </div>
+</section>
+  <br>
+      <br>
   <!-- Footer -->
   <footer>
     <div class="container">
