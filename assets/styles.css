@@ -1067,4 +1067,285 @@ footer a:hover {
   font-size: 16px;
 }
 
-.feature-item .sub
+.feature-item .sub {
+  font-size: 14px;
+}
+
+.form-right {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(107, 68, 35, .08);
+}
+
+.contact-form {
+  display: grid;
+  gap: 16px;
+}
+
+/* ==========================================
+   LANDING PAGE SPECIFIC STYLES
+   ========================================== */
+
+.neighborhoods-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.neighborhood-item {
+  background: rgba(107, 68, 35, .04);
+  border: 1px solid var(--line);
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.neighborhood-item:hover {
+  background: rgba(107, 68, 35, .08);
+  border-color: var(--accent);
+  transform: translateX(4px);
+}
+
+.market-info-box {
+  background: rgba(107, 68, 35, .03);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 48px;
+}
+
+.market-info-box h2 {
+  margin-bottom: 22px;
+}
+
+.benefit-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+}
+
+.benefit-list li {
+  padding: 14px 0 14px 36px;
+  position: relative;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.benefit-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (MOBILE)
+   ========================================== */
+
+@media (max-width: 900px) {
+  .hero { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .hero-card {
+    position: static;
+  }
+  
+  .row { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .grid-3 { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .julian-callout {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .julian-large {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  
+  .mascot { 
+    justify-content: center;
+    margin: 24px auto;
+  }
+  
+  .mascot img { 
+    width: 180px; 
+  }
+  
+  .desktop-nav {
+    display: none;
+  }
+  
+  .header-ctas {
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  
+  .cta-phone,
+  .cta-header {
+    font-size: 13px;
+    padding: 10px 14px;
+    white-space: nowrap;
+  }
+  
+  .form-mascot {
+    width: 70px;
+    top: -22px;
+    right: -22px;
+  }
+  
+  h1 {
+    font-size: 36px;
+  }
+  
+  h2 {
+    font-size: 30px;
+  }
+  
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mascot-feature img {
+    max-width: 220px;
+  }
+  
+  .comparison-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 18px;
+  }
+  
+  .comparison-row .label {
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .header-row {
+    display: none;
+  }
+  
+  .highlight-col {
+    order: -1;
+  }
+  
+  .julian-story {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 36px 28px;
+  }
+  
+  .julian-story img {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  
+  .process-step {
+    grid-template-columns: 65px 1fr;
+    gap: 18px;
+  }
+  
+  .process-step:not(:last-child)::after {
+    left: 32px;
+    top: 65px;
+  }
+  
+  .step-number {
+    width: 65px;
+    height: 65px;
+    font-size: 26px;
+  }
+  
+  .commitment-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .commitment-box {
+    padding: 50px 28px;
+  }
+  
+  .contact-options-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .contact-option-card.compact {
+    padding: 14px;
+  }
+  
+  .contact-option-card.compact .contact-icon {
+    font-size: 24px;
+  }
+  
+  .contact-option-card.compact .contact-info h3 {
+    font-size: 15px;
+  }
+  
+  .contact-option-card.compact .contact-detail {
+    font-size: 13.5px;
+  }
+  
+  .contact-option-card.compact .sub.small {
+    font-size: 12px;
+  }
+  
+  .contact-form-wrapper {
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+  }
+  
+  .form-left img {
+    max-width: 160px;
+    margin: 0 auto 16px;
+  }
+  
+  .form-right {
+    padding: 24px;
+  }
+  
+  .neighborhoods-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .market-info-box {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .helper {
+    width: 64px;
+    height: 64px;
+    right: 18px;
+    bottom: 18px;
+  }
+  
+  .helper img {
+    width: 44px;
+  }
+  
+  .final-cta {
+    padding: 50px 28px;
+  }
+}
