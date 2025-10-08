@@ -141,8 +141,8 @@ header {
   padding: 11px 18px;
   font-size: 14px;
   border-radius: 8px;
-  background: transparent;
-  color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
   font-weight: 600;
   border: 1.5px solid var(--accent);
   text-decoration: none;
