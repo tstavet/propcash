@@ -1,3 +1,6 @@
+23.57 KB •1,351 lines
+•
+Formatting may be inconsistent from source
 /* ==========================================
    PROPCASH STYLES - CLEANED VERSION
    Save this as: /propcash/assets/styles.css
@@ -168,6 +171,9 @@ header {
 /* ==========================================
    TYPOGRAPHY
    ========================================== */
+/* ==========================================
+   TYPOGRAPHY
+   ========================================== */
 
 h1 { 
   font-family: 'Cormorant Garamond', serif;
@@ -176,7 +182,7 @@ h1 {
   margin: 20px 0 16px; 
   letter-spacing: -.02em;
   font-weight: 700;
-  color: var(--text);
+  color: var(--accent);  /* Change from var(--text) to var(--accent) */
 }
 
 h2 {
@@ -186,7 +192,7 @@ h2 {
   margin-bottom: 16px;
   font-weight: 700;
   letter-spacing: -.015em;
-  color: var(--text);
+  color: var(--accent);  /* Change from var(--text) to var(--accent) */
 }
 
 h3 {
@@ -194,7 +200,7 @@ h3 {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 10px;
-  color: var(--text);
+  color: var(--accent);  /* Change from var(--text) to var(--accent) */
   letter-spacing: -.01em;
 }
 
@@ -203,7 +209,7 @@ h4 {
   font-size: 19px;
   font-weight: 600;
   margin-bottom: 8px;
-  color: var(--text);
+  color: var(--accent);  /* Change from var(--text) to var(--accent) */
 }
 
 .sub { 
@@ -223,24 +229,6 @@ h4 {
   gap: 40px; 
   padding: clamp(40px, 7vw, 90px) 0; 
   align-items: start;
-  background: #3d2f1f;
-  margin: 0 -50vw;
-  padding-left: 50vw;
-  padding-right: 50vw;
-}
-
-.hero h1 {
-  color: #ffffff;
-}
-
-.hero .sub {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.hero .badge {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.25);
-  color: #ffffff;
 }
 
 .badge { 
@@ -406,7 +394,9 @@ select {
 }
 
 .btn:hover { 
-  transform: translateY(-2px);
+  background: #5a371c;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(107, 68, 35, .25);
 }
 
 .btn-secondary {
@@ -425,7 +415,10 @@ select {
 }
 
 .btn-secondary:hover {
-  transform: translateY(-2px);
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  transform: translateY(-1px);
 }
 
 .secure { 
