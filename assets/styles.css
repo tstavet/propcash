@@ -289,13 +289,6 @@ h4 {
   top: 110px;
 }
 
-.hero-card h3 {
-  font-size: 26px;
-  line-height: 1.6;
-  text-align: center;
-}
-
-
 .quick-call {
   background: rgba(107, 68, 35, .04);
   border: 1px solid var(--line);
