@@ -168,6 +168,9 @@ header {
 /* ==========================================
    TYPOGRAPHY
    ========================================== */
+/* ==========================================
+   TYPOGRAPHY
+   ========================================== */
 
 h1 { 
   font-family: 'Cormorant Garamond', serif;
@@ -176,7 +179,7 @@ h1 {
   margin: 20px 0 16px; 
   letter-spacing: -.02em;
   font-weight: 700;
-  color: var(--text);
+  color: var(--accent);  /* Change from var(--text) to var(--accent) */
 }
 
 h2 {
@@ -186,7 +189,7 @@ h2 {
   margin-bottom: 16px;
   font-weight: 700;
   letter-spacing: -.015em;
-  color: var(--text);
+  color: var(--accent);  /* Change from var(--text) to var(--accent) */
 }
 
 h3 {
@@ -194,7 +197,7 @@ h3 {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 10px;
-  color: var(--text);
+  color: var(--accent);  /* Change from var(--text) to var(--accent) */
   letter-spacing: -.01em;
 }
 
@@ -203,7 +206,7 @@ h4 {
   font-size: 19px;
   font-weight: 600;
   margin-bottom: 8px;
-  color: var(--text);
+  color: var(--accent);  /* Change from var(--text) to var(--accent) */
 }
 
 .sub { 
