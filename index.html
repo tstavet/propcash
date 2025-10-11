@@ -341,48 +341,57 @@ Reply to this lead ASAP!
     });
   </script>
   
-<!-- Sticky Helper Mascot with Text Bubble -->
-  <div class="helper-container" style="position: fixed; right: 26px; bottom: 26px; z-index: 999;">
-    <!-- Speech Bubble -->
-    <div class="helper-bubble" style="
+  <!-- Sticky Helper Mascot with Text Bubble -->
+<div class="helper-container" style="position: fixed; right: 26px; bottom: 26px; z-index: 999;">
+  <!-- Speech Bubble -->
+  <div class="helper-bubble" style="
+    position: absolute;
+    bottom: 90px;
+    right: 0;
+    background: white;
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    padding: 12px 16px;
+    box-shadow: 0 6px 24px rgba(107, 68, 35, .15);
+    max-width: 200px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+  ">
+    <p style="margin: 0; font-size: 13px; line-height: 1.4; color: var(--text); font-weight: 500;">
+      Questions? Text us anytime! 💬
+    </p>
+    <!-- Arrow pointing down to Julian -->
+    <div style="
       position: absolute;
-      bottom: 90px;
-      right: 0;
-      background: white;
-      border: 2px solid var(--accent);
-      border-radius: 12px;
-      padding: 12px 16px;
-      box-shadow: 0 6px 24px rgba(107, 68, 35, .15);
-      max-width: 200px;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: all 0.3s ease;
-      pointer-events: none;
-    ">
-      <p style="margin: 0; font-size: 13px; line-height: 1.4; color: var(--text); font-weight: 500;">
-        Questions? Text us anytime! 💬
-      </p>
-      <!-- Arrow pointing down to Julian -->
-      <div style="
-        position: absolute;
-        bottom: -8px;
-        right: 20px;
-        width: 0;
-        height: 0;
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        border-top: 8px solid var(--accent);
-      "></div>
-      <div style="
-        position: absolute;
-        bottom: -5px;
-        right: 22px;
-        width: 0;
-        height: 0;
-        border-left: 6px solid transparent;
-        border-right: 6px solid transparent;
-        border-top: 6px solid white;
-      "></div>
-    </div>
+      bottom: -8px;
+      right: 20px;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid var(--accent);
+    "></div>
+    <div style="
+      position: absolute;
+      bottom: -5px;
+      right: 22px;
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid white;
+    "></div>
+  </div>
+
+  <!-- Julian Helper Button -->
+  <a class="helper" 
+     href="sms:8569385550?&body=Hi%2C%20I%20have%20a%20question%20about%20selling%20my%20home." 
+     aria-label="Text us with questions">
+    <img src="/propcash/assets/mascot.png" alt="Julian helper" loading="lazy" />
+  </a>
+</div>
+
 </body>
 </html>
