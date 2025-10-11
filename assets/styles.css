@@ -207,7 +207,7 @@ h2 {
 
 h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 600;
   margin-bottom: 10px;
   color: var(--accent);  /* Change from var(--text) to var(--accent) */
