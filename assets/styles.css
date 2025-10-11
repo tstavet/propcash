@@ -724,82 +724,76 @@ footer a:hover {
   color: var(--accent);
 }
 
-<!-- Sticky Helper Mascot with Text Bubble -->
-<div class="helper-container" style="position: fixed; right: 26px; bottom: 26px; z-index: 999;">
-  <!-- Speech Bubble -->
-  <div class="helper-bubble" style="
-    position: absolute;
-    bottom: 90px;
-    right: 0;
-    background: white;
-    border: 2px solid var(--accent);
-    border-radius: 12px;
-    padding: 12px 16px;
+/* ==========================================
+   FOOTER
+   ========================================== */
+footer { 
+  border-top: 1px solid var(--line); 
+  padding: 50px 0 90px; 
+  color: var(--muted); 
+  background: rgba(107, 68, 35, .02); 
+}
+footer a {
+  color: var(--muted);
+}
+footer a:hover {
+  color: var(--accent);
+}
+
+/* ==========================================
+   STICKY HELPER MASCOT
+   ========================================== */
+
+.helper { 
+  position: fixed; 
+  right: 26px; 
+  bottom: 26px; 
+  width: 72px; 
+  height: 72px; 
+  border-radius: 50%; 
+  background: #fff; 
+  border: 1.5px solid var(--accent); 
+  display: grid; 
+  place-items: center; 
+  box-shadow: 0 6px 24px rgba(107, 68, 35, .15); 
+  cursor: pointer; 
+  z-index: 999; 
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.helper img { 
+  width: 52px; 
+  height: auto; 
+  display: block; 
+}
+
+.helper:hover { 
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 35px rgba(107, 68, 35, .25);
+  text-decoration: none;
+}
+
+/* Helper bubble interactions */
+.helper-container:hover .helper-bubble {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% {
     box-shadow: 0 6px 24px rgba(107, 68, 35, .15);
-    max-width: 200px;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    pointer-events: none;
-  ">
-    <p style="margin: 0; font-size: 13px; line-height: 1.4; color: var(--text); font-weight: 500;">
-      Questions? Text us anytime! 💬
-    </p>
-    <!-- Arrow pointing down to Julian -->
-    <div style="
-      position: absolute;
-      bottom: -8px;
-      right: 20px;
-      width: 0;
-      height: 0;
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-top: 8px solid var(--accent);
-    "></div>
-    <div style="
-      position: absolute;
-      bottom: -5px;
-      right: 22px;
-      width: 0;
-      height: 0;
-      border-left: 6px solid transparent;
-      border-right: 6px solid transparent;
-      border-top: 6px solid white;
-    "></div>
-  </div>
-
-  <!-- Julian Helper Button -->
-  <a class="helper" 
-     href="sms:8569385550?&body=Hi%2C%20I%20have%20a%20question%20about%20selling%20my%20home." 
-     aria-label="Text us with questions" 
-     style="position: relative;">
-    <img src="/propcash/assets/mascot.png" alt="Julian helper" loading="lazy" />
-  </a>
-</div>
-
-<style>
-  /* Show bubble on hover */
-  .helper-container:hover .helper-bubble {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
   }
-
-  /* Pulse animation to draw attention */
-  @keyframes pulse {
-    0%, 100% {
-      box-shadow: 0 6px 24px rgba(107, 68, 35, .15);
-    }
-    50% {
-      box-shadow: 0 6px 24px rgba(107, 68, 35, .3);
-    }
+  50% {
+    box-shadow: 0 6px 24px rgba(107, 68, 35, .3);
   }
+}
 
-  .helper {
-    animation: pulse 3s ease-in-out infinite;
-  }
-</style>
-
+.helper {
+  animation: pulse 3s ease-in-out infinite;
+}
 
 /* ==========================================
    ABOUT PAGE SPECIFIC STYLES
