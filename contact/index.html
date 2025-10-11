@@ -43,12 +43,29 @@
   })();
 </script>
 
-  <main class="container">
-  <!-- HERO -->
-  <section class="hero-simple" style="text-align: center; display: flex; flex-direction: column; align-items: center; margin-bottom: 8px; padding-bottom: 0;">
-    <h1>Contact Propcash</h1>
-    <p class="sub" style="max-width: 700px;">We're committed to providing the best customer support possible. There are 3 ways to contact our team.</p>
-  </section>
+  </main> <!-- Close container BEFORE hero -->
+
+<!-- HERO -->
+<section class="hero-simple" style="
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/propcash/assets/customer-service.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(80px, 10vw, 120px) 20px;
+  margin-bottom: 0;
+">
+  <h1 style="color: white;">Contact Propcash</h1>
+  <p class="sub" style="max-width: 700px; margin-top: 20px; color: rgba(255, 255, 255, 0.95);">
+    We're committed to providing the best customer support possible. There are 3 ways to contact our team.
+  </p>
+</section>
+
+<main class="container"> <!-- Reopen container for rest of content -->
 
 
     <!-- CONTACT OPTIONS -->
