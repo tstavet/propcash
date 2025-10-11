@@ -171,6 +171,7 @@ header {
   border-radius: 8px;
   font-weight: 700;
   font-size: 18px;
+   font-family: 'Cormorant Garamond', serif;  /* ADD THIS LINE */
   text-decoration: none;
   transition: all 0.3s;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
