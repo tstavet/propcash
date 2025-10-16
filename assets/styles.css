@@ -98,6 +98,7 @@ header {
   display: flex;
   gap: 32px;
   align-items: center;
+color: #6b4423;
 }
 .desktop-nav a {
   font-weight: 500;
