@@ -17,9 +17,9 @@
   <title>Terms of Service | Propcash</title>
   <meta name="description" content="Propcash Terms of Service - Terms and conditions for using our website and services." />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="canonical" href="https://tstavet.github.io/propcash/terms" />
-  <link rel="icon" href="/propcash/assets/mascot-favicon.png" />
-  <link rel="stylesheet" href="/propcash/assets/styles.css" />
+  <link rel="canonical" href="https://propcash.co/terms" />
+  <link rel="icon" href="/assets/mascot-favicon.png" />
+  <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 <body>
   <!-- Header -->
@@ -27,7 +27,7 @@
   <script>
     (async () => {
       const mount = document.getElementById('header');
-      const res = await fetch('/propcash/assets/header.html', { cache: 'no-store' });
+      const res = await fetch('/assets/header.html', { cache: 'no-store' });
       const html = await res.text();
       mount.innerHTML = html;
       const btn = mount.querySelector('.mobile-menu-toggle');
@@ -186,7 +186,7 @@
     <div class="container">
       <div style="display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; padding-bottom:24px; border-bottom:1px solid var(--line);">
         <div>
-          <a href="/propcash/" class="brand" style="margin-bottom:8px; text-decoration:none;">
+          <a href="/" class="brand" style="margin-bottom:8px; text-decoration:none;">
             Propcash
           </a>
           <div style="font-size:14px; color:var(--muted); margin-top:8px;">
@@ -194,17 +194,17 @@
           </div>
         </div>
         <nav style="display:flex; gap:24px; flex-wrap:wrap;">
-          <a href="/propcash/">Home</a>
-          <a href="/propcash/about">About</a>
-          <a href="/propcash/contact">Contact</a>
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
         </nav>
       </div>
       <div style="padding-top:24px;">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; font-size:13px; color:var(--muted);">
           <div>© <span id="year"></span> Propcash. All rights reserved.</div>
           <div>
-            <a href="/propcash/privacy">Privacy Policy</a> • 
-            <a href="/propcash/terms" style="font-weight: 600;">Terms of Service</a>
+            <a href="/privacy">Privacy Policy</a> • 
+            <a href="/terms" style="font-weight: 600;">Terms of Service</a>
           </div>
         </div>
       </div>
