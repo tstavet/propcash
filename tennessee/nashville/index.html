@@ -188,6 +188,12 @@
         <span style="display: flex; align-items: center; justify-content: center; width: 16px; height: 16px; background: rgba(255, 255, 255, 0.9); border-radius: 3px; color: #6b4423; font-size: 11px; font-weight: bold;">✓</span>
         <span style="color: white; font-weight: 500; font-size: clamp(11px, 2.5vw, 13px); white-space: nowrap;">We Respond in Minutes</span>
       </div>
+
+       <div style="display: flex; align-items: center; gap: 6px; background: rgba(255, 255, 255, 0.25); padding: clamp(6px, 1.5vw, 8px) clamp(12px, 3vw, 16px); border-radius: 50px; backdrop-filter: blur(10px);">
+        <span style="display: flex; align-items: center; justify-content: center; width: 16px; height: 16px; background: rgba(255, 255, 255, 0.9); border-radius: 3px; color: #6b4423; font-size: 11px; font-weight: bold;">✓</span>
+        <span style="color: white; font-weight: 500; font-size: clamp(11px, 2.5vw, 13px); white-space: nowrap;">Fast, US-Based Text Support</span>
+      </div>
+      
       
       <div style="display: flex; align-items: center; gap: 6px; background: rgba(255, 255, 255, 0.25); padding: clamp(6px, 1.5vw, 8px) clamp(12px, 3vw, 16px); border-radius: 50px; backdrop-filter: blur(10px);">
         <span style="display: flex; align-items: center; justify-content: center; width: 16px; height: 16px; background: rgba(255, 255, 255, 0.9); border-radius: 3px; color: #6b4423; font-size: 11px; font-weight: bold;">✓</span>
@@ -257,30 +263,28 @@
 
   <main class="container"> <!-- Reopen container for rest of content -->
 
-    <!-- SOCIAL PROOF / STATS -->
-    <section style="padding: 40px 0;">
-      <div style="text-align: center; margin-bottom: 32px;">
-        <h2>Trusted by Nashville Homeowners Since 2020</h2>
-        <p class="sub" style="max-width: 700px; margin: 12px auto 0;">We help Nashvillilians sell their homes quickly so they can move on to their next chapter.</p>
-      </div>
-      
-      <div style="display:flex; justify-content:center; gap:24px; flex-wrap:wrap; text-align:center;">
-        <div style="flex:1; min-width:200px; max-width:280px; background:#f8f5f2; border:1px solid var(--line); border-radius:12px; padding:28px 20px;">
-          <div style="font-size:2.5rem; font-weight:700; color:var(--accent); font-family: 'Cormorant Garamond', serif;">24 Hrs</div>
-          <div style="font-size:1rem; color:var(--muted); margin-top:8px;">Avg Time for an Offer</div>
-        </div>
-
-        <div style="flex:1; min-width:200px; max-width:280px; background:#f8f5f2; border:1px solid var(--line); border-radius:12px; padding:28px 20px;">
-          <div style="font-size:2.5rem; font-weight:700; color:var(--accent); font-family: 'Cormorant Garamond', serif;">7-14 Days</div>
-          <div style="font-size:1rem; color:var(--muted); margin-top:8px;">Avg Time to Close</div>
-        </div>
-
-        <div style="flex:1; min-width:200px; max-width:280px; background:#f8f5f2; border:1px solid var(--line); border-radius:12px; padding:28px 20px;">
-          <div style="font-size:2.5rem; font-weight:700; color:var(--accent); font-family: 'Cormorant Garamond', serif;">98%</div>
-          <div style="font-size:1rem; color:var(--muted); margin-top:8px;">Satisfaction Rate</div>
-        </div>
-      </div>
-    </section>
+<!-- SOCIAL PROOF / STATS - MOBILE OPTIMIZED -->
+<section style="padding: clamp(40px, 8vw, 60px) 20px;">
+  <div style="text-align: center; margin-bottom: clamp(24px, 5vw, 32px);">
+    <h2 style="font-size: clamp(24px, 5vw, 36px); margin-bottom: 12px;">Trusted by Nashville Homeowners Since 2020</h2>
+    <p class="sub" style="max-width: 700px; margin: 12px auto 0; font-size: clamp(14px, 3vw, 18px); padding: 0 20px;">We help Nashvillians sell their homes quickly so they can move on to their next chapter.</p>
+  </div>
+  
+  <div style="display:flex; justify-content:center; gap: clamp(16px, 3vw, 24px); flex-wrap:wrap; text-align:center;">
+    <div style="flex:1; min-width:200px; max-width:280px; background:#f8f5f2; border:1px solid var(--line); border-radius:12px; padding: clamp(20px, 4vw, 28px) clamp(16px, 3vw, 20px);">
+      <div style="font-size: clamp(2rem, 6vw, 2.5rem); font-weight:700; color:var(--accent); font-family: 'Cormorant Garamond', serif;">24 Hrs</div>
+      <div style="font-size: clamp(14px, 3vw, 16px); color:var(--muted); margin-top:8px;">Avg Time for an Offer</div>
+    </div>
+    <div style="flex:1; min-width:200px; max-width:280px; background:#f8f5f2; border:1px solid var(--line); border-radius:12px; padding: clamp(20px, 4vw, 28px) clamp(16px, 3vw, 20px);">
+      <div style="font-size: clamp(2rem, 6vw, 2.5rem); font-weight:700; color:var(--accent); font-family: 'Cormorant Garamond', serif;">7-14 Days</div>
+      <div style="font-size: clamp(14px, 3vw, 16px); color:var(--muted); margin-top:8px;">Avg Time to Close</div>
+    </div>
+    <div style="flex:1; min-width:200px; max-width:280px; background:#f8f5f2; border:1px solid var(--line); border-radius:12px; padding: clamp(20px, 4vw, 28px) clamp(16px, 3vw, 20px);">
+      <div style="font-size: clamp(2rem, 6vw, 2.5rem); font-weight:700; color:var(--accent); font-family: 'Cormorant Garamond', serif;">98%</div>
+      <div style="font-size: clamp(14px, 3vw, 16px); color:var(--muted); margin-top:8px;">Satisfaction Rate</div>
+    </div>
+  </div>
+</section>
 
     <!-- TESTIMONIALS SECTION - NEW! -->
     <section style="background: rgba(107, 68, 35, .03); padding: 60px 32px; border-radius: 12px; margin: 40px 0;">
