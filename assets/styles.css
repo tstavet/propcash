@@ -841,47 +841,6 @@ footer a:hover {
   border: 1px solid var(--line);
 }
 
-.comparison-table {
-  max-width: 900px;
-  margin: 0 auto;
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.comparison-row {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
-  gap: 20px;
-  padding: 18px 26px;
-  align-items: center;
-  border-bottom: 1px solid var(--line);
-}
-
-.comparison-row:last-child {
-  border-bottom: none;
-}
-
-.header-row {
-  background: rgba(107, 68, 35, .05);
-  font-weight: 700;
-  padding: 22px 26px;
-}
-
-.comparison-row .label {
-  font-weight: 600;
-  color: var(--text);
-}
-
-.highlight-col {
-  background: rgba(107, 68, 35, .04);
-  padding: 14px;
-  border-radius: 8px;
-  font-weight: 600;
-  color: var(--accent);
-}
-
 .julian-story {
   display: grid;
   grid-template-columns: 300px 1fr;
