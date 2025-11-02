@@ -36,102 +36,86 @@
 
   <main class="container" style="max-width: 900px; padding: 60px 0;">
 
-  <!-- FORM SECTION (Form on left, bullets on right — inline only) -->
-<section id="contact-form" style="padding: 60px 20px;">
-  <div class="contact-form-wrapper" style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center; gap: 40px;">
+import { FileText, Search, CheckCircle, DollarSign } from "lucide-react";
 
-    <!-- Left: Form -->
-    <div class="hero-card" id="lead" style="flex: 1 1 500px; max-width: 600px; text-align: center;">
-      
-      <h2 style="text-align: center; margin-bottom: 14px;">
-        Get Your Cash Offer in 24 Hours
-      </h2>
-      <p class="sub" style="max-width: 700px; margin: 0 auto 28px; line-height: 1.6;">
-        <a href="sms:6155524296?&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20cash%20offer%20on%20my%20home."
-           style="color: var(--accent); text-decoration: underline; font-weight: 800;">
-          Text us</a> 
-        or fill out the form below to get the conversation started.
-      </p>
-      <br>
-      
-      <form 
-        class="form" 
-        id="contactForm"
-        action="https://formspree.io/f/mdkponlo"
-        method="POST"
-        style="text-align: left;"
-      >
-        <!-- Hidden field to track which page the lead came from -->
-        <input type="hidden" name="page" id="pageName" value="" />
-        
-        <div class="row" style="display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 16px;">
-          <div style="flex: 1; min-width: 200px;">
-            <label for="name">Full Name *</label>
-            <input id="name" name="name" placeholder="Your Name" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;" />
-          </div>
-          <div style="flex: 1; min-width: 200px;">
-            <label for="phone">Phone Number *</label>
-            <input id="phone" name="phone" type="tel" placeholder="(615) 552-4296" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;" />
-          </div>
-        </div>
-        
-        <div class="row" style="display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 16px;">
-          <div style="flex: 1; min-width: 200px;">
-            <label for="email">Email Address *</label>
-            <input id="email" type="email" name="email" placeholder="you@example.com" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;" />
-          </div>
-          <div style="flex: 1; min-width: 200px;">
-            <label for="address">Property Address *</label>
-            <input id="address" name="address" placeholder="123 Main St, Nashville, TN" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;" />
-          </div>
-        </div>
-        
-        <button class="btn" type="submit" style="margin-top: 16px; background: var(--accent); color: #fff; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-weight: 700;">
-          Get My Cash Offer →
-        </button>
-        <div class="secure" style="margin-top: 12px; font-size: 13px; color: #666;">
-          🔒 100% confidential. No obligation. By submitting, you agree to be contacted by phone, text, or email.
-        </div>
-      </form>
-    </div>
+const HowItWorks = () => {
+  const steps = [
+    {
+      number: "1",
+      icon: FileText,
+      title: "Request Offer",
+      description: "Fill out our simple form or call us. No commitment required."
+    },
+    {
+      number: "2",
+      icon: Search,
+      title: "We Review",
+      description: "Our team evaluates your property within 24 hours."
+    },
+    {
+      number: "3",
+      icon: CheckCircle,
+      title: "Accept & Close",
+      description: "Choose your closing date. We handle all the paperwork."
+    },
+    {
+      number: "4",
+      icon: DollarSign,
+      title: "Get Paid",
+      description: "Receive cash payment at closing. Fast and hassle-free."
+    }
+  ];
 
-    <!-- Right: Features -->
-    <div class="form-right" style="flex: 1 1 400px; display: flex; align-items: center; justify-content: center;">
-      <div class="contact-features" style="max-width: 400px;">
-        <div class="feature-item" style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 32px;">
-          <span class="feature-check" style="font-size: 20px; color: var(--accent); font-weight: 800;">✓</span>
-          <div>
-            <strong style="font-size: 20px;">100% Free</strong>
-            <p class="sub" style="font-size: 16px; margin-top: 4px;">No cost, no obligation, no pressure.</p>
-          </div>
+  return (
+    <section className="py-16 md:py-24 bg-background">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4">
+            How It Works
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            From inquiry to cash in hand—our simple 4-step process makes selling your home fast and stress-free.
+          </p>
         </div>
 
-        <div class="feature-item" style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 32px;">
-          <span class="feature-check" style="font-size: 20px; color: var(--accent); font-weight: 800;">✓</span>
-          <div>
-            <strong style="font-size: 20px;">Fast Response</strong>
-            <p class="sub" style="font-size: 16px; margin-top: 4px;">We'll review and respond within 24 hours.</p>
-          </div>
-        </div>
-
-        <div class="feature-item" style="display: flex; align-items: flex-start; gap: 12px;">
-          <span class="feature-check" style="font-size: 20px; color: var(--accent); font-weight: 800;">✓</span>
-          <div>
-            <strong style="font-size: 20px;">100% Confidential</strong>
-            <p class="sub" style="font-size: 16px; margin-top: 4px;">Your information is secure and never shared.</p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+          {/* Connection line - hidden on mobile */}
+          <div className="hidden lg:block absolute top-16 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary/20 to-transparent" 
+               style={{ top: '4rem' }} />
+          
+          {steps.map((step, index) => {
+            const Icon = step.icon;
+            return (
+              <div key={index} className="relative">
+                <div className="flex flex-col items-center text-center">
+                  {/* Number badge with icon */}
+                  <div className="relative mb-4">
+                    <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center relative z-10 border-4 border-background shadow-lg">
+                      <Icon className="w-10 h-10 text-primary" strokeWidth={1.5} />
+                    </div>
+                    <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm z-20 shadow-md">
+                      {step.number}
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <h3 className="text-xl font-semibold mb-2 text-primary">
+                    {step.title}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
-    </div>
+    </section>
+  );
+};
 
-  </div>
-</section>
-
-<script>
-  // Set the page name value when the page loads
-  document.getElementById('pageName').value =
-    'Nashville Landing Page - ' + location.pathname + location.search;
-</script>
+export default HowItWorks;
 
 
     
