@@ -35,55 +35,90 @@
   </script>
 
   <main class="container" style="max-width: 900px; padding: 60px 0;">
- <!-- SIMPLIFIED FORM SECTION - FORMSPREE INTEGRATED -->
-<section>
-  <div class="hero-card" id="lead" style="max-width: 600px; margin: 0 auto; text-align: center;">
-    
-    <h2 style="text-align: center; margin-bottom: 14px;">
-      Get Your Cash Offer in 24 Hours
-    </h2>
-    <p class="sub" style="max-width: 700px; margin: 0 auto 28px; line-height: 1.6;">
-      <a href="sms:6155524296?&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20cash%20offer%20on%20my%20home."
-         style="color: var(--accent); text-decoration: underline; font-weight: 800;">
-        Text us</a> 
-      or fill out the form below to get the conversation started.
-    </p>
-    <br>
-    
-    <form 
-      class="form" 
-      id="contactForm"
-      action="https://formspree.io/f/mdkponlo"
-      method="POST"
-    >
-      <!-- Hidden field to track which page the lead came from -->
-      <input type="hidden" name="page" id="pageName" value="" />
+<!-- FORM SECTION (Flipped layout: form on left, bullets on right) -->
+<section id="contact-form">
+  <div class="contact-form-wrapper" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: stretch; justify-content: center;">
+
+    <!-- Left: Form -->
+    <div class="hero-card" id="lead" style="flex: 1 1 500px; max-width: 600px; margin: 0 auto; text-align: center;">
       
-      <div class="row">
-        <div>
-          <label for="name">Full Name *</label>
-          <input id="name" name="name" placeholder="Your Name" required />
+      <h2 style="text-align: center; margin-bottom: 14px;">
+        Get Your Cash Offer in 24 Hours
+      </h2>
+      <p class="sub" style="max-width: 700px; margin: 0 auto 28px; line-height: 1.6;">
+        <a href="sms:6155524296?&body=Hi%2C%20I%27m%20interested%20in%20getting%20a%20cash%20offer%20on%20my%20home."
+           style="color: var(--accent); text-decoration: underline; font-weight: 800;">
+          Text us</a> 
+        or fill out the form below to get the conversation started.
+      </p>
+      <br>
+      
+      <form 
+        class="form" 
+        id="contactForm"
+        action="https://formspree.io/f/mdkponlo"
+        method="POST"
+      >
+        <!-- Hidden field to track which page the lead came from -->
+        <input type="hidden" name="page" id="pageName" value="" />
+        
+        <div class="row">
+          <div>
+            <label for="name">Full Name *</label>
+            <input id="name" name="name" placeholder="Your Name" required />
+          </div>
+          <div>
+            <label for="phone">Phone Number *</label>
+            <input id="phone" name="phone" type="tel" placeholder="(615) 552-4296" required />
+          </div>
         </div>
-        <div>
-          <label for="phone">Phone Number *</label>
-          <input id="phone" name="phone" type="tel" placeholder="(615) 552-4296" required />
+        
+        <div class="row">
+          <div>
+            <label for="email">Email Address *</label>
+            <input id="email" type="email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div>
+            <label for="address">Property Address *</label>
+            <input id="address" name="address" placeholder="123 Main St, Nashville, TN" required />
+          </div>
+        </div>
+        
+        <button class="btn" type="submit">Get My Cash Offer →</button>
+        <div class="secure" style="margin-top: 12px; font-size: 13px; color: var(--muted);">
+          🔒 100% confidential. No obligation. By submitting, you agree to be contacted by phone, text, or email.
+        </div>
+      </form>
+    </div>
+
+    <!-- Right: Features -->
+    <div class="form-right" style="display: flex; align-items: center; justify-content: center; flex: 1 1 400px;">
+      <div class="contact-features" style="max-width: 400px;">
+        <div class="feature-item" style="margin-bottom: 32px; display: flex; align-items: flex-start; gap: 12px;">
+          <span class="feature-check" style="font-size: 20px; color: var(--accent); font-weight: 800;">✓</span>
+          <div>
+            <strong style="font-size: 20px;">100% Free</strong>
+            <p class="sub" style="font-size: 16px; margin-top: 4px;">No cost, no obligation, no pressure.</p>
+          </div>
+        </div>
+
+        <div class="feature-item" style="margin-bottom: 32px; display: flex; align-items: flex-start; gap: 12px;">
+          <span class="feature-check" style="font-size: 20px; color: var(--accent); font-weight: 800;">✓</span>
+          <div>
+            <strong style="font-size: 20px;">Fast Response</strong>
+            <p class="sub" style="font-size: 16px; margin-top: 4px;">We'll review and respond within 24 hours.</p>
+          </div>
+        </div>
+
+        <div class="feature-item" style="display: flex; align-items: flex-start; gap: 12px;">
+          <span class="feature-check" style="font-size: 20px; color: var(--accent); font-weight: 800;">✓</span>
+          <div>
+            <strong style="font-size: 20px;">100% Confidential</strong>
+            <p class="sub" style="font-size: 16px; margin-top: 4px;">Your information is secure and never shared.</p>
+          </div>
         </div>
       </div>
-      
-      <div class="row">
-        <div>
-          <label for="email">Email Address *</label>
-          <input id="email" type="email" name="email" placeholder="you@example.com" required />
-        </div>
-        <div>
-          <label for="address">Property Address *</label>
-          <input id="address" name="address" placeholder="123 Main St, Nashville, TN" required />
-        </div>
-      </div>
-      
-      <button class="btn" type="submit">Get My Cash Offer →</button>
-      <div class="secure">🔒 100% confidential. No obligation. By submitting, you agree to be contacted by phone, text, or email.</div>
-    </form>
+    </div>
   </div>
 </section>
 
@@ -91,6 +126,48 @@
   // Set the page name value when the page loads
   document.getElementById('pageName').value = 'Nashville Landing Page - ' + location.pathname + location.search;
 </script>
+
+<style>
+  /* Responsive adjustments */
+  @media (max-width: 900px) {
+    .contact-form-wrapper {
+      flex-direction: column !important;
+      gap: 40px !important;
+    }
+    .hero-card, .form-right {
+      max-width: 100% !important;
+    }
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .row > div {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .btn {
+    margin-top: 16px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background .2s ease;
+  }
+
+  .btn:hover {
+    background: #70492c;
+  }
+</style>
+
     
   </main>
 
