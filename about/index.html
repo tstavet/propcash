@@ -146,80 +146,149 @@ min-height: 350px;
         </div>
     </section>
 
-    <!-- HOW WE'RE DIFFERENT -->
-    <section>
-      <h2 style="text-align: center; margin-bottom: 40px;">What Makes Propcash Different?</h2>
-    <!-- COMPARISON (Desktop table → Mobile cards) -->
+   <!-- COMPARISON (Desktop table → Mobile cards, emoji-free) -->
 <style>
+  /* --- Theme hooks (fallbacks if CSS vars missing) --- */
+  :root{
+    --accent: #8b5e3c;        /* Propcash brown */
+    --text: #1b1b1b;
+    --muted: #6b7280;
+    --line: #ece7e3;
+    --bg-soft: #f8f5f2;
+  }
+
   .comparison-wrapper {
     max-width: 1000px;
     margin: 0 auto;
+    padding-inline: 8px;
   }
-  
+
+  .comparison-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .comparison-heading {
+    font-size: clamp(22px, 2.2vw, 28px);
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 0 16px;
+  }
+
+  .comparison-sub {
+    color: var(--muted);
+    margin: 0 0 20px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
   .comparison-table {
     display: grid;
-    gap: 2px;
+    gap: 1px;                 /* hairline grid separators */
     background: var(--line);
-    border-radius: 12px;
-    overflow: hidden;
+    border-radius: 14px;
+    overflow: clip;
+    box-shadow: 0 8px 24px rgba(0,0,0,.05);
   }
-  
+
   .comparison-row {
     display: grid;
-    grid-template-columns: 200px 1fr 1fr;
+    grid-template-columns: 220px 1fr 1fr;
     background: white;
-    align-items: center;
+    align-items: stretch;
   }
-  
+
   .comparison-row > div {
-    padding: 20px;
+    padding: 18px 20px;
   }
-  
+
   .header-row {
-    background: #f8f8f8;
-    font-weight: 700;
+    background: #faf9f8;
+    font-weight: 800;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    backdrop-filter: saturate(1.2) blur(2px);
   }
-  
+
   .header-row > div:first-child {
     opacity: 0;
   }
-  
+
+  .header-col {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+  }
+
+  .header-col .brand {
+    font-weight: 900;
+    color: var(--text);
+  }
+  .header-col .brand--propcash {
+    color: var(--accent);
+  }
+
   .label {
     font-weight: 700;
     color: var(--text);
     font-size: 15px;
+    position: sticky;  /* keeps labels visible while scrolling horizontally on narrow desktops */
+    left: 0;
+    background: white;
+    border-right: 1px solid var(--line);
+    z-index: 1;
   }
-  
-  .highlight-col {
-    background: linear-gradient(135deg, rgba(107, 68, 35, 0.04) 0%, rgba(107, 68, 35, 0.02) 100%);
-    border-left: 3px solid var(--accent);
-  }
-  
-  .chip {
-    background: rgba(107, 68, 35, 0.1);
-    color: var(--accent);
-    border: 1px solid rgba(107, 68, 35, 0.2);
-    padding: 8px 14px;
-    border-radius: 6px;
-    font-weight: 700;
-    display: inline-block;
-    font-size: 14px;
-    line-height: 1.4;
-  }
-  
+
   .cell-muted {
     color: var(--muted);
     font-size: 14px;
-    line-height: 1.5;
-  }
-  
-  .comparison-icon {
-    font-size: 20px;
-    margin-right: 8px;
-    vertical-align: middle;
+    line-height: 1.55;
   }
 
-  /* Mobile Optimization */
+  /* Spotlight column for Propcash */
+  .highlight-col {
+    background:
+      linear-gradient(180deg, rgba(139,94,60,0.06) 0%, rgba(139,94,60,0.03) 100%);
+    border-left: 3px solid var(--accent);
+    position: relative;
+    isolation: isolate;
+  }
+
+  .highlight-col::after{
+    content:"";
+    position:absolute; inset:-1px -1px -1px auto;
+    width: 40%;
+    background: radial-gradient(400px 160px at 100% 0%, rgba(139,94,60,.08), transparent 60%);
+    z-index:-1;
+  }
+
+  .chip {
+    background: rgba(139, 94, 60, 0.08);
+    color: var(--accent);
+    border: 1px solid rgba(139, 94, 60, 0.22);
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-weight: 800;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 1.35;
+    white-space: nowrap;
+  }
+
+  /* Row hover (desktop) */
+  @media (hover:hover){
+    .comparison-row:not(.header-row):hover{
+      background: #fffdfa;
+    }
+  }
+
+  /* Mobile → Card layout */
   @media (max-width: 768px) {
     .comparison-table {
       display: flex;
@@ -227,48 +296,43 @@ min-height: 350px;
       gap: 16px;
       background: transparent;
       border-radius: 0;
+      box-shadow: none;
     }
-    
+
     .comparison-row {
       display: block;
       border: 1px solid var(--line);
-      border-radius: 12px;
+      border-radius: 14px;
       padding: 0;
       background: white;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
     }
-    
-    .comparison-row > div {
-      padding: 0;
-    }
-    
-    .header-row {
-      display: none;
-    }
-    
+
+    .comparison-row > div { padding: 0; }
+
+    .header-row { display: none; }
+
     .label {
-      background: #f8f8f8;
+      position: static;
+      background: #faf9f8;
       padding: 14px 16px;
       margin: 0;
       border-bottom: 1px solid var(--line);
       font-size: 16px;
-      font-weight: 800;
+      font-weight: 900;
       color: var(--text);
-      border-radius: 12px 12px 0 0;
+      border-radius: 14px 14px 0 0;
     }
-    
+
     .mobile-compare-item {
       padding: 16px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
-    
-    .mobile-compare-item:last-child {
-      border-bottom: none;
-    }
-    
+    .mobile-compare-item:last-child { border-bottom: none; }
+
     .mobile-compare-label {
       font-size: 11px;
-      font-weight: 800;
+      font-weight: 900;
       color: var(--muted);
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -277,199 +341,145 @@ min-height: 350px;
       align-items: center;
       gap: 6px;
     }
-    
     .mobile-compare-value {
       font-size: 15px;
-      line-height: 1.5;
+      line-height: 1.55;
+      color: var(--text);
     }
-    
+
     .highlight-col {
-      background: linear-gradient(135deg, rgba(107, 68, 35, 0.06) 0%, rgba(107, 68, 35, 0.03) 100%);
+      background: linear-gradient(135deg, rgba(139, 94, 60, 0.08) 0%, rgba(139, 94, 60, 0.04) 100%);
       border-left: none;
-      border-radius: 0 0 12px 12px;
+      border-radius: 0 0 14px 14px;
     }
-    
-    .chip {
-      font-size: 13px;
-      padding: 6px 12px;
-    }
+
+    .chip { font-size: 12px; padding: 6px 10px; }
+  }
+
+  /* Accessibility: keyboard focus */
+  .comparison-row:focus-within{
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
   }
 </style>
 
-<div class="comparison-wrapper">
-  <div class="comparison-table">
-    
+<div class="comparison-wrapper" role="region" aria-label="Traditional Sale vs Propcash">
+  <span class="comparison-eyebrow">Compare</span>
+  <h3 class="comparison-heading">Traditional Sale vs. Propcash</h3>
+  <p class="comparison-sub">A straightforward side-by-side of timeline, costs, and convenience so you can decide what fits your situation.</p>
+
+  <div class="comparison-table" role="table" aria-label="Comparison table">
     <!-- Desktop Header Row -->
-    <div class="comparison-row header-row">
-      <div></div>
-      <div>Traditional Sale</div>
-      <div>Propcash</div>
+    <div class="comparison-row header-row" role="row">
+      <div aria-hidden="true"></div>
+      <div class="header-col" role="columnheader"><span class="brand">Traditional Sale</span></div>
+      <div class="header-col" role="columnheader"><span class="brand brand--propcash">Propcash</span></div>
     </div>
 
     <!-- Row: Timeline -->
-    <div class="comparison-row">
-      <div class="label">
-        <span class="comparison-icon">⏱️</span>Timeline
-      </div>
-      <div class="cell-muted">
+    <div class="comparison-row" role="row">
+      <div class="label" role="rowheader">Timeline</div>
+      <div class="cell-muted" role="cell">
         <div class="mobile-compare-item">
-          <div class="mobile-compare-label">
-            <span>🏠</span> Traditional Sale
-          </div>
-          <div class="mobile-compare-value cell-muted">
-            3–6 months on average
-          </div>
+          <div class="mobile-compare-label">Traditional Sale</div>
+          <div class="mobile-compare-value cell-muted">Typically 3–6 months</div>
         </div>
       </div>
-      <div class="highlight-col">
+      <div class="highlight-col" role="cell">
         <div class="mobile-compare-item">
-          <div class="mobile-compare-label">
-            <span>⚡</span> Propcash
-          </div>
-          <div class="mobile-compare-value">
-            <span class="chip">7–14 days</span>
-          </div>
+          <div class="mobile-compare-label">Propcash</div>
+          <div class="mobile-compare-value"><span class="chip">7–14 days</span></div>
         </div>
       </div>
     </div>
 
     <!-- Row: Repairs Needed -->
-    <div class="comparison-row">
-      <div class="label">
-        <span class="comparison-icon">🔧</span>Repairs Needed
-      </div>
-      <div class="cell-muted">
+    <div class="comparison-row" role="row">
+      <div class="label" role="rowheader">Repairs Needed</div>
+      <div class="cell-muted" role="cell">
         <div class="mobile-compare-item">
-          <div class="mobile-compare-label">
-            <span>🏠</span> Traditional Sale
-          </div>
-          <div class="mobile-compare-value cell-muted">
-            Almost always necessary
-          </div>
+          <div class="mobile-compare-label">Traditional Sale</div>
+          <div class="mobile-compare-value cell-muted">Often required before listing</div>
         </div>
       </div>
-      <div class="highlight-col">
+      <div class="highlight-col" role="cell">
         <div class="mobile-compare-item">
-          <div class="mobile-compare-label">
-            <span>⚡</span> Propcash
-          </div>
-          <div class="mobile-compare-value">
-            <span class="chip">Never required</span>
-          </div>
+          <div class="mobile-compare-label">Propcash</div>
+          <div class="mobile-compare-value"><span class="chip">No repairs required</span></div>
         </div>
       </div>
     </div>
 
     <!-- Row: Closing Costs -->
-    <div class="comparison-row">
-      <div class="label">
-        <span class="comparison-icon">💰</span>Closing Costs
-      </div>
-      <div class="cell-muted">
+    <div class="comparison-row" role="row">
+      <div class="label" role="rowheader">Closing Costs</div>
+      <div class="cell-muted" role="cell">
         <div class="mobile-compare-item">
-          <div class="mobile-compare-label">
-            <span>🏠</span> Traditional Sale
-          </div>
-          <div class="mobile-compare-value cell-muted">
-            2–5% of sale price
-          </div>
+          <div class="mobile-compare-label">Traditional Sale</div>
+          <div class="mobile-compare-value cell-muted">Approximately 2–5% of sale price</div>
         </div>
       </div>
-      <div class="highlight-col">
+      <div class="highlight-col" role="cell">
         <div class="mobile-compare-item">
-          <div class="mobile-compare-label">
-            <span>⚡</span> Propcash
-          </div>
-          <div class="mobile-compare-value">
-            <span class="chip">$0 - We cover closing costs</span>
-          </div>
+          <div class="mobile-compare-label">Propcash</div>
+          <div class="mobile-compare-value"><span class="chip">$0 — We cover closing costs</span></div>
         </div>
       </div>
     </div>
 
     <!-- Row: Showings Required -->
-    <div class="comparison-row">
-      <div class="label">
-        <span class="comparison-icon">👥</span>Showings
-      </div>
-      <div class="cell-muted">
+    <div class="comparison-row" role="row">
+      <div class="label" role="rowheader">Showings</div>
+      <div class="cell-muted" role="cell">
         <div class="mobile-compare-item">
-          <div class="mobile-compare-label">
-            <span>🏠</span> Traditional Sale
-          </div>
-          <div class="mobile-compare-value cell-muted">
-            Multiple showings required
-          </div>
+          <div class="mobile-compare-label">Traditional Sale</div>
+          <div class="mobile-compare-value cell-muted">Multiple showings and open houses</div>
         </div>
       </div>
-      <div class="highlight-col">
+      <div class="highlight-col" role="cell">
         <div class="mobile-compare-item">
-          <div class="mobile-compare-label">
-            <span>⚡</span> Propcash
-          </div>
-          <div class="mobile-compare-value">
-            <span class="chip">Not necessary</span>
-          </div>
+          <div class="mobile-compare-label">Propcash</div>
+          <div class="mobile-compare-value"><span class="chip">No showings needed</span></div>
         </div>
       </div>
     </div>
 
     <!-- Row: Deal Certainty -->
-    <div class="comparison-row">
-      <div class="label">
-        <span class="comparison-icon">✅</span>Deal Certainty
-      </div>
-      <div class="cell-muted">
+    <div class="comparison-row" role="row">
+      <div class="label" role="rowheader">Deal Certainty</div>
+      <div class="cell-muted" role="cell">
         <div class="mobile-compare-item">
-          <div class="mobile-compare-label">
-            <span>🏠</span> Traditional Sale
-          </div>
-          <div class="mobile-compare-value cell-muted">
-            Many offers fall through
-          </div>
+          <div class="mobile-compare-label">Traditional Sale</div>
+          <div class="mobile-compare-value cell-muted">Financing and contingencies can fall through</div>
         </div>
       </div>
-      <div class="highlight-col">
+      <div class="highlight-col" role="cell">
         <div class="mobile-compare-item">
-          <div class="mobile-compare-label">
-            <span>⚡</span> Propcash
-          </div>
-          <div class="mobile-compare-value">
-            <span class="chip">Guaranteed cash offer</span>
-          </div>
+          <div class="mobile-compare-label">Propcash</div>
+          <div class="mobile-compare-value"><span class="chip">Firm cash offer</span></div>
         </div>
       </div>
     </div>
 
     <!-- Row: Flexibility -->
-    <div class="comparison-row">
-      <div class="label">
-        <span class="comparison-icon">📅</span>Flexibility
-      </div>
-      <div class="cell-muted">
+    <div class="comparison-row" role="row">
+      <div class="label" role="rowheader">Flexibility</div>
+      <div class="cell-muted" role="cell">
         <div class="mobile-compare-item">
-          <div class="mobile-compare-label">
-            <span>🏠</span> Traditional Sale
-          </div>
-          <div class="mobile-compare-value cell-muted">
-            Limited to buyer's schedule
-          </div>
+          <div class="mobile-compare-label">Traditional Sale</div>
+          <div class="mobile-compare-value cell-muted">Dependent on buyer’s schedule</div>
         </div>
       </div>
-      <div class="highlight-col">
+      <div class="highlight-col" role="cell">
         <div class="mobile-compare-item">
-          <div class="mobile-compare-label">
-            <span>⚡</span> Propcash
-          </div>
-          <div class="mobile-compare-value">
-            <span class="chip">Close on your timeline</span>
-          </div>
+          <div class="mobile-compare-label">Propcash</div>
+          <div class="mobile-compare-value"><span class="chip">Close on your timeline</span></div>
         </div>
       </div>
     </div>
-
   </div>
 </div>
+
 
     <!-- MEET JULIAN -->
     <section>
