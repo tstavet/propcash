@@ -35,12 +35,13 @@
   </script>
 
   <main class="container" style="max-width: 900px; padding: 60px 0;">
-<!-- FORM SECTION (Flipped layout: form on left, bullets on right) -->
-<section id="contact-form">
-  <div class="contact-form-wrapper" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: stretch; justify-content: center;">
+
+  <!-- FORM SECTION (Form on left, bullets on right — inline only) -->
+<section id="contact-form" style="padding: 60px 20px;">
+  <div class="contact-form-wrapper" style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center; gap: 40px;">
 
     <!-- Left: Form -->
-    <div class="hero-card" id="lead" style="flex: 1 1 500px; max-width: 600px; margin: 0 auto; text-align: center;">
+    <div class="hero-card" id="lead" style="flex: 1 1 500px; max-width: 600px; text-align: center;">
       
       <h2 style="text-align: center; margin-bottom: 14px;">
         Get Your Cash Offer in 24 Hours
@@ -58,43 +59,46 @@
         id="contactForm"
         action="https://formspree.io/f/mdkponlo"
         method="POST"
+        style="text-align: left;"
       >
         <!-- Hidden field to track which page the lead came from -->
         <input type="hidden" name="page" id="pageName" value="" />
         
-        <div class="row">
-          <div>
+        <div class="row" style="display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 16px;">
+          <div style="flex: 1; min-width: 200px;">
             <label for="name">Full Name *</label>
-            <input id="name" name="name" placeholder="Your Name" required />
+            <input id="name" name="name" placeholder="Your Name" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;" />
           </div>
-          <div>
+          <div style="flex: 1; min-width: 200px;">
             <label for="phone">Phone Number *</label>
-            <input id="phone" name="phone" type="tel" placeholder="(615) 552-4296" required />
+            <input id="phone" name="phone" type="tel" placeholder="(615) 552-4296" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;" />
           </div>
         </div>
         
-        <div class="row">
-          <div>
+        <div class="row" style="display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 16px;">
+          <div style="flex: 1; min-width: 200px;">
             <label for="email">Email Address *</label>
-            <input id="email" type="email" name="email" placeholder="you@example.com" required />
+            <input id="email" type="email" name="email" placeholder="you@example.com" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;" />
           </div>
-          <div>
+          <div style="flex: 1; min-width: 200px;">
             <label for="address">Property Address *</label>
-            <input id="address" name="address" placeholder="123 Main St, Nashville, TN" required />
+            <input id="address" name="address" placeholder="123 Main St, Nashville, TN" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;" />
           </div>
         </div>
         
-        <button class="btn" type="submit">Get My Cash Offer →</button>
-        <div class="secure" style="margin-top: 12px; font-size: 13px; color: var(--muted);">
+        <button class="btn" type="submit" style="margin-top: 16px; background: var(--accent); color: #fff; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-weight: 700;">
+          Get My Cash Offer →
+        </button>
+        <div class="secure" style="margin-top: 12px; font-size: 13px; color: #666;">
           🔒 100% confidential. No obligation. By submitting, you agree to be contacted by phone, text, or email.
         </div>
       </form>
     </div>
 
     <!-- Right: Features -->
-    <div class="form-right" style="display: flex; align-items: center; justify-content: center; flex: 1 1 400px;">
+    <div class="form-right" style="flex: 1 1 400px; display: flex; align-items: center; justify-content: center;">
       <div class="contact-features" style="max-width: 400px;">
-        <div class="feature-item" style="margin-bottom: 32px; display: flex; align-items: flex-start; gap: 12px;">
+        <div class="feature-item" style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 32px;">
           <span class="feature-check" style="font-size: 20px; color: var(--accent); font-weight: 800;">✓</span>
           <div>
             <strong style="font-size: 20px;">100% Free</strong>
@@ -102,7 +106,7 @@
           </div>
         </div>
 
-        <div class="feature-item" style="margin-bottom: 32px; display: flex; align-items: flex-start; gap: 12px;">
+        <div class="feature-item" style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 32px;">
           <span class="feature-check" style="font-size: 20px; color: var(--accent); font-weight: 800;">✓</span>
           <div>
             <strong style="font-size: 20px;">Fast Response</strong>
@@ -119,54 +123,16 @@
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
 <script>
   // Set the page name value when the page loads
-  document.getElementById('pageName').value = 'Nashville Landing Page - ' + location.pathname + location.search;
+  document.getElementById('pageName').value =
+    'Nashville Landing Page - ' + location.pathname + location.search;
 </script>
 
-<style>
-  /* Responsive adjustments */
-  @media (max-width: 900px) {
-    .contact-form-wrapper {
-      flex-direction: column !important;
-      gap: 40px !important;
-    }
-    .hero-card, .form-right {
-      max-width: 100% !important;
-    }
-  }
-
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-bottom: 16px;
-  }
-
-  .row > div {
-    flex: 1;
-    min-width: 200px;
-  }
-
-  .btn {
-    margin-top: 16px;
-    background: var(--accent);
-    color: #fff;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 700;
-    transition: background .2s ease;
-  }
-
-  .btn:hover {
-    background: #70492c;
-  }
-</style>
 
     
   </main>
