@@ -127,7 +127,7 @@
   
 <!-- HERO SECTION -->
 <section class="hero" style="
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/assets/nashville-inherited-hero.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/nashville-inherited-hero.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -186,7 +186,7 @@
       <span style="color: var(--text); font-weight: 600;">Inherited House</span>
     </div>
 
-   <!-- INHERITED PROPERTY CHALLENGES (Emoji-free, mobile-first) -->
+<!-- INHERITED PROPERTY CHALLENGES (Updated per request) -->
 <section class="inherit-wrap" aria-labelledby="inherit-heading">
   <div class="inherit-header">
     <span class="eyebrow">For Nashville Heirs</span>
@@ -199,48 +199,60 @@
   <div class="inherit-grid">
     <!-- Card -->
     <article class="inherit-card">
-      <div class="badge">01</div>
-      <h3 class="card-title">Probate Process Delays</h3>
+      <div class="title-row">
+        <div class="badge">01</div>
+        <h3 class="card-title">Probate Process Delays</h3>
+      </div>
       <p class="card-sub">
         Tennessee probate can take 6–12 months or longer, especially with heir disputes or creditor claims. Meanwhile, taxes and utilities still accrue.
       </p>
     </article>
 
     <article class="inherit-card">
-      <div class="badge">02</div>
-      <h3 class="card-title">Property in Poor Condition</h3>
+      <div class="title-row">
+        <div class="badge">02</div>
+        <h3 class="card-title">Property in Poor Condition</h3>
+      </div>
       <p class="card-sub">
         Many inherited homes need significant updates. Coordinating inspections and repairs can be overwhelming without local support.
       </p>
     </article>
 
     <article class="inherit-card">
-      <div class="badge">03</div>
-      <h3 class="card-title">Ongoing Carrying Costs</h3>
+      <div class="title-row">
+        <div class="badge">03</div>
+        <h3 class="card-title">Ongoing Carrying Costs</h3>
+      </div>
       <p class="card-sub">
         Taxes, insurance, utilities, lawn care, and HOA fees add up quickly—often $500–$1,500+ per month while the house sits vacant.
       </p>
     </article>
 
     <article class="inherit-card">
-      <div class="badge">04</div>
-      <h3 class="card-title">Property Is Out of State</h3>
+      <div class="title-row">
+        <div class="badge">04</div>
+        <h3 class="card-title">Property Is Out of State</h3>
+      </div>
       <p class="card-sub">
         Managing a Nashville home from elsewhere increases cost and complexity. Scheduling contractors and showings remotely is difficult.
       </p>
     </article>
 
     <article class="inherit-card">
-      <div class="badge">05</div>
-      <h3 class="card-title">Multiple Heirs & Disagreements</h3>
+      <div class="title-row">
+        <div class="badge">05</div>
+        <h3 class="card-title">Multiple Heirs & Disagreements</h3>
+      </div>
       <p class="card-sub">
         When siblings inherit together, conflicts around pricing, timing, or repairs can create stress and delay resolution.
       </p>
     </article>
 
     <article class="inherit-card">
-      <div class="badge">06</div>
-      <h3 class="card-title">Emotional Attachment</h3>
+      <div class="title-row">
+        <div class="badge">06</div>
+        <h3 class="card-title">Emotional Attachment</h3>
+      </div>
       <p class="card-sub">
         Selling a family home is hard. The memories—and the work of sorting belongings—can stall decisions during a difficult time.
       </p>
@@ -249,7 +261,7 @@
 </section>
 
 <style>
-  :root{
+  :root {
     --accent: #8b5e3c;      /* Propcash brown */
     --text: #1a1a1a;
     --muted: #6b7280;
@@ -258,20 +270,20 @@
     --card: #ffffff;
   }
 
-  .inherit-wrap{
+  .inherit-wrap {
     padding: clamp(48px, 8vw, 80px) 20px;
     background: linear-gradient(135deg, rgba(107,68,35,0.05) 0%, rgba(107,68,35,0.02) 100%);
     border-radius: 16px;
     margin-bottom: 60px;
   }
 
-  .inherit-header{
+  .inherit-header {
     max-width: 920px;
     margin: 0 auto 28px;
     text-align: center;
   }
 
-  .eyebrow{
+  .eyebrow {
     display: inline-block;
     font-size: 11px;
     letter-spacing: .12em;
@@ -280,15 +292,15 @@
     margin-bottom: 8px;
   }
 
-  .inherit-title{
+  .inherit-title {
     font-size: clamp(26px, 4.5vw, 36px);
     line-height: 1.15;
     margin: 0 0 12px;
-    color: var(--text);
+    color: var(--accent); /* Changed to Propcash brown */
     font-weight: 800;
   }
 
-  .inherit-sub{
+  .inherit-sub {
     max-width: 780px;
     margin: 0 auto;
     line-height: 1.7;
@@ -296,7 +308,7 @@
     color: var(--muted);
   }
 
-  .inherit-grid{
+  .inherit-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: clamp(14px, 2vw, 24px);
@@ -304,19 +316,19 @@
     margin: 32px auto 0;
   }
 
-  .inherit-card{
+  .inherit-card {
     background: var(--card);
     border: 1px solid var(--line);
     border-radius: 14px;
-    padding: 18px 18px 18px 18px;
+    padding: 20px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.05);
     transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
     position: relative;
   }
 
-  .inherit-card::after{
-    content:"";
-    position:absolute;
+  .inherit-card::after {
+    content: "";
+    position: absolute;
     inset: -1px -1px auto -1px;
     height: 3px;
     background: linear-gradient(90deg, rgba(139,94,60,.25), rgba(139,94,60,0));
@@ -325,33 +337,42 @@
     pointer-events: none;
   }
 
-  .inherit-card:hover{
+  .inherit-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 24px rgba(0,0,0,0.08);
     border-color: rgba(139,94,60,0.35);
   }
 
-  .badge{
-    width: 40px; height: 40px;
+  .title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .badge {
+    width: 42px;
+    height: 42px;
     border-radius: 10px;
-    display: grid; place-items: center;
+    display: grid;
+    place-items: center;
     font-weight: 800;
     font-size: 13px;
     color: var(--accent);
     background: rgba(139,94,60,0.08);
     border: 1px solid rgba(139,94,60,0.22);
-    margin-bottom: 12px;
+    flex-shrink: 0;
   }
 
-  .card-title{
+  .card-title {
     font-size: clamp(16px, 2.6vw, 18px);
     line-height: 1.35;
-    margin: 0 0 8px;
     color: var(--text);
     font-weight: 800;
+    margin: 0;
   }
 
-  .card-sub{
+  .card-sub {
     margin: 0;
     color: var(--muted);
     font-size: 15px;
@@ -359,16 +380,31 @@
   }
 
   /* Mobile refinements */
-  @media (max-width: 768px){
-    .inherit-wrap{ padding: 40px 16px; border-radius: 14px; }
-    .inherit-grid{ gap: 14px; }
-    .inherit-card{ padding: 16px; border-radius: 12px; }
-    .badge{ width: 36px; height: 36px; border-radius: 9px; font-size: 12px; }
-    .card-sub{ font-size: 14.5px; }
+  @media (max-width: 768px) {
+    .inherit-wrap {
+      padding: 40px 16px;
+      border-radius: 14px;
+    }
+    .inherit-grid {
+      gap: 14px;
+    }
+    .inherit-card {
+      padding: 16px;
+      border-radius: 12px;
+    }
+    .badge {
+      width: 36px;
+      height: 36px;
+      font-size: 12px;
+      border-radius: 8px;
+    }
+    .card-sub {
+      font-size: 14.5px;
+    }
   }
 
   /* Focus states for accessibility */
-  .inherit-card:focus-within{
+  .inherit-card:focus-within {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
   }
@@ -376,9 +412,12 @@
 
     
     <!-- VISUAL DIVIDER IMAGE -->
-    <div style="text-align: center; margin: 60px 0; border-radius: 16px; overflow: hidden;">
-      <img src="/assets/nashville3.jpg" alt="Nashville real estate market" style="max-width: 100%; height: auto; display: block;">
-    </div>
+<div style="display: flex; justify-content: center; margin: 60px 0; border-radius: 16px; overflow: hidden;">
+  <img src="/assets/nashville3.jpg" 
+       alt="Nashville real estate market" 
+       style="max-width: 100%; height: auto; border-radius: 16px;">
+</div>
+
     
     <!-- WHY CASH SALE MAKES SENSE -->
     <section style="padding: clamp(60px, 10vw, 80px) 20px;">
