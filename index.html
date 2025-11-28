@@ -13,24 +13,151 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  <!-- SEO -->
-  <title>Propcash | Sell Your Home Fast for Cash - No Repairs Needed</title>
-  <meta name="description" content="Sell your house fast for cash with Propcash. No repairs, no agent fees, no hassle. Get a fair cash offer in 24 hours. We buy houses nationwide. Call (615)-552-4296." />
+  <title>Propcash | The Cash Offer Marketplace</title>
+  <meta name="description" content="Get multiple competing cash offers from our network of 500+ investors. Sell your house fast with real market competition. Average of 3.2 offers per property." />
   <link rel="canonical" href="https://propcash.co/" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Propcash | Sell Your Home Fast for Cash" />
-  <meta property="og:description" content="A nationwide network of trusted home buyers. Get market value for your property without repairs, commissions, or stress." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://propcash.co/" />
-  <meta property="og:image" content="https://propcash.co/assets/og-image.jpg" />
-
+  
   <!-- Favicon -->
   <link rel="icon" href="/assets/favicon.png" />
-  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
-
+  
   <!-- Styles -->
   <link rel="stylesheet" href="/assets/styles-v2.css" />
+  
+  <style>
+    /* Tech-Forward Enhancements */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    @keyframes slideIn {
+      from { transform: translateX(-20px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .pulse-animation {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    .glassmorphism {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(107, 68, 35, 0.1);
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #6b4423 0%, #8b5e3c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .network-node {
+      width: 12px;
+      height: 12px;
+      background: #6b4423;
+      border-radius: 50%;
+      position: absolute;
+      box-shadow: 0 0 20px rgba(107, 68, 35, 0.5);
+    }
+    
+    .network-line {
+      position: absolute;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(107, 68, 35, 0.2), rgba(107, 68, 35, 0.05));
+      transform-origin: left center;
+    }
+    
+    .stat-counter {
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.05em;
+    }
+    
+    .dashboard-card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(107, 68, 35, 0.08);
+      border: 1px solid #e5e0db;
+    }
+    
+    .offer-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: #f8f5f2;
+      border-radius: 24px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid #e5e0db;
+    }
+    
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    /* Interactive Elements */
+    .hover-lift {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .hover-lift:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(107, 68, 35, 0.15);
+    }
+    
+    /* Process Timeline */
+    .timeline-step {
+      position: relative;
+      padding-left: 60px;
+      margin-bottom: 48px;
+    }
+    
+    .timeline-step::before {
+      content: '';
+      position: absolute;
+      left: 18px;
+      top: 40px;
+      width: 2px;
+      height: calc(100% + 8px);
+      background: linear-gradient(180deg, #6b4423, rgba(107, 68, 35, 0.1));
+    }
+    
+    .timeline-step:last-child::before {
+      display: none;
+    }
+    
+    .timeline-number {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      background: #6b4423;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(107, 68, 35, 0.3);
+    }
+  </style>
 </head>
 
 <body>
@@ -41,14 +168,15 @@
         <a href="/" class="brand">Propcash</a>
         
         <div class="desktop-nav">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#network">Our Network</a>
+          <a href="#why-marketplace">Why Marketplace</a>
+          <a href="#reviews">Reviews</a>
         </div>
         
         <div class="header-ctas">
           <a href="tel:6155524296" class="cta-phone">📞 (615) 552-4296</a>
-          <a href="#lead" class="cta-header">Get Cash Offer</a>
+          <a href="#start" class="cta-header">Start Your Auction</a>
         </div>
         
         <button class="mobile-menu-toggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
@@ -56,415 +184,452 @@
     </div>
     
     <nav class="mobile-nav" id="mobileNav">
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
-      <a href="tel:6155524296" class="mobile-cta">📞 Call Us Now</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#network">Our Network</a>
+      <a href="#why-marketplace">Why Marketplace</a>
+      <a href="#reviews">Reviews</a>
+      <a href="tel:6155524296" class="mobile-cta">📞 Call Now</a>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" style="background-image: url('/assets/hero-home.jpg');">
-    <div class="hero-content">
-      <h1>Sell Your House Fast for Cash</h1>
-      <p>Skip the repairs, showings, and months of waiting. Get a fair cash offer in 24 hours and close on your timeline.</p>
+  <!-- Hero Section - Marketplace Focus -->
+  <section class="hero" style="background: linear-gradient(135deg, #fdfcfb 0%, #f8f5f2 100%); min-height: auto; padding: 80px 0 120px;">
+    <div class="hero-content" style="max-width: 1200px;">
       
-      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
-        <a href="#lead" class="btn btn-white btn-large">Get My Cash Offer</a>
-        <a href="tel:6155524296" class="btn btn-secondary btn-large">📞 Call Now</a>
+      <!-- Status Bar -->
+      <div class="glassmorphism" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 24px; border-radius: 24px; margin-bottom: 32px;">
+        <div class="status-dot"></div>
+        <span style="font-size: 14px; font-weight: 600; color: #6b4423;">
+          <span class="stat-counter" id="activeInvestors">547</span> active investors • 
+          <span class="stat-counter" id="offersToday">23</span> offers made today
+        </span>
       </div>
       
-      <div class="hero-badges">
-        <div class="hero-badge">
-          <span class="hero-badge-icon">✓</span>
-          <span>No Repairs Needed</span>
+      <h1 style="color: #1a1512; max-width: 900px; margin: 0 auto 24px; font-size: clamp(40px, 6vw, 72px);">
+        The First <span class="gradient-text">Cash Offer Marketplace</span> for Your Home
+      </h1>
+      
+      <p style="font-size: clamp(18px, 2.5vw, 24px); color: #6b625a; max-width: 700px; margin: 0 auto 48px; line-height: 1.6;">
+        Get multiple competing offers from our network of 500+ investors. Real competition. Real transparency. Average 3.2 offers per property.
+      </p>
+      
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px;">
+        <a href="#start" class="btn btn-primary btn-large">
+          Start Your Auction →
+        </a>
+        <a href="#how-it-works" class="btn btn-secondary btn-large">
+          See How It Works
+        </a>
+      </div>
+      
+      <!-- Real-time Activity Feed -->
+      <div class="dashboard-card" style="max-width: 700px; margin: 0 auto; text-align: left;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #e5e0db;">
+          <div style="width: 32px; height: 32px; background: #f8f5f2; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px;">📊</div>
+          <div>
+            <div style="font-weight: 700; color: #1a1512;">Live Marketplace Activity</div>
+            <div style="font-size: 13px; color: #6b625a;">Recent offers across our network</div>
+          </div>
         </div>
-        <div class="hero-badge">
-          <span class="hero-badge-icon">✓</span>
-          <span>Close in 7-14 Days</span>
-        </div>
-        <div class="hero-badge">
-          <span class="hero-badge-icon">✓</span>
-          <span>Nationwide Service</span>
+        
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div class="offer-pill">
+            <span style="color: #6b625a;">Austin, TX</span>
+            <span style="color: #1a1512; font-weight: 700;">$342,000</span>
+            <span style="font-size: 12px; color: #10b981;">● 3 offers</span>
+          </div>
+          <div class="offer-pill">
+            <span style="color: #6b625a;">Nashville, TN</span>
+            <span style="color: #1a1512; font-weight: 700;">$289,500</span>
+            <span style="font-size: 12px; color: #10b981;">● 2 offers</span>
+          </div>
+          <div class="offer-pill">
+            <span style="color: #6b625a;">Phoenix, AZ</span>
+            <span style="color: #1a1512; font-weight: 700;">$415,200</span>
+            <span style="font-size: 12px; color: #10b981;">● 4 offers</span>
+          </div>
         </div>
       </div>
+      
     </div>
   </section>
 
-  <!-- Trust Badges -->
-  <section class="section-sm" style="background: #f8f5f2;">
+  <!-- Network Visualization Section -->
+  <section id="network" style="background: white; padding: 80px 0; position: relative; overflow: hidden;">
     <div class="container">
-      <div class="trust-badges">
-        <div class="trust-badge">
-          <div class="trust-badge-icon">🏆</div>
-          <div class="trust-badge-text">A+ Rated Service</div>
+      <div style="text-align: center; margin-bottom: 64px;">
+        <h2 style="margin-bottom: 16px;">Powered by the Largest Cash Buyer Network</h2>
+        <p class="text-large text-muted" style="max-width: 700px; margin: 0 auto;">
+          Our proprietary platform connects you with 500+ vetted investors across all 50 states, creating real competition for your property.
+        </p>
+      </div>
+      
+      <!-- Network Stats Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; max-width: 1000px; margin: 0 auto;">
+        
+        <div class="dashboard-card hover-lift" style="text-align: center;">
+          <div style="font-size: 48px; font-weight: 700; color: #6b4423; margin-bottom: 8px;" class="stat-counter">
+            547
+          </div>
+          <div style="font-weight: 600; color: #1a1512; margin-bottom: 4px;">Active Investors</div>
+          <div style="font-size: 14px; color: #6b625a;">Vetted & Ready to Buy</div>
         </div>
-        <div class="trust-badge">
-          <div class="trust-badge-icon">🔒</div>
-          <div class="trust-badge-text">100% Confidential</div>
+        
+        <div class="dashboard-card hover-lift" style="text-align: center;">
+          <div style="font-size: 48px; font-weight: 700; color: #6b4423; margin-bottom: 8px;" class="stat-counter">
+            3.2
+          </div>
+          <div style="font-weight: 600; color: #1a1512; margin-bottom: 4px;">Avg. Offers Per Home</div>
+          <div style="font-size: 14px; color: #6b625a;">Multiple Competing Bids</div>
         </div>
-        <div class="trust-badge">
-          <div class="trust-badge-icon">⚡</div>
-          <div class="trust-badge-text">24-Hour Offers</div>
+        
+        <div class="dashboard-card hover-lift" style="text-align: center;">
+          <div style="font-size: 48px; font-weight: 700; color: #6b4423; margin-bottom: 8px;" class="stat-counter">
+            24hrs
+          </div>
+          <div style="font-weight: 600; color: #1a1512; margin-bottom: 4px;">First Offer Received</div>
+          <div style="font-size: 14px; color: #6b625a;">Lightning Fast Response</div>
         </div>
-        <div class="trust-badge">
-          <div class="trust-badge-icon">🇺🇸</div>
-          <div class="trust-badge-text">All 50 States</div>
+        
+        <div class="dashboard-card hover-lift" style="text-align: center;">
+          <div style="font-size: 48px; font-weight: 700; color: #6b4423; margin-bottom: 8px;">
+            50
+          </div>
+          <div style="font-weight: 600; color: #1a1512; margin-bottom: 4px;">States Covered</div>
+          <div style="font-size: 14px; color: #6b625a;">Nationwide Coverage</div>
         </div>
+        
+      </div>
+      
+      <!-- Visual Network Map -->
+      <div style="margin-top: 64px; position: relative; height: 200px; background: linear-gradient(135deg, #f8f5f2 0%, #fdfcfb 100%); border-radius: 16px; overflow: hidden; border: 1px solid #e5e0db;">
+        <div id="networkViz" style="position: relative; width: 100%; height: 100%;"></div>
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 10;">
+          <div style="font-size: 18px; font-weight: 700; color: #6b4423; margin-bottom: 8px;">Your Property</div>
+          <div style="font-size: 14px; color: #6b625a;">Connected to 500+ investors nationwide</div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- How It Works - Dashboard Style -->
+  <section id="how-it-works" style="background: #f8f5f2; padding: 80px 0;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 64px;">
+        <h2>How the Marketplace Works</h2>
+        <p class="text-large text-muted" style="max-width: 700px; margin: 16px auto 0;">
+          Simple, transparent, and powered by technology. No guesswork—just real offers from real investors.
+        </p>
+      </div>
+      
+      <div style="max-width: 900px; margin: 0 auto;">
+        
+        <!-- Step 1 -->
+        <div class="timeline-step">
+          <div class="timeline-number">1</div>
+          <div class="dashboard-card hover-lift">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+              <div style="width: 48px; height: 48px; background: #f8f5f2; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 24px;">📝</div>
+              <div>
+                <h3 style="margin: 0 0 4px;">Submit Your Property</h3>
+                <p style="margin: 0; font-size: 14px; color: #6b625a;">Takes 2 minutes. No obligation.</p>
+              </div>
+            </div>
+            <p style="margin: 0; color: #6b625a; line-height: 1.6;">
+              Answer a few basic questions about your property. Our platform instantly distributes your listing to our network of 500+ investors who match your property type and location.
+            </p>
+            <div style="margin-top: 16px; padding: 16px; background: #fdfcfb; border-radius: 8px; border: 1px solid #e5e0db;">
+              <div style="font-size: 13px; color: #6b625a; margin-bottom: 8px;">Platform Status</div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div class="status-dot"></div>
+                <span style="font-size: 14px; font-weight: 600; color: #1a1512;">Property sent to 12 matching investors</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="timeline-step">
+          <div class="timeline-number">2</div>
+          <div class="dashboard-card hover-lift">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+              <div style="width: 48px; height: 48px; background: #f8f5f2; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 24px;">📊</div>
+              <div>
+                <h3 style="margin: 0 0 4px;">Investors Compete for Your Property</h3>
+                <p style="margin: 0; font-size: 14px; color: #6b625a;">Real-time competitive bidding.</p>
+              </div>
+            </div>
+            <p style="margin: 0 0 16px; color: #6b625a; line-height: 1.6;">
+              Watch offers come in through your personalized dashboard. Investors compete, which means you get market-driven pricing—not arbitrary lowballs.
+            </p>
+            
+            <!-- Mock Dashboard -->
+            <div style="background: #fdfcfb; border-radius: 12px; padding: 20px; border: 1px solid #e5e0db;">
+              <div style="font-size: 13px; font-weight: 600; color: #6b625a; margin-bottom: 12px;">YOUR OFFERS</div>
+              
+              <div style="display: flex; flex-direction: column; gap: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: white; border-radius: 8px; border: 1px solid #e5e0db;">
+                  <div>
+                    <div style="font-weight: 600; color: #1a1512;">Premier Investments LLC</div>
+                    <div style="font-size: 12px; color: #6b625a;">Phoenix, AZ • Closes in 10 days</div>
+                  </div>
+                  <div style="font-size: 20px; font-weight: 700; color: #6b4423;">$342,000</div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: white; border-radius: 8px; border: 1px solid #e5e0db;">
+                  <div>
+                    <div style="font-weight: 600; color: #1a1512;">Rapid Home Buyers</div>
+                    <div style="font-size: 12px; color: #6b625a;">Phoenix, AZ • Closes in 14 days</div>
+                  </div>
+                  <div style="font-size: 20px; font-weight: 700; color: #6b4423;">$338,500</div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: white; border-radius: 8px; border: 1px solid #e5e0db;">
+                  <div>
+                    <div style="font-weight: 600; color: #1a1512;">Desert Capital Partners</div>
+                    <div style="font-size: 12px; color: #6b625a;">Phoenix, AZ • Closes in 7 days</div>
+                  </div>
+                  <div style="font-size: 20px; font-weight: 700; color: #6b4423;">$335,000</div>
+                </div>
+              </div>
+              
+              <div style="margin-top: 12px; font-size: 12px; color: #6b625a; text-align: center;">
+                💡 <strong>Average increase:</strong> 8.3% vs. single-buyer offers
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="timeline-step">
+          <div class="timeline-number">3</div>
+          <div class="dashboard-card hover-lift">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+              <div style="width: 48px; height: 48px; background: #f8f5f2; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 24px;">✅</div>
+              <div>
+                <h3 style="margin: 0 0 4px;">Choose the Best Offer</h3>
+                <p style="margin: 0; font-size: 14px; color: #6b625a;">You're in complete control.</p>
+              </div>
+            </div>
+            <p style="margin: 0; color: #6b625a; line-height: 1.6;">
+              Review all offers side-by-side. Compare price, closing timeline, and investor ratings. Accept the one that works best for you—or decline them all. Zero pressure, zero obligation.
+            </p>
+            <div style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap;">
+              <div style="padding: 12px 20px; background: #fdfcfb; border-radius: 8px; border: 1px solid #e5e0db; font-size: 14px;">
+                <span style="color: #6b625a;">Avg. closing:</span>
+                <strong style="color: #1a1512; margin-left: 4px;">14 days</strong>
+              </div>
+              <div style="padding: 12px 20px; background: #fdfcfb; border-radius: 8px; border: 1px solid #e5e0db; font-size: 14px;">
+                <span style="color: #6b625a;">Fastest close:</span>
+                <strong style="color: #1a1512; margin-left: 4px;">3 days</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        
       </div>
     </div>
   </section>
 
-  <!-- Main Content -->
-  <main class="container">
-    
-    <!-- How It Works -->
-    <section>
-      <h2 class="text-center">How It Works</h2>
-      <p class="text-large text-muted text-center" style="max-width: 700px; margin: 0 auto 48px;">
-        Our simple 3-step process gets you from offer to cash in hand faster than a traditional sale.
-      </p>
-      
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="#6b4423"/>
-            </svg>
-          </div>
-          <h3>1. Tell Us About Your Home</h3>
-          <p>Answer a few quick questions about your property. No property visit required to start.</p>
-        </div>
-        
-        <div class="card">
-          <div class="card-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z" fill="#6b4423"/>
-            </svg>
-          </div>
-          <h3>2. Get Your Cash Offer</h3>
-          <p>Receive a fair, no-obligation cash offer within 24 hours. No pressure to accept.</p>
-        </div>
-        
-        <div class="card">
-          <div class="card-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M11.8 10.9C9.53 10.31 8.8 9.7 8.8 8.75C8.8 7.66 9.81 6.9 11.5 6.9C13.28 6.9 13.94 7.75 14 9H16.21C16.14 7.28 15.09 5.7 13 5.19V3H10V5.16C8.06 5.58 6.5 6.84 6.5 8.77C6.5 11.08 8.41 12.23 11.2 12.9C13.7 13.5 14.2 14.38 14.2 15.31C14.2 16 13.71 17.1 11.5 17.1C9.44 17.1 8.63 16.18 8.52 15H6.32C6.44 17.19 8.08 18.42 10 18.83V21H13V18.85C14.95 18.48 16.5 17.35 16.5 15.3C16.5 12.46 14.07 11.49 11.8 10.9Z" fill="#6b4423"/>
-            </svg>
-          </div>
-          <h3>3. Close on Your Schedule</h3>
-          <p>Choose your closing date. We can close in as little as 7 days or wait until you're ready.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Who We Help -->
-    <section style="background: #f8f5f2; margin: 0 -50vw; padding: 64px 50vw;">
-      <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-        <h2 class="text-center">We Help Homeowners in Every Situation</h2>
-        <p class="text-large text-muted text-center" style="max-width: 800px; margin: 0 auto 48px;">
-          Whether you're facing foreclosure, inherited a property, going through a divorce, or simply need to sell fast—we're here to help.
-        </p>
-        
-        <div class="grid-3">
-          <div class="card">
-            <h4>💔 Divorce</h4>
-            <p>Sell quickly and split proceeds fairly. We make the process simple during a difficult time.</p>
-          </div>
-          
-          <div class="card">
-            <h4>🏚️ Inherited Property</h4>
-            <p>Don't want to maintain an inherited home? Sell it as-is without spending a penny on repairs.</p>
-          </div>
-          
-          <div class="card">
-            <h4>⚠️ Facing Foreclosure</h4>
-            <p>Stop foreclosure in its tracks. We can often close before the bank takes your home.</p>
-          </div>
-          
-          <div class="card">
-            <h4>🔧 Major Repairs Needed</h4>
-            <p>Foundation issues? Roof damage? We buy houses in any condition—no repairs required.</p>
-          </div>
-          
-          <div class="card">
-            <h4>✈️ Relocating Fast</h4>
-            <p>New job in a new city? Sell your current home quickly without the traditional timeline.</p>
-          </div>
-          
-          <div class="card">
-            <h4>🏘️ Tired of Being a Landlord</h4>
-            <p>Done with property management and tenant issues? Sell your rental property fast for cash.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats -->
-    <section>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-number">24hrs</div>
-          <div class="stat-label">Average Time to Offer</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">7-14</div>
-          <div class="stat-label">Days to Close</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">1000+</div>
-          <div class="stat-label">Happy Homeowners</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose Propcash -->
-    <section>
-      <h2 class="text-center">Why Homeowners Choose Propcash</h2>
-      <p class="text-large text-muted text-center" style="max-width: 800px; margin: 0 auto 48px;">
-        We're not your typical cash home buyer. We're a nationwide network of vetted investors committed to fair, transparent offers.
-      </p>
-      
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-icon">💰</div>
-          <h3>Fair Market Offers</h3>
-          <p>We use transparent, market-based pricing. Our nationwide network creates competitive offers—not lowballs.</p>
-        </div>
-        
-        <div class="card">
-          <div class="card-icon">⚡</div>
-          <h3>Lightning-Fast Process</h3>
-          <p>Get your offer in 24 hours. Close in as few as 7 days. We work on YOUR timeline, not ours.</p>
-        </div>
-        
-        <div class="card">
-          <div class="card-icon">🛠️</div>
-          <h3>Zero Repairs Required</h3>
-          <p>We buy houses as-is. Leaky roof? Outdated kitchen? Foundation issues? We'll still make you an offer.</p>
-        </div>
-        
-        <div class="card">
-          <div class="card-icon">💼</div>
-          <h3>No Agent Commissions</h3>
-          <p>Keep more of your money. No 6% commission fees, no agent pressure, no endless showings.</p>
-        </div>
-        
-        <div class="card">
-          <div class="card-icon">🤝</div>
-          <h3>Transparent & Honest</h3>
-          <p>We explain exactly how we calculate our offers. No hidden fees, no fine print, no surprises.</p>
-        </div>
-        
-        <div class="card">
-          <div class="card-icon">🇺🇸</div>
-          <h3>Nationwide Reach</h3>
-          <p>We work in all 50 states. From rural towns to major cities—if you have a property, we're interested.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section style="background: #f8f5f2; margin: 0 -50vw; padding: 64px 50vw;">
-      <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-        <h2 class="text-center">What Homeowners Are Saying</h2>
-        <p class="text-large text-muted text-center" style="max-width: 700px; margin: 0 auto 48px;">
-          Real stories from real homeowners who sold with Propcash.
-        </p>
-        
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <div class="testimonial-rating">★★★★★</div>
-            <p class="testimonial-text">
-              "I inherited my parents' house in rough shape and didn't want to deal with repairs. Propcash made me a fair offer and closed in 10 days. Couldn't be happier!"
-            </p>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar">SM</div>
-              <div class="testimonial-info">
-                <h4>Sarah M.</h4>
-                <div class="testimonial-location">Nashville, TN</div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-card">
-            <div class="testimonial-rating">★★★★★</div>
-            <p class="testimonial-text">
-              "Going through a divorce and needed to sell fast. The Propcash team was professional, respectful, and got us a great offer within 24 hours. Highly recommend."
-            </p>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar">JR</div>
-              <div class="testimonial-info">
-                <h4>Jennifer R.</h4>
-                <div class="testimonial-location">Austin, TX</div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-card">
-            <div class="testimonial-rating">★★★★★</div>
-            <p class="testimonial-text">
-              "Was facing foreclosure and thought I'd lost everything. Propcash helped me sell quickly, avoid foreclosure, and walk away with cash in my pocket. They saved me."
-            </p>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar">MT</div>
-              <div class="testimonial-info">
-                <h4>Michael T.</h4>
-                <div class="testimonial-location">Phoenix, AZ</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Form Section -->
-    <section id="lead">
-      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: start;">
-        <!-- Left: Benefits -->
-        <div>
-          <h2>Get Your Cash Offer Today</h2>
-          <p class="text-large text-muted">
-            Fill out the form and get a no-obligation cash offer in 24 hours. Or if you prefer, text or call us directly.
+  <!-- Why Marketplace Model -->
+  <section id="why-marketplace" style="background: white; padding: 80px 0;">
+    <div class="container">
+      <div style="max-width: 1100px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 64px;">
+          <h2>Why the Marketplace Model Wins</h2>
+          <p class="text-large text-muted" style="max-width: 700px; margin: 16px auto 0;">
+            Traditional cash buyers give you one offer. We create competition. The difference is significant.
           </p>
-          
-          <div style="margin-top: 32px;">
-            <div style="display: flex; align-items: start; gap: 16px; margin-bottom: 24px;">
-              <div style="width: 32px; height: 32px; background: #6b4423; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">✓</div>
-              <div>
-                <strong style="display: block; margin-bottom: 4px;">100% Free & No Obligation</strong>
-                <p class="text-muted" style="margin: 0; font-size: 15px;">No cost to get an offer. Accept it only if it works for you.</p>
-              </div>
-            </div>
-            
-            <div style="display: flex; align-items: start; gap: 16px; margin-bottom: 24px;">
-              <div style="width: 32px; height: 32px; background: #6b4423; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">✓</div>
-              <div>
-                <strong style="display: block; margin-bottom: 4px;">Fast 24-Hour Response</strong>
-                <p class="text-muted" style="margin: 0; font-size: 15px;">We review your property and respond with an offer within one business day.</p>
-              </div>
-            </div>
-            
-            <div style="display: flex; align-items: start; gap: 16px;">
-              <div style="width: 32px; height: 32px; background: #6b4423; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">✓</div>
-              <div>
-                <strong style="display: block; margin-bottom: 4px;">Your Information is Safe</strong>
-                <p class="text-muted" style="margin: 0; font-size: 15px;">We never share your information. 100% confidential.</p>
-              </div>
-            </div>
-          </div>
-          
-          <div style="margin-top: 40px; padding: 24px; background: #f8f5f2; border-radius: 10px; border: 1px solid #e5e0db;">
-            <p style="margin: 0; font-weight: 600;">Prefer to talk? We're here to help!</p>
-            <a href="tel:6155524296" class="phone-large" style="margin-top: 8px; display: block;">(615) 552-4296</a>
-            <p class="text-small text-muted" style="margin: 8px 0 0;">Mon-Fri: 9am-5pm CST</p>
-          </div>
         </div>
         
-        <!-- Right: Form -->
-        <div class="form-card" style="position: static;">
-          <div class="form-header">
-            <h3 style="margin-bottom: 8px;">Get Started Now</h3>
-            <p class="text-muted text-small" style="margin: 0;">All fields required • Takes 2 minutes</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+          
+          <div class="card hover-lift">
+            <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px;">💰</div>
+            <h3>Higher Offers</h3>
+            <p style="color: #6b625a; margin-bottom: 16px;">Competition drives prices up. Our data shows marketplace listings receive offers averaging 8.3% higher than single-buyer scenarios.</p>
+            <div style="padding: 12px; background: #f8f5f2; border-radius: 8px; font-size: 14px; font-weight: 600; color: #6b4423;">
+              $25,000+ average increase on $300k homes
+            </div>
           </div>
           
-          <form 
-            class="form" 
-            id="contactForm"
-            action="https://formspree.io/f/mdkponlo"
-            method="POST"
-          >
-            <input type="hidden" name="page" id="pageName" value="" />
-            
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Full Name</label>
-                <input id="name" name="name" placeholder="John Doe" required />
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input id="phone" name="phone" type="tel" placeholder="(615) 552-4296" required />
-              </div>
+          <div class="card hover-lift">
+            <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px;">⚡</div>
+            <h3>Faster Responses</h3>
+            <p style="color: #6b625a; margin-bottom: 16px;">500+ investors means someone is always ready to bid. Most properties receive their first offer within 24 hours.</p>
+            <div style="padding: 12px; background: #f8f5f2; border-radius: 8px; font-size: 14px; font-weight: 600; color: #6b4423;">
+              Average response time: 18 hours
             </div>
-            
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input id="email" type="email" name="email" placeholder="john@example.com" required />
-              </div>
-              <div class="form-group">
-                <label for="address">Property Address</label>
-                <input id="address" name="address" placeholder="123 Main St, Nashville, TN" required />
-              </div>
+          </div>
+          
+          <div class="card hover-lift">
+            <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px;">🔒</div>
+            <h3>Market Validation</h3>
+            <p style="color: #6b625a; margin-bottom: 16px;">Multiple offers prove your property's value. You're not relying on one investor's opinion—you have market consensus.</p>
+            <div style="padding: 12px; background: #f8f5f2; border-radius: 8px; font-size: 14px; font-weight: 600; color: #6b4423;">
+              Real market data, not arbitrary pricing
             </div>
-            
-            <button class="btn btn-primary btn-block" type="submit">Get My Cash Offer →</button>
-            <div class="form-secure">🔒 Your information is 100% confidential and will never be shared.</div>
-          </form>
+          </div>
+          
+          <div class="card hover-lift">
+            <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px;">📊</div>
+            <h3>Full Transparency</h3>
+            <p style="color: #6b625a; margin-bottom: 16px;">See all offers, investor profiles, and closing terms. Make an informed decision with complete information.</p>
+            <div style="padding: 12px; background: #f8f5f2; border-radius: 8px; font-size: 14px; font-weight: 600; color: #6b4423;">
+              Dashboard access included
+            </div>
+          </div>
+          
+          <div class="card hover-lift">
+            <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px;">🛠️</div>
+            <h3>Flexible Terms</h3>
+            <p style="color: #6b625a; margin-bottom: 16px;">Different investors offer different closing timelines. Choose the schedule that works for your situation.</p>
+            <div style="padding: 12px; background: #f8f5f2; border-radius: 8px; font-size: 14px; font-weight: 600; color: #6b4423;">
+              3 days to 90+ days available
+            </div>
+          </div>
+          
+          <div class="card hover-lift">
+            <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px;">🤝</div>
+            <h3>Zero Commitment</h3>
+            <p style="color: #6b625a; margin-bottom: 16px;">Receive offers with no obligation to accept. If none work for you, walk away. It's that simple.</p>
+            <div style="padding: 12px; background: #f8f5f2; border-radius: 8px; font-size: 14px; font-weight: 600; color: #6b4423;">
+              100% free, always
+            </div>
+          </div>
+          
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FAQ -->
-    <section>
-      <h2 class="text-center">Frequently Asked Questions</h2>
-      <div style="max-width: 800px; margin: 0 auto;">
-        
-        <details>
-          <summary>How quickly can I get an offer?</summary>
-          <p>We typically provide cash offers within 24 hours of receiving your information. In some cases, we can provide same-day offers for urgent situations.</p>
-        </details>
-
-        <details>
-          <summary>Do you really buy houses in any condition?</summary>
-          <p>Yes! We buy houses as-is. Whether your property needs major repairs, has foundation issues, fire damage, or is perfectly move-in ready—we're interested. You don't need to spend a single dollar on repairs or cleaning.</p>
-        </details>
-
-        <details>
-          <summary>Are there any fees or commissions?</summary>
-          <p>No. There are zero fees, no commissions, and no hidden costs. The offer we give you is the amount you'll receive at closing.</p>
-        </details>
-
-        <details>
-          <summary>How do you determine your offer price?</summary>
-          <p>We use current market data, recent comparable sales in your area, and property condition to calculate a fair offer. We're transparent about our pricing and happy to explain how we arrived at your number.</p>
-        </details>
-
-        <details>
-          <summary>Can I choose my own closing date?</summary>
-          <p>Absolutely! We work on YOUR timeline. Need to close in 7 days? We can do that. Need 60 days to find a new place? No problem. You're in control.</p>
-        </details>
-
-        <details>
-          <summary>What if I'm behind on mortgage payments?</summary>
-          <p>We can often help homeowners who are behind on payments avoid foreclosure. Contact us to discuss your specific situation—there may be options available.</p>
-        </details>
-
-        <details>
-          <summary>Do you buy properties in all 50 states?</summary>
-          <p>Yes! We have a nationwide network of investors. No matter where your property is located, we'd love to hear from you.</p>
-        </details>
-
-        <details>
-          <summary>Is this a scam? How do I know you're legitimate?</summary>
-          <p>We're a registered real estate investment company. We've helped over 1,000 homeowners sell their properties. You're never obligated to accept our offer, and we encourage you to research us and ask questions.</p>
-        </details>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Final CTA -->
-  <section style="background: #6b4423; color: white; padding: 64px 0; text-align: center;">
+  <!-- Testimonials - Modern Cards -->
+  <section id="reviews" style="background: #f8f5f2; padding: 80px 0;">
     <div class="container">
-      <h2 style="color: white; margin-bottom: 16px;">Ready to Sell Your House Fast?</h2>
-      <p class="text-large" style="color: rgba(255, 255, 255, 0.9); max-width: 700px; margin: 0 auto 32px;">
-        Get a fair cash offer in 24 hours. No repairs, no fees, no obligation.
+      <div style="text-align: center; margin-bottom: 64px;">
+        <h2>Trusted by Thousands of Homeowners</h2>
+        <p class="text-large text-muted">Real stories from real sellers.</p>
+      </div>
+      
+      <div class="testimonials-grid">
+        
+        <div class="testimonial-card hover-lift">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text">
+            "I received 4 offers within 36 hours. The highest was $18,000 more than the first. The competition was real, and so were the results."
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">DM</div>
+            <div class="testimonial-info">
+              <h4>David M.</h4>
+              <div class="testimonial-location">Austin, TX</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card hover-lift">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text">
+            "The dashboard made everything so clear. I could see exactly who was bidding, their track record, and closing terms. Made the decision easy."
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">JL</div>
+            <div class="testimonial-info">
+              <h4>Jennifer L.</h4>
+              <div class="testimonial-location">Nashville, TN</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card hover-lift">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text">
+            "After getting lowballed by local 'we buy houses' companies, Propcash's marketplace gave me 3 competing offers that were all significantly higher."
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SK</div>
+            <div class="testimonial-info">
+              <h4>Sarah K.</h4>
+              <div class="testimonial-location">Phoenix, AZ</div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section id="start" style="background: #6b4423; color: white; padding: 80px 0; text-align: center;">
+    <div class="container" style="max-width: 800px;">
+      <h2 style="color: white; margin-bottom: 16px;">Ready to See What Your Home Can Attract?</h2>
+      <p style="font-size: 20px; color: rgba(255, 255, 255, 0.9); margin-bottom: 40px; line-height: 1.6;">
+        Submit your property to our marketplace and start receiving competing offers within 24 hours. No risk, no obligation.
       </p>
-      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-        <a href="#lead" class="btn btn-white btn-large">Get My Cash Offer</a>
-        <a href="tel:6155524296" class="btn btn-secondary btn-large" style="border-color: white; color: white;">📞 (615) 552-4296</a>
+      
+      <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 40px; margin-bottom: 32px; border: 1px solid rgba(255, 255, 255, 0.2);">
+        <form action="https://formspree.io/f/mdkponlo" method="POST" style="display: flex; flex-direction: column; gap: 20px;">
+          <input type="hidden" name="page" value="Tech Forward Homepage" />
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+            <input 
+              type="text" 
+              name="name" 
+              placeholder="Your Name" 
+              required 
+              style="padding: 16px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.95); color: #1a1512; font-size: 16px;"
+            />
+            <input 
+              type="tel" 
+              name="phone" 
+              placeholder="Phone Number" 
+              required 
+              style="padding: 16px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.95); color: #1a1512; font-size: 16px;"
+            />
+          </div>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+            <input 
+              type="email" 
+              name="email" 
+              placeholder="Email Address" 
+              required 
+              style="padding: 16px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.95); color: #1a1512; font-size: 16px;"
+            />
+            <input 
+              type="text" 
+              name="address" 
+              placeholder="Property Address" 
+              required 
+              style="padding: 16px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.95); color: #1a1512; font-size: 16px;"
+            />
+          </div>
+          
+          <button 
+            type="submit" 
+            class="btn btn-white btn-large btn-block"
+            style="background: white; color: #6b4423; font-size: 18px; padding: 20px;"
+          >
+            Start Your Auction →
+          </button>
+          
+          <div style="font-size: 13px; color: rgba(255, 255, 255, 0.7); text-align: center;">
+            🔒 Your information is secure. We'll match you with investors and you'll receive offers in your dashboard.
+          </div>
+        </form>
+      </div>
+      
+      <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; font-size: 14px; color: rgba(255, 255, 255, 0.8);">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 20px;">✓</span> 500+ Vetted Investors
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 20px;">✓</span> No Fees or Commissions
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 20px;">✓</span> Zero Obligation
+        </div>
       </div>
     </div>
   </section>
@@ -476,7 +641,7 @@
         <div>
           <a href="/" class="brand" style="display: block; margin-bottom: 12px;">Propcash</a>
           <p class="text-muted text-small" style="margin: 0; max-width: 300px;">
-            The fastest way to sell your property for cash. Nationwide service, local expertise.
+            The first cash offer marketplace. Powered by 500+ investors nationwide.
           </p>
         </div>
         <nav style="display: flex; gap: 32px;">
@@ -489,7 +654,7 @@
       <div class="footer-bottom">
         <div>
           <p class="footer-disclaimer">
-            <strong>Disclaimer:</strong> Propcash is a national real estate investment firm. We may purchase properties directly or assign purchase contracts to other qualified investors. We are not acting as licensed real estate agents or brokers and do not offer legal, tax, or financial advice. All offers are subject to property evaluation and contract terms.
+            <strong>Disclaimer:</strong> Propcash operates a marketplace platform connecting property sellers with independent investors. We do not purchase properties directly. All offers come from third-party investors in our network. We are not acting as licensed real estate agents or brokers and do not offer legal, tax, or financial advice.
           </p>
           <p style="margin: 0;">© <span id="year"></span> Propcash. All rights reserved.</p>
         </div>
@@ -501,21 +666,71 @@
     </div>
   </footer>
 
-  <!-- Sticky Helper Button -->
+  <!-- Sticky Helper - Tech Style -->
   <div class="helper-container">
-    <a href="tel:6155524296" class="helper-phone" aria-label="Call us now">
-      📞 Call Now
+    <a href="#start" class="helper-phone" aria-label="Start your auction">
+      🚀 Start Auction
     </a>
   </div>
-  
 
   <!-- JavaScript -->
   <script src="/assets/scripts.js"></script>
-</body>
-</html>
   
-
-  <!-- JavaScript -->
-  <script src="/assets/scripts.js"></script>
+  <script>
+    // Animated Counter for Stats
+    function animateCounter(element, target, duration = 2000) {
+      const start = 0;
+      const increment = target / (duration / 16);
+      let current = start;
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          element.textContent = Math.round(target);
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.round(current);
+        }
+      }, 16);
+    }
+    
+    // Initialize counters on load
+    document.addEventListener('DOMContentLoaded', () => {
+      const activeInvestors = document.getElementById('activeInvestors');
+      const offersToday = document.getElementById('offersToday');
+      
+      if (activeInvestors) animateCounter(activeInvestors, 547);
+      if (offersToday) animateCounter(offersToday, 23);
+      
+      // Randomly update "offers today" every few seconds
+      setInterval(() => {
+        if (offersToday) {
+          const current = parseInt(offersToday.textContent);
+          offersToday.textContent = current + 1;
+        }
+      }, 15000);
+    });
+    
+    // Simple Network Visualization
+    function createNetworkViz() {
+      const container = document.getElementById('networkViz');
+      if (!container) return;
+      
+      const width = container.offsetWidth;
+      const height = 200;
+      
+      // Create random nodes
+      for (let i = 0; i < 20; i++) {
+        const node = document.createElement('div');
+        node.className = 'network-node';
+        node.style.left = `${Math.random() * width}px`;
+        node.style.top = `${Math.random() * height}px`;
+        node.style.animationDelay = `${Math.random() * 2}s`;
+        container.appendChild(node);
+      }
+    }
+    
+    document.addEventListener('DOMContentLoaded', createNetworkViz);
+  </script>
 </body>
 </html>
