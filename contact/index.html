@@ -98,7 +98,7 @@
   <section style="background: white; padding: 80px 0;">
     <div class="container" style="max-width: 900px;">
       
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-bottom: 64px;">
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 64px;">
         
         <!-- Phone -->
         <a href="tel:6155524296" class="contact-method" style="background: #f8f5f2; padding: 40px 32px; border-radius: 12px; text-decoration: none; border: 1px solid #e5e0db; text-align: center;">
@@ -137,6 +137,12 @@
         </a>
         
       </div>
+
+      @media (max-width: 768px) {
+  .contact-methods-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
 
       <!-- Contact Form -->
       <div style="background: #f8f5f2; padding: 48px; border-radius: 16px; border: 1px solid #e5e0db;">
