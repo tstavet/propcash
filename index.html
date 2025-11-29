@@ -191,57 +191,119 @@
     </nav>
   </header>
 
-<!-- Hero Section - Marketplace Focus with Background Image -->
+<!-- Hero Section - Clean Image-Forward Design (SellFast Style) -->
 <section class="hero" style="
   position: relative;
-  min-height: auto; 
-  padding: 80px 0 120px;
+  min-height: 600px;
+  padding: 120px 0 160px;
   background-image: url('/assets/nashville-house.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
 ">
   
-  <!-- Overlay for text readability - ADJUST OPACITY IN THE rgba() VALUES -->
+  <!-- Subtle overlay for slight contrast only -->
   <div style="
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(253, 252, 251, 0.6) 0%, rgba(248, 245, 242, 0.6) 100%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%);
     z-index: 1;
   "></div>
   
-  <!-- Content (sits above overlay) -->
-  <div class="hero-content" style="max-width: 1200px; position: relative; z-index: 2;">
+  <!-- Content - Right-aligned like SellFast -->
+  <div class="hero-content" style="
+    max-width: 1200px; 
+    position: relative; 
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+  ">
     
-    
-    <h1 style="color: #1a1512; max-width: 900px; margin: 0 auto 24px; font-size: clamp(40px, 6vw, 72px);">
-      Get <span class="gradient-text">Competing Cash Offers</span> For Your Property
-    </h1>
-    
-    <p style="font-size: clamp(18px, 2.5vw, 24px); color: #6b625a; max-width: 700px; margin: 0 auto 48px; line-height: 1.6;">
-      Drive competition for your proprety by sending it to our network of 500+ cash investors. Average 3.2 offers per property.
-    </p>
-    
-    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px;">
-      <a href="#start" class="btn btn-primary btn-large">
-        Start Getting Cash Offers →
-      </a>
-    </div>
-
-      <!-- Status Bar -->
-    <div class="glassmorphism" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 24px; border-radius: 24px; margin-bottom: 32px;">
-      <div class="status-dot"></div>
-      <span style="font-size: 14px; font-weight: 600; color: #6b4423;">
-        <span class="stat-counter" id="activeInvestors">547</span> active investors • 
-        <span class="stat-counter" id="offersToday">23</span> offers made today
-      </span>
+    <div style="max-width: 650px;">
+      <!-- Headline - White text with shadow for readability -->
+      <h1 style="
+        color: white; 
+        margin: 0 0 32px;
+        font-size: clamp(42px, 6vw, 68px);
+        line-height: 1.1;
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        font-weight: 700;
+      ">
+        Get <span style="display: inline-block;">Competing Cash Offers</span> For Your Property
+      </h1>
+      
+      <!-- Subheadline - White text with shadow -->
+      <p style="
+        font-size: clamp(18px, 2.5vw, 22px); 
+        color: white;
+        margin: 0 0 40px;
+        line-height: 1.5;
+        text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+      ">
+        Drive competition for your property by sending it to our network of 500+ cash investors. Average 3.2 offers per property.
+      </p>
+      
+      <!-- Single CTA Button -->
+      <div style="margin-bottom: 32px;">
+        <a href="#start" class="btn btn-primary btn-large" style="
+          background: #6b4423;
+          color: white;
+          padding: 18px 40px;
+          font-size: 18px;
+          font-weight: 700;
+          border-radius: 8px;
+          text-decoration: none;
+          display: inline-block;
+          box-shadow: 0 4px 20px rgba(107, 68, 35, 0.4);
+          transition: all 0.3s ease;
+        ">
+          Start Getting Cash Offers →
+        </a>
+      </div>
+      
+      <!-- Status Bar - Subtle at bottom -->
+      <div style="
+        display: inline-flex; 
+        align-items: center; 
+        gap: 12px; 
+        padding: 12px 24px; 
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      ">
+        <div class="status-dot"></div>
+        <span style="font-size: 14px; font-weight: 600; color: #6b4423;">
+          <span class="stat-counter" id="activeInvestors">547</span> active investors • 
+          <span class="stat-counter" id="offersToday">23</span> offers made today
+        </span>
+      </div>
     </div>
     
   </div>
 </section>
+
+<!-- Mobile Responsive Adjustments -->
+<style>
+@media (max-width: 768px) {
+  .hero .hero-content {
+    align-items: center !important;
+    text-align: center !important;
+  }
+  
+  .hero h1,
+  .hero p {
+    text-align: center !important;
+  }
+}
+</style>
 
   
   <!-- How It Works - Dashboard Style -->
