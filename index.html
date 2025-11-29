@@ -534,6 +534,126 @@ Our secret? Competition. We send your property to our national network of 500+ v
 
 </div>
 </div>
+
+      <!-- Enhanced Hero Form - Stands Out on Any Background -->
+<form 
+  action="#start" 
+  method="GET" 
+  class="hero-form"
+  style="
+    display: flex; 
+    gap: 0; 
+    width: 100%; 
+    max-width: 650px;
+    margin: 0 auto;
+    box-shadow: 
+      0 12px 40px rgba(0, 0, 0, 0.25),
+      0 0 0 3px rgba(107, 68, 35, 0.3),
+      0 0 0 6px rgba(255, 255, 255, 0.8);
+    border-radius: 14px; 
+    overflow: hidden;
+    position: relative;
+  "
+>
+  
+  <!-- Address Input Field -->
+  <input 
+    type="text" 
+    name="address" 
+    placeholder="Enter your property address"
+    required
+    aria-label="Property address"
+    style="
+      flex: 1;
+      padding: 22px 24px;
+      font-size: 17px;
+      border: none;
+      background: white;
+      color: #1a1512;
+      font-family: inherit;
+      outline: none;
+      font-weight: 500;
+    "
+  />
+  
+  <!-- Submit Button -->
+  <button 
+    type="submit"
+    class="hero-form-button"
+    style="
+      padding: 22px 36px;
+      background: #6b4423;
+      color: white;
+      border: none;
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+      font-family: inherit;
+      text-transform: none;
+      letter-spacing: 0.3px;
+    "
+    onmouseover="this.style.background='#5a371c'; this.style.transform='scale(1.02)'"
+    onmouseout="this.style.background='#6b4423'; this.style.transform='scale(1)'"
+  >
+    Get Cash Offers →
+  </button>
+  
+</form>
+
+<!-- Mobile Responsive Styling -->
+<style>
+  /* Desktop hover effects */
+  .hero-form input:focus {
+    box-shadow: inset 0 0 0 2px #6b4423;
+  }
+  
+  .hero-form input::placeholder {
+    color: #9e9691;
+    font-weight: 400;
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 650px) {
+    .hero-form {
+      flex-direction: column !important;
+      border-radius: 14px !important;
+      max-width: 90% !important;
+    }
+    
+    .hero-form input {
+      border-radius: 14px 14px 0 0 !important;
+      text-align: center;
+      padding: 20px 20px !important;
+      font-size: 16px !important;
+    }
+    
+    .hero-form button {
+      border-radius: 0 0 14px 14px !important;
+      padding: 20px 24px !important;
+      font-size: 16px !important;
+    }
+  }
+  
+  /* Extra emphasis for button */
+  .hero-form-button {
+    position: relative;
+  }
+  
+  .hero-form-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 100%);
+    pointer-events: none;
+  }
+</style>
+
+    
   </section>
 
 <!-- Image Section with Overlay Info -->
