@@ -228,32 +228,82 @@
         1px 1px 0 rgba(0, 0, 0, 0.3),
         0 2px 8px rgba(0, 0, 0, 0.2);
     ">
-      Get Competing Cash Offers For Your Property
+      The World's First Cash Offer Marketplace 
     </h1>
     
-  <p style="
-  font-size: clamp(18px, 2.5vw, 24px); 
-  color: white; 
-  max-width: 700px; 
-  margin: 0 auto 48px; 
-  line-height: 1.6;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-">
-  Drive competition for your property by sending it to our network of 500+ cash investors. Average 3.2 offers per property.
-</p>
+   <div style="display: flex; gap: 0; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; max-width: 650px; margin-left: auto; margin-right: auto;">
+  
+  <form action="#start" method="GET" style="display: flex; gap: 0; width: 100%; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); border-radius: 12px; overflow: hidden;">
     
-    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px;">
-      <a href="#start" class="btn btn-primary btn-large">
-        Start Getting Cash Offers →
-      </a>
-    </div>
+    <!-- Address Input Field -->
+    <input 
+      type="text" 
+      name="address" 
+      placeholder="Enter your property address"
+      required
+      style="
+        flex: 1;
+        padding: 20px 24px;
+        font-size: 16px;
+        border: none;
+        background: white;
+        color: #1a1512;
+        font-family: inherit;
+        outline: none;
+      "
+    />
+    
+    <!-- Submit Button -->
+    <button 
+      type="submit"
+      style="
+        padding: 20px 32px;
+        background: #6b4423;
+        color: white;
+        border: none;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: background 0.3s ease;
+        font-family: inherit;
+      "
+      onmouseover="this.style.background='#5a371c'"
+      onmouseout="this.style.background='#6b4423'"
+    >
+      Get Cash Offers →
+    </button>
+    
+  </form>
+  
+</div>
+
+<!-- Mobile Responsive Styling -->
+<style>
+@media (max-width: 600px) {
+  form[action="#start"] {
+    flex-direction: column !important;
+    border-radius: 12px !important;
+  }
+  
+  form[action="#start"] input {
+    border-radius: 12px 12px 0 0 !important;
+    text-align: center;
+  }
+  
+  form[action="#start"] button {
+    border-radius: 0 0 12px 12px !important;
+    padding: 18px 24px !important;
+  }
+}
+</style>
 
     <!-- Status Bar -->
     <div class="glassmorphism" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 24px; border-radius: 24px; margin-bottom: 32px;">
       <div class="status-dot"></div>
       <span style="font-size: 14px; font-weight: 600; color: #6b4423;">
         <span class="stat-counter" id="activeInvestors">547</span> active investors • 
-        <span class="stat-counter" id="offersToday">23</span> offers made today
+        <span class="stat-counter" id="offersToday">3.2</span> avg offers per property
       </span>
     </div>
     
@@ -266,7 +316,7 @@
       <div style="text-align: center; margin-bottom: 64px;">
         <h2>The best way to sell your property "as is" for cash</h2>
         <p class="text-large text-muted" style="max-width: 700px; margin: 16px auto 0;">
-  Propcash drives competitive bids for your property ensuring that you get the best offer possible.
+ Drive competition for your property by sending it to our network of 500+ cash investors. Our investors want to buy your home fast for cash, with no repairs necessary.
         </p>
       </div>
       
