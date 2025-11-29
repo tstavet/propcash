@@ -415,9 +415,11 @@ Our secret? Competition. We send your property to our national network of 500+ v
 </div>
   </section>
 
-  <!-- Image Section -->
+<!-- Image Section with Overlay Info -->
 <section style="background: white; padding: 80px 0;">
-  <div class="container" style="max-width: 1200px; margin: 0 auto;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; position: relative;">
+    
+    <!-- Background Image -->
     <img 
       src="/assets/propcash-client-handshake.jpg" 
       alt="Propcash marketplace process" 
@@ -428,70 +430,96 @@ Our secret? Competition. We send your property to our national network of 500+ v
         box-shadow: 0 8px 30px rgba(107, 68, 35, 0.15);
       "
     />
+    
+    <!-- Overlay Content Box -->
+    <div style="
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      right: 40px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(107, 68, 35, 0.1);
+    ">
+      
+      <!-- Header -->
+      <h2 style="margin: 0 0 32px; font-size: 28px; color: #1a1512; text-align: center;">What Happens If You Accept an Offer?</h2>
+      
+      <!-- Three Columns -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;">
+        
+        <!-- Column 1: Accept -->
+        <div>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+            <div style="width: 32px; height: 32px; background: #6b4423; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <span style="color: white; font-size: 18px; font-weight: 700;">✓</span>
+            </div>
+            <h3 style="margin: 0; font-size: 16px; color: #1a1512; font-weight: 700;">Ready to Accept?</h3>
+          </div>
+          <p style="margin: 0; font-size: 14px; color: #6b625a; line-height: 1.6; padding-left: 44px;">
+            We put your property under contract and assign it to the investor. A Marketplace Specialist guides you through closing.
+          </p>
+        </div>
+        
+        <!-- Column 2: Decline -->
+        <div>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+            <div style="width: 32px; height: 32px; background: #6b4423; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <span style="color: white; font-size: 18px; font-weight: 700;">✗</span>
+            </div>
+            <h3 style="margin: 0; font-size: 16px; color: #1a1512; font-weight: 700;">Decide Not to Accept?</h3>
+          </div>
+          <p style="margin: 0; font-size: 14px; color: #6b625a; line-height: 1.6; padding-left: 44px;">
+            No obligation to accept any offer. Walk away anytime. <strong style="color: #1a1512;">Zero pressure, zero cost.</strong>
+          </p>
+        </div>
+        
+        <!-- Column 3: No Offers -->
+        <div>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+            <div style="width: 32px; height: 32px; background: #6b4423; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <span style="color: white; font-size: 18px; font-weight: 700;">?</span>
+            </div>
+            <h3 style="margin: 0; font-size: 16px; color: #1a1512; font-weight: 700;">No Offers Received?</h3>
+          </div>
+          <p style="margin: 0; font-size: 14px; color: #6b625a; line-height: 1.6; padding-left: 44px;">
+            We'll email within 48 hours with alternatives and next steps. <strong style="color: #1a1512;">No fees, no hard feelings.</strong>
+          </p>
+        </div>
+        
+      </div>
+      
+    </div>
+    
   </div>
 </section>
 
-  <section>
- <!-- What Happens After You Submit Section -->
-
-<section style="background: #f8f5f2; padding: 60px 0;">
-  <div class="container" style="max-width: 1000px; margin: 0 auto;">
-    
-    <!-- Section Header -->
-    <div style="text-align: center; margin-bottom: 48px;">
-      <h2 style="margin-bottom: 16px;">What happens if you accept an offer?</h2>
-    </div>
-    
-    <!-- Three Information Boxes -->
-    <div style="display: flex; flex-direction: column; gap: 24px; max-width: 900px; margin: 0 auto;">
-      
-      <!-- Box 1: Ready to Accept -->
-      <div style="background: white; border-radius: 12px; padding: 32px; border: 2px solid #e5e0db; box-shadow: 0 4px 12px rgba(107, 68, 35, 0.08);">
-        <div style="display: flex; gap: 20px; align-items: start;">
-          <div style="flex-shrink: 0; width: 48px; height: 48px; background: #f8f5f2; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">
-            
-          </div>
-          <div>
-            <h3 style="margin: 0 0 12px; font-size: 18px;">Ready to accept an offer?</h3>
-            <p style="margin: 0; color: #6b625a; line-height: 1.7;">
-              Propcash does not buy your home directly. We put your property under contract at the agreed-upon price and then reassign that contract to our cash investor, creating a safe and secure transaction for everyone involved. A Marketplace Specialist will be available to answer questions and walk through every phase of this process with you.
-            </p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Box 2: Choose Not to Accept -->
-      <div style="background: white; border-radius: 12px; padding: 32px; border: 2px solid #e5e0db; box-shadow: 0 4px 12px rgba(107, 68, 35, 0.08);">
-        <div style="display: flex; gap: 20px; align-items: start;">
-          <div style="flex-shrink: 0; width: 48px; height: 48px; background: #f8f5f2; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">
-            
-          </div>
-          <div>
-            <h3 style="margin: 0 0 12px; font-size: 18px;">Decide not to accept an offer?</h3>
-            <p style="margin: 0; color: #6b625a; line-height: 1.7;">
-              That's completely fine. There's no obligation to accept any offer, and you'll never pay a fee for using Propcash. Whether the offers don't meet your expectations or you simply changed your mind, you're free to decline and walk away. <strong style="color: #1a1512;">Zero pressure, zero cost.</strong>
-            </p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Box 3: What If No Offers -->
-      <div style="background: white; border-radius: 12px; padding: 32px; border: 2px solid #e5e0db; box-shadow: 0 4px 12px rgba(107, 68, 35, 0.08);">
-        <div style="display: flex; gap: 20px; align-items: start;">
-          <div style="flex-shrink: 0; width: 48px; height: 48px; background: #f8f5f2; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">
-          </div>
-          <div>
-            <h3 style="margin: 0 0 12px; font-size: 18px;">What if I don't receive any offers?</h3>
-            <p style="margin: 0; color: #6b625a; line-height: 1.7;">
-              While 94% of properties receive at least one offer, some don't match our network's current buying criteria. If this happens, we'll email you within 48 hours with an explanation, suggestions for alternative selling methods, and an optional callback to discuss your options. <strong style="color: #1a1512;">No fees, no hard feelings.</strong>
-            </p>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-    
-</section>
+<!-- Mobile Responsive Adjustments -->
+<style>
+@media (max-width: 768px) {
+  section .container > div[style*="position: absolute"] {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    margin-top: 24px;
+    padding: 24px !important;
+  }
+  
+  section .container > div[style*="position: absolute"] h2 {
+    font-size: 22px !important;
+    margin-bottom: 24px !important;
+  }
+  
+  section .container > div[style*="position: absolute"] > div {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+}
+</style>
     
 <!-- Quick Contact Section - Standalone -->
 <section style="background: white; padding: 60px 0;">
@@ -513,6 +541,33 @@ Our secret? Competition. We send your property to our national network of 500+ v
 </section>
 
 <!-- End What Happens After You Submit Section -->
+
+    <!-- Network Stats -->
+<section style="background: white; padding: 80px 0;">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; max-width: 1200px; margin: 0 auto;">
+      
+      <div class="stat-card">
+        <div class="stat-number" id="investorCount">547</div>
+        <div class="stat-label">Active Investors</div>
+        <p style="margin: 12px 0 0; font-size: 14px; color: #6b625a;">Vetted cash buyers across all 50 states</p>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-number" id="avgOffers">3</div>
+        <div class="stat-label">Avg. Offers Per Property</div>
+        <p style="margin: 12px 0 0; font-size: 14px; color: #6b625a;">Competition drives better pricing</p>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-number">24hr</div>
+        <div class="stat-label">First Offer Response</div>
+        <p style="margin: 12px 0 0; font-size: 14px; color: #6b625a;">Most properties get offers within a day</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
 
     <!-- Visual Network Map with Google Earth Background -->
 <div style="margin-top: 64px; position: relative; height: 500px; background-image: url('/assets/google-earth_jph.png'); background-size: cover; background-position: center; border-radius: 16px; overflow: hidden; border: 1px solid #e5e0db; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);">
