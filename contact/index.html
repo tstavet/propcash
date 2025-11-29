@@ -45,6 +45,14 @@
       0%, 100% { opacity: 1; }
       50% { opacity: 0.5; }
     }
+
+    /* Mobile: Stack contact methods */
+    @media (max-width: 768px) {
+      .contact-methods-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+    
   </style>
 </head>
 
@@ -137,12 +145,6 @@
         </a>
         
       </div>
-
-      @media (max-width: 768px) {
-  .contact-methods-grid {
-    grid-template-columns: 1fr !important;
-  }
-}
 
       <!-- Contact Form -->
       <div style="background: #f8f5f2; padding: 48px; border-radius: 16px; border: 1px solid #e5e0db;">
