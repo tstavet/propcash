@@ -803,31 +803,136 @@
       </div>
     </div>
   </section>
-
-  <!-- Final CTA -->
-  <section style="background: linear-gradient(135deg, #6b4423, #8b5e3c); color: white; padding: 80px 0; text-align: center;">
-    <div class="container" style="max-width: 800px;">
-      <h2 style="color: white; margin-bottom: 24px;">Experience the Marketplace Difference</h2>
-      <p style="font-size: 20px; color: rgba(255, 255, 255, 0.9); margin-bottom: 40px; line-height: 1.7;">
-        See what happens when 500+ investors compete for your property. Submit your listing and start receiving offers within 24 hours.
-      </p>
-      
-      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-        <a href="/#start" class="btn btn-white btn-large">
-          Start Your Auction →
-        </a>
-        <a href="/contact" class="btn btn-secondary btn-large" style="border-color: white; color: white;">
-          Questions? Contact Us
-        </a>
+<!-- Final CTA Section - Conversion Optimized -->
+<section id="start" style="background: #6b4423; color: white; padding: 80px 0; text-align: center;">
+  <div class="container" style="max-width: 700px;">
+    
+    <!-- Headline - Benefit-Focused -->
+    <h2 style="color: white; margin-bottom: 12px; font-size: clamp(28px, 5vw, 42px); line-height: 1.2;">
+      Get competing cash offers in 24 hours
+    </h2>
+    
+    <!-- Subheadline - Clear Value Prop -->
+    <p style="font-size: 18px; color: rgba(255, 255, 255, 0.95); margin-bottom: 32px; line-height: 1.5; font-weight: 500;">
+      500+ investors compete for your property. Zero fees, zero obligation.
+    </p>
+    
+    <!-- Trust Indicators - Above Form -->
+    <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 32px; font-size: 14px; color: rgba(255, 255, 255, 0.9);">
+      <div style="display: flex; align-items: center; gap: 6px;">
+        <span style="font-size: 18px;">✓</span> <span>No fees or costs</span>
       </div>
-      
-      <div style="margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.2); display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; font-size: 15px;">
-        <div>✓ Zero fees for sellers</div>
-        <div>✓ No obligation to accept</div>
-        <div>✓ 24-hour response time</div>
+      <div style="display: flex; align-items: center; gap: 6px;">
+        <span style="font-size: 18px;">✓</span> <span>No obligation</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 6px;">
+        <span style="font-size: 18px;">✓</span> <span>2-minute setup</span>
       </div>
     </div>
-  </section>
+    
+    <!-- Form Container with Enhanced Visibility -->
+    <div style="margin-bottom: 24px;">
+      <form 
+        action="https://formspree.io/f/mdkponlo" 
+        method="POST" 
+        class="final-cta-form"
+        style="
+          display: flex; 
+          gap: 0; 
+          width: 100%; 
+          max-width: 600px;
+          margin: 0 auto;
+          box-shadow: 
+            0 16px 48px rgba(0, 0, 0, 0.35),
+            0 0 0 4px rgba(255, 255, 255, 0.15),
+            0 0 0 1px rgba(255, 255, 255, 0.4);
+          border-radius: 12px; 
+          overflow: hidden;
+        "
+      >
+        <input type="hidden" name="page" value="Final CTA" />
+        
+        <!-- Address Input -->
+        <input 
+          type="text" 
+          name="address" 
+          placeholder="Enter your property address"
+          required
+          aria-label="Property address"
+          style="
+            flex: 1;
+            padding: 20px 24px;
+            font-size: 16px;
+            border: none;
+            background: white;
+            color: #1a1512;
+            font-family: inherit;
+            outline: none;
+            font-weight: 500;
+          "
+        />
+        
+        <!-- Submit Button with High Contrast -->
+        <button 
+          type="submit"
+          style="
+            padding: 20px 32px;
+            background: white;
+            color: #6b4423;
+            border: none;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            font-family: inherit;
+          "
+          onmouseover="this.style.background='#fdfcfb'; this.style.transform='scale(1.02)'"
+          onmouseout="this.style.background='white'; this.style.transform='scale(1)'"
+        >
+          Get Cash Offers →
+        </button>
+      </form>
+    </div>
+    
+    <!-- Security Message - Below Form -->
+    <p style="font-size: 13px; color: rgba(255, 255, 255, 0.75); margin: 0; display: flex; align-items: center; justify-content: center; gap: 6px;">
+      <span>🔒</span> <span>Your information is secure and will never be sold</span>
+    </p>
+    
+  </div>
+</section>
+
+<!-- Responsive Styles -->
+<style>
+  .final-cta-form input:focus {
+    box-shadow: inset 0 0 0 2px #6b4423;
+  }
+  
+  .final-cta-form input::placeholder {
+    color: #9e9691;
+    font-weight: 400;
+  }
+  
+  @media (max-width: 650px) {
+    .final-cta-form {
+      flex-direction: column !important;
+      max-width: 90% !important;
+    }
+    
+    .final-cta-form input {
+      border-radius: 12px 12px 0 0 !important;
+      text-align: center;
+      padding: 18px 20px !important;
+    }
+    
+    .final-cta-form button {
+      border-radius: 0 0 12px 12px !important;
+      padding: 18px 24px !important;
+    }
+  }
+</style>
+
 
   <!-- Footer -->
   <footer>
