@@ -12,247 +12,38 @@
   
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <title>About Propcash | We Built a Marketplace, Not Another Cash Buyer</title>
-  <meta name="description" content="Learn how Propcash uses technology to create a competitive marketplace for cash home offers. We're not buyers—we're the platform connecting sellers with 500+ investors." />
-  <link rel="canonical" href="https://propcash.co/about" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="About Propcash | The Cash Offer Marketplace" />
-  <meta property="og:description" content="We're changing how cash offers work. Learn about our marketplace platform and why competition beats single-buyer scenarios." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://propcash.co/about" />
-  <meta property="og:image" content="https://propcash.co/assets/og-image.jpg" />
+  <title>Contact Us | Propcash</title>
+  <meta name="description" content="Have questions? Our Marketplace Specialists are available 24/7 to help. Contact us by phone, text, or email." />
+  <link rel="canonical" href="https://propcash.co/contact" />
 
   <!-- Favicon -->
-  <link rel="icon" href="/assets/favicon.png" />
+  <link rel="icon" href="/assets/mascot-favicon.png" />
   
   <!-- Styles -->
   <link rel="stylesheet" href="/assets/styles-v2.css" />
   
   <style>
-    /* About Page Specific Styles */
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    .contact-method {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .contact-method:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(107, 68, 35, 0.15);
+    }
+    
+    .status-indicator {
+      width: 10px;
+      height: 10px;
+      background: #10b981;
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulse 2s ease-in-out infinite;
     }
     
     @keyframes pulse {
       0%, 100% { opacity: 1; }
       50% { opacity: 0.5; }
-    }
-    
-    .hero-about {
-      background: linear-gradient(135deg, #fdfcfb 0%, #f8f5f2 100%);
-      padding: 80px 0;
-      text-align: center;
-    }
-    
-    .timeline-container {
-      position: relative;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 1fr 60px 1fr;
-      gap: 40px;
-      margin-bottom: 60px;
-      align-items: center;
-    }
-    
-    .timeline-item:nth-child(even) .timeline-content:first-child {
-      order: 3;
-    }
-    
-    .timeline-content {
-      background: white;
-      padding: 32px;
-      border-radius: 12px;
-      border: 1px solid #e5e0db;
-      box-shadow: 0 4px 20px rgba(107, 68, 35, 0.08);
-    }
-    
-    .timeline-dot {
-      width: 60px;
-      height: 60px;
-      background: #6b4423;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      color: white;
-      font-weight: 700;
-      box-shadow: 0 0 0 8px #f8f5f2;
-      position: relative;
-      z-index: 2;
-    }
-    
-    .timeline-dot::before {
-      content: '';
-      position: absolute;
-      width: 2px;
-      height: 120px;
-      background: linear-gradient(180deg, #6b4423, rgba(107, 68, 35, 0.2));
-      top: 60px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    
-    .timeline-item:last-child .timeline-dot::before {
-      display: none;
-    }
-    
-    .comparison-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2px;
-      background: #e5e0db;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(107, 68, 35, 0.08);
-    }
-    
-    .comparison-header {
-      padding: 24px;
-      font-weight: 700;
-      font-size: 20px;
-      text-align: center;
-      background: white;
-    }
-    
-    .comparison-header.highlight {
-      background: #6b4423;
-      color: white;
-    }
-    
-    .comparison-row {
-      display: contents;
-    }
-    
-    .comparison-cell {
-      padding: 20px 24px;
-      background: white;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    
-    .comparison-cell.highlight {
-      background: #f8f5f2;
-    }
-    
-    .check-icon {
-      color: #10b981;
-      font-size: 20px;
-      flex-shrink: 0;
-    }
-    
-    .x-icon {
-      color: #dc2626;
-      font-size: 20px;
-      flex-shrink: 0;
-    }
-    
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 32px;
-      margin-top: 48px;
-    }
-    
-    .team-card {
-      background: white;
-      border-radius: 12px;
-      padding: 32px;
-      text-align: center;
-      border: 1px solid #e5e0db;
-      transition: all 0.3s;
-    }
-    
-    .team-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(107, 68, 35, 0.15);
-      border-color: #6b4423;
-    }
-    
-    .team-avatar {
-      width: 100px;
-      height: 100px;
-      background: linear-gradient(135deg, #f8f5f2, #fdfcfb);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 40px;
-      margin: 0 auto 20px;
-      border: 3px solid #e5e0db;
-    }
-    
-    .value-card {
-      background: white;
-      border-radius: 12px;
-      padding: 32px;
-      border-left: 4px solid #6b4423;
-      box-shadow: 0 4px 20px rgba(107, 68, 35, 0.08);
-    }
-    
-    .stat-large {
-      font-size: 56px;
-      font-weight: 700;
-      color: #6b4423;
-      font-family: 'Cormorant Garamond', serif;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    
-    .network-visual {
-      position: relative;
-      height: 300px;
-      background: linear-gradient(135deg, #f8f5f2 0%, #fdfcfb 100%);
-      border-radius: 16px;
-      border: 1px solid #e5e0db;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .network-node {
-      width: 12px;
-      height: 12px;
-      background: #6b4423;
-      border-radius: 50%;
-      position: absolute;
-      box-shadow: 0 0 20px rgba(107, 68, 35, 0.5);
-      animation: pulse 2s ease-in-out infinite;
-    }
-    
-    @media (max-width: 768px) {
-      .timeline-item {
-        grid-template-columns: 40px 1fr;
-        gap: 20px;
-      }
-      
-      .timeline-item .timeline-content:first-child {
-        display: none;
-      }
-      
-      .timeline-item:nth-child(even) .timeline-content:first-child {
-        order: initial;
-      }
-      
-      .comparison-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .comparison-row {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1px;
-      }
     }
   </style>
 </head>
@@ -265,14 +56,14 @@
         <a href="/" class="brand">Propcash</a>
         
         <div class="desktop-nav">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
+          <a href="/#how-it-works">How it Works</a>
+          <a href="/#why-marketplace">Why Propcash</a>
+          <a href="/#reviews">Reviews</a>
         </div>
         
         <div class="header-ctas">
-          <a href="tel:6155524296" class="cta-phone">📞 (615) 552-4296</a>
-          <a href="/#start" class="cta-header">Start Your Auction</a>
+          <a href="tel:6155524296" class="cta-phone">Text us (615) 552-4296</a>
+          <a href="/#start" class="cta-header">Get Cash Offers</a>
         </div>
         
         <button class="mobile-menu-toggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
@@ -280,571 +71,182 @@
     </div>
     
     <nav class="mobile-nav" id="mobileNav">
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
-      <a href="tel:6155524296" class="mobile-cta">📞 Call Now</a>
+      <a href="/#how-it-works">How it Works</a>
+      <a href="/#why-marketplace">Why Propcash</a>
+      <a href="/#reviews">Reviews</a>
+      <a href="tel:6155524296" class="mobile-cta">Text Now</a>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero-about">
+  <section style="background: linear-gradient(135deg, #fdfcfb 0%, #f8f5f2 100%); padding: 80px 0 60px; text-align: center;">
+    <div class="container" style="max-width: 700px;">
+      <h1 style="margin-bottom: 16px;">We're here to help</h1>
+      <p class="text-large text-muted" style="margin-bottom: 24px;">
+        Our Marketplace Specialists are available around the clock to answer your questions and guide you through the process.
+      </p>
+      
+      <!-- Availability Badge -->
+      <div style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; background: white; border-radius: 24px; box-shadow: 0 4px 12px rgba(107, 68, 35, 0.1); border: 1px solid #e5e0db;">
+        <span class="status-indicator"></span>
+        <span style="font-weight: 600; color: #1a1512; font-size: 14px;">Available 24/7</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Methods -->
+  <section style="background: white; padding: 80px 0;">
     <div class="container" style="max-width: 900px;">
-      <h1 style="margin-bottom: 24px;">We're Not Buyers.<br>We're the Platform That Connects You With Them.</h1>
-      <p class="text-large text-muted" style="max-width: 700px; margin: 0 auto; line-height: 1.7;">
-        Propcash is a technology company that built the first marketplace for cash home offers. We don't buy houses—we create competition between investors who do.
-      </p>
-    </div>
-  </section>
-
-  <!-- The Problem We Saw -->
-  <section style="background: white; padding: 80px 0;">
-    <div class="container">
-      <div style="max-width: 1100px; margin: 0 auto;">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
-          
-          <div>
-            <h2 style="margin-bottom: 24px;">The Problem We Saw</h2>
-            <p style="color: #6b625a; font-size: 18px; line-height: 1.7; margin-bottom: 20px;">
-              In 2019, a family member was trying to sell an inherited property. They contacted several "we buy houses" companies, hoping to get fair offers.
-            </p>
-            <p style="color: #6b625a; font-size: 18px; line-height: 1.7; margin-bottom: 20px;">
-              Every single one lowballed them. The offers ranged from 60-70% of market value, with no explanation for how they arrived at those numbers.
-            </p>
-            <p style="color: #6b625a; font-size: 18px; line-height: 1.7; margin-bottom: 20px;">
-              <strong style="color: #1a1512;">The problem wasn't the offers themselves—it was the lack of competition.</strong> With only one buyer giving one offer, sellers had no leverage and no way to know if the price was fair.
-            </p>
-            <p style="color: #6b625a; font-size: 18px; line-height: 1.7;">
-              That's when we realized: <strong style="color: #6b4423;">the cash home buying industry needed a marketplace.</strong>
-            </p>
-          </div>
-          
-          <div>
-            <div style="background: #f8f5f2; border-radius: 16px; padding: 40px; border: 1px solid #e5e0db;">
-              <h3 style="margin-bottom: 24px; text-align: center;">Single Buyer Problem</h3>
-              
-              <div style="display: flex; flex-direction: column; gap: 16px;">
-                <div style="display: flex; align-items: start; gap: 12px;">
-                  <div class="x-icon">✗</div>
-                  <div style="color: #6b625a;">One company, one offer—take it or leave it</div>
-                </div>
-                
-                <div style="display: flex; align-items: start; gap: 12px;">
-                  <div class="x-icon">✗</div>
-                  <div style="color: #6b625a;">No way to verify if offer is fair</div>
-                </div>
-                
-                <div style="display: flex; align-items: start; gap: 12px;">
-                  <div class="x-icon">✗</div>
-                  <div style="color: #6b625a;">Buyers profit from lowballing</div>
-                </div>
-                
-                <div style="display: flex; align-items: start; gap: 12px;">
-                  <div class="x-icon">✗</div>
-                  <div style="color: #6b625a;">No transparency in pricing</div>
-                </div>
-                
-                <div style="display: flex; align-items: start; gap: 12px;">
-                  <div class="x-icon">✗</div>
-                  <div style="color: #6b625a;">Sellers have zero leverage</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Solution -->
-  <section style="background: #f8f5f2; padding: 80px 0;">
-    <div class="container">
-      <div style="max-width: 1100px; margin: 0 auto;">
-        
-        <div style="text-align: center; margin-bottom: 64px;">
-          <h2>Our Solution: A Marketplace for Cash Offers</h2>
-          <p class="text-large text-muted" style="max-width: 800px; margin: 16px auto 0;">
-            We built technology to create what the industry was missing: real competition. When multiple investors compete for the same property, sellers win.
-          </p>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
-          
-          <div class="card" style="background: white;">
-            <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px;">🔗</div>
-            <h3>Proprietary Matching Technology</h3>
-            <p style="color: #6b625a; margin-bottom: 0;">
-              Our algorithm analyzes your property and instantly connects you with investors in our network who specialize in your area and property type.
-            </p>
-          </div>
-          
-          <div class="card" style="background: white;">
-            <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px;">🏆</div>
-            <h3>Competition Drives Better Offers</h3>
-            <p style="color: #6b625a; margin-bottom: 0;">
-              When investors know they're competing, they submit their best offers. Our data shows marketplace listings get offers averaging 8.3% higher.
-            </p>
-          </div>
-          
-          <div class="card" style="background: white;">
-            <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px;">📊</div>
-            <h3>Complete Transparency</h3>
-            <p style="color: #6b625a; margin-bottom: 0;">
-              See all offers side-by-side. Compare prices, closing timelines, and investor profiles. Make an informed decision with complete information.
-            </p>
-          </div>
-          
-          <div class="card" style="background: white;">
-            <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px;">🎯</div>
-            <h3>Aligned Incentives</h3>
-            <p style="color: #6b625a; margin-bottom: 0;">
-              We only succeed when you get great offers. Our platform fee comes from successful matches, so we're incentivized to create competition, not lowball you.
-            </p>
-          </div>
-          
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
-  <!-- By the Numbers -->
-  <section style="background: white; padding: 80px 0;">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 64px;">
-        <h2>By the Numbers</h2>
-        <p class="text-large text-muted">Data that proves the marketplace model works.</p>
-      </div>
       
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; max-width: 1100px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-bottom: 64px;">
         
-        <div style="text-align: center;">
-          <div class="stat-large">547</div>
-          <div style="font-weight: 600; color: #1a1512; margin-bottom: 8px;">Active Investors</div>
-          <div style="font-size: 14px; color: #6b625a;">Vetted professionals in our network</div>
-        </div>
+        <!-- Phone -->
+        <a href="tel:6155524296" class="contact-method" style="background: #f8f5f2; padding: 40px 32px; border-radius: 12px; text-decoration: none; border: 1px solid #e5e0db; text-align: center;">
+          <div style="width: 64px; height: 64px; background: #6b4423; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 4px 12px rgba(107, 68, 35, 0.3);">
+            <span style="font-size: 28px;">📞</span>
+          </div>
+          <h3 style="margin: 0 0 8px; color: #1a1512; font-size: 20px;">Call Us</h3>
+          <p style="margin: 0 0 16px; color: #6b625a; font-size: 14px;">Speak with a specialist now</p>
+          <div style="font-size: 20px; font-weight: 700; color: #6b4423; letter-spacing: -0.5px;">
+            (615) 552-4296
+          </div>
+        </a>
         
-        <div style="text-align: center;">
-          <div class="stat-large">3.2</div>
-          <div style="font-weight: 600; color: #1a1512; margin-bottom: 8px;">Avg. Offers Per Property</div>
-          <div style="font-size: 14px; color: #6b625a;">Real competition for every listing</div>
-        </div>
+        <!-- Text/SMS -->
+        <a href="sms:6155524296?&body=Hi%2C%20I%20have%20a%20question%20about%20Propcash." class="contact-method" style="background: #f8f5f2; padding: 40px 32px; border-radius: 12px; text-decoration: none; border: 1px solid #e5e0db; text-align: center;">
+          <div style="width: 64px; height: 64px; background: #6b4423; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 4px 12px rgba(107, 68, 35, 0.3);">
+            <span style="font-size: 28px;">💬</span>
+          </div>
+          <h3 style="margin: 0 0 8px; color: #1a1512; font-size: 20px;">Text Us</h3>
+          <p style="margin: 0 0 16px; color: #6b625a; font-size: 14px;">Get a quick response via SMS</p>
+          <div style="font-size: 20px; font-weight: 700; color: #6b4423; letter-spacing: -0.5px;">
+            (615) 552-4296
+          </div>
+        </a>
         
-        <div style="text-align: center;">
-          <div class="stat-large">8.3%</div>
-          <div style="font-weight: 600; color: #1a1512; margin-bottom: 8px;">Higher Than Single Buyer</div>
-          <div style="font-size: 14px; color: #6b625a;">Average increase vs. one-offer scenarios</div>
-        </div>
-        
-        <div style="text-align: center;">
-          <div class="stat-large">50</div>
-          <div style="font-weight: 600; color: #1a1512; margin-bottom: 8px;">States Covered</div>
-          <div style="font-size: 14px; color: #6b625a;">Nationwide investor network</div>
-        </div>
+        <!-- Email -->
+        <a href="mailto:hello@propcash.co" class="contact-method" style="background: #f8f5f2; padding: 40px 32px; border-radius: 12px; text-decoration: none; border: 1px solid #e5e0db; text-align: center;">
+          <div style="width: 64px; height: 64px; background: #6b4423; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 4px 12px rgba(107, 68, 35, 0.3);">
+            <span style="font-size: 28px;">✉️</span>
+          </div>
+          <h3 style="margin: 0 0 8px; color: #1a1512; font-size: 20px;">Email Us</h3>
+          <p style="margin: 0 0 16px; color: #6b625a; font-size: 14px;">We typically respond within 1 hour</p>
+          <div style="font-size: 18px; font-weight: 700; color: #6b4423;">
+            hello@propcash.co
+          </div>
+        </a>
         
       </div>
-    </div>
-  </section>
 
-  <!-- How We're Different - Comparison Table -->
-  <section style="background: #f8f5f2; padding: 80px 0;">
-    <div class="container">
-      <div style="max-width: 1000px; margin: 0 auto;">
-        
-        <div style="text-align: center; margin-bottom: 48px;">
-          <h2>How We're Different From Traditional Cash Buyers</h2>
-          <p class="text-large text-muted">It's not just marketing—it's a fundamentally different model.</p>
+      <!-- Contact Form -->
+      <div style="background: #f8f5f2; padding: 48px; border-radius: 16px; border: 1px solid #e5e0db;">
+        <div style="text-align: center; margin-bottom: 32px;">
+          <h2 style="margin-bottom: 8px;">Send us a message</h2>
+          <p style="color: #6b625a; margin: 0;">Fill out the form below and we'll get back to you within minutes</p>
         </div>
         
-        <div class="comparison-grid">
-          <!-- Headers -->
-          <div class="comparison-header">Traditional Cash Buyer</div>
-          <div class="comparison-header highlight">Propcash Marketplace</div>
+        <form action="https://formspree.io/f/mdkponlo" method="POST" style="max-width: 600px; margin: 0 auto;">
+          <input type="hidden" name="page" value="Contact Us" />
           
-          <!-- Row 1 -->
-          <div class="comparison-row">
-            <div class="comparison-cell">
-              <span class="x-icon">✗</span>
-              <span style="color: #6b625a;">One buyer, one offer</span>
-            </div>
-            <div class="comparison-cell highlight">
-              <span class="check-icon">✓</span>
-              <span style="color: #1a1512; font-weight: 500;">500+ investors, multiple offers</span>
-            </div>
-          </div>
-          
-          <!-- Row 2 -->
-          <div class="comparison-row">
-            <div class="comparison-cell">
-              <span class="x-icon">✗</span>
-              <span style="color: #6b625a;">Their price is final</span>
-            </div>
-            <div class="comparison-cell highlight">
-              <span class="check-icon">✓</span>
-              <span style="color: #1a1512; font-weight: 500;">Competition drives prices up</span>
-            </div>
-          </div>
-          
-          <!-- Row 3 -->
-          <div class="comparison-row">
-            <div class="comparison-cell">
-              <span class="x-icon">✗</span>
-              <span style="color: #6b625a;">Profit from lowballing you</span>
-            </div>
-            <div class="comparison-cell highlight">
-              <span class="check-icon">✓</span>
-              <span style="color: #1a1512; font-weight: 500;">Profit from better matches</span>
-            </div>
-          </div>
-          
-          <!-- Row 4 -->
-          <div class="comparison-row">
-            <div class="comparison-cell">
-              <span class="x-icon">✗</span>
-              <span style="color: #6b625a;">Opaque pricing</span>
-            </div>
-            <div class="comparison-cell highlight">
-              <span class="check-icon">✓</span>
-              <span style="color: #1a1512; font-weight: 500;">Full transparency</span>
-            </div>
-          </div>
-          
-          <!-- Row 5 -->
-          <div class="comparison-row">
-            <div class="comparison-cell">
-              <span class="x-icon">✗</span>
-              <span style="color: #6b625a;">You have no leverage</span>
-            </div>
-            <div class="comparison-cell highlight">
-              <span class="check-icon">✓</span>
-              <span style="color: #1a1512; font-weight: 500;">You choose the best offer</span>
-            </div>
-          </div>
-          
-          <!-- Row 6 -->
-          <div class="comparison-row">
-            <div class="comparison-cell">
-              <span class="x-icon">✗</span>
-              <span style="color: #6b625a;">No way to verify fairness</span>
-            </div>
-            <div class="comparison-cell highlight">
-              <span class="check-icon">✓</span>
-              <span style="color: #1a1512; font-weight: 500;">Market validation through competition</span>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Network -->
-  <section style="background: white; padding: 80px 0;">
-    <div class="container">
-      <div style="max-width: 1100px; margin: 0 auto;">
-        
-        <div style="text-align: center; margin-bottom: 48px;">
-          <h2>Our Investor Network</h2>
-          <p class="text-large text-muted" style="max-width: 800px; margin: 16px auto 0;">
-            We don't work with just anyone. Every investor in our network is thoroughly vetted to ensure they're professional, reliable, and have the funds to close.
-          </p>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 64px;">
-          
-          <div>
-            <h3 style="margin-bottom: 24px;">Our Vetting Process</h3>
+          <div style="display: grid; gap: 20px; margin-bottom: 20px;">
             
-            <div style="display: flex; flex-direction: column; gap: 24px;">
-              <div style="display: flex; gap: 16px;">
-                <div style="width: 40px; height: 40px; background: #6b4423; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; flex-shrink: 0;">1</div>
-                <div>
-                  <div style="font-weight: 600; color: #1a1512; margin-bottom: 4px;">Proof of Funds</div>
-                  <div style="font-size: 14px; color: #6b625a;">Must demonstrate liquid capital for cash purchases</div>
-                </div>
-              </div>
-              
-              <div style="display: flex; gap: 16px;">
-                <div style="width: 40px; height: 40px; background: #6b4423; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; flex-shrink: 0;">2</div>
-                <div>
-                  <div style="font-weight: 600; color: #1a1512; margin-bottom: 4px;">Track Record Review</div>
-                  <div style="font-size: 14px; color: #6b625a;">Minimum 10 successful closings required</div>
-                </div>
-              </div>
-              
-              <div style="display: flex; gap: 16px;">
-                <div style="width: 40px; height: 40px; background: #6b4423; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; flex-shrink: 0;">3</div>
-                <div>
-                  <div style="font-weight: 600; color: #1a1512; margin-bottom: 4px;">Compliance Check</div>
-                  <div style="font-size: 14px; color: #6b625a;">Background check and business verification</div>
-                </div>
-              </div>
-              
-              <div style="display: flex; gap: 16px;">
-                <div style="width: 40px; height: 40px; background: #6b4423; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; flex-shrink: 0;">4</div>
-                <div>
-                  <div style="font-weight: 600; color: #1a1512; margin-bottom: 4px;">Performance Monitoring</div>
-                  <div style="font-size: 14px; color: #6b625a;">Ongoing evaluation based on seller feedback</div>
-                </div>
-              </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <input 
+                type="text" 
+                name="name" 
+                placeholder="Your Name" 
+                required 
+                style="padding: 16px 20px; border-radius: 10px; border: 1px solid #e5e0db; background: white; font-size: 16px; font-family: inherit;"
+              />
+              <input 
+                type="tel" 
+                name="phone" 
+                placeholder="Phone Number" 
+                required 
+                style="padding: 16px 20px; border-radius: 10px; border: 1px solid #e5e0db; background: white; font-size: 16px; font-family: inherit;"
+              />
             </div>
+            
+            <input 
+              type="email" 
+              name="email" 
+              placeholder="Email Address" 
+              required 
+              style="padding: 16px 20px; border-radius: 10px; border: 1px solid #e5e0db; background: white; font-size: 16px; font-family: inherit;"
+            />
+            
+            <textarea 
+              name="message" 
+              placeholder="How can we help you?" 
+              rows="5" 
+              required 
+              style="padding: 16px 20px; border-radius: 10px; border: 1px solid #e5e0db; background: white; font-size: 16px; font-family: inherit; resize: vertical;"
+            ></textarea>
+            
           </div>
           
-          <div class="network-visual">
-            <div style="position: relative; z-index: 10; text-align: center;">
-              <div style="font-size: 48px; margin-bottom: 16px;">🌐</div>
-              <div style="font-size: 24px; font-weight: 700; color: #6b4423; margin-bottom: 8px;">500+ Vetted Investors</div>
-              <div style="font-size: 16px; color: #6b625a;">Across all 50 states</div>
-            </div>
-            <!-- Animated nodes will be added via JS -->
-            <div id="networkNodes"></div>
-          </div>
+          <button 
+            type="submit" 
+            class="btn btn-primary btn-large btn-block"
+            style="width: 100%; padding: 18px; font-size: 18px;"
+          >
+            Send Message →
+          </button>
           
-        </div>
-        
-        <div style="background: #f8f5f2; border-radius: 16px; padding: 40px; border: 1px solid #e5e0db; text-align: center;">
-          <h3 style="margin-bottom: 16px;">Why Investors Join Our Network</h3>
-          <p style="color: #6b625a; max-width: 700px; margin: 0 auto 32px; line-height: 1.7;">
-            Investors pay a platform fee to access our marketplace because it gives them high-quality leads and reduces their marketing costs. This fee structure means we're incentivized to create value for both sellers and investors.
+          <p style="text-align: center; font-size: 13px; color: #6b625a; margin: 16px 0 0;">
+            🔒 Your information is secure and will never be sold
           </p>
-          <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
-            <div>
-              <div style="font-size: 32px; font-weight: 700; color: #6b4423; margin-bottom: 4px;">Pre-qualified</div>
-              <div style="font-size: 14px; color: #6b625a;">Sellers ready to transact</div>
-            </div>
-            <div>
-              <div style="font-size: 32px; font-weight: 700; color: #6b4423; margin-bottom: 4px;">Lower CAC</div>
-              <div style="font-size: 14px; color: #6b625a;">Better than paid ads</div>
-            </div>
-            <div>
-              <div style="font-size: 32px; font-weight: 700; color: #6b4423; margin-bottom: 4px;">Fair Competition</div>
-              <div style="font-size: 14px; color: #6b625a;">Level playing field</div>
-            </div>
-          </div>
-        </div>
-        
+        </form>
       </div>
+
     </div>
   </section>
 
-  <!-- How We Make Money -->
-  <section style="background: #6b4423; color: white; padding: 80px 0;">
-    <div class="container">
-      <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-        
-        <h2 style="color: white; margin-bottom: 24px;">How We Make Money (And Why It Matters)</h2>
-        <p style="font-size: 18px; line-height: 1.7; margin-bottom: 40px; color: rgba(255, 255, 255, 0.9);">
-          Transparency is core to what we do, so let's be clear about our business model:
-        </p>
-        
-        <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 40px; border: 1px solid rgba(255, 255, 255, 0.2); text-align: left; margin-bottom: 40px;">
-          <div style="display: flex; gap: 20px; align-items: start; margin-bottom: 24px;">
-            <div style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0;">💰</div>
-            <div>
-              <h3 style="color: white; margin-bottom: 12px;">Platform Fee from Investors</h3>
-              <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.7; margin: 0;">
-                When an investor successfully closes on a property through our marketplace, they pay us a platform fee (typically 2-3% of the sale price). This is similar to how Airbnb charges hosts, or how StockX charges sellers.
-              </p>
-            </div>
-          </div>
-          
-          <div style="display: flex; gap: 20px; align-items: start;">
-            <div style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0;">🎯</div>
-            <div>
-              <h3 style="color: white; margin-bottom: 12px;">Sellers Pay Nothing</h3>
-              <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.7; margin: 0;">
-                You never pay us a fee. Not to use the platform, not to receive offers, not when you close. The service is completely free for sellers because investors cover the platform cost.
-              </p>
-            </div>
-          </div>
-        </div>
-        
-        <div style="border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 40px;">
-          <h3 style="color: white; margin-bottom: 16px;">Why This Model Works Better</h3>
-          <p style="font-size: 16px; line-height: 1.7; color: rgba(255, 255, 255, 0.9); max-width: 700px; margin: 0 auto;">
-            Because we only get paid when deals close successfully, our incentives are aligned with yours. We're motivated to create competition and get you multiple strong offers—not to lowball you on a single offer. The better the offers you get, the more likely a deal happens, and the more successful we are.
-          </p>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Team -->
-  <section style="background: white; padding: 80px 0;">
-    <div class="container">
-      <div style="max-width: 1100px; margin: 0 auto;">
-        
-        <div style="text-align: center; margin-bottom: 48px;">
-          <h2>Meet the Marketplace Team</h2>
-          <p class="text-large text-muted">Platform specialists dedicated to creating the best experience for sellers and investors.</p>
-        </div>
-        
-        <div class="team-grid">
-          
-          <div class="team-card">
-            <div class="team-avatar">👨‍💼</div>
-            <h3 style="margin-bottom: 8px;">Platform Operations</h3>
-            <p style="color: #6b625a; font-size: 15px; margin-bottom: 16px;">
-              Manages the marketplace, ensures smooth matching between sellers and investors, and handles day-to-day operations.
-            </p>
-            <div style="padding: 12px; background: #f8f5f2; border-radius: 8px; font-size: 14px; color: #6b4423; font-weight: 600;">
-              Your main point of contact
-            </div>
-          </div>
-          
-          <div class="team-card">
-            <div class="team-avatar">👩‍💻</div>
-            <h3 style="margin-bottom: 8px;">Technology Team</h3>
-            <p style="color: #6b625a; font-size: 15px; margin-bottom: 16px;">
-              Builds and maintains the matching algorithm, investor dashboard, and seller interface that powers the marketplace.
-            </p>
-            <div style="padding: 12px; background: #f8f5f2; border-radius: 8px; font-size: 14px; color: #6b4423; font-weight: 600;">
-              The engine behind it all
-            </div>
-          </div>
-          
-          <div class="team-card">
-            <div class="team-avatar">🤝</div>
-            <h3 style="margin-bottom: 8px;">Investor Relations</h3>
-            <p style="color: #6b625a; font-size: 15px; margin-bottom: 16px;">
-              Vets new investors, maintains network quality, and ensures investors follow platform guidelines and deliver great experiences.
-            </p>
-            <div style="padding: 12px; background: #f8f5f2; border-radius: 8px; font-size: 14px; color: #6b4423; font-weight: 600;">
-              Quality control
-            </div>
-          </div>
-          
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Commitment -->
-  <section style="background: #f8f5f2; padding: 80px 0;">
-    <div class="container">
-      <div style="max-width: 1000px; margin: 0 auto;">
-        
-        <div style="text-align: center; margin-bottom: 48px;">
-          <h2>Our Commitment to Sellers</h2>
-          <p class="text-large text-muted">These aren't just values—they're how we built the platform.</p>
-        </div>
-        
-        <div style="display: grid; gap: 32px;">
-          
-          <div class="value-card">
-            <h3 style="margin-bottom: 12px;">Competition Over Monopoly</h3>
-            <p style="color: #6b625a; line-height: 1.7; margin: 0;">
-              We believe sellers deserve options, not ultimatums. Every property listing goes to multiple investors because competition creates better outcomes for everyone.
-            </p>
-          </div>
-          
-          <div class="value-card">
-            <h3 style="margin-bottom: 12px;">Transparency Over Opacity</h3>
-            <p style="color: #6b625a; line-height: 1.7; margin: 0;">
-              You'll see every offer, every investor profile, and every closing term. We believe in complete transparency because that's how trust is built.
-            </p>
-          </div>
-          
-          <div class="value-card">
-            <h3 style="margin-bottom: 12px;">Technology Over Tradition</h3>
-            <p style="color: #6b625a; line-height: 1.7; margin: 0;">
-              We use data and algorithms to create fair matches. Our platform removes bias and creates efficiency that benefits both sellers and investors.
-            </p>
-          </div>
-          
-          <div class="value-card">
-            <h3 style="margin-bottom: 12px;">Your Control Always</h3>
-            <p style="color: #6b625a; line-height: 1.7; margin: 0;">
-              We're a platform, not a decision-maker. You choose which offer to accept (if any). You choose your closing timeline. You're always in complete control.
-            </p>
-          </div>
-          
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section style="background: white; padding: 80px 0;">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 48px;">
-        <h2>What Sellers Say About the Marketplace</h2>
-      </div>
-      
-      <div class="testimonials-grid">
-        
-        <div class="testimonial-card">
-          <div class="testimonial-rating">★★★★★</div>
-          <p class="testimonial-text">
-            "The marketplace model makes so much sense. I received 4 offers and could compare them side-by-side. The highest was $22,000 more than a local 'we buy houses' company had offered me the week before."
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">RL</div>
-            <div class="testimonial-info">
-              <h4>Robert L.</h4>
-              <div class="testimonial-location">Denver, CO</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="testimonial-card">
-          <div class="testimonial-rating">★★★★★</div>
-          <p class="testimonial-text">
-            "I was skeptical at first, but the transparency won me over. Being able to see investor profiles and track records made me feel confident in my decision. This is how it should work."
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">MK</div>
-            <div class="testimonial-info">
-              <h4>Maria K.</h4>
-              <div class="testimonial-location">Austin, TX</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="testimonial-card">
-          <div class="testimonial-rating">★★★★★</div>
-          <p class="testimonial-text">
-            "Finally, a cash buyer service that doesn't feel like they're taking advantage of you. The competition between investors meant I got a fair price. Highly recommend."
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">JS</div>
-            <div class="testimonial-info">
-              <h4>James S.</h4>
-              <div class="testimonial-location">Nashville, TN</div>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
-  <!-- Final CTA -->
-  <section style="background: linear-gradient(135deg, #6b4423, #8b5e3c); color: white; padding: 80px 0; text-align: center;">
+  <!-- FAQ Section -->
+  <section style="background: #fdfcfb; padding: 80px 0;">
     <div class="container" style="max-width: 800px;">
-      <h2 style="color: white; margin-bottom: 24px;">Experience the Marketplace Difference</h2>
-      <p style="font-size: 20px; color: rgba(255, 255, 255, 0.9); margin-bottom: 40px; line-height: 1.7;">
-        See what happens when 500+ investors compete for your property. Submit your listing and start receiving offers within 24 hours.
+      <div style="text-align: center; margin-bottom: 48px;">
+        <h2>Common questions</h2>
+        <p class="text-muted">Quick answers to help you get started</p>
+      </div>
+      
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; border: 1px solid #e5e0db;">
+          <h3 style="margin: 0 0 12px; font-size: 18px; color: #1a1512;">How quickly will I get offers?</h3>
+          <p style="margin: 0; color: #6b625a; line-height: 1.6;">
+            Most properties receive their first offer within 24 hours. Our network of 500+ investors is constantly reviewing new listings, so you'll typically hear back very quickly.
+          </p>
+        </div>
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; border: 1px solid #e5e0db;">
+          <h3 style="margin: 0 0 12px; font-size: 18px; color: #1a1512;">Is there any cost or obligation?</h3>
+          <p style="margin: 0; color: #6b625a; line-height: 1.6;">
+            Zero. Propcash is 100% free to use, and you're never obligated to accept any offer. If none of the offers work for you, simply walk away—no fees, no pressure.
+          </p>
+        </div>
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; border: 1px solid #e5e0db;">
+          <h3 style="margin: 0 0 12px; font-size: 18px; color: #1a1512;">What happens after I submit my property?</h3>
+          <p style="margin: 0; color: #6b625a; line-height: 1.6;">
+            Your listing is distributed to our network of vetted investors. As offers come in, our Marketplace Specialists review them and present you with the best options. You choose what works for you.
+          </p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section style="background: #6b4423; color: white; padding: 80px 0; text-align: center;">
+    <div class="container" style="max-width: 600px;">
+      <h2 style="color: white; margin-bottom: 16px;">Ready to get started?</h2>
+      <p style="font-size: 18px; color: rgba(255, 255, 255, 0.95); margin-bottom: 32px;">
+        Submit your property and start receiving competing cash offers within 24 hours.
       </p>
-      
-      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-        <a href="/#start" class="btn btn-white btn-large">
-          Start Your Auction →
-        </a>
-        <a href="/contact" class="btn btn-secondary btn-large" style="border-color: white; color: white;">
-          Questions? Contact Us
-        </a>
-      </div>
-      
-      <div style="margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.2); display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; font-size: 15px;">
-        <div>✓ Zero fees for sellers</div>
-        <div>✓ No obligation to accept</div>
-        <div>✓ 24-hour response time</div>
-      </div>
+      <a href="/#start" class="btn btn-white btn-large">
+        Get Cash Offers →
+      </a>
     </div>
   </section>
 
@@ -868,7 +270,7 @@
       <div class="footer-bottom">
         <div>
           <p class="footer-disclaimer">
-            <strong>Disclaimer:</strong> Propcash operates a marketplace platform connecting property sellers with independent investors. We do not purchase properties directly. All offers come from third-party investors in our network. We are not acting as licensed real estate agents or brokers and do not offer legal, tax, or financial advice.
+            <strong>Disclaimer:</strong> Propcash operates a marketplace platform connecting property sellers with independent investors. We do not purchase properties directly. All offers come from third-party investors in our network. We are not acting as licensed real estate agents or brokers and do not offer legal, tax, or financial advice. Propcash and/or its affiliates may acquire contractual rights to properties listed on the platform and assign those rights to investors in our network.
           </p>
           <p style="margin: 0;">© <span id="year"></span> Propcash. All rights reserved.</p>
         </div>
@@ -882,42 +284,16 @@
 
   <!-- Sticky Helper -->
   <div class="helper-container">
-    <a href="/#start" class="helper-phone" aria-label="Start your auction">
-      🚀 Start Auction
+    <a href="tel:6155524296" class="helper-phone" aria-label="Call us now">
+      Call Now
     </a>
   </div>
 
   <!-- JavaScript -->
   <script src="/assets/scripts.js"></script>
-  
   <script>
-    // Create network visualization nodes
-    function createNetworkNodes() {
-      const container = document.getElementById('networkNodes');
-      if (!container) return;
-      
-      const positions = [
-        { left: '15%', top: '20%' },
-        { left: '25%', top: '60%' },
-        { left: '45%', top: '15%' },
-        { left: '55%', top: '75%' },
-        { left: '70%', top: '30%' },
-        { left: '80%', top: '65%' },
-        { left: '35%', top: '85%' },
-        { left: '65%', top: '50%' },
-      ];
-      
-      positions.forEach((pos, i) => {
-        const node = document.createElement('div');
-        node.className = 'network-node';
-        node.style.left = pos.left;
-        node.style.top = pos.top;
-        node.style.animationDelay = `${i * 0.3}s`;
-        container.appendChild(node);
-      });
-    }
-    
-    document.addEventListener('DOMContentLoaded', createNetworkNodes);
+    // Update year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
