@@ -1329,3 +1329,9 @@ footer nav a:hover {
     display: none;
   }
 }
+
+@media (max-width: 480px) {
+  .mobile-step-card {
+    padding: 32px 20px !important;
+  }
+}
