@@ -243,49 +243,33 @@ header {
   align-items: center;
 }
 
-/* Mobile Menu */
-.mobile-menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 28px;
-  color: var(--primary);
-  cursor: pointer;
-  padding: var(--space-sm);
-  transition: var(--transition);
-}
-
-.mobile-menu-toggle:hover {
-  opacity: 0.7;
-}
-
+/* Mobile Navigation Styles */
 .mobile-nav {
   display: none;
   flex-direction: column;
-  background: var(--card);
-  border-top: 1px solid var(--border-light);
-  box-shadow: var(--shadow-lg);
+  background: white;
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
-  padding: var(--space-lg);
-  z-index: 999;
+  padding: 16px 0;
+  box-shadow: 0 8px 24px rgba(107, 68, 35, 0.15);
+  border-top: 1px solid #e5e0db;
+  z-index: 1000;
 }
 
-.mobile-nav.open {
+.mobile-nav.active {
   display: flex;
 }
 
 .mobile-nav a {
-  padding: var(--space-md) 0;
-  font-family: var(--font-heading);
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--primary);
+  padding: 14px 24px;
+  color: #1a1512;
   text-decoration: none;
-  border-bottom: 1px solid var(--border-light);
-  transition: var(--transition);
+  font-weight: 500;
+  font-size: 16px;
+  transition: background 0.2s, color 0.2s;
+  border-bottom: 1px solid #f0ebe6;
 }
 
 .mobile-nav a:last-child {
@@ -293,19 +277,52 @@ header {
 }
 
 .mobile-nav a:hover {
-  opacity: 0.7;
-  padding-left: var(--space-sm);
+  background: #f8f5f2;
+  color: #6b4423;
 }
 
-.mobile-cta {
-  background: var(--primary);
-  color: white !important;
-  border-radius: var(--radius);
-  padding: var(--space-md) var(--space-lg) !important;
+.mobile-nav .mobile-cta {
+  margin: 16px 24px 8px;
+  padding: 16px 24px;
+  background: #6b4423;
+  color: white;
   text-align: center;
-  margin-top: var(--space-md);
-  box-shadow: var(--shadow);
-  border-bottom: none !important;
+  border-radius: 8px;
+  font-weight: 700;
+  border-bottom: none;
+}
+
+.mobile-nav .mobile-cta:hover {
+  background: #5a371c;
+  color: white;
+}
+
+/* Show/hide based on screen size */
+@media (min-width: 769px) {
+  .mobile-menu-toggle {
+    display: none;
+  }
+  .mobile-nav {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-nav,
+  .header-ctas {
+    display: none;
+  }
+  .mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    color: #1a1512;
+  }
 }
 
 /* ==========================================
