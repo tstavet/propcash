@@ -325,6 +325,18 @@ header {
   }
 }
 
+.logo {
+  height: 36px; /* adjust for your design */
+  width: auto;
+  display: block;
+}
+
+.brand {
+  display: flex;
+  align-items: left;
+}
+
+
 /* ==========================================
    BUTTONS & CTAs
    ========================================== */
