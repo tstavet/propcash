@@ -161,33 +161,83 @@
 
 <body>
   <!-- Header -->
-  <header>
-    <div class="container">
-      <nav class="nav">
-        <a href="/" class="brand">Propcash</a>
-        
-        <div class="desktop-nav">
-          <a href="#how-it-works">How it Works</a>
-          <a href="#why-marketplace">Why Propcash</a>
-          <a href="#reviews">Reviews</a>
-        </div>
-        
-        <div class="header-ctas">
-          <a href="tel:6155524296" class="cta-phone">Text us (615) 552-4296</a>
-          <a href="#start" class="cta-header">Get Cash Offers</a>
-        </div>
-        
-        <button class="mobile-menu-toggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
-      </nav>
-    </div>
-    
-    <nav class="mobile-nav" id="mobileNav">
-      <a href="#how-it-works">How it Works</a>
-      <a href="#why-marketplace">Why Propcash</a>
-      <a href="#reviews">Reviews</a>
-      <a href="tel:6155524296" class="mobile-cta">Get Cash Offers</a>
+
+  <!-- Header -->
+<header>
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="brand">Propcash</a>
+      
+      <div class="desktop-nav">
+        <a href="#how-it-works">How it Works</a>
+        <a href="#why-marketplace">Why Propcash</a>
+        <a href="#reviews">Reviews</a>
+      </div>
+      
+      <div class="header-ctas">
+        <a href="tel:6155524296" class="cta-phone">Text us (615) 552-4296</a>
+        <a href="#start" class="cta-header">Get Cash Offers</a>
+      </div>
+      
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
     </nav>
-  </header>
+  </div>
+  
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#start">Sell Your Home</a>
+    <a href="#how-it-works">How it Works</a>
+    <a href="#why-marketplace">Why Propcash?</a>
+    <a href="/about">About Us</a>
+    <a href="/contact">Contact Us</a>
+    <a href="/careers">Careers</a>
+    <a href="/faq">FAQ</a>
+    <a href="/investors">Investors</a>
+    <a href="#start" class="mobile-cta">Get Cash Offers →</a>
+  </nav>
+</header>
+
+<!-- Mobile Menu Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const mobileNav = document.getElementById('mobileNav');
+  
+  if (mobileMenuToggle && mobileNav) {
+    mobileMenuToggle.addEventListener('click', function() {
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      
+      // Toggle menu visibility
+      mobileNav.classList.toggle('active');
+      
+      // Update aria-expanded
+      this.setAttribute('aria-expanded', !isExpanded);
+      
+      // Toggle hamburger icon
+      this.textContent = isExpanded ? '☰' : '✕';
+    });
+    
+    // Close menu when clicking a link
+    const mobileLinks = mobileNav.querySelectorAll('a');
+    mobileLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileNav.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenuToggle.textContent = '☰';
+      });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!mobileNav.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+        mobileNav.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenuToggle.textContent = '☰';
+      }
+    });
+  }
+});
+</script>
+  
 
 <!-- Hero Section - Marketplace Focus with Background Image -->
 <section class="hero" style="
