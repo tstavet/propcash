@@ -22,24 +22,37 @@
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 <body>
-  <!-- Header -->
-  <div id="header"></div>
-  <script>
-    (async () => {
-      const mount = document.getElementById('header');
-      const res = await fetch('/assets/header.html', { cache: 'no-store' });
-      const html = await res.text();
-      mount.innerHTML = html;
-      const btn = mount.querySelector('.mobile-menu-toggle');
-      const menu = mount.querySelector('#mobileNav');
-      if (btn && menu) {
-        btn.addEventListener('click', () => {
-          menu.classList.toggle('open');
-          btn.textContent = menu.classList.contains('open') ? '✕' : '☰';
-        });
-      }
-    })();
-  </script>
+
+  <header>
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="brand">Propcash</a>
+      
+    <!-- Desktop Navigation -->
+<div class="desktop-nav">
+  <a href="/#how-it-works">How it Works</a>
+  <a href="/#why-marketplace">Why Propcash</a>
+  <a href="/faq">FAQ</a>
+</div>
+
+<!-- Desktop CTA -->
+<div class="header-ctas">
+  <a href="/#start" class="cta-header">Get Cash Offers</a>
+</div>
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
+    </nav>
+  </div>
+  
+<!-- Mobile Navigation -->
+<nav class="mobile-nav" id="mobileNav">
+  <a href="/#how-it-works">How it Works</a>
+  <a href="/#why-marketplace">Why Propcash</a>
+  <a href="/faq">FAQ</a>
+  <a href="/#start" class="mobile-cta">Get Cash Offers →</a>
+</nav>
+
+</header>
 
   <main class="container" style="max-width: 900px; padding: 60px 0;">
     <h1>Terms of Service</h1>
