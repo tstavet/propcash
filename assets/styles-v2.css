@@ -1354,69 +1354,71 @@ footer nav a:hover {
 }
 
 /* ===========================================
-   DUAL CTA COMPONENT
+   DUAL CTA BUTTONS
    =========================================== */
 
-.dual-cta {
-  display: inline-flex;
+.cta-buttons {
+  display: flex;
   align-items: center;
-  gap: 0;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(107, 68, 35, 0.25);
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
-.dual-cta-primary {
+/* Outline Button (Ghost Style) */
+.cta-btn-outline {
   display: inline-flex;
   align-items: center;
-  padding: 18px 32px;
-  background: #6b4423;
-  color: white;
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.dual-cta-primary:hover {
-  background: #5a371c;
-}
-
-.dual-cta-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 18px 24px;
-  background: #f8f5f2;
+  justify-content: center;
+  padding: 16px 32px;
+  background: #fdfcfb;
   color: #6b4423;
   font-size: 16px;
   font-weight: 600;
   text-decoration: none;
-  border-left: 1px solid #e5e0db;
+  border-radius: 50px;
+  border: 2px solid #6b4423;
   transition: all 0.3s ease;
 }
 
-.dual-cta-secondary:hover {
-  background: #f0ebe6;
+.cta-btn-outline:hover {
+  background: #6b4423;
+  color: white;
 }
 
-/* Responsive: Stack on mobile */
-@media (max-width: 480px) {
-  .dual-cta {
+/* Solid Button */
+.cta-btn-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  background: #6b4423;
+  color: #f8f5f2;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  border: 2px solid #6b4423;
+  transition: all 0.3s ease;
+}
+
+.cta-btn-solid:hover {
+  background: #5a371c;
+  border-color: #5a371c;
+}
+
+/* Responsive */
+@media (max-width: 580px) {
+  .cta-buttons {
     flex-direction: column;
-    width: 100%;
-    max-width: 280px;
+    gap: 12px;
   }
   
-  .dual-cta-primary,
-  .dual-cta-secondary {
+  .cta-btn-outline,
+  .cta-btn-solid {
     width: 100%;
-    justify-content: center;
-    padding: 16px 24px;
-  }
-  
-  .dual-cta-secondary {
-    border-left: none;
-    border-top: 1px solid #e5e0db;
+    max-width: 300px;
   }
 }
+```
