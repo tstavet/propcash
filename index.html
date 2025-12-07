@@ -1030,180 +1030,29 @@ Most "we buy houses" companies send you one low-ball offer. Propcash drives up t
     </div>
   </section>
   
-<!-- Final CTA Section - Two-Step Form -->
+<!-- CTA Section with Button -->
 <section id="start" style="background: #6b4423; color: white; padding: 80px 0; text-align: center;">
   <div class="container" style="max-width: 700px;">
     
-    <!-- Headline -->
     <h2 style="color: white; margin-bottom: 12px; font-size: clamp(28px, 5vw, 42px); line-height: 1.2;">
       Get competing cash offers in 24 hours
     </h2>
     
-    <!-- Subheadline -->
     <p style="font-size: 18px; color: rgba(255, 255, 255, 0.95); margin-bottom: 32px; line-height: 1.5; font-weight: 500;">
       500+ investors compete for your property. Zero fees, zero obligation.
     </p>
     
-    <!-- Two-Step Form Container -->
-    <div style="max-width: 500px; margin: 0 auto 24px;">
-      
-      <!-- Step 1: Address -->
-      <div id="formStep1">
-        <div style="margin-bottom: 16px;">
-          <input 
-            type="text" 
-            id="addressInput"
-            placeholder="Enter your property address"
-            style="
-              width: 100%;
-              padding: 18px 20px;
-              font-size: 16px;
-              border: none;
-              border-radius: 10px;
-              background: white;
-              color: #1a1512;
-              font-family: inherit;
-              outline: none;
-              font-weight: 500;
-              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            "
-          />
-        </div>
-        <button 
-          type="button"
-          onclick="showStep2()"
-          style="
-            width: 100%;
-            padding: 18px 32px;
-            background: #1a1512;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: inherit;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-          "
-          onmouseover="this.style.background='#2d2520'; this.style.transform='translateY(-2px)'"
-          onmouseout="this.style.background='#1a1512'; this.style.transform='translateY(0)'"
-        >
-          Get My Cash Offers →
-        </button>
-        
-        <!-- Step indicator -->
-        <p style="font-size: 13px; color: rgba(255, 255, 255, 0.6); margin-top: 16px;">
-          Step 1 of 2
-        </p>
-      </div>
-      
-      <!-- Step 2: Contact Info (Hidden Initially) -->
-      <div id="formStep2" style="display: none;">
-        <form action="https://formspree.io/f/mdkponlo" method="POST">
-          <input type="hidden" name="page" value="Final CTA" />
-          <input type="hidden" name="address" id="addressHidden" />
-          
-          <!-- Progress bar -->
-          <div style="background: rgba(255,255,255,0.2); border-radius: 4px; height: 6px; margin-bottom: 24px; overflow: hidden;">
-            <div style="background: white; width: 100%; height: 100%; border-radius: 4px;"></div>
-          </div>
-          
-          <p style="font-size: 16px; color: white; margin-bottom: 20px; font-weight: 500;">
-            Almost done! Where should we send your offers?
-          </p>
-          
-          <div style="display: flex; flex-direction: column; gap: 12px;">
-            <input 
-              type="text" 
-              name="name" 
-              placeholder="Your name"
-              required
-              style="
-                width: 100%;
-                padding: 16px 20px;
-                font-size: 16px;
-                border: none;
-                border-radius: 10px;
-                background: white;
-                color: #1a1512;
-                font-family: inherit;
-                outline: none;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-              "
-            />
-            <input 
-              type="tel" 
-              name="phone" 
-              placeholder="Phone number"
-              required
-              style="
-                width: 100%;
-                padding: 16px 20px;
-                font-size: 16px;
-                border: none;
-                border-radius: 10px;
-                background: white;
-                color: #1a1512;
-                font-family: inherit;
-                outline: none;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-              "
-            />
-            <input 
-              type="email" 
-              name="email" 
-              placeholder="Email address"
-              required
-              style="
-                width: 100%;
-                padding: 16px 20px;
-                font-size: 16px;
-                border: none;
-                border-radius: 10px;
-                background: white;
-                color: #1a1512;
-                font-family: inherit;
-                outline: none;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-              "
-            />
-            <button 
-              type="submit"
-              style="
-                width: 100%;
-                padding: 18px 32px;
-                background: #1a1512;
-                color: white;
-                border: none;
-                border-radius: 10px;
-                font-size: 18px;
-                font-weight: 700;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                font-family: inherit;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-              "
-              onmouseover="this.style.background='#2d2520'; this.style.transform='translateY(-2px)'"
-              onmouseout="this.style.background='#1a1512'; this.style.transform='translateY(0)'"
-            >
-              Submit My Property →
-            </button>
-          </div>
-          
-          <!-- Back link -->
-          <p style="margin-top: 16px;">
-            <a href="#" onclick="showStep1(); return false;" style="color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: underline;">
-              ← Back to edit address
-            </a>
-          </p>
-        </form>
-      </div>
-      
-    </div>
-
+    <!-- CTA Button -->
+    <a 
+      href="https://your-typeform-url.typeform.com/to/xxxxx" 
+      target="_blank"
+      class="cta-button-main"
+    >
+      Get My Cash Offers →
+    </a>
+    
     <!-- Trust Indicators -->
-    <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 24px; font-size: 14px; color: rgba(255, 255, 255, 0.9);">
+    <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 32px; font-size: 14px; color: rgba(255, 255, 255, 0.9);">
       <div style="display: flex; align-items: center; gap: 6px;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="20 6 9 17 4 12"></polyline>
@@ -1220,12 +1069,12 @@ Most "we buy houses" companies send you one low-ball offer. Propcash drives up t
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="20 6 9 17 4 12"></polyline>
         </svg>
-        <span>2-minute setup</span>
+        <span>Takes 2 minutes</span>
       </div>
     </div>
     
     <!-- Security Message -->
-    <p style="font-size: 13px; color: rgba(255, 255, 255, 0.75); margin: 0; display: flex; align-items: center; justify-content: center; gap: 6px;">
+    <p style="font-size: 13px; color: rgba(255, 255, 255, 0.75); margin-top: 24px; display: flex; align-items: center; justify-content: center; gap: 6px;">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
         <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
@@ -1235,27 +1084,6 @@ Most "we buy houses" companies send you one low-ball offer. Propcash drives up t
     
   </div>
 </section>
-
-<!-- Two-Step Form Script -->
-<script>
-function showStep2() {
-  const address = document.getElementById('addressInput').value;
-  if (address.trim() === '') {
-    document.getElementById('addressInput').focus();
-    document.getElementById('addressInput').style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15), inset 0 0 0 2px #dc2626';
-    return;
-  }
-  document.getElementById('addressHidden').value = address;
-  document.getElementById('formStep1').style.display = 'none';
-  document.getElementById('formStep2').style.display = 'block';
-}
-
-function showStep1() {
-  document.getElementById('formStep1').style.display = 'block';
-  document.getElementById('formStep2').style.display = 'none';
-}
-</script>
-  
   <!-- Footer -->
 <footer>
   <div class="container">
