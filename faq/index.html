@@ -435,3 +435,44 @@
     }
   }
 </style>
+
+  <!-- Mobile Menu Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const mobileNav = document.getElementById('mobileNav');
+  
+  if (mobileMenuToggle && mobileNav) {
+    // Toggle menu on button click
+    mobileMenuToggle.addEventListener('click', function() {
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      
+      mobileNav.classList.toggle('active');
+      this.setAttribute('aria-expanded', !isExpanded);
+      this.textContent = isExpanded ? '☰' : '✕';
+    });
+    
+    // Close menu when clicking a link
+    const mobileLinks = mobileNav.querySelectorAll('a');
+    mobileLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileNav.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenuToggle.textContent = '☰';
+      });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!mobileNav.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+        mobileNav.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenuToggle.textContent = '☰';
+      }
+    });
+  }
+});
+</script>
+
+</body>
+</html>
