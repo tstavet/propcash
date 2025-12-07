@@ -162,57 +162,18 @@
 <body>
   <!-- Header -->
 
-  <!-- Header -->
-<header>
-  <div class="container">
-    <nav class="nav">
-      <a href="/" class="brand">Propcash</a>
-      
-      <div class="desktop-nav">
-        <a href="#how-it-works">How it Works</a>
-        <a href="#why-marketplace">Why Propcash</a>
-        <a href="#reviews">Reviews</a>
-      </div>
-      
-      <div class="header-ctas">
-        <a href="tel:6155524296" class="cta-phone">Text us (615) 552-4296</a>
-        <a href="#start" class="cta-header">Get Cash Offers</a>
-      </div>
-      
-      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
-    </nav>
-  </div>
-  
-  <nav class="mobile-nav" id="mobileNav">
-    <a href="#start">Sell Your Home</a>
-    <a href="#how-it-works">How it Works</a>
-    <a href="#why-marketplace">Why Propcash?</a>
-    <a href="/about">About Us</a>
-    <a href="/contact">Contact Us</a>
-    <a href="/careers">Careers</a>
-    <a href="/faq">FAQ</a>
-    <a href="/investors">Investors</a>
-    <a href="#start" class="mobile-cta">Get Cash Offers →</a>
-  </nav>
-</header>
-
-<!-- Mobile Menu Script -->
-<script>
+// Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
   const mobileMenuToggle = document.getElementById('mobileMenuToggle');
   const mobileNav = document.getElementById('mobileNav');
   
   if (mobileMenuToggle && mobileNav) {
+    // Toggle menu on button click
     mobileMenuToggle.addEventListener('click', function() {
       const isExpanded = this.getAttribute('aria-expanded') === 'true';
       
-      // Toggle menu visibility
       mobileNav.classList.toggle('active');
-      
-      // Update aria-expanded
       this.setAttribute('aria-expanded', !isExpanded);
-      
-      // Toggle hamburger icon
       this.textContent = isExpanded ? '☰' : '✕';
     });
     
@@ -236,8 +197,62 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
-</script>
+<!-- Header -->
+<header>
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="brand">Propcash</a>
+      
+      <!-- Desktop Navigation -->
+      <div class="desktop-nav">
+        
+        <!-- Dropdown: Sell Your Home -->
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle">
+            Sell Your Home
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left: 6px;">
+              <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/#how-it-works">How it Works</a>
+            <a href="/#why-marketplace">Why Propcash</a>
+            <a href="/faq">FAQ</a>
+            <a href="/contact">Contact Us</a>
+          </div>
+        </div>
+        
+        <a href="/about">About Us</a>
+        <a href="/investors">Investors</a>
+      </div>
+      
+      <!-- Desktop CTA -->
+      <div class="header-ctas">
+        <a href="/#start" class="cta-header">Get Cash Offers</a>
+      </div>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
+    </nav>
+  </div>
   
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-section">
+      <div class="mobile-nav-label">Sell Your Home</div>
+      <a href="/#how-it-works">How it Works</a>
+      <a href="/#why-marketplace">Why Propcash?</a>
+      <a href="/faq">FAQ</a>
+      <a href="/contact">Contact Us</a>
+    </div>
+    <div class="mobile-nav-divider"></div>
+    <a href="/about">About Us</a>
+    <a href="/investors">Investors</a>
+    <a href="/careers">Careers</a>
+    <a href="/#start" class="mobile-cta">Get Cash Offers →</a>
+  </nav>
+
+</header>
 
 <!-- Hero Section - Marketplace Focus with Background Image -->
 <section class="hero" style="
@@ -1251,3 +1266,5 @@ We send your property to our national network of 500+ vetted cash investors. Mor
     }
   }
 </style>
+
+  
