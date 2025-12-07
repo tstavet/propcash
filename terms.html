@@ -275,6 +275,31 @@
   }
 </style>
 
+  <!-- Mobile Responsive Styles for Footer -->
+<style>
+  @media (max-width: 768px) {
+    footer .container > div:first-child {
+      grid-template-columns: 1fr !important;
+      gap: 32px !important;
+    }
+  }
+</style>
+
+<!-- Footer Year Script -->
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<!-- Mobile Responsive Styles for Footer -->
+<style>
+  @media (max-width: 768px) {
+    footer .container > div:first-child {
+      grid-template-columns: 1fr !important;
+      gap: 32px !important;
+    }
+  }
+</style>
+
   <!-- Mobile Menu Script -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
