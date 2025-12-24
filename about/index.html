@@ -325,7 +325,164 @@
       gap: 20px !important;
     }
   }
-    
+
+      * Comparison Section - Redesigned */
+.comparison-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.comparison-column {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(107, 68, 35, 0.08);
+  border: 1px solid #e5e0db;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.comparison-column:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(107, 68, 35, 0.12);
+}
+
+.comparison-column-header {
+  padding: 24px;
+  text-align: center;
+  border-bottom: 1px solid #e5e0db;
+  position: relative;
+}
+
+.comparison-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1512;
+}
+
+.recommended-badge {
+  display: inline-block;
+  margin-left: 12px;
+  padding: 4px 12px;
+  background: #6b4423;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 20px;
+  vertical-align: middle;
+}
+
+/* Traditional column styling */
+.comparison-traditional .comparison-column-header {
+  background: #fdfcfb;
+}
+
+/* Propcash column styling */
+.comparison-propcash {
+  border: 2px solid #6b4423;
+}
+
+.comparison-propcash .comparison-column-header {
+  background: linear-gradient(135deg, #f8f5f2 0%, #fdfcfb 100%);
+}
+
+/* List styling */
+.comparison-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.comparison-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 24px;
+  border-bottom: 1px solid #f0ebe6;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.comparison-list li:last-child {
+  border-bottom: none;
+}
+
+/* Traditional list text */
+.comparison-traditional .comparison-list li span:last-child {
+  color: #6b625a;
+}
+
+/* Propcash list text */
+.comparison-propcash .comparison-list li span:last-child {
+  color: #1a1512;
+  font-weight: 500;
+}
+
+/* Icon styling */
+.icon-x,
+.icon-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.icon-x {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.icon-check {
+  background: #ecfdf5;
+  color: #10b981;
+}
+
+/* ---- MOBILE RESPONSIVE ---- */
+@media (max-width: 768px) {
+  .comparison-wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .comparison-column-header {
+    padding: 20px;
+  }
+  
+  .comparison-label {
+    font-size: 16px;
+    display: block;
+  }
+  
+  .recommended-badge {
+    display: block;
+    margin: 8px auto 0;
+    width: fit-content;
+  }
+  
+  .comparison-list li {
+    padding: 14px 20px;
+    font-size: 14px;
+    gap: 12px;
+  }
+  
+  .icon-x,
+  .icon-check {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .icon-x svg,
+  .icon-check svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+      
   </style>
 </head>
 
@@ -454,7 +611,7 @@
               <line x1="12" y1="8" x2="19" y2="16"></line>
             </svg>
           </div>
-          <h3>Proprietary matching technology</h3>
+          <h3 style="color: #6b4423;">Proprietary matching technology</h3>
           <p style="color: #6b625a; margin-bottom: 0;">
             Our AI-powered algorithm analyzes your property and instantly matches you with investors in our network who specialize in your area and property type.
           </p>
@@ -468,7 +625,7 @@
               <polyline points="17 6 23 6 23 12"></polyline>
             </svg>
           </div>
-          <h3>Competition drives better offers</h3>
+          <h3 style="color: #6b4423;">Competition drives better offers</h3>
           <p style="color: #6b625a; margin-bottom: 0;">
             When investors know they're competing, they submit their best offers. Our data shows marketplace listings get offers averaging 15% higher.
           </p>
@@ -482,7 +639,7 @@
               <circle cx="12" cy="12" r="3"></circle>
             </svg>
           </div>
-          <h3>Complete transparency</h3>
+         <h3 style="color: #6b4423;">Complete transparency</h3>
           <p style="color: #6b625a; margin-bottom: 0;">
             A Marketplace Specialist will keep you fully informed so that you can compare offers, closing timelines, and investor profiles.
           </p>
@@ -497,7 +654,7 @@
               <path d="M9.5 8h5"></path>
             </svg>
           </div>
-          <h3>Aligned incentives</h3>
+         <h3 style="color: #6b4423;">Aligned incentives</h3>
           <p style="color: #6b625a; margin-bottom: 0;">
             We only succeed when you get great offers. Our platform fee comes from successful matches, so we're incentivized to create competition, not lowball you.
           </p>
@@ -513,7 +670,7 @@
   <section style="background: white; padding: 80px 0;">
     <div class="container">
       <div style="text-align: center; margin-bottom: 64px;">
-        <h2>By the Numbers</h2>
+        <h2>By the numbers</h2>
       </div>
       
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; max-width: 1100px; margin: 0 auto;">
@@ -539,97 +696,150 @@
       </div>
     </div>
   </section>
+  
+<!-- ============================================
+     COMPARISON TABLE - REDESIGNED
+     Mobile: Two stacked cards
+     Desktop: Side-by-side columns
+     ============================================ -->
 
-  <!-- How We're Different - Comparison Table -->
-  <section style="background: #f8f5f2; padding: 80px 0;">
-    <div class="container">
-      <div style="max-width: 1000px; margin: 0 auto;">
+<!-- How We're Different - Comparison Table -->
+<section style="background: #f8f5f2; padding: 80px 0;">
+  <div class="container">
+    <div style="max-width: 1000px; margin: 0 auto;">
+      
+      <div style="text-align: center; margin-bottom: 48px;">
+        <h2>Why our marketplace approach is better than traditional cash buyers</h2>
+      </div>
+      
+      <div class="comparison-wrapper">
         
-        <div style="text-align: center; margin-bottom: 48px;">
-          <h2>Why our marketplace approach is better than traditional cash buyers</h2>
+        <!-- Traditional Cash Buyer Column -->
+        <div class="comparison-column comparison-traditional">
+          <div class="comparison-column-header">
+            <span class="comparison-label">Traditional Cash Buyer</span>
+          </div>
+          <ul class="comparison-list">
+            <li>
+              <span class="icon-x">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </span>
+              <span>One buyer, one offer</span>
+            </li>
+            <li>
+              <span class="icon-x">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </span>
+              <span>Their price is final</span>
+            </li>
+            <li>
+              <span class="icon-x">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </span>
+              <span>Profit from lowballing you</span>
+            </li>
+            <li>
+              <span class="icon-x">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </span>
+              <span>Opaque pricing</span>
+            </li>
+            <li>
+              <span class="icon-x">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </span>
+              <span>You have no leverage</span>
+            </li>
+            <li>
+              <span class="icon-x">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </span>
+              <span>No way to verify fairness</span>
+            </li>
+          </ul>
         </div>
         
-        <div class="comparison-grid">
-          <!-- Headers -->
-          <div class="comparison-header">Traditional Cash Buyer</div>
-          <div class="comparison-header highlight">Propcash Marketplace</div>
-          
-          <!-- Row 1 -->
-          <div class="comparison-row">
-            <div class="comparison-cell">
-              <span class="x-icon">✗</span>
-              <span style="color: #6b625a;">One buyer, one offer</span>
-            </div>
-            <div class="comparison-cell highlight">
-              <span class="check-icon">✓</span>
-              <span style="color: #1a1512; font-weight: 500;">500+ investors, multiple offers</span>
-            </div>
+        <!-- Propcash Marketplace Column -->
+        <div class="comparison-column comparison-propcash">
+          <div class="comparison-column-header">
+            <span class="comparison-label">Propcash Marketplace</span>
+            <span class="recommended-badge">Recommended</span>
           </div>
-          
-          <!-- Row 2 -->
-          <div class="comparison-row">
-            <div class="comparison-cell">
-              <span class="x-icon">✗</span>
-              <span style="color: #6b625a;">Their price is final</span>
-            </div>
-            <div class="comparison-cell highlight">
-              <span class="check-icon">✓</span>
-              <span style="color: #1a1512; font-weight: 500;">Competition drives prices up</span>
-            </div>
-          </div>
-          
-          <!-- Row 3 -->
-          <div class="comparison-row">
-            <div class="comparison-cell">
-              <span class="x-icon">✗</span>
-              <span style="color: #6b625a;">Profit from lowballing you</span>
-            </div>
-            <div class="comparison-cell highlight">
-              <span class="check-icon">✓</span>
-              <span style="color: #1a1512; font-weight: 500;">Profit from better matches</span>
-            </div>
-          </div>
-          
-          <!-- Row 4 -->
-          <div class="comparison-row">
-            <div class="comparison-cell">
-              <span class="x-icon">✗</span>
-              <span style="color: #6b625a;">Opaque pricing</span>
-            </div>
-            <div class="comparison-cell highlight">
-              <span class="check-icon">✓</span>
-              <span style="color: #1a1512; font-weight: 500;">Full transparency</span>
-            </div>
-          </div>
-          
-          <!-- Row 5 -->
-          <div class="comparison-row">
-            <div class="comparison-cell">
-              <span class="x-icon">✗</span>
-              <span style="color: #6b625a;">You have no leverage</span>
-            </div>
-            <div class="comparison-cell highlight">
-              <span class="check-icon">✓</span>
-              <span style="color: #1a1512; font-weight: 500;">You choose the best offer</span>
-            </div>
-          </div>
-          
-          <!-- Row 6 -->
-          <div class="comparison-row">
-            <div class="comparison-cell">
-              <span class="x-icon">✗</span>
-              <span style="color: #6b625a;">No way to verify fairness</span>
-            </div>
-            <div class="comparison-cell highlight">
-              <span class="check-icon">✓</span>
-              <span style="color: #1a1512; font-weight: 500;">Market validation through competition</span>
-            </div>
-          </div>
+          <ul class="comparison-list">
+            <li>
+              <span class="icon-check">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span>500+ investors, multiple offers</span>
+            </li>
+            <li>
+              <span class="icon-check">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span>Competition drives prices up</span>
+            </li>
+            <li>
+              <span class="icon-check">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span>Profit from better matches</span>
+            </li>
+            <li>
+              <span class="icon-check">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span>Full transparency</span>
+            </li>
+            <li>
+              <span class="icon-check">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span>You choose the best offer</span>
+            </li>
+            <li>
+              <span class="icon-check">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span>Market validation through competition</span>
+            </li>
+          </ul>
         </div>
         
       </div>
+      
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Our Network -->
   <section style="background: white; padding: 80px 0;">
