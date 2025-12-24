@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="/assets/styles-v2.css" />
   
   <style>
+    /* Investor Page Styles */
+    
     .benefit-card {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -47,52 +49,236 @@
       margin-bottom: 8px;
       line-height: 1;
     }
+    
+    .benefit-icon {
+      width: 64px;
+      height: 64px;
+      background: #6b4423;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    
+    .step-row {
+      display: flex;
+      gap: 32px;
+      align-items: start;
+    }
+    
+    .step-number {
+      flex-shrink: 0;
+      width: 64px;
+      height: 64px;
+      background: #6b4423;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 28px;
+      box-shadow: 0 4px 12px rgba(107, 68, 35, 0.3);
+    }
+    
+    .faq-card {
+      background: white;
+      padding: 32px;
+      border-radius: 12px;
+      border: 1px solid #e5e0db;
+    }
+    
+    .faq-card h3 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      color: #1a1512;
+    }
+    
+    .faq-card p {
+      margin: 0;
+      color: #6b625a;
+      line-height: 1.6;
+    }
+    
+    /* Form Styles */
+    .investor-form-input {
+      padding: 16px 20px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.95);
+      color: #1a1512;
+      font-size: 16px;
+      font-family: inherit;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    .investor-form-input:focus {
+      outline: none;
+      border-color: white;
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+    }
+    
+    .investor-form-input::placeholder {
+      color: #6b625a;
+    }
+    
+    /* ---- MOBILE RESPONSIVE ---- */
+    @media (max-width: 768px) {
+      
+      /* Hero adjustments */
+      .investor-hero {
+        padding: 70px 0 60px !important;
+      }
+      
+      .investor-hero h1 {
+        font-size: 32px !important;
+      }
+      
+      .investor-hero p {
+        font-size: 17px !important;
+      }
+      
+      /* Stats grid - 2x2 on mobile */
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+      }
+      
+      .stat-box {
+        padding: 20px 16px;
+      }
+      
+      .stat-number {
+        font-size: 32px;
+      }
+      
+      /* Benefits grid - single column */
+      .benefits-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+      }
+      
+      .benefit-card {
+        padding: 32px 24px !important;
+      }
+      
+      .benefit-icon {
+        width: 56px;
+        height: 56px;
+      }
+      
+      .benefit-icon svg {
+        width: 26px;
+        height: 26px;
+      }
+      
+      /* How it works steps */
+      .step-row {
+        gap: 20px;
+      }
+      
+      .step-number {
+        width: 52px;
+        height: 52px;
+        font-size: 24px;
+      }
+      
+      .step-row h3 {
+        font-size: 20px !important;
+      }
+      
+      .step-row p {
+        font-size: 15px !important;
+      }
+      
+      /* FAQ cards */
+      .faq-card {
+        padding: 24px 20px;
+      }
+      
+      .faq-card h3 {
+        font-size: 16px;
+      }
+      
+      .faq-card p {
+        font-size: 14px;
+      }
+      
+      /* Testimonial */
+      .testimonial-box {
+        padding: 40px 24px !important;
+      }
+      
+      .testimonial-box p {
+        font-size: 18px !important;
+        padding: 0 !important;
+      }
+      
+      /* CTA Form */
+      .cta-form-container {
+        padding: 28px 20px !important;
+      }
+      
+      /* Footer */
+      footer .container > div:first-child {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .stats-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
   </style>
 </head>
 
 <body>
   <!-- Header -->
   <header>
-  <div class="container">
-    <nav class="nav">
-      <a href="/" class="brand">
-  <img src="/assets/logo.png" alt="Propcash Logo" class="logo">
-</a>     
-      
-    <!-- Desktop Navigation -->
-<div class="desktop-nav">
-  <a href="/#how-it-works">How it Works</a>
-  <a href="/#why-marketplace">Why Propcash</a>
-  <a href="/faq">FAQ</a>
-</div>
+    <div class="container">
+      <nav class="nav">
+        <a href="/" class="brand">
+          <img src="/assets/logo.png" alt="Propcash Logo" class="logo">
+        </a>     
+        
+        <!-- Desktop Navigation -->
+        <div class="desktop-nav">
+          <a href="/#how-it-works">How it Works</a>
+          <a href="/#why-marketplace">Why Propcash</a>
+          <a href="/faq">FAQ</a>
+        </div>
 
-<!-- Desktop CTA -->
-<div class="header-ctas">
-  <a href="/#start" class="cta-header">Get My Cash Offers →</a>
-</div>
-      <!-- Mobile Menu Toggle -->
-      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
-    </nav>
-  </div>
+        <!-- Desktop CTA -->
+        <div class="header-ctas">
+          <a href="/#start" class="cta-header">Get My Cash Offers →</a>
+        </div>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
+      </nav>
+    </div>
   
-<!-- Mobile Navigation -->
-<nav class="mobile-nav" id="mobileNav">
-  <a href="/#how-it-works">How it Works</a>
-  <a href="/#why-marketplace">Why Propcash</a>
-  <a href="/faq">FAQ</a>
-  <a href="/#start" class="mobile-cta">Get My Cash Offers →</a>
-</nav>
-
-</header>
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="/#how-it-works">How it Works</a>
+      <a href="/#why-marketplace">Why Propcash</a>
+      <a href="/faq">FAQ</a>
+      <a href="/#start" class="mobile-cta">Get My Cash Offers →</a>
+    </nav>
+  </header>
 
   <!-- Hero Section -->
-  <section style="background: linear-gradient(135deg, #6b4423 0%, #8b5e3c 100%); color: white; padding: 100px 0; text-align: center; position: relative; overflow: hidden;">
+  <section class="investor-hero" style="background: linear-gradient(135deg, #6b4423 0%, #8b5e3c 100%); color: white; padding: 100px 0; text-align: center; position: relative; overflow: hidden;">
     <!-- Decorative elements -->
     <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.05); border-radius: 50%;"></div>
     <div style="position: absolute; bottom: -80px; left: -80px; width: 300px; height: 300px; background: rgba(255,255,255,0.05); border-radius: 50%;"></div>
     
     <div class="container" style="max-width: 800px; position: relative; z-index: 2;">
-      <h1 style="color: white; margin-bottom: 20px; font-size: clamp(36px, 6vw, 56px);">
+      <h1 style="color: white; margin-bottom: 20px; font-size: clamp(32px, 6vw, 56px);">
         Get exclusive access to motivated seller leads
       </h1>
       <p style="font-size: 20px; color: rgba(255, 255, 255, 0.95); margin-bottom: 40px; line-height: 1.6;">
@@ -107,26 +293,26 @@
   <!-- Stats Section -->
   <section style="background: white; padding: 60px 0;">
     <div class="container" style="max-width: 1000px;">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">
+      <div class="stats-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
         
         <div class="stat-box">
           <div class="stat-number">500+</div>
-          <div style="color: #6b625a; font-weight: 600;">Active Investors</div>
+          <div style="color: #6b625a; font-weight: 600; font-size: 14px;">Active Investors</div>
         </div>
         
         <div class="stat-box">
           <div class="stat-number">3.2</div>
-          <div style="color: #6b625a; font-weight: 600;">Avg. Offers Per Property</div>
+          <div style="color: #6b625a; font-weight: 600; font-size: 14px;">Avg. Offers Per Property</div>
         </div>
         
         <div class="stat-box">
           <div class="stat-number">24hrs</div>
-          <div style="color: #6b625a; font-weight: 600;">Average Response Time</div>
+          <div style="color: #6b625a; font-weight: 600; font-size: 14px;">Average Response Time</div>
         </div>
         
         <div class="stat-box">
           <div class="stat-number">100%</div>
-          <div style="color: #6b625a; font-weight: 600;">Motivated Sellers</div>
+          <div style="color: #6b625a; font-weight: 600; font-size: 14px;">Motivated Sellers</div>
         </div>
         
       </div>
@@ -141,69 +327,89 @@
         <p class="text-large text-muted">Get the competitive advantages that matter most</p>
       </div>
       
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; max-width: 1100px; margin: 0 auto;">
+      <div class="benefits-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1100px; margin: 0 auto;">
         
-        <!-- Benefit 1 -->
+        <!-- Benefit 1: Pre-Qualified Leads -->
         <div class="benefit-card" style="background: white; padding: 40px 32px; border-radius: 12px; text-align: center; border: 1px solid #e5e0db;">
-          <div style="width: 64px; height: 64px; background: #6b4423; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 32px;">
-            🎯
+          <div class="benefit-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="6"></circle>
+              <circle cx="12" cy="12" r="2"></circle>
+            </svg>
           </div>
-          <h3 style="margin: 0 0 12px; font-size: 20px;">Pre-Qualified Leads</h3>
+          <h3 style="margin: 0 0 12px; font-size: 20px; color: #6b4423;">Pre-Qualified Leads</h3>
           <p style="margin: 0; color: #6b625a; line-height: 1.6;">
             Every seller on our platform is motivated and ready to sell. No tire kickers, no cold prospects—just serious opportunities.
           </p>
         </div>
         
-        <!-- Benefit 2 -->
+        <!-- Benefit 2: No Marketing Costs -->
         <div class="benefit-card" style="background: white; padding: 40px 32px; border-radius: 12px; text-align: center; border: 1px solid #e5e0db;">
-          <div style="width: 64px; height: 64px; background: #6b4423; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 32px;">
-            💰
+          <div class="benefit-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              <line x1="2" y1="2" x2="22" y2="22"></line>
+            </svg>
           </div>
-          <h3 style="margin: 0 0 12px; font-size: 20px;">No Marketing Costs</h3>
+          <h3 style="margin: 0 0 12px; font-size: 20px; color: #6b4423;">No Marketing Costs</h3>
           <p style="margin: 0; color: #6b625a; line-height: 1.6;">
             We handle all seller acquisition and marketing. You focus on what you do best—analyzing deals and closing transactions.
           </p>
         </div>
         
-        <!-- Benefit 3 -->
+        <!-- Benefit 3: Transparent Platform -->
         <div class="benefit-card" style="background: white; padding: 40px 32px; border-radius: 12px; text-align: center; border: 1px solid #e5e0db;">
-          <div style="width: 64px; height: 64px; background: #6b4423; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 32px;">
-            📊
+          <div class="benefit-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
           </div>
-          <h3 style="margin: 0 0 12px; font-size: 20px;">Transparent Platform</h3>
+          <h3 style="margin: 0 0 12px; font-size: 20px; color: #6b4423;">Transparent Platform</h3>
           <p style="margin: 0; color: #6b625a; line-height: 1.6;">
             See property details, seller motivation, and competing offer counts. Make informed decisions with complete transparency.
           </p>
         </div>
         
-        <!-- Benefit 4 -->
+        <!-- Benefit 4: Instant Notifications -->
         <div class="benefit-card" style="background: white; padding: 40px 32px; border-radius: 12px; text-align: center; border: 1px solid #e5e0db;">
-          <div style="width: 64px; height: 64px; background: #6b4423; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 32px;">
-            🚀
+          <div class="benefit-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              <line x1="12" y1="2" x2="12" y2="4"></line>
+            </svg>
           </div>
-          <h3 style="margin: 0 0 12px; font-size: 20px;">Instant Notifications</h3>
+          <h3 style="margin: 0 0 12px; font-size: 20px; color: #6b4423;">Instant Notifications</h3>
           <p style="margin: 0; color: #6b625a; line-height: 1.6;">
             Get real-time alerts when new properties match your criteria. Be first to submit competitive offers on deals you want.
           </p>
         </div>
         
-        <!-- Benefit 5 -->
+        <!-- Benefit 5: Market Protection -->
         <div class="benefit-card" style="background: white; padding: 40px 32px; border-radius: 12px; text-align: center; border: 1px solid #e5e0db;">
-          <div style="width: 64px; height: 64px; background: #6b4423; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 32px;">
-            🔒
+          <div class="benefit-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
+            </svg>
           </div>
-          <h3 style="margin: 0 0 12px; font-size: 20px;">Market Protection</h3>
+          <h3 style="margin: 0 0 12px; font-size: 20px; color: #6b4423;">Market Protection</h3>
           <p style="margin: 0; color: #6b625a; line-height: 1.6;">
             We limit investor density per market to ensure healthy deal flow for all partners. Quality over quantity, always.
           </p>
         </div>
         
-        <!-- Benefit 6 -->
+        <!-- Benefit 6: Fast & Simple -->
         <div class="benefit-card" style="background: white; padding: 40px 32px; border-radius: 12px; text-align: center; border: 1px solid #e5e0db;">
-          <div style="width: 64px; height: 64px; background: #6b4423; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 32px;">
-            ⚡
+          <div class="benefit-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
           </div>
-          <h3 style="margin: 0 0 12px; font-size: 20px;">Fast & Simple</h3>
+          <h3 style="margin: 0 0 12px; font-size: 20px; color: #6b4423;">Fast & Simple</h3>
           <p style="margin: 0; color: #6b625a; line-height: 1.6;">
             Submit offers in minutes through our platform. Track deal status, communicate with sellers, and close efficiently.
           </p>
@@ -224,10 +430,8 @@
       <div style="display: flex; flex-direction: column; gap: 48px;">
         
         <!-- Step 1 -->
-        <div style="display: flex; gap: 32px; align-items: start;">
-          <div style="flex-shrink: 0; width: 64px; height: 64px; background: #6b4423; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 28px; box-shadow: 0 4px 12px rgba(107, 68, 35, 0.3);">
-            1
-          </div>
+        <div class="step-row">
+          <div class="step-number">1</div>
           <div style="flex: 1;">
             <h3 style="margin: 0 0 12px; font-size: 24px;">Apply to Join</h3>
             <p style="margin: 0; color: #6b625a; line-height: 1.7; font-size: 17px;">
@@ -237,10 +441,8 @@
         </div>
         
         <!-- Step 2 -->
-        <div style="display: flex; gap: 32px; align-items: start;">
-          <div style="flex-shrink: 0; width: 64px; height: 64px; background: #6b4423; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 28px; box-shadow: 0 4px 12px rgba(107, 68, 35, 0.3);">
-            2
-          </div>
+        <div class="step-row">
+          <div class="step-number">2</div>
           <div style="flex: 1;">
             <h3 style="margin: 0 0 12px; font-size: 24px;">Set Your Criteria</h3>
             <p style="margin: 0; color: #6b625a; line-height: 1.7; font-size: 17px;">
@@ -250,10 +452,8 @@
         </div>
         
         <!-- Step 3 -->
-        <div style="display: flex; gap: 32px; align-items: start;">
-          <div style="flex-shrink: 0; width: 64px; height: 64px; background: #6b4423; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 28px; box-shadow: 0 4px 12px rgba(107, 68, 35, 0.3);">
-            3
-          </div>
+        <div class="step-row">
+          <div class="step-number">3</div>
           <div style="flex: 1;">
             <h3 style="margin: 0 0 12px; font-size: 24px;">Receive Deals & Submit Offers</h3>
             <p style="margin: 0; color: #6b625a; line-height: 1.7; font-size: 17px;">
@@ -274,46 +474,46 @@
         <p class="text-large text-muted">Everything you need to know about joining our network</p>
       </div>
       
-      <div style="display: flex; flex-direction: column; gap: 24px;">
+      <div style="display: flex; flex-direction: column; gap: 20px;">
         
-        <div style="background: white; padding: 32px; border-radius: 12px; border: 1px solid #e5e0db;">
-          <h3 style="margin: 0 0 12px; font-size: 18px; color: #1a1512;">What are the requirements to join?</h3>
-          <p style="margin: 0; color: #6b625a; line-height: 1.6;">
+        <div class="faq-card">
+          <h3>What are the requirements to join?</h3>
+          <p>
             We require proof of funds or financing capability, a track record of closing deals (or equivalent real estate experience), and the ability to close quickly. We vet all investors to maintain marketplace quality.
           </p>
         </div>
         
-        <div style="background: white; padding: 32px; border-radius: 12px; border: 1px solid #e5e0db;">
-          <h3 style="margin: 0 0 12px; font-size: 18px; color: #1a1512;">How much does it cost to join?</h3>
-          <p style="margin: 0; color: #6b625a; line-height: 1.6;">
+        <div class="faq-card">
+          <h3>How much does it cost to join?</h3>
+          <p>
             Pricing varies by market and demand. We offer monthly subscription plans that give you access to all deals in your target areas. Contact us for specific pricing in your markets of interest.
           </p>
         </div>
         
-        <div style="background: white; padding: 32px; border-radius: 12px; border: 1px solid #e5e0db;">
-          <h3 style="margin: 0 0 12px; font-size: 18px; color: #1a1512;">How many investors compete for each deal?</h3>
-          <p style="margin: 0; color: #6b625a; line-height: 1.6;">
+        <div class="faq-card">
+          <h3>How many investors compete for each deal?</h3>
+          <p>
             On average, properties receive 3-5 offers from our network. We carefully manage investor density to ensure everyone gets quality deal flow without excessive competition.
           </p>
         </div>
         
-        <div style="background: white; padding: 32px; border-radius: 12px; border: 1px solid #e5e0db;">
-          <h3 style="margin: 0 0 12px; font-size: 18px; color: #1a1512;">Do you share my offers with other investors?</h3>
-          <p style="margin: 0; color: #6b625a; line-height: 1.6;">
+        <div class="faq-card">
+          <h3>Do you share my offers with other investors?</h3>
+          <p>
             No. Your offer amounts and deal structures remain confidential. Sellers see competing offer counts and ranges, but never specific investor identities or exact figures.
           </p>
         </div>
         
-        <div style="background: white; padding: 32px; border-radius: 12px; border: 1px solid #e5e0db;">
-          <h3 style="margin: 0 0 12px; font-size: 18px; color: #1a1512;">What types of properties are available?</h3>
-          <p style="margin: 0; color: #6b625a; line-height: 1.6;">
+        <div class="faq-card">
+          <h3>What types of properties are available?</h3>
+          <p>
             We work with all residential property types: single-family homes, condos, townhomes, multi-family properties, and land. Properties range from retail-ready to heavy rehab opportunities.
           </p>
         </div>
         
-        <div style="background: white; padding: 32px; border-radius: 12px; border: 1px solid #e5e0db;">
-          <h3 style="margin: 0 0 12px; font-size: 18px; color: #1a1512;">Can I operate in multiple markets?</h3>
-          <p style="margin: 0; color: #6b625a; line-height: 1.6;">
+        <div class="faq-card">
+          <h3>Can I operate in multiple markets?</h3>
+          <p>
             Yes. Set criteria for as many markets as you want. You'll receive notifications for all properties matching your parameters across all your target areas.
           </p>
         </div>
@@ -325,8 +525,8 @@
   <!-- Testimonial -->
   <section style="background: white; padding: 80px 0;">
     <div class="container" style="max-width: 900px;">
-      <div style="background: #f8f5f2; padding: 64px 48px; border-radius: 16px; border: 1px solid #e5e0db; position: relative;">
-        <div style="font-size: 64px; color: rgba(107, 68, 35, 0.15); position: absolute; top: 32px; left: 48px; line-height: 1;">"</div>
+      <div class="testimonial-box" style="background: #f8f5f2; padding: 64px 48px; border-radius: 16px; border: 1px solid #e5e0db; position: relative;">
+        <div style="font-size: 64px; color: rgba(107, 68, 35, 0.15); position: absolute; top: 24px; left: 32px; line-height: 1;">"</div>
         <p style="font-size: 22px; color: #1a1512; line-height: 1.7; margin: 0 0 32px; padding: 0 32px; text-align: center; font-style: italic;">
           Propcash has completely changed my acquisition strategy. I used to spend $15K per month on marketing and still chase dead leads. Now I get 5-10 quality opportunities per week delivered directly to me. The ROI is incredible.
         </p>
@@ -347,8 +547,8 @@
       </p>
       
       <!-- Application Form -->
-      <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 40px; margin-bottom: 32px; border: 1px solid rgba(255, 255, 255, 0.2);">
-        <form action="https://formspree.io/f/mdkponlo" method="POST" style="display: flex; flex-direction: column; gap: 20px; max-width: 500px; margin: 0 auto;">
+      <div class="cta-form-container" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 40px; margin-bottom: 32px; border: 1px solid rgba(255, 255, 255, 0.2);">
+        <form action="https://formspree.io/f/mdkponlo" method="POST" style="display: flex; flex-direction: column; gap: 16px; max-width: 500px; margin: 0 auto;">
           <input type="hidden" name="page" value="Investor Application" />
           
           <input 
@@ -356,7 +556,7 @@
             name="name" 
             placeholder="Full Name" 
             required 
-            style="padding: 16px 20px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.95); color: #1a1512; font-size: 16px; font-family: inherit;"
+            class="investor-form-input"
           />
           
           <input 
@@ -364,7 +564,7 @@
             name="email" 
             placeholder="Email Address" 
             required 
-            style="padding: 16px 20px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.95); color: #1a1512; font-size: 16px; font-family: inherit;"
+            class="investor-form-input"
           />
           
           <input 
@@ -372,7 +572,7 @@
             name="phone" 
             placeholder="Phone Number" 
             required 
-            style="padding: 16px 20px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.95); color: #1a1512; font-size: 16px; font-family: inherit;"
+            class="investor-form-input"
           />
           
           <input 
@@ -380,7 +580,7 @@
             name="markets" 
             placeholder="Target Markets (e.g., Nashville, Atlanta)" 
             required 
-            style="padding: 16px 20px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.95); color: #1a1512; font-size: 16px; font-family: inherit;"
+            class="investor-form-input"
           />
           
           <textarea 
@@ -388,7 +588,8 @@
             placeholder="Briefly describe your investment experience and annual deal volume" 
             rows="4" 
             required 
-            style="padding: 16px 20px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.95); color: #1a1512; font-size: 16px; font-family: inherit; resize: vertical;"
+            class="investor-form-input"
+            style="resize: vertical;"
           ></textarea>
           
           <button 
@@ -416,7 +617,7 @@
         <div>
           <a href="/" class="brand" style="display: block; margin-bottom: 12px;">Propcash</a>
           <p class="text-muted text-small" style="margin: 0; max-width: 300px; line-height: 1.6;">
-            The first cash offer marketplace. Powered by 500+ investors nationwide.
+            Real estate's first competitive marketplace for cash offers. Powered by 500+ investors nationwide.
           </p>
         </div>
         
@@ -425,7 +626,7 @@
           <h4 style="margin: 0 0 20px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #6b4423;">For Sellers</h4>
           <nav style="display: flex; flex-direction: column; gap: 12px;">
             <a href="/#start" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">Sell Your Home</a>
-            <a href="/#how-it-works" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">How It Works</a>
+            <a href="/#how-it-works" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">How it Works</a>
             <a href="/#why-marketplace" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">Why Propcash?</a>
             <a href="/faq" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">FAQ</a>
           </nav>
@@ -449,8 +650,8 @@
             <a href="tel:6155524296" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">
               (615) 552-4296
             </a>
-            <a href="mailto:info@propcash.co" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">
-              info@propcash.co
+            <a href="mailto:hello@propcash.co" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">
+              hello@propcash.co
             </a>
           </div>
         </div>
@@ -476,47 +677,42 @@
   <!-- JavaScript -->
   <script src="/assets/scripts.js"></script>
   <script>
-    // Update year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
   <!-- Mobile Menu Script -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-  const mobileNav = document.getElementById('mobileNav');
-  
-  if (mobileMenuToggle && mobileNav) {
-    // Toggle menu on button click
-    mobileMenuToggle.addEventListener('click', function() {
-      const isExpanded = this.getAttribute('aria-expanded') === 'true';
-      
-      mobileNav.classList.toggle('active');
-      this.setAttribute('aria-expanded', !isExpanded);
-      this.textContent = isExpanded ? '☰' : '✕';
-    });
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileNav = document.getElementById('mobileNav');
     
-    // Close menu when clicking a link
-    const mobileLinks = mobileNav.querySelectorAll('a');
-    mobileLinks.forEach(function(link) {
-      link.addEventListener('click', function() {
-        mobileNav.classList.remove('active');
-        mobileMenuToggle.setAttribute('aria-expanded', 'false');
-        mobileMenuToggle.textContent = '☰';
+    if (mobileMenuToggle && mobileNav) {
+      mobileMenuToggle.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        mobileNav.classList.toggle('active');
+        this.setAttribute('aria-expanded', !isExpanded);
+        this.textContent = isExpanded ? '☰' : '✕';
       });
-    });
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-      if (!mobileNav.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
-        mobileNav.classList.remove('active');
-        mobileMenuToggle.setAttribute('aria-expanded', 'false');
-        mobileMenuToggle.textContent = '☰';
-      }
-    });
-  }
-});
-</script>
+      
+      const mobileLinks = mobileNav.querySelectorAll('a');
+      mobileLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          mobileNav.classList.remove('active');
+          mobileMenuToggle.setAttribute('aria-expanded', 'false');
+          mobileMenuToggle.textContent = '☰';
+        });
+      });
+      
+      document.addEventListener('click', function(event) {
+        if (!mobileNav.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+          mobileNav.classList.remove('active');
+          mobileMenuToggle.setAttribute('aria-expanded', 'false');
+          mobileMenuToggle.textContent = '☰';
+        }
+      });
+    }
+  });
+  </script>
   
 </body>
 </html>
