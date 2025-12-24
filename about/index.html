@@ -254,6 +254,75 @@
         gap: 1px;
       }
     }
+ /* ---- MOBILE RESPONSIVE FIXES ---- */
+  
+  @media (max-width: 768px) {
+    
+    /* Hero padding adjustment */
+    .hero-about {
+      padding: 60px 0;
+    }
+    
+    /* Problem section - stack columns */
+    .hero-about + section .container > div > div[style*="grid-template-columns: 1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+      gap: 32px !important;
+    }
+    
+    /* Solution cards - stack to single column */
+    section:has(h2:contains("Our solution")) .container > div > div[style*="grid-template-columns: 1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+    }
+    
+    /* Our Network section - stack columns */
+    section:has(h2:contains("Our investor network")) div[style*="grid-template-columns: 1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+      gap: 40px !important;
+    }
+    
+    /* Network visual - reduce height on mobile */
+    .network-visual {
+      height: 220px !important;
+    }
+    
+    /* Why investors join - wrap stats */
+    section:has(h3:contains("Why investors join")) div[style*="gap: 40px"] {
+      gap: 24px !important;
+    }
+    
+    /* Stats section - ensure wrapping */
+    div[style*="display: flex"][style*="justify-content: center"][style*="gap: 40px"] {
+      gap: 20px !important;
+    }
+    
+  }
+  
+  /* Fallback for browsers without :has() support */
+  @media (max-width: 768px) {
+    
+    /* Problem We Solve section */
+    .problem-grid {
+      grid-template-columns: 1fr !important;
+      gap: 32px !important;
+    }
+    
+    /* Solution cards grid */
+    .solution-grid {
+      grid-template-columns: 1fr !important;
+    }
+    
+    /* Network section grid */
+    .network-grid {
+      grid-template-columns: 1fr !important;
+      gap: 40px !important;
+    }
+    
+    /* Investor benefits row */
+    .investor-benefits {
+      gap: 20px !important;
+    }
+  }
+    
   </style>
 </head>
 
@@ -305,8 +374,8 @@
   <section style="background: white; padding: 80px 0;">
     <div class="container">
       <div style="max-width: 1100px; margin: 0 auto;">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
-          
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; class="problem-grid">
+          class="problem-grid"
           <div>
             <h2 style="margin-bottom: 24px;">The Problem We Solve</h2>
             <p style="color: #6b625a; font-size: 18px; line-height: 1.7; margin-bottom: 20px;">
@@ -358,57 +427,85 @@
     </div>
   </section>
 
-  <!-- Our Solution -->
-  <section style="background: #f8f5f2; padding: 80px 0;">
-    <div class="container">
-      <div style="max-width: 1100px; margin: 0 auto;">
+<!-- Our Solution -->
+<section style="background: #f8f5f2; padding: 80px 0;">
+  <div class="container">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      
+      <div style="text-align: center; margin-bottom: 64px;">
+        <h2>Our solution: a marketplace for cash offers</h2>
+        <p class="text-large text-muted" style="max-width: 800px; margin: 16px auto 0;">
+          We built technology to create what the industry was missing: real competition. When multiple investors compete for the same property, sellers win.
+        </p>
+      </div>
+      
+      <div class="solution-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
         
-        <div style="text-align: center; margin-bottom: 64px;">
-          <h2>Our solution: a marketplace for cash offers</h2>
-          <p class="text-large text-muted" style="max-width: 800px; margin: 16px auto 0;">
-            We built technology to create what the industry was missing: real competition. When multiple investors compete for the same property, sellers win.
+        <!-- Card 1: Proprietary Matching Technology -->
+        <div class="card" style="background: white;">
+          <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="5" r="3"></circle>
+              <circle cx="5" cy="19" r="3"></circle>
+              <circle cx="19" cy="19" r="3"></circle>
+              <line x1="12" y1="8" x2="5" y2="16"></line>
+              <line x1="12" y1="8" x2="19" y2="16"></line>
+            </svg>
+          </div>
+          <h3>Proprietary Matching Technology</h3>
+          <p style="color: #6b625a; margin-bottom: 0;">
+            Our algorithm analyzes your property and instantly connects you with investors in our network who specialize in your area and property type.
           </p>
         </div>
         
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
-          
-          <div class="card" style="background: white;">
-            <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px;">🔗</div>
-            <h3>Proprietary Matching Technology</h3>
-            <p style="color: #6b625a; margin-bottom: 0;">
-              Our algorithm analyzes your property and instantly connects you with investors in our network who specialize in your area and property type.
-            </p>
+        <!-- Card 2: Competition Drives Better Offers -->
+        <div class="card" style="background: white;">
+          <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
           </div>
-          
-          <div class="card" style="background: white;">
-            <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px;">🏆</div>
-            <h3>Competition Drives Better Offers</h3>
-            <p style="color: #6b625a; margin-bottom: 0;">
-              When investors know they're competing, they submit their best offers. Our data shows marketplace listings get offers averaging 8.3% higher.
-            </p>
+          <h3>Competition Drives Better Offers</h3>
+          <p style="color: #6b625a; margin-bottom: 0;">
+            When investors know they're competing, they submit their best offers. Our data shows marketplace listings get offers averaging 8.3% higher.
+          </p>
+        </div>
+        
+        <!-- Card 3: Complete Transparency -->
+        <div class="card" style="background: white;">
+          <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
           </div>
-          
-          <div class="card" style="background: white;">
-            <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px;">📊</div>
-            <h3>Complete Transparency</h3>
-            <p style="color: #6b625a; margin-bottom: 0;">
-              See all offers side-by-side. Compare prices, closing timelines, and investor profiles. Make an informed decision with complete information.
-            </p>
+          <h3>Complete Transparency</h3>
+          <p style="color: #6b625a; margin-bottom: 0;">
+            See all offers side-by-side. Compare prices, closing timelines, and investor profiles. Make an informed decision with complete information.
+          </p>
+        </div>
+        
+        <!-- Card 4: Aligned Incentives -->
+        <div class="card" style="background: white;">
+          <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path>
+              <path d="M12 5.5v5"></path>
+              <path d="M9.5 8h5"></path>
+            </svg>
           </div>
-          
-          <div class="card" style="background: white;">
-            <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px;">🎯</div>
-            <h3>Aligned Incentives</h3>
-            <p style="color: #6b625a; margin-bottom: 0;">
-              We only succeed when you get great offers. Our platform fee comes from successful matches, so we're incentivized to create competition, not lowball you.
-            </p>
-          </div>
-          
+          <h3>Aligned Incentives</h3>
+          <p style="color: #6b625a; margin-bottom: 0;">
+            We only succeed when you get great offers. Our platform fee comes from successful matches, so we're incentivized to create competition, not lowball you.
+          </p>
         </div>
         
       </div>
+      
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- By the Numbers -->
   <section style="background: white; padding: 80px 0;">
@@ -537,7 +634,6 @@
   <section style="background: white; padding: 80px 0;">
     <div class="container">
       <div style="max-width: 1100px; margin: 0 auto;">
-        
         <div style="text-align: center; margin-bottom: 48px;">
           <h2>Our investor network</h2>
           <p class="text-large text-muted" style="max-width: 800px; margin: 16px auto 0;">
@@ -545,7 +641,7 @@
           </p>
         </div>
         
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 64px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 64px; class="network-grid">
           
           <div>
             <h3 style="margin-bottom: 24px;">Our vetting process</h3>
@@ -622,54 +718,64 @@
     </div>
   </section>
 
-  <!-- How We Make Money -->
-  <section style="background: #6b4423; color: white; padding: 80px 0;">
-    <div class="container">
-      <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+ <!-- How We Make Money -->
+<section style="background: #6b4423; color: white; padding: 80px 0;">
+  <div class="container">
+    <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+      
+      <h2 style="color: white; margin-bottom: 24px;">How we make money (and why it matters)</h2>
+      <p style="font-size: 18px; line-height: 1.7; margin-bottom: 40px; color: rgba(255, 255, 255, 0.9);">
+        Transparency is core to what we do, so let's be clear about our business model:
+      </p>
+      
+      <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 40px; border: 1px solid rgba(255, 255, 255, 0.2); text-align: left; margin-bottom: 40px;">
         
-        <h2 style="color: white; margin-bottom: 24px;">How we make money (and why it matters)</h2>
-        <p style="font-size: 18px; line-height: 1.7; margin-bottom: 40px; color: rgba(255, 255, 255, 0.9);">
-          Transparency is core to what we do, so let's be clear about our business model:
-        </p>
-          
-             <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 40px; border: 1px solid rgba(255, 255, 255, 0.2); text-align: left; margin-bottom: 40px;">
-          <div style="display: flex; gap: 20px; align-items: start; margin-bottom: 24px;">
-
-             <div style="display: flex; gap: 20px; align-items: start;">
-               
-            <div style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0;">🎯</div>
-            <div>
-              <h3 style="color: white; margin-bottom: 12px;">Sellers pay nothing</h3>
-              <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.7; margin: 0;">
-                There are no costs for sellers. Not to submit their property, not to receive offers, not when you close.
-              </p>
-            </div>
+        <!-- Sellers Pay Nothing -->
+        <div style="display: flex; gap: 20px; align-items: start; margin-bottom: 32px;">
+          <div style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="16 12 12 8 8 12"></polyline>
+              <line x1="12" y1="16" x2="12" y2="8"></line>
+            </svg>
+          </div>
+          <div>
+            <h3 style="color: white; margin-bottom: 12px;">Sellers pay nothing</h3>
+            <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.7; margin: 0;">
+              There are no costs for sellers. Not to submit their property, not to receive offers, not when you close.
+            </p>
           </div>
         </div>
-               
-          <div style="display: flex; gap: 20px; align-items: start;">   
-            
-            <div style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0;">💰</div>
-            <div>
-              <h3 style="color: white; margin-bottom: 12px;">Investors only pay when a deal is reached</h3>
-              <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.7; margin: 0;">
-                Investors pay an industry standard fee, but only when they successfully close on an attractive property through our marketplace. 
-              </p>
-            </div>
-          </div>
-
-                       <div style="display: flex; gap: 20px; align-items: start;">   
         
-        <div style="border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 40px;">
-          <h3 style="color: white; margin-bottom: 16px;">Why This Model Works Better</h3>
-          <p style="font-size: 16px; line-height: 1.7; color: rgba(255, 255, 255, 0.9); max-width: 700px; margin: 0 auto;">
-            Because we only get paid when deals close successfully, our incentives are aligned with our members. We're motivated to create deals that align with both sellers and investors. 
-          </p>
+        <!-- Investors Pay on Success -->
+        <div style="display: flex; gap: 20px; align-items: start;">
+          <div style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 style="color: white; margin-bottom: 12px;">Investors only pay when a deal is reached</h3>
+            <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.7; margin: 0;">
+              Investors pay an industry standard fee, but only when they successfully close on an attractive property through our marketplace.
+            </p>
+          </div>
         </div>
         
       </div>
+      
+      <!-- Why This Model Works -->
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 40px;">
+        <h3 style="color: white; margin-bottom: 16px;">Why This Model Works Better</h3>
+        <p style="font-size: 16px; line-height: 1.7; color: rgba(255, 255, 255, 0.9); max-width: 700px; margin: 0 auto;">
+          Because we only get paid when deals close successfully, our incentives are aligned with our members. We're motivated to create deals that align with both sellers and investors.
+        </p>
+      </div>
+      
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Our Team -->
   <section style="background: white; padding: 80px 0;">
