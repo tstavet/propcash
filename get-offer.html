@@ -1,1 +1,1136 @@
-Test
+Get offer multistep · HTML
+Copy
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGV6HXQ0RW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CGV6HXQ0RW');
+  </script>
+  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Get Your Cash Offer | Propcash</title>
+  <meta name="description" content="Get competing cash offers for your property in 24 hours. 500+ investors, zero fees, no obligation. Takes 2 minutes." />
+  <link rel="canonical" href="https://propcash.co/get-offer" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Get Your Cash Offer | Propcash" />
+  <meta property="og:description" content="Get competing cash offers for your property in 24 hours. 500+ investors, zero fees, no obligation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://propcash.co/get-offer" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/mascot-favicon.png" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #fdfcfb 0%, #f8f5f2 100%);
+      min-height: 100vh;
+      color: #1a1512;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3 {
+      font-family: 'DM Sans', sans-serif;
+    }
+    
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(253, 252, 251, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e5e0db;
+      z-index: 100;
+    }
+    
+    .logo {
+      height: 32px;
+    }
+    
+    .header-contact {
+      font-size: 14px;
+      color: #6b625a;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    
+    .header-contact:hover {
+      color: #6b4423;
+    }
+    
+    /* Progress Bar */
+    .progress-container {
+      position: fixed;
+      top: 65px;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: #e5e0db;
+      z-index: 99;
+    }
+    
+    .progress-bar {
+      height: 100%;
+      background: #6b4423;
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+    
+    /* Main Container */
+    .form-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 24px 60px;
+    }
+    
+    /* Step Wrapper */
+    .steps-wrapper {
+      width: 100%;
+      max-width: 600px;
+      position: relative;
+    }
+    
+    /* Individual Step */
+    .step {
+      display: none;
+      animation: fadeInUp 0.4s ease;
+    }
+    
+    .step.active {
+      display: block;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Step Number */
+    .step-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #6b625a;
+      margin-bottom: 16px;
+    }
+    
+    .step-number {
+      width: 28px;
+      height: 28px;
+      background: #6b4423;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 13px;
+    }
+    
+    /* Question */
+    .question {
+      font-size: clamp(28px, 5vw, 38px);
+      font-weight: 600;
+      color: #1a1512;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    
+    .question-hint {
+      font-size: 16px;
+      color: #6b625a;
+      margin-bottom: 32px;
+    }
+    
+    /* Input Styles */
+    .form-input {
+      width: 100%;
+      padding: 20px 24px;
+      border-radius: 12px;
+      border: 2px solid #e5e0db;
+      background: white;
+      font-size: 18px;
+      font-family: inherit;
+      transition: all 0.2s ease;
+      margin-bottom: 24px;
+    }
+    
+    .form-input:focus {
+      outline: none;
+      border-color: #6b4423;
+      box-shadow: 0 0 0 4px rgba(107, 68, 35, 0.1);
+    }
+    
+    .form-input::placeholder {
+      color: #9e9691;
+    }
+    
+    .form-input.large {
+      font-size: 22px;
+      padding: 24px;
+    }
+    
+    /* Select Options (Custom Radio Buttons) */
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    
+    .option-btn {
+      padding: 18px 20px;
+      border: 2px solid #e5e0db;
+      border-radius: 12px;
+      background: white;
+      font-size: 15px;
+      font-family: inherit;
+      color: #1a1512;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .option-btn:hover {
+      border-color: #6b4423;
+      background: #fdfcfb;
+    }
+    
+    .option-btn.selected {
+      border-color: #6b4423;
+      background: #f8f5f2;
+    }
+    
+    .option-btn.selected .option-check {
+      background: #6b4423;
+      border-color: #6b4423;
+    }
+    
+    .option-btn.selected .option-check svg {
+      opacity: 1;
+    }
+    
+    .option-check {
+      width: 24px;
+      height: 24px;
+      border: 2px solid #e5e0db;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+    
+    .option-check svg {
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    
+    /* Navigation Buttons */
+    .nav-buttons {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    
+    .btn-next {
+      padding: 16px 32px;
+      background: #6b4423;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .btn-next:hover:not(:disabled) {
+      background: #5a3a1e;
+      transform: translateY(-1px);
+    }
+    
+    .btn-next:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    .btn-back {
+      padding: 16px 20px;
+      background: transparent;
+      color: #6b625a;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .btn-back:hover {
+      color: #1a1512;
+      background: #f0ebe6;
+    }
+    
+    /* Enter Hint */
+    .enter-hint {
+      font-size: 13px;
+      color: #9e9691;
+      margin-top: 16px;
+    }
+    
+    .enter-hint kbd {
+      padding: 4px 8px;
+      background: #f0ebe6;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 12px;
+    }
+    
+    /* Summary Step */
+    .summary-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      border: 1px solid #e5e0db;
+      margin-bottom: 32px;
+    }
+    
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 0;
+      border-bottom: 1px solid #f0ebe6;
+    }
+    
+    .summary-row:last-child {
+      border-bottom: none;
+    }
+    
+    .summary-label {
+      font-size: 14px;
+      color: #6b625a;
+    }
+    
+    .summary-value {
+      font-size: 15px;
+      font-weight: 500;
+      color: #1a1512;
+      text-align: right;
+      max-width: 60%;
+    }
+    
+    .btn-submit {
+      width: 100%;
+      padding: 20px 32px;
+      background: #6b4423;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .btn-submit:hover {
+      background: #5a3a1e;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(107, 68, 35, 0.25);
+    }
+    
+    /* Success Step */
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      background: #10b981;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      animation: scaleIn 0.4s ease;
+    }
+    
+    @keyframes scaleIn {
+      from { transform: scale(0); }
+      to { transform: scale(1); }
+    }
+    
+    .success-title {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    
+    .success-message {
+      font-size: 17px;
+      color: #6b625a;
+      text-align: center;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+    
+    .next-steps {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid #e5e0db;
+    }
+    
+    .next-steps h3 {
+      font-size: 16px;
+      margin-bottom: 16px;
+      color: #1a1512;
+    }
+    
+    .next-step-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    
+    .next-step-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .step-icon {
+      width: 32px;
+      height: 32px;
+      background: #f8f5f2;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .next-step-item p {
+      font-size: 14px;
+      color: #6b625a;
+    }
+    
+    /* Trust Footer */
+    .trust-footer {
+      text-align: center;
+      padding-top: 32px;
+      border-top: 1px solid #e5e0db;
+      margin-top: 32px;
+    }
+    
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: #6b625a;
+    }
+    
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 90px 20px 40px;
+      }
+      
+      .question {
+        font-size: 26px;
+      }
+      
+      .form-input {
+        font-size: 16px;
+        padding: 18px 20px;
+      }
+      
+      .form-input.large {
+        font-size: 18px;
+        padding: 20px;
+      }
+      
+      .options-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .option-btn {
+        padding: 16px;
+      }
+      
+      .nav-buttons {
+        flex-direction: column-reverse;
+        gap: 8px;
+      }
+      
+      .btn-next, .btn-back {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .enter-hint {
+        display: none;
+      }
+      
+      .summary-row {
+        flex-direction: column;
+        gap: 4px;
+      }
+      
+      .summary-value {
+        text-align: left;
+        max-width: 100%;
+      }
+      
+      .header-contact span {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="/">
+      <img src="/assets/logo.png" alt="Propcash" class="logo">
+    </a>
+    <a href="tel:6155524296" class="header-contact">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+      </svg>
+      <span>(615) 552-4296</span>
+    </a>
+  </header>
+
+  <!-- Progress Bar -->
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- Form Container -->
+  <div class="form-container">
+    <div class="steps-wrapper">
+      
+      <!-- Step 1: Property Address -->
+      <div class="step active" data-step="1">
+        <div class="step-indicator">
+          <span class="step-number">1</span>
+          <span>of 5</span>
+        </div>
+        <h2 class="question">What's the address of your property?</h2>
+        <p class="question-hint">Enter the full address including city and state</p>
+        
+        <input 
+          type="text" 
+          id="address" 
+          class="form-input large" 
+          placeholder="123 Main St, Nashville, TN 37201"
+          autocomplete="street-address"
+        />
+        
+        <div class="nav-buttons">
+          <button type="button" class="btn-next" onclick="nextStep()" id="btn1">
+            Continue
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+        <p class="enter-hint">Press <kbd>Enter ↵</kbd> to continue</p>
+      </div>
+      
+      <!-- Step 2: Name -->
+      <div class="step" data-step="2">
+        <div class="step-indicator">
+          <span class="step-number">2</span>
+          <span>of 5</span>
+        </div>
+        <h2 class="question">What's your name?</h2>
+        <p class="question-hint">So we know who to contact</p>
+        
+        <input 
+          type="text" 
+          id="name" 
+          class="form-input large" 
+          placeholder="John Smith"
+          autocomplete="name"
+        />
+        
+        <div class="nav-buttons">
+          <button type="button" class="btn-next" onclick="nextStep()" id="btn2">
+            Continue
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+          <button type="button" class="btn-back" onclick="prevStep()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back
+          </button>
+        </div>
+        <p class="enter-hint">Press <kbd>Enter ↵</kbd> to continue</p>
+      </div>
+      
+      <!-- Step 3: Phone -->
+      <div class="step" data-step="3">
+        <div class="step-indicator">
+          <span class="step-number">3</span>
+          <span>of 5</span>
+        </div>
+        <h2 class="question">What's your phone number?</h2>
+        <p class="question-hint">We'll text or call with your offers</p>
+        
+        <input 
+          type="tel" 
+          id="phone" 
+          class="form-input large" 
+          placeholder="(615) 555-1234"
+          autocomplete="tel"
+        />
+        
+        <div class="nav-buttons">
+          <button type="button" class="btn-next" onclick="nextStep()" id="btn3">
+            Continue
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+          <button type="button" class="btn-back" onclick="prevStep()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back
+          </button>
+        </div>
+        <p class="enter-hint">Press <kbd>Enter ↵</kbd> to continue</p>
+      </div>
+      
+      <!-- Step 4: Email (Optional) -->
+      <div class="step" data-step="4">
+        <div class="step-indicator">
+          <span class="step-number">4</span>
+          <span>of 5</span>
+        </div>
+        <h2 class="question">What's your email? <span style="font-weight: 400; font-size: 0.7em; color: #6b625a;">(optional)</span></h2>
+        <p class="question-hint">For sending offer details and documents</p>
+        
+        <input 
+          type="email" 
+          id="email" 
+          class="form-input large" 
+          placeholder="john@email.com"
+          autocomplete="email"
+        />
+        
+        <div class="nav-buttons">
+          <button type="button" class="btn-next" onclick="nextStep()" id="btn4">
+            Continue
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+          <button type="button" class="btn-back" onclick="prevStep()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back
+          </button>
+        </div>
+        <p class="enter-hint">Press <kbd>Enter ↵</kbd> or skip</p>
+      </div>
+      
+      <!-- Step 5: Reason for Selling -->
+      <div class="step" data-step="5">
+        <div class="step-indicator">
+          <span class="step-number">5</span>
+          <span>of 5</span>
+        </div>
+        <h2 class="question">What's your reason for selling?</h2>
+        <p class="question-hint">This helps us match you with the right investors</p>
+        
+        <div class="options-grid" id="reasonOptions">
+          <button type="button" class="option-btn" data-value="Relocating">
+            <span class="option-check">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            Relocating
+          </button>
+          <button type="button" class="option-btn" data-value="Downsizing">
+            <span class="option-check">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            Downsizing
+          </button>
+          <button type="button" class="option-btn" data-value="Upgrading">
+            <span class="option-check">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            Upgrading
+          </button>
+          <button type="button" class="option-btn" data-value="Financial Reasons">
+            <span class="option-check">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            Financial Reasons
+          </button>
+          <button type="button" class="option-btn" data-value="Inherited Property">
+            <span class="option-check">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            Inherited Property
+          </button>
+          <button type="button" class="option-btn" data-value="Tired Landlord">
+            <span class="option-check">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            Tired Landlord
+          </button>
+          <button type="button" class="option-btn" data-value="Needs Repairs">
+            <span class="option-check">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            Needs Repairs
+          </button>
+          <button type="button" class="option-btn" data-value="Other">
+            <span class="option-check">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            Other
+          </button>
+        </div>
+        
+        <input type="hidden" id="reason" value="" />
+        
+        <div class="nav-buttons">
+          <button type="button" class="btn-next" onclick="nextStep()" id="btn5" disabled>
+            Continue
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+          <button type="button" class="btn-back" onclick="prevStep()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back
+          </button>
+        </div>
+      </div>
+      
+      <!-- Step 6: Summary & Submit -->
+      <div class="step" data-step="6">
+        <h2 class="question">Almost done! Review your info</h2>
+        <p class="question-hint">Make sure everything looks correct</p>
+        
+        <div class="summary-card">
+          <div class="summary-row">
+            <span class="summary-label">Property Address</span>
+            <span class="summary-value" id="summaryAddress">—</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">Name</span>
+            <span class="summary-value" id="summaryName">—</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">Phone</span>
+            <span class="summary-value" id="summaryPhone">—</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">Email</span>
+            <span class="summary-value" id="summaryEmail">—</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">Reason for Selling</span>
+            <span class="summary-value" id="summaryReason">—</span>
+          </div>
+        </div>
+        
+        <button type="button" class="btn-submit" onclick="submitForm()" id="submitBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          Get My Cash Offers
+        </button>
+        
+        <div class="nav-buttons" style="justify-content: center; margin-top: 16px;">
+          <button type="button" class="btn-back" onclick="prevStep()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to edit
+          </button>
+        </div>
+        
+        <div class="trust-footer">
+          <div class="trust-badges">
+            <div class="trust-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b625a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <span>Secure & encrypted</span>
+            </div>
+            <div class="trust-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b625a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <span>No obligation</span>
+            </div>
+            <div class="trust-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b625a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+              <span>Zero fees</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Step 7: Success -->
+      <div class="step" data-step="7">
+        <div class="success-icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        
+        <h2 class="success-title">You're all set!</h2>
+        <p class="success-message">
+          We've received your information and are matching you with investors right now. Expect to hear from us within <strong>24 hours</strong>.
+        </p>
+        
+        <div class="next-steps">
+          <h3>What happens next?</h3>
+          
+          <div class="next-step-item">
+            <div class="step-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <p>A Marketplace Specialist will call you to confirm property details</p>
+          </div>
+          
+          <div class="next-step-item">
+            <div class="step-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+            </div>
+            <p>We'll send your listing to our network of 500+ vetted investors</p>
+          </div>
+          
+          <div class="next-step-item">
+            <div class="step-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+            </div>
+            <p>Receive competing cash offers—you choose the best one</p>
+          </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 32px;">
+          <a href="/" style="color: #6b4423; text-decoration: none; font-weight: 500;">
+            ← Return to homepage
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Hidden Form for Formspree -->
+  <form id="hiddenForm" action="https://formspree.io/f/mdkponlo" method="POST" style="display: none;">
+    <input type="hidden" name="form_source" value="Multi-Step Get Offer" />
+    <input type="hidden" name="property_address" id="formAddress" />
+    <input type="hidden" name="name" id="formName" />
+    <input type="hidden" name="phone" id="formPhone" />
+    <input type="hidden" name="email" id="formEmail" />
+    <input type="hidden" name="reason_for_selling" id="formReason" />
+    <input type="hidden" name="submitted_at" id="formTimestamp" />
+  </form>
+
+  <script>
+    // State
+    let currentStep = 1;
+    const totalSteps = 7;
+    
+    // DOM Elements
+    const progressBar = document.getElementById('progressBar');
+    const steps = document.querySelectorAll('.step');
+    
+    // Update progress bar
+    function updateProgress() {
+      const progress = ((currentStep - 1) / (totalSteps - 2)) * 100;
+      progressBar.style.width = Math.min(progress, 100) + '%';
+    }
+    
+    // Show current step
+    function showStep(step) {
+      steps.forEach(s => s.classList.remove('active'));
+      document.querySelector(`[data-step="${step}"]`).classList.add('active');
+      
+      // Focus input if exists
+      const input = document.querySelector(`[data-step="${step}"] .form-input`);
+      if (input) {
+        setTimeout(() => input.focus(), 100);
+      }
+      
+      updateProgress();
+    }
+    
+    // Validation
+    function validateStep(step) {
+      switch(step) {
+        case 1:
+          return document.getElementById('address').value.trim().length > 5;
+        case 2:
+          return document.getElementById('name').value.trim().length > 1;
+        case 3:
+          const phone = document.getElementById('phone').value.replace(/\D/g, '');
+          return phone.length >= 10;
+        case 4:
+          return true; // Email is optional
+        case 5:
+          return document.getElementById('reason').value !== '';
+        default:
+          return true;
+      }
+    }
+    
+    // Next step
+    function nextStep() {
+      if (!validateStep(currentStep)) {
+        // Shake the input
+        const input = document.querySelector(`[data-step="${currentStep}"] .form-input`);
+        if (input) {
+          input.style.animation = 'none';
+          input.offsetHeight; // Trigger reflow
+          input.style.animation = 'shake 0.5s ease';
+        }
+        return;
+      }
+      
+      // Update summary if going to step 6
+      if (currentStep === 5) {
+        updateSummary();
+      }
+      
+      currentStep++;
+      showStep(currentStep);
+    }
+    
+    // Previous step
+    function prevStep() {
+      if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    }
+    
+    // Update summary
+    function updateSummary() {
+      document.getElementById('summaryAddress').textContent = document.getElementById('address').value || '—';
+      document.getElementById('summaryName').textContent = document.getElementById('name').value || '—';
+      document.getElementById('summaryPhone').textContent = document.getElementById('phone').value || '—';
+      document.getElementById('summaryEmail').textContent = document.getElementById('email').value || 'Not provided';
+      document.getElementById('summaryReason').textContent = document.getElementById('reason').value || '—';
+    }
+    
+    // Submit form
+    function submitForm() {
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;">
+          <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
+          <path d="M12 2a10 10 0 0 1 10 10" stroke-opacity="1"></path>
+        </svg>
+        Submitting...
+      `;
+      
+      // Populate hidden form
+      document.getElementById('formAddress').value = document.getElementById('address').value;
+      document.getElementById('formName').value = document.getElementById('name').value;
+      document.getElementById('formPhone').value = document.getElementById('phone').value;
+      document.getElementById('formEmail').value = document.getElementById('email').value;
+      document.getElementById('formReason').value = document.getElementById('reason').value;
+      document.getElementById('formTimestamp').value = new Date().toISOString();
+      
+      // Submit via fetch
+      const form = document.getElementById('hiddenForm');
+      const formData = new FormData(form);
+      
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          currentStep = 7;
+          showStep(7);
+        } else {
+          throw new Error('Submission failed');
+        }
+      })
+      .catch(error => {
+        alert('There was an error submitting. Please try again or call us at (615) 552-4296.');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          Get My Cash Offers
+        `;
+      });
+    }
+    
+    // Phone number formatting
+    document.getElementById('phone').addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length >= 6) {
+        value = `(${value.slice(0,3)}) ${value.slice(3,6)}-${value.slice(6,10)}`;
+      } else if (value.length >= 3) {
+        value = `(${value.slice(0,3)}) ${value.slice(3)}`;
+      }
+      e.target.value = value;
+    });
+    
+    // Reason options
+    document.querySelectorAll('.option-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+        this.classList.add('selected');
+        document.getElementById('reason').value = this.dataset.value;
+        document.getElementById('btn5').disabled = false;
+        
+        // Auto-advance after short delay
+        setTimeout(() => nextStep(), 300);
+      });
+    });
+    
+    // Enter key to advance
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && currentStep < 6) {
+        e.preventDefault();
+        nextStep();
+      }
+    });
+    
+    // Add shake animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-8px); }
+        75% { transform: translateX(8px); }
+      }
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+    `;
+    document.head.appendChild(style);
+    
+    // Initialize
+    updateProgress();
+  </script>
+
+</body>
+</html>
