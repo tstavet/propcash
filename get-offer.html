@@ -712,6 +712,23 @@
         font-size: 12px;
         padding: 8px 12px;
       }
+      
+      /* Personalization Preview */
+.personalization-preview {
+  background: linear-gradient(135deg, rgba(107, 68, 35, 0.08) 0%, rgba(107, 68, 35, 0.04) 100%);
+  border: 1px solid rgba(107, 68, 35, 0.15);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  font-size: 18px;
+  color: #6b4423;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
+}
+
+.personalization-preview span {
+  font-weight: 700;
+}
     }
   </style>
 </head>
@@ -802,43 +819,67 @@
         <p class="enter-hint">Press <kbd>Enter ↵</kbd> to continue</p>
       </div>
       
-      <!-- Step 2: Name -->
-      <div class="step" data-step="2">
-        <div class="step-indicator">
-          <span class="step-number">2</span>
-          <span>of 5</span>
-        </div>
-        <h2 class="question">What's your name?</h2>
-        <p class="question-hint">So we know who to contact</p>
-        
-        <div class="input-container">
-          <input 
-            type="text" 
-            id="name" 
-            class="form-input large" 
-            placeholder="John Smith"
-            autocomplete="name"
-          />
-        </div>
-        
-        <div class="nav-buttons">
-          <button type="button" class="btn-next" onclick="nextStep()" id="btn2">
-            Continue
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </button>
-          <button type="button" class="btn-back" onclick="prevStep()">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="19" y1="12" x2="5" y2="12"></line>
-              <polyline points="12 19 5 12 12 5"></polyline>
-            </svg>
-            Back
-          </button>
-        </div>
-        <p class="enter-hint">Press <kbd>Enter ↵</kbd> to continue</p>
-      </div>
+     <!-- Step 2: Name - ENHANCED -->
+<div class="step" data-step="2">
+  <div class="step-header">
+    <div class="step-indicator">
+      <span class="step-number">2</span>
+      <span>of 5</span>
+    </div>
+  </div>
+  
+  <!-- Encouragement -->
+  <p class="encouragement">Great start!</p>
+  
+  <h2 class="question">What's your name?</h2>
+  <p class="question-hint">We'll use your first name when we reach out</p>
+  
+  <!-- Personalization Preview -->
+  <div class="personalization-preview" id="namePreview" style="display: none;">
+    Nice to meet you, <span id="namePreviewText"></span>! 👋
+  </div>
+  
+  <div class="input-container">
+    <input 
+      type="text" 
+      id="name" 
+      class="form-input large" 
+      placeholder="John Smith"
+      autocomplete="name"
+    />
+    <div class="input-check" id="nameCheck">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+  </div>
+  
+  <!-- Privacy Note -->
+  <div class="privacy-note">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+    </svg>
+    <span>Only your first name is shared with investors</span>
+  </div>
+  
+  <div class="nav-buttons">
+    <button type="button" class="btn-next" onclick="nextStep()" id="btn2">
+      Continue
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </button>
+    <button type="button" class="btn-back" onclick="prevStep()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Back
+    </button>
+  </div>
+  <p class="enter-hint">Press <kbd>Enter ↵</kbd> to continue</p>
+</div>
       
       <!-- Step 3: Phone -->
       <div class="step" data-step="3">
@@ -1221,6 +1262,55 @@
           return true;
       }
     }
+
+    // Name validation and personalization
+const nameInput = document.getElementById('name');
+const nameCheck = document.getElementById('nameCheck');
+const namePreview = document.getElementById('namePreview');
+const namePreviewText = document.getElementById('namePreviewText');
+
+nameInput.addEventListener('input', function() {
+  const name = this.value.trim();
+  const firstName = name.split(' ')[0]; // Get first name only
+  
+  if (name.length >= 2) {
+    // Show checkmark
+    this.classList.add('valid');
+    nameCheck.classList.add('visible');
+    
+    // Show personalization preview
+    namePreview.style.display = 'block';
+    namePreviewText.textContent = firstName;
+  } else {
+    // Hide checkmark
+    this.classList.remove('valid');
+    nameCheck.classList.remove('visible');
+    
+    // Hide personalization preview
+    namePreview.style.display = 'none';
+  }
+});
+```
+
+---
+
+**Result:**
+```
+② of 5
+
+Great start!
+
+What's your name?
+We'll use your first name when we reach out
+
+┌─────────────────────────────────────────┐
+│  Nice to meet you, John! 👋             │
+└─────────────────────────────────────────┘
+
+[John Smith                            ✓]
+🛡 Only your first name is shared with investors
+
+[Continue →]
     
     // Next step
     function nextStep() {
