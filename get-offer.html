@@ -1440,6 +1440,7 @@ nameInput.addEventListener('input', function() {
       document.getElementById('formEmail').value = document.getElementById('email').value;
       document.getElementById('formReason').value = document.getElementById('reason').value;
       document.getElementById('formTimestamp').value = new Date().toISOString();
+      document.getElementById('formContactPreference').value = document.getElementById('contactPreference').value;
       
       // Submit via fetch
       const form = document.getElementById('hiddenForm');
