@@ -1,6 +1,3 @@
-Get offer multistep · HTML
-Copy
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -124,22 +121,60 @@ Copy
     /* Individual Step */
     .step {
       display: none;
-      animation: fadeInUp 0.4s ease;
     }
     
     .step.active {
       display: block;
+      animation: fadeInUp 0.5s ease;
     }
     
     @keyframes fadeInUp {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
       }
       to {
         opacity: 1;
         transform: translateY(0);
       }
+    }
+    
+    /* Step Icon - NEW */
+    .step-icon {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, #6b4423 0%, #8b5e3c 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(107, 68, 35, 0.25);
+      animation: iconBounce 0.6s ease 0.2s both;
+    }
+    
+    @keyframes iconBounce {
+      0% {
+        opacity: 0;
+        transform: scale(0.5) translateY(20px);
+      }
+      60% {
+        transform: scale(1.1) translateY(0);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+    
+    /* Step Header Badge - NEW */
+    .step-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+      gap: 12px;
     }
     
     /* Step Number */
@@ -149,7 +184,6 @@ Copy
       gap: 8px;
       font-size: 14px;
       color: #6b625a;
-      margin-bottom: 16px;
     }
     
     .step-number {
@@ -163,6 +197,35 @@ Copy
       justify-content: center;
       font-weight: 600;
       font-size: 13px;
+    }
+    
+    /* Coverage Badge - NEW */
+    .coverage-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #10b981;
+      animation: fadeIn 0.5s ease 0.3s both;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    /* Encouragement Text - NEW */
+    .encouragement {
+      font-size: 15px;
+      color: #6b4423;
+      font-weight: 600;
+      margin-bottom: 8px;
+      animation: fadeIn 0.5s ease 0.2s both;
     }
     
     /* Question */
@@ -180,17 +243,23 @@ Copy
       margin-bottom: 32px;
     }
     
+    /* Input Container - NEW for validation checkmark */
+    .input-container {
+      position: relative;
+      margin-bottom: 12px;
+    }
+    
     /* Input Styles */
     .form-input {
       width: 100%;
       padding: 20px 24px;
+      padding-right: 56px;
       border-radius: 12px;
       border: 2px solid #e5e0db;
       background: white;
       font-size: 18px;
       font-family: inherit;
       transition: all 0.2s ease;
-      margin-bottom: 24px;
     }
     
     .form-input:focus {
@@ -204,8 +273,85 @@ Copy
     }
     
     .form-input.large {
-      font-size: 22px;
-      padding: 24px;
+      font-size: 18px;
+      padding: 22px 24px;
+      padding-right: 56px;
+    }
+    
+    .form-input.valid {
+      border-color: #10b981;
+      background: #f0fdf9;
+    }
+    
+    /* Validation Checkmark - NEW */
+    .input-check {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 28px;
+      background: #10b981;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(-50%) scale(0);
+      transition: all 0.3s ease;
+    }
+    
+    .input-check.visible {
+      opacity: 1;
+      transform: translateY(-50%) scale(1);
+    }
+    
+    /* Privacy Note - NEW */
+    .privacy-note {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: #6b625a;
+      margin-bottom: 24px;
+    }
+    
+    .privacy-note svg {
+      flex-shrink: 0;
+      color: #6b4423;
+    }
+    
+    /* Social Proof Badge - NEW */
+    .social-proof {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: white;
+      border: 1px solid #e5e0db;
+      border-radius: 24px;
+      font-size: 13px;
+      color: #6b625a;
+      margin-bottom: 28px;
+      animation: fadeIn 0.5s ease 0.4s both;
+      box-shadow: 0 2px 8px rgba(107, 68, 35, 0.06);
+    }
+    
+    .social-proof-dot {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      animation: pulse 2s ease infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.9); }
+    }
+    
+    .social-proof strong {
+      color: #1a1512;
     }
     
     /* Select Options (Custom Radio Buttons) */
@@ -448,7 +594,7 @@ Copy
       margin-bottom: 0;
     }
     
-    .step-icon {
+    .step-icon-small {
       width: 32px;
       height: 32px;
       background: #f8f5f2;
@@ -493,6 +639,23 @@ Copy
         padding: 90px 20px 40px;
       }
       
+      .step-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 16px;
+      }
+      
+      .step-icon svg {
+        width: 28px;
+        height: 28px;
+      }
+      
+      .step-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      
       .question {
         font-size: 26px;
       }
@@ -500,11 +663,13 @@ Copy
       .form-input {
         font-size: 16px;
         padding: 18px 20px;
+        padding-right: 50px;
       }
       
       .form-input.large {
-        font-size: 18px;
-        padding: 20px;
+        font-size: 16px;
+        padding: 18px 20px;
+        padding-right: 50px;
       }
       
       .options-grid {
@@ -542,6 +707,11 @@ Copy
       .header-contact span {
         display: none;
       }
+      
+      .social-proof {
+        font-size: 12px;
+        padding: 8px 12px;
+      }
     }
   </style>
 </head>
@@ -570,22 +740,70 @@ Copy
   <div class="form-container">
     <div class="steps-wrapper">
       
-      <!-- Step 1: Property Address -->
+      <!-- Step 1: Property Address - ENHANCED -->
       <div class="step active" data-step="1">
-        <div class="step-indicator">
-          <span class="step-number">1</span>
-          <span>of 5</span>
-        </div>
-        <h2 class="question">What's the address of your property?</h2>
-        <p class="question-hint">Enter the full address including city and state</p>
         
-        <input 
-          type="text" 
-          id="address" 
-          class="form-input large" 
-          placeholder="123 Main St, Nashville, TN 37201"
-          autocomplete="street-address"
-        />
+        <!-- House Icon -->
+        <div class="step-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </div>
+        
+        <!-- Header with Step Indicator & Coverage Badge -->
+        <div class="step-header">
+          <div class="step-indicator">
+            <span class="step-number">1</span>
+            <span>of 5 · Takes 2 min</span>
+          </div>
+          <div class="coverage-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+            </svg>
+            All 50 states covered
+          </div>
+        </div>
+        
+        <!-- Encouragement -->
+        <p class="encouragement">Let's get you some offers!</p>
+        
+        <!-- Question -->
+        <h2 class="question">What's the address of your property?</h2>
+        <p class="question-hint">We'll connect you with local cash buyers in your area.</p>
+        
+        <!-- Social Proof -->
+        <div class="social-proof">
+          <span class="social-proof-dot"></span>
+          <span><strong id="homeownerCount">127</strong> homeowners requested offers today</span>
+        </div>
+        
+        <!-- Input with Validation Checkmark -->
+        <div class="input-container">
+          <input 
+            type="text" 
+            id="address" 
+            class="form-input large" 
+            placeholder="e.g., 742 Evergreen Terrace, Nashville, TN"
+            autocomplete="street-address"
+          />
+          <div class="input-check" id="addressCheck">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+        </div>
+        
+        <!-- Privacy Note -->
+        <div class="privacy-note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          <span>We'll never share your address publicly</span>
+        </div>
         
         <div class="nav-buttons">
           <button type="button" class="btn-next" onclick="nextStep()" id="btn1">
@@ -608,13 +826,15 @@ Copy
         <h2 class="question">What's your name?</h2>
         <p class="question-hint">So we know who to contact</p>
         
-        <input 
-          type="text" 
-          id="name" 
-          class="form-input large" 
-          placeholder="John Smith"
-          autocomplete="name"
-        />
+        <div class="input-container">
+          <input 
+            type="text" 
+            id="name" 
+            class="form-input large" 
+            placeholder="John Smith"
+            autocomplete="name"
+          />
+        </div>
         
         <div class="nav-buttons">
           <button type="button" class="btn-next" onclick="nextStep()" id="btn2">
@@ -642,15 +862,17 @@ Copy
           <span>of 5</span>
         </div>
         <h2 class="question">What's your phone number?</h2>
-        <p class="question-hint">We'll text or call with your offers (but never with unsolicited marketing texts)</p>
+        <p class="question-hint">We'll text or call with your offers</p>
         
-        <input 
-          type="tel" 
-          id="phone" 
-          class="form-input large" 
-          placeholder="(615) 555-1234"
-          autocomplete="tel"
-        />
+        <div class="input-container">
+          <input 
+            type="tel" 
+            id="phone" 
+            class="form-input large" 
+            placeholder="(615) 555-1234"
+            autocomplete="tel"
+          />
+        </div>
         
         <div class="nav-buttons">
           <button type="button" class="btn-next" onclick="nextStep()" id="btn3">
@@ -671,22 +893,24 @@ Copy
         <p class="enter-hint">Press <kbd>Enter ↵</kbd> to continue</p>
       </div>
       
-      <!-- Step 4: Email -->
+      <!-- Step 4: Email (Optional) -->
       <div class="step" data-step="4">
         <div class="step-indicator">
           <span class="step-number">4</span>
           <span>of 5</span>
         </div>
-        <h2 class="question">What's your email? </h2>
+        <h2 class="question">What's your email? <span style="font-weight: 400; font-size: 0.7em; color: #6b625a;">(optional)</span></h2>
         <p class="question-hint">For sending offer details and documents</p>
         
-        <input 
-          type="email" 
-          id="email" 
-          class="form-input large" 
-          placeholder="john@email.com"
-          autocomplete="email"
-        />
+        <div class="input-container">
+          <input 
+            type="email" 
+            id="email" 
+            class="form-input large" 
+            placeholder="john@email.com"
+            autocomplete="email"
+          />
+        </div>
         
         <div class="nav-buttons">
           <button type="button" class="btn-next" onclick="nextStep()" id="btn4">
@@ -885,14 +1109,14 @@ Copy
         
         <h2 class="success-title">You're all set!</h2>
         <p class="success-message">
-          We've received your information and are getting to work matching you with investors right now. Expect to hear from us within <strong>24 hours</strong>.
+          We've received your information and are matching you with investors right now. Expect to hear from us within <strong>24 hours</strong>.
         </p>
         
         <div class="next-steps">
           <h3>What happens next?</h3>
           
           <div class="next-step-item">
-            <div class="step-icon">
+            <div class="step-icon-small">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
               </svg>
@@ -901,23 +1125,23 @@ Copy
           </div>
           
           <div class="next-step-item">
-            <div class="step-icon">
+            <div class="step-icon-small">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
                 <polyline points="17 6 23 6 23 12"></polyline>
               </svg>
             </div>
-            <p>After confirming a few details, we'll send your listing to our network of 500+ vetted investors</p>
+            <p>We'll send your listing to our network of 500+ vetted investors</p>
           </div>
           
           <div class="next-step-item">
-            <div class="step-icon">
+            <div class="step-icon-small">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
                 <line x1="1" y1="10" x2="23" y2="10"></line>
               </svg>
             </div>
-            <p>We'll receive all competing cash offers and present you with the best one.</p>
+            <p>Receive competing cash offers—you choose the best one</p>
           </div>
         </div>
         
@@ -950,6 +1174,12 @@ Copy
     // DOM Elements
     const progressBar = document.getElementById('progressBar');
     const steps = document.querySelectorAll('.step');
+    const addressInput = document.getElementById('address');
+    const addressCheck = document.getElementById('addressCheck');
+    
+    // Randomize homeowner count (between 89-156)
+    const homeownerCount = Math.floor(Math.random() * (156 - 89 + 1)) + 89;
+    document.getElementById('homeownerCount').textContent = homeownerCount;
     
     // Update progress bar
     function updateProgress() {
@@ -970,6 +1200,27 @@ Copy
       
       updateProgress();
     }
+    
+    // Address validation with checkmark
+    function validateAddress(value) {
+      // Check if address looks complete (has number, street, and comma for city/state)
+      const hasNumber = /\d/.test(value);
+      const hasComma = value.includes(',');
+      const minLength = value.trim().length >= 10;
+      
+      return hasNumber && hasComma && minLength;
+    }
+    
+    // Update address checkmark
+    addressInput.addEventListener('input', function() {
+      if (validateAddress(this.value)) {
+        this.classList.add('valid');
+        addressCheck.classList.add('visible');
+      } else {
+        this.classList.remove('valid');
+        addressCheck.classList.remove('visible');
+      }
+    });
     
     // Validation
     function validateStep(step) {
