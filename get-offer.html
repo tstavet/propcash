@@ -953,6 +953,50 @@
     font-size: 13px;
     padding: 12px 16px;
   }
+}
+    /* Contact Box */
+.contact-box {
+  background: #f8f5f2;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.contact-box h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1512;
+  margin-bottom: 4px;
+}
+
+.contact-box p {
+  font-size: 14px;
+  color: #6b625a;
+  margin-bottom: 16px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6b4423;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  transition: opacity 0.2s;
+}
+
+.contact-link:hover {
+  opacity: 0.8;
+}
     
   </style>
 </head>
@@ -1349,19 +1393,18 @@
   </div>
 </div>
       
-    <!-- Step 6: Summary & Submit - ENHANCED -->
+<!-- Step 6: Success & Confirmation - COMBINED -->
 <div class="step" data-step="6">
   
   <!-- Personalized Header -->
   <div class="summary-header">
     <div class="summary-icon">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        <polyline points="20 6 9 17 4 12"></polyline>
       </svg>
     </div>
     <h2 class="question"><span id="summaryNameHeader">You</span>, you're all set!</h2>
-    <p class="question-hint">Review your information below</p>
+    <p class="question-hint">We've received your information and are matching you with investors right now. Expect to hear from us within <strong>24 hours</strong>.</p>
   </div>
   
   <!-- Summary Card with Checkmarks -->
@@ -1413,145 +1456,69 @@
     </div>
   </div>
   
-  <!-- What Happens Next Timeline -->
-  <div class="next-timeline">
-    <h3>What happens next</h3>
-    <div class="timeline-steps">
-      <div class="timeline-step">
-        <div class="timeline-number">1</div>
-        <div class="timeline-content">
-          <strong>We review your property</strong>
-          <span>Within 24 hours</span>
-        </div>
+  <!-- What Happens Next -->
+  <div class="next-steps">
+    <h3>What happens next?</h3>
+    
+    <div class="next-step-item">
+      <div class="step-icon-small">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
       </div>
-      <div class="timeline-step">
-        <div class="timeline-number">2</div>
-        <div class="timeline-content">
-          <strong>Investors submit offers</strong>
-          <span>Competitive bidding starts</span>
-        </div>
+      <p>A Marketplace Specialist will call you to confirm property details</p>
+    </div>
+    
+    <div class="next-step-item">
+      <div class="step-icon-small">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+          <polyline points="17 6 23 6 23 12"></polyline>
+        </svg>
       </div>
-      <div class="timeline-step">
-        <div class="timeline-number">3</div>
-        <div class="timeline-content">
-          <strong>You choose the best offer</strong>
-          <span>No obligation to accept</span>
-        </div>
+      <p>We'll send your listing to our network of 500+ vetted investors</p>
+    </div>
+    
+    <div class="next-step-item">
+      <div class="step-icon-small">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+          <line x1="1" y1="10" x2="23" y2="10"></line>
+        </svg>
       </div>
+      <p>Receive competing cash offers—you choose the best one</p>
     </div>
   </div>
   
-  <!-- Social Proof -->
-  <div class="social-proof-banner">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-      <circle cx="9" cy="7" r="4"></circle>
-      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-    </svg>
-    <span>Join <strong>2,000+</strong> homeowners who received offers this month</span>
-  </div>
-  
-  <!-- Big Submit Button -->
-  <button type="button" class="btn-submit-big" onclick="submitForm()" id="submitBtn">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="20 6 9 17 4 12"></polyline>
-    </svg>
-    Get My Cash Offers
-  </button>
-  
-  <div class="nav-buttons" style="justify-content: center; margin-top: 16px;">
-    <button type="button" class="btn-back" onclick="prevStep()">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="19" y1="12" x2="5" y2="12"></line>
-        <polyline points="12 19 5 12 12 5"></polyline>
-      </svg>
-      Back to edit
-    </button>
-  </div>
-  
-  <!-- Trust Footer -->
-  <div class="trust-footer">
-    <div class="trust-badges">
-      <div class="trust-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b625a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+  <!-- Contact Us -->
+  <div class="contact-box">
+    <h4>Have questions?</h4>
+    <p>Our team is here to help</p>
+    <div class="contact-links">
+      <a href="tel:6155524296" class="contact-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
         </svg>
-        <span>Secure & encrypted</span>
-      </div>
-      <div class="trust-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b625a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        (615) 552-4296
+      </a>
+      <a href="mailto:info@propcash.co" class="contact-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
         </svg>
-        <span>No obligation</span>
-      </div>
-      <div class="trust-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b625a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="12" y1="1" x2="12" y2="23"></line>
-          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-        </svg>
-        <span>Zero fees</span>
-      </div>
+        info@propcash.co
+      </a>
     </div>
   </div>
+  
+  <!-- Return Home -->
+  <div style="text-align: center; margin-top: 24px;">
+    <a href="/" style="color: #6b4423; text-decoration: none; font-weight: 500;">
+      ← Return to homepage
+    </a>
+  </div>
+  
 </div>
-      
-      <!-- Step 7: Success -->
-      <div class="step" data-step="7">
-        <div class="success-icon">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"></polyline>
-          </svg>
-        </div>
-        
-        <h2 class="success-title">You're all set!</h2>
-        <p class="success-message">
-          We've received your information and are matching you with investors right now. Expect to hear from us within <strong>24 hours</strong>.
-        </p>
-        
-        <div class="next-steps">
-          <h3>What happens next?</h3>
-          
-          <div class="next-step-item">
-            <div class="step-icon-small">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-              </svg>
-            </div>
-            <p>A Marketplace Specialist will call you to confirm property details</p>
-          </div>
-          
-          <div class="next-step-item">
-            <div class="step-icon-small">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                <polyline points="17 6 23 6 23 12"></polyline>
-              </svg>
-            </div>
-            <p>We'll send your listing to our network of 500+ vetted investors</p>
-          </div>
-          
-          <div class="next-step-item">
-            <div class="step-icon-small">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                <line x1="1" y1="10" x2="23" y2="10"></line>
-              </svg>
-            </div>
-            <p>Receive competing cash offers—you choose the best one</p>
-          </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 32px;">
-          <a href="/" style="color: #6b4423; text-decoration: none; font-weight: 500;">
-            ← Return to homepage
-          </a>
-        </div>
-      </div>
-      
-    </div>
-  </div>
 
   <!-- Hidden Form for Formspree -->
   
@@ -1816,19 +1783,23 @@ prefBtns.forEach(btn => {
   });
 });
     
-    // Reason options
-    document.querySelectorAll('.option-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
-        this.classList.add('selected');
-        document.getElementById('reason').value = this.dataset.value;
-        document.getElementById('btn5').disabled = false;
-        
-        // Auto-advance after short delay
-        setTimeout(() => nextStep(), 300);
-      });
-    });
+// Reason options - Auto-submit after selection
+document.querySelectorAll('.option-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+    this.classList.add('selected');
+    document.getElementById('reason').value = this.dataset.value;
+    document.getElementById('btn5').disabled = false;
     
+    // Update summary and auto-submit after short delay
+    setTimeout(() => {
+      updateSummary();
+      submitForm();
+    }, 400);
+  });
+});
+        
+  
     // Enter key to advance
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Enter' && currentStep < 6) {
