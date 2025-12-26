@@ -729,6 +729,56 @@
 .personalization-preview span {
   font-weight: 700;
 }
+
+      /* Contact Preference Toggle */
+.contact-preference {
+  margin-bottom: 20px;
+}
+
+.preference-label {
+  font-size: 14px;
+  color: #6b625a;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.preference-toggle {
+  display: flex;
+  gap: 10px;
+}
+
+.pref-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border: 2px solid #e5e0db;
+  border-radius: 10px;
+  background: white;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: inherit;
+  color: #6b625a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pref-btn:hover {
+  border-color: #6b4423;
+  color: #6b4423;
+}
+
+.pref-btn.selected {
+  border-color: #6b4423;
+  background: rgba(107, 68, 35, 0.08);
+  color: #6b4423;
+}
+
+.pref-btn.selected svg {
+  stroke: #6b4423;
+}
     }
   </style>
 </head>
@@ -880,43 +930,83 @@
   <p class="enter-hint">Press <kbd>Enter ↵</kbd> to continue</p>
 </div>
       
-      <!-- Step 3: Phone -->
-      <div class="step" data-step="3">
-        <div class="step-indicator">
-          <span class="step-number">3</span>
-          <span>of 5</span>
-        </div>
-        <h2 class="question">What's your phone number?</h2>
-        <p class="question-hint">We'll text or call with your offers</p>
-        
-        <div class="input-container">
-          <input 
-            type="tel" 
-            id="phone" 
-            class="form-input large" 
-            placeholder="(615) 555-1234"
-            autocomplete="tel"
-          />
-        </div>
-        
-        <div class="nav-buttons">
-          <button type="button" class="btn-next" onclick="nextStep()" id="btn3">
-            Continue
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </button>
-          <button type="button" class="btn-back" onclick="prevStep()">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="19" y1="12" x2="5" y2="12"></line>
-              <polyline points="12 19 5 12 12 5"></polyline>
-            </svg>
-            Back
-          </button>
-        </div>
-        <p class="enter-hint">Press <kbd>Enter ↵</kbd> to continue</p>
-      </div>
+<!-- Step 3: Phone - ENHANCED -->
+<div class="step" data-step="3">
+  <div class="step-header">
+    <div class="step-indicator">
+      <span class="step-number">3</span>
+      <span>of 5</span>
+    </div>
+  </div>
+  
+  <!-- Encouragement -->
+  <p class="encouragement">You're halfway done!</p>
+  
+  <h2 class="question">What's your phone number?</h2>
+  <p class="question-hint">We'll reach out with your cash offers</p>
+  
+  <div class="input-container">
+    <input 
+      type="tel" 
+      id="phone" 
+      class="form-input large" 
+      placeholder="(615) 555-1234"
+      autocomplete="tel"
+    />
+    <div class="input-check" id="phoneCheck">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+  </div>
+  
+  <!-- Contact Preference Toggle -->
+  <div class="contact-preference">
+    <span class="preference-label">Which do you prefer?</span>
+    <div class="preference-toggle">
+      <button type="button" class="pref-btn selected" data-value="Text" id="prefText">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        Text me
+      </button>
+      <button type="button" class="pref-btn" data-value="Call" id="prefCall">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+        Call me
+      </button>
+    </div>
+  </div>
+  
+  <input type="hidden" id="contactPreference" value="Text" />
+  
+  <!-- Privacy Note -->
+  <div class="privacy-note">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+    </svg>
+    <span>We'll only contact you about your property</span>
+  </div>
+  
+  <div class="nav-buttons">
+    <button type="button" class="btn-next" onclick="nextStep()" id="btn3">
+      Continue
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </button>
+    <button type="button" class="btn-back" onclick="prevStep()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Back
+    </button>
+  </div>
+  <p class="enter-hint">Press <kbd>Enter ↵</kbd> to continue</p>
+</div>
       
       <!-- Step 4: Email (Optional) -->
       <div class="step" data-step="4">
@@ -1181,11 +1271,13 @@
   </div>
 
   <!-- Hidden Form for Formspree -->
+  
   <form id="hiddenForm" action="https://formspree.io/f/mdkponlo" method="POST" style="display: none;">
     <input type="hidden" name="form_source" value="Multi-Step Get Offer" />
     <input type="hidden" name="property_address" id="formAddress" />
     <input type="hidden" name="name" id="formName" />
     <input type="hidden" name="phone" id="formPhone" />
+    <input type="hidden" name="contact_preference" id="formContactPreference" />
     <input type="hidden" name="email" id="formEmail" />
     <input type="hidden" name="reason_for_selling" id="formReason" />
     <input type="hidden" name="submitted_at" id="formTimestamp" />
@@ -1381,16 +1473,42 @@ nameInput.addEventListener('input', function() {
       });
     }
     
-    // Phone number formatting
-    document.getElementById('phone').addEventListener('input', function(e) {
-      let value = e.target.value.replace(/\D/g, '');
-      if (value.length >= 6) {
-        value = `(${value.slice(0,3)}) ${value.slice(3,6)}-${value.slice(6,10)}`;
-      } else if (value.length >= 3) {
-        value = `(${value.slice(0,3)}) ${value.slice(3)}`;
-      }
-      e.target.value = value;
-    });
+   // Phone validation and formatting
+const phoneInput = document.getElementById('phone');
+const phoneCheck = document.getElementById('phoneCheck');
+
+phoneInput.addEventListener('input', function(e) {
+  // Auto-format
+  let value = e.target.value.replace(/\D/g, '');
+  if (value.length >= 6) {
+    value = `(${value.slice(0,3)}) ${value.slice(3,6)}-${value.slice(6,10)}`;
+  } else if (value.length >= 3) {
+    value = `(${value.slice(0,3)}) ${value.slice(3)}`;
+  }
+  e.target.value = value;
+  
+  // Validation checkmark
+  const digits = e.target.value.replace(/\D/g, '');
+  if (digits.length >= 10) {
+    this.classList.add('valid');
+    phoneCheck.classList.add('visible');
+  } else {
+    this.classList.remove('valid');
+    phoneCheck.classList.remove('visible');
+  }
+});
+
+// Contact preference toggle
+const prefBtns = document.querySelectorAll('.pref-btn');
+const contactPreference = document.getElementById('contactPreference');
+
+prefBtns.forEach(btn => {
+  btn.addEventListener('click', function() {
+    prefBtns.forEach(b => b.classList.remove('selected'));
+    this.classList.add('selected');
+    contactPreference.value = this.dataset.value;
+  });
+});
     
     // Reason options
     document.querySelectorAll('.option-btn').forEach(btn => {
