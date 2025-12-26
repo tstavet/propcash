@@ -1162,10 +1162,6 @@
     const addressInput = document.getElementById('address');
     const addressCheck = document.getElementById('addressCheck');
     
-    // Randomize homeowner count (between 89-156)
-    const homeownerCount = Math.floor(Math.random() * (156 - 89 + 1)) + 89;
-    document.getElementById('homeownerCount').textContent = homeownerCount;
-    
     // Update progress bar
     function updateProgress() {
       const progress = ((currentStep - 1) / (totalSteps - 2)) * 100;
