@@ -884,8 +884,26 @@
   .stat-value {
     font-size: 48px;
   }
+}
 
-   /* ==========================================
+  @media (max-width: 480px) {
+  .visual-card {
+    padding: var(--space-xl);
+  }
+  
+  .stat-value {
+    font-size: 48px;
+  }
+}
+
+/* ==========================================
+   CARD ACCENT HEADINGS
+   ========================================== */
+.card-accent h3 {
+  color: var(--primary);
+}
+
+/* ==========================================
    SITUATION CARDS
    ========================================== */
 .situation-card {
@@ -924,7 +942,7 @@
   margin: 0;
 }
 
-   /* ==========================================
+/* ==========================================
    NEIGHBORHOODS SECTION WITH IMAGE
    ========================================== */
 .neighborhoods-section {
@@ -1049,7 +1067,7 @@
   color: var(--text-muted);
 }
 
-/* Responsive */
+/* Neighborhoods Responsive */
 @media (max-width: 900px) {
   .neighborhoods-layout {
     grid-template-columns: 1fr;
