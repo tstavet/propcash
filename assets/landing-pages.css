@@ -27,6 +27,11 @@
   margin-bottom: 0;
 }
 
+/* Add at the top of your file */
+html, body {
+  overflow-x: hidden;
+}
+
 /* ==========================================
    LANDING PAGE HERO
    ========================================== */
@@ -378,7 +383,7 @@
    COMPARISON TABLE
    ========================================== */
 .table-wrapper {
-  max-width: 1000px;
+  max-width: 100%;
   margin: 0 auto;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -655,12 +660,13 @@
 
 @media (max-width: 768px) {
   .comparison-table {
-    font-size: 14px;
+    min-width: 500px;
+    font-size: 13px;
   }
   
   .comparison-table th,
   .comparison-table td {
-    padding: 14px var(--space-sm);
+    padding: 12px 10px;
   }
 }
 
