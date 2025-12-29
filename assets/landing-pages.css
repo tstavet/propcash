@@ -884,4 +884,43 @@
   .stat-value {
     font-size: 48px;
   }
+
+   /* ==========================================
+   SITUATION CARDS
+   ========================================== */
+.situation-card {
+  text-align: left;
+}
+
+.situation-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, rgba(107, 68, 35, 0.08) 0%, rgba(107, 68, 35, 0.15) 100%);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-md);
+  color: var(--primary);
+  transition: var(--transition);
+}
+
+.situation-card:hover .situation-icon {
+  background: var(--primary);
+  color: white;
+  transform: scale(1.05);
+}
+
+.situation-card h4 {
+  color: var(--primary);
+  font-size: 18px;
+  margin-bottom: var(--space-sm);
+}
+
+.situation-card p {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.65;
+  margin: 0;
+}
 }
