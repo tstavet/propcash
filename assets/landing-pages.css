@@ -35,13 +35,12 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: clamp(600px, 80vh, 90vh);
+  min-height: clamp(550px, 70vh, 80vh);
   display: flex;
-align-items: flex-start;
-padding-top: clamp(100px, 12vw, 140px);
-   justify-content: center;
+  align-items: flex-start;
+  justify-content: center;
   text-align: center;
-  padding: clamp(100px, 15vw, 160px) var(--space-lg);
+  padding: clamp(60px, 8vw, 100px) var(--space-lg) clamp(80px, 12vw, 140px);
 }
 
 .lp-hero::before {
