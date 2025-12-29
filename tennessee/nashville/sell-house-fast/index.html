@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGV6HXQ0RW"></script>
   <script>
@@ -246,630 +245,42 @@
   
   <!-- Styles -->
   <link rel="stylesheet" href="/assets/styles-v2.css" />
-  
-  <style>
-    /* Nashville Landing Page Specific Styles */
-    
-    .nashville-hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('/assets/nashville-house.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: clamp(80px, 15vw, 140px) 20px;
-      min-height: clamp(550px, 75vh, 85vh);
-    }
-    
-    .nashville-hero h1 {
-      color: white;
-      margin-bottom: clamp(16px, 3vw, 24px);
-      line-height: 1.15;
-      font-size: clamp(32px, 6vw, 56px);
-      max-width: 900px;
-    }
-    
-    .nashville-hero .sub {
-      color: rgba(255, 255, 255, 0.95);
-      font-size: clamp(16px, 3vw, 20px);
-      max-width: 700px;
-      margin: 0 auto clamp(32px, 5vw, 48px);
-      line-height: 1.6;
-    }
-    
-    .hero-badges {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: clamp(24px, 4vw, 32px);
-    }
-    
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      padding: 10px 18px;
-      border-radius: 50px;
-      color: white;
-      font-size: 14px;
-      font-weight: 500;
-    }
-    
-    .hero-badge .dot {
-      width: 8px;
-      height: 8px;
-      background: #10b981;
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-    
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-    
-    .section {
-      padding: clamp(60px, 10vw, 100px) 20px;
-    }
-    
-    .section-alt {
-      background: #f9f8f6;
-    }
-    
-    .section-header {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto clamp(40px, 6vw, 60px);
-    }
-    
-    .section-header h2 {
-      font-size: clamp(28px, 5vw, 42px);
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
-    
-    .section-header .sub {
-      font-size: clamp(16px, 3vw, 18px);
-      max-width: 650px;
-      margin: 0 auto;
-    }
-    
-    /* Differentiator Cards */
-    .diff-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    
-    .diff-card {
-      background: white;
-      border-radius: 16px;
-      padding: 32px;
-      border: 1px solid rgba(0,0,0,0.06);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .diff-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--accent, #6b4423);
-    }
-    
-    .diff-card h3 {
-      font-size: 20px;
-      margin-bottom: 12px;
-      color: #1a1512;
-    }
-    
-    .diff-card .sub {
-      margin: 0;
-      line-height: 1.7;
-    }
-    
-    .diff-card .stat {
-      display: inline-block;
-      margin-top: 16px;
-      padding: 8px 16px;
-      background: #f5f3f0;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--accent, #6b4423);
-    }
-    
-    /* How It Works */
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 32px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    
-    .step-card {
-      text-align: center;
-      padding: 32px 24px;
-    }
-    
-    .step-num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      background: var(--accent, #6b4423);
-      color: white;
-      border-radius: 50%;
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-    
-    .step-card h3 {
-      font-size: 20px;
-      margin-bottom: 12px;
-    }
-    
-    .step-card .sub {
-      margin: 0;
-      line-height: 1.7;
-    }
-    
-    .step-card .step-meta {
-      margin-top: 16px;
-      font-size: 14px;
-      color: var(--accent, #6b4423);
-      font-weight: 600;
-    }
-    
-    /* Comparison Table */
-    .comparison-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-      border-radius: 12px;
-      overflow: hidden;
-      min-width: 700px;
-    }
-    
-    .comparison-table thead {
-      background: var(--accent, #6b4423);
-      color: white;
-    }
-    
-    .comparison-table th {
-      padding: 18px 16px;
-      text-align: left;
-      font-size: 15px;
-      font-weight: 600;
-    }
-    
-    .comparison-table td {
-      padding: 18px 16px;
-      font-size: 15px;
-      border-bottom: 1px solid #eee;
-    }
-    
-    .comparison-table tr:last-child td {
-      border-bottom: none;
-    }
-    
-    .comparison-table tr:nth-child(even) {
-      background: #faf9f7;
-    }
-    
-    .comparison-table .highlight {
-      color: var(--accent, #6b4423);
-      font-weight: 600;
-    }
-    
-    /* As-Is Grid */
-    .as-is-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 16px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .as-is-item {
-      background: white;
-      padding: 24px 16px;
-      border-radius: 12px;
-      text-align: center;
-      border: 1px solid rgba(0,0,0,0.06);
-    }
-    
-    .as-is-item .icon {
-      font-size: 32px;
-      margin-bottom: 8px;
-    }
-    
-    .as-is-item p {
-      margin: 0;
-      font-weight: 500;
-      font-size: 14px;
-    }
-    
-    /* Stats Row */
-    .stats-row {
-      display: flex;
-      justify-content: center;
-      gap: clamp(24px, 5vw, 48px);
-      flex-wrap: wrap;
-      text-align: center;
-    }
-    
-    .stat-item {
-      flex: 1;
-      min-width: 180px;
-      max-width: 250px;
-      background: white;
-      padding: clamp(24px, 4vw, 32px);
-      border-radius: 16px;
-      border: 1px solid rgba(0,0,0,0.06);
-    }
-    
-    .stat-item .value {
-      font-size: clamp(2rem, 5vw, 2.5rem);
-      font-weight: 700;
-      color: var(--accent, #6b4423);
-      font-family: 'Cormorant Garamond', Georgia, serif;
-    }
-    
-    .stat-item .label {
-      font-size: 14px;
-      color: var(--muted, #666);
-      margin-top: 8px;
-    }
-    
-    /* Testimonials */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    
-    .testimonial-card {
-      background: white;
-      border-radius: 16px;
-      padding: 32px;
-      border: 1px solid rgba(0,0,0,0.06);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    }
-    
-    .testimonial-card .stars {
-      color: #f59e0b;
-      font-size: 18px;
-      margin-bottom: 16px;
-      letter-spacing: 2px;
-    }
-    
-    .testimonial-card .quote {
-      font-size: 16px;
-      line-height: 1.7;
-      color: #444;
-      margin-bottom: 20px;
-      font-style: italic;
-    }
-    
-    .testimonial-card .author {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    
-    .testimonial-card .avatar {
-      width: 44px;
-      height: 44px;
-      background: var(--accent, #6b4423);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 600;
-      font-size: 16px;
-    }
-    
-    .testimonial-card .author-info .name {
-      font-weight: 600;
-      color: #1a1512;
-    }
-    
-    .testimonial-card .author-info .location {
-      font-size: 14px;
-      color: var(--muted, #666);
-    }
-    
-    /* Situations Grid */
-    .situations-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    
-    .situation-card {
-      background: white;
-      border-radius: 12px;
-      padding: 24px;
-      border: 1px solid rgba(0,0,0,0.06);
-    }
-    
-    .situation-card h4 {
-      font-size: 18px;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    .situation-card .sub {
-      margin: 0;
-      line-height: 1.6;
-    }
-    
-    /* Neighborhoods */
-    .neighborhoods-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    
-    .neighborhood-item {
-      background: white;
-      padding: 16px 20px;
-      border-radius: 8px;
-      border: 1px solid rgba(0,0,0,0.06);
-      font-size: 15px;
-    }
-    
-    /* FAQ */
-    .faq-section {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .faq-section details {
-      background: white;
-      border-radius: 12px;
-      margin-bottom: 12px;
-      border: 1px solid rgba(0,0,0,0.06);
-      overflow: hidden;
-    }
-    
-    .faq-section summary {
-      padding: 20px 24px;
-      font-weight: 600;
-      font-size: 16px;
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .faq-section summary::-webkit-details-marker {
-      display: none;
-    }
-    
-    .faq-section summary::after {
-      content: '+';
-      font-size: 24px;
-      color: var(--accent, #6b4423);
-      font-weight: 400;
-    }
-    
-    .faq-section details[open] summary::after {
-      content: '−';
-    }
-    
-    .faq-section details .content {
-      padding: 0 24px 20px;
-    }
-    
-    .faq-section details .content .sub {
-      margin: 0;
-      line-height: 1.7;
-    }
-    
-    /* CTA Section */
-    .cta-section {
-      background: linear-gradient(135deg, #6b4423 0%, #8b5a2b 100%);
-      text-align: center;
-      padding: clamp(60px, 10vw, 100px) 20px;
-    }
-    
-    .cta-section h2 {
-      color: white;
-      font-size: clamp(28px, 5vw, 40px);
-      margin-bottom: 16px;
-    }
-    
-    .cta-section .sub {
-      color: rgba(255,255,255,0.9);
-      font-size: clamp(16px, 3vw, 18px);
-      max-width: 600px;
-      margin: 0 auto 32px;
-    }
-    
-    .cta-section .btn-white {
-      background: white;
-      color: #6b4423;
-      padding: 18px 48px;
-      font-size: 18px;
-      font-weight: 700;
-      border-radius: 8px;
-      text-decoration: none;
-      display: inline-block;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    
-    .cta-section .btn-white:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-    }
-    
-    .cta-section .cta-contact {
-      margin-top: 24px;
-      color: rgba(255,255,255,0.8);
-      font-size: 15px;
-    }
-    
-    .cta-section .cta-contact a {
-      color: white;
-      text-decoration: underline;
-    }
-    
-    /* Breadcrumb */
-    .breadcrumb {
-      padding: 14px 20px;
-      background: #f5f5f5;
-      font-size: 14px;
-    }
-    
-    .breadcrumb ol {
-      list-style: none;
-      display: flex;
-      gap: 8px;
-      margin: 0;
-      padding: 0;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .breadcrumb a {
-      color: var(--accent, #6b4423);
-      text-decoration: none;
-    }
-    
-    .breadcrumb a:hover {
-      text-decoration: underline;
-    }
-    
-    .breadcrumb .separator {
-      color: #999;
-    }
-    
-    .breadcrumb .current {
-      color: #666;
-    }
-    
-    /* Contact Bar */
-    .contact-bar {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-      padding: 24px;
-      background: #f9f8f6;
-      border-radius: 12px;
-      margin-top: 40px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    .contact-bar .label {
-      font-weight: 500;
-      color: #444;
-    }
-    
-    .contact-bar a {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 20px;
-      background: white;
-      border: 1px solid rgba(0,0,0,0.1);
-      border-radius: 8px;
-      color: #1a1512;
-      text-decoration: none;
-      font-weight: 500;
-      transition: border-color 0.2s;
-    }
-    
-    .contact-bar a:hover {
-      border-color: var(--accent, #6b4423);
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-      .comparison-table-wrapper {
-        overflow-x: auto;
-        margin: 0 -20px;
-        padding: 0 20px;
-      }
-      
-      .hero-badges {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .contact-bar {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/landing-pages.css" />
 </head>
 <body>
-<!-- Header -->
-<header>
-  <div class="container">
-    <nav class="nav">
-      <a href="/" class="brand">
-        <img src="/assets/logo.png" alt="Propcash Logo" class="logo">
-      </a>
-      
-      <!-- Desktop Navigation -->
-      <div class="desktop-nav">
-        <a href="/#how-it-works">How it Works</a>
-        <a href="/#why-marketplace">Why Propcash</a>
-        <a href="/faq">FAQ</a>
-      </div>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <a href="/" class="brand">
+          <img src="/assets/logo.png" alt="Propcash Logo" class="logo">
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <div class="desktop-nav">
+          <a href="/#how-it-works">How it Works</a>
+          <a href="/#why-marketplace">Why Propcash</a>
+          <a href="/faq">FAQ</a>
+        </div>
 
-      <!-- Desktop CTA -->
-      <div class="header-ctas">
-        <a href="/get-offer" class="cta-header">Get My Cash Offers →</a>
-      </div>
-      
-      <!-- Mobile Menu Toggle -->
-      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
+        <!-- Desktop CTA -->
+        <div class="header-ctas">
+          <a href="/get-offer" class="cta-header">Get My Cash Offers →</a>
+        </div>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
+      </nav>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="/#how-it-works">How it Works</a>
+      <a href="/#why-marketplace">Why Propcash</a>
+      <a href="/faq">FAQ</a>
+      <a href="/get-offer" class="mobile-cta">Get My Cash Offers →</a>
     </nav>
-  </div>
-  
-  <!-- Mobile Navigation -->
-  <nav class="mobile-nav" id="mobileNav">
-    <a href="/#how-it-works">How it Works</a>
-    <a href="/#why-marketplace">Why Propcash</a>
-    <a href="/faq">FAQ</a>
-    <a href="/get-offer" class="mobile-cta">Get My Cash Offers →</a>
-  </nav>
-</header>
+  </header>
 
   <!-- Breadcrumb -->
   <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -884,29 +295,25 @@
 
   <main>
     <!-- HERO SECTION -->
-    <section class="nashville-hero">
-      <div class="container" style="max-width: 900px;">
+    <section class="lp-hero" style="background-image: url('/assets/nashville-house.jpg');">
+      <div class="lp-hero-content">
         <h1>Sell Your House Fast in Nashville, TN — Get Competing Cash Offers</h1>
-        
-        <p class="sub">
+        <p class="text-large">
           Stop settling for lowball offers. Our Nashville marketplace connects you with 500+ investors who compete for your property — so you get the best price, not just the fastest one.
         </p>
-        
-        <a href="/get-offer" class="btn-white" style="display: inline-block; padding: 18px 48px; font-size: 18px; font-weight: 700; text-decoration: none; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.25);">
-          Get Competing Cash Offers →
-        </a>
+        <a href="/get-offer" class="btn btn-white btn-large">Get Competing Cash Offers →</a>
         
         <div class="hero-badges">
           <div class="hero-badge">
-            <span class="dot"></span>
+            <span class="pulse-dot"></span>
             <span>500+ Active Nashville Investors</span>
           </div>
           <div class="hero-badge">
-            <span class="dot"></span>
+            <span class="pulse-dot"></span>
             <span>Local Team • 7-Day Closing</span>
           </div>
           <div class="hero-badge">
-            <span class="dot"></span>
+            <span class="pulse-dot"></span>
             <span>3 Offers Per Property (Avg.)</span>
           </div>
         </div>
@@ -914,261 +321,277 @@
     </section>
 
     <!-- WHY PROPCASH IS DIFFERENT -->
-    <section class="section">
+    <section class="section-lg">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <h2>Why Nashville Homeowners Choose Propcash Over Traditional Cash Buyers</h2>
-          <p class="sub">
+          <p class="text-large text-muted">
             Most "we buy houses" companies make you one offer and hope you don't shop around. We built something better.
           </p>
         </div>
         
-        <div class="diff-grid">
-          <div class="diff-card">
+        <div class="grid-3">
+          <div class="card card-accent">
             <h3>500+ Investors Competing for Your Property</h3>
-            <p class="sub">
+            <p>
               Instead of one company making one offer, we send your property to our network of vetted Nashville investors. They compete. You win.
             </p>
-            <span class="stat">Avg. 3+ offers per property</span>
+            <span class="badge">Avg. 3+ offers per property</span>
           </div>
           
-          <div class="diff-card">
+          <div class="card card-accent">
             <h3>Local Nashville Team</h3>
-            <p class="sub">
+            <p>
               We're not a faceless national corporation. Our team lives and works in Nashville. When you call, you talk to someone who knows your neighborhood.
             </p>
-            <span class="stat">Response time: minutes, not days</span>
+            <span class="badge">Response time: minutes, not days</span>
           </div>
           
-          <div class="diff-card">
+          <div class="card card-accent">
             <h3>Close in as Few as 7 Days</h3>
-            <p class="sub">
+            <p>
               Need to sell fast? We can close in a week. Need more time? We work on your schedule. You're always in control.
             </p>
-            <span class="stat">Fastest close: 3 days</span>
+            <span class="badge">Fastest close: 3 days</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- STATS ROW -->
-    <section class="section section-alt">
+    <section class="section-lg bg-secondary">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <h2>Trusted by Nashville Homeowners Since 2020</h2>
-          <p class="sub">We help Nashvillians sell their homes quickly so they can move on to the next chapter.</p>
+          <p class="text-muted">We help Nashvillians sell their homes quickly so they can move on to the next chapter.</p>
         </div>
         
-        <div class="stats-row">
-          <div class="stat-item">
-            <div class="value">24 Hrs</div>
-            <div class="label">Avg. Time to First Offer</div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">24 Hrs</div>
+            <div class="stat-label">Avg. Time to First Offer</div>
           </div>
-          <div class="stat-item">
-            <div class="value">7-14 Days</div>
-            <div class="label">Avg. Time to Close</div>
+          <div class="stat-card">
+            <div class="stat-number">7-14 Days</div>
+            <div class="stat-label">Avg. Time to Close</div>
           </div>
-          <div class="stat-item">
-            <div class="value">98%</div>
-            <div class="label">Seller Satisfaction Rate</div>
+          <div class="stat-card">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Seller Satisfaction Rate</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- HOW IT WORKS -->
-    <section class="section">
+    <section class="section-lg">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <h2>How to Sell Your House Fast in Nashville</h2>
-          <p class="sub">Get competing cash offers for your property in three simple steps</p>
+          <p class="text-muted">Get competing cash offers for your property in three simple steps</p>
         </div>
         
-        <div class="steps-grid">
-          <div class="step-card">
-            <div class="step-num">1</div>
-            <h3>Submit Your Property Details</h3>
-            <p class="sub">Answer a few questions about your Nashville home so we can share it with our investor network.</p>
-            <div class="step-meta">⏱️ Takes 2 minutes</div>
+        <div class="process-timeline">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Submit Your Property Details</h3>
+              <p>Answer a few questions about your Nashville home so we can share it with our investor network.</p>
+              <span class="step-meta">⏱️ Takes 2 minutes</span>
+            </div>
           </div>
           
-          <div class="step-card">
-            <div class="step-num">2</div>
-            <h3>Investors Compete for Your Property</h3>
-            <p class="sub">Your property goes to 500+ vetted cash investors. They submit competing offers within 24 hours.</p>
-            <div class="step-meta">📊 Avg. 3 offers per property</div>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Investors Compete for Your Property</h3>
+              <p>Your property goes to 500+ vetted cash investors. They submit competing offers within 24 hours.</p>
+              <span class="step-meta">📊 Avg. 3 offers per property</span>
+            </div>
           </div>
           
-          <div class="step-card">
-            <div class="step-num">3</div>
-            <h3>Choose Your Best Offer & Close</h3>
-            <p class="sub">Our Specialists review all offers and present you with the best options. You choose if, when, and how to proceed.</p>
-            <div class="step-meta">🏠 Close in as few as 7 days</div>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Choose Your Best Offer & Close</h3>
+              <p>Our Specialists review all offers and present you with the best options. You choose if, when, and how to proceed.</p>
+              <span class="step-meta">🏠 Close in as few as 7 days</span>
+            </div>
           </div>
         </div>
         
-        <div style="text-align: center; margin-top: 48px;">
-          <a href="/get-offer" class="btn" style="display: inline-block; padding: 18px 48px; text-decoration: none; font-size: 17px;">Get Competing Cash Offers →</a>
+        <div class="text-center mt-xl">
+          <a href="/get-offer" class="btn btn-primary btn-large">Get Competing Cash Offers →</a>
         </div>
       </div>
     </section>
 
     <!-- COMPARISON TABLE -->
-    <section class="section section-alt">
+    <section class="section-lg bg-secondary">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <h2>Sell Your Nashville House Fast: Compare Your Options</h2>
-          <p class="sub">See why a competitive marketplace beats both traditional sales and single-buyer cash offers</p>
+          <p class="text-muted">See why a competitive marketplace beats both traditional sales and single-buyer cash offers</p>
         </div>
         
-        <div class="comparison-table-wrapper" style="max-width: 1000px; margin: 0 auto;">
-          <div style="overflow-x: auto;">
-            <table class="comparison-table">
-              <thead>
-                <tr>
-                  <th>Factor</th>
-                  <th>Propcash Marketplace</th>
-                  <th>Typical "We Buy Houses"</th>
-                  <th>Traditional Agent Sale</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Number of Offers</strong></td>
-                  <td class="highlight">Multiple competing offers</td>
-                  <td>1 offer (take it or leave it)</td>
-                  <td>Varies</td>
-                </tr>
-                <tr>
-                  <td><strong>Timeline to Close</strong></td>
-                  <td class="highlight">7-14 days</td>
-                  <td>7-14 days</td>
-                  <td>60-180 days</td>
-                </tr>
-                <tr>
-                  <td><strong>Offer Quality</strong></td>
-                  <td class="highlight">Competition drives better prices</td>
-                  <td>Often 30-70% of market value</td>
-                  <td>Market rate (minus fees)</td>
-                </tr>
-                <tr>
-                  <td><strong>Repairs Needed</strong></td>
-                  <td class="highlight">None — sell as-is</td>
-                  <td>None</td>
-                  <td>Usually required</td>
-                </tr>
-                <tr>
-                  <td><strong>Fees & Commissions</strong></td>
-                  <td class="highlight">$0</td>
-                  <td>$0 (but lower offer)</td>
-                  <td>5-6% commission + closing costs</td>
-                </tr>
-                <tr>
-                  <td><strong>Who's in Control</strong></td>
-                  <td class="highlight">You choose from multiple offers</td>
-                  <td>Buyer sets the terms</td>
-                  <td>Market dependent</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Factor</th>
+                <th>Propcash Marketplace</th>
+                <th>Typical "We Buy Houses"</th>
+                <th>Traditional Agent Sale</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Number of Offers</strong></td>
+                <td class="highlight">Multiple competing offers</td>
+                <td>1 offer (take it or leave it)</td>
+                <td>Varies</td>
+              </tr>
+              <tr>
+                <td><strong>Timeline to Close</strong></td>
+                <td class="highlight">7-14 days</td>
+                <td>7-14 days</td>
+                <td>60-180 days</td>
+              </tr>
+              <tr>
+                <td><strong>Offer Quality</strong></td>
+                <td class="highlight">Competition drives better prices</td>
+                <td>Often 30-70% of market value</td>
+                <td>Market rate (minus fees)</td>
+              </tr>
+              <tr>
+                <td><strong>Repairs Needed</strong></td>
+                <td class="highlight">None — sell as-is</td>
+                <td>None</td>
+                <td>Usually required</td>
+              </tr>
+              <tr>
+                <td><strong>Fees & Commissions</strong></td>
+                <td class="highlight">$0</td>
+                <td>$0 (but lower offer)</td>
+                <td>5-6% commission + closing costs</td>
+              </tr>
+              <tr>
+                <td><strong>Who's in Control</strong></td>
+                <td class="highlight">You choose from multiple offers</td>
+                <td>Buyer sets the terms</td>
+                <td>Market dependent</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         
-        <div style="text-align: center; margin-top: 40px;">
-          <p class="sub" style="margin-bottom: 24px;">Ready to see what your Nashville home is really worth?</p>
-          <a href="/get-offer" class="btn" style="display: inline-block; padding: 18px 48px; text-decoration: none;">Get Competing Cash Offers →</a>
+        <div class="text-center mt-xl">
+          <p class="text-muted mb-md">Ready to see what your Nashville home is really worth?</p>
+          <a href="/get-offer" class="btn btn-primary btn-large">Get Competing Cash Offers →</a>
         </div>
       </div>
     </section>
 
     <!-- SELL AS-IS -->
-    <section class="section">
+    <section class="section-lg">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <h2>Sell Your Nashville House As-Is — No Repairs, No Cleaning, No Stress</h2>
-          <p class="sub">Our investors buy Nashville homes in any condition. You don't need to fix, clean, or prepare anything.</p>
+          <p class="text-muted">Our investors buy Nashville homes in any condition. You don't need to fix, clean, or prepare anything.</p>
         </div>
         
-        <div class="as-is-grid">
-          <div class="as-is-item">
-            <div class="icon">🔧</div>
+        <div class="icon-grid">
+          <div class="icon-card">
+            <div class="icon-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
             <p>Foundation Issues</p>
           </div>
-          <div class="as-is-item">
-            <div class="icon">🏚️</div>
+          <div class="icon-card">
+            <div class="icon-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
             <p>Major Repairs Needed</p>
           </div>
-          <div class="as-is-item">
-            <div class="icon">💧</div>
+          <div class="icon-card">
+            <div class="icon-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+            </div>
             <p>Water Damage</p>
           </div>
-          <div class="as-is-item">
-            <div class="icon">📦</div>
+          <div class="icon-card">
+            <div class="icon-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+            </div>
             <p>Full of Stuff</p>
           </div>
-          <div class="as-is-item">
-            <div class="icon">🏠</div>
+          <div class="icon-card">
+            <div class="icon-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            </div>
             <p>Outdated Interior</p>
           </div>
-          <div class="as-is-item">
-            <div class="icon">🔥</div>
+          <div class="icon-card">
+            <div class="icon-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+            </div>
             <p>Fire Damage</p>
           </div>
         </div>
         
-        <p class="sub" style="text-align: center; margin-top: 32px; max-width: 700px; margin-left: auto; margin-right: auto;">
+        <p class="text-muted text-center container-narrow mt-xl">
           Don't spend thousands on repairs hoping to attract a buyer. Our investors see potential where others see problems — and they'll compete to make you the best offer.
         </p>
       </div>
     </section>
 
     <!-- TESTIMONIALS -->
-    <section class="section section-alt">
+    <section class="section-lg bg-secondary">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <h2>Nashville Homeowners Who Got Competing Offers</h2>
-          <p class="sub">Real stories from Nashville sellers who chose the marketplace approach</p>
+          <p class="text-muted">Real stories from Nashville sellers who chose the marketplace approach</p>
         </div>
         
         <div class="testimonials-grid">
           <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="quote">
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">
               "After getting lowballed by local 'we buy houses' companies, Propcash's marketplace got me multiple competing offers. The winning offer was $25K higher than the first company offered. Closed in 10 days."
             </p>
-            <div class="author">
-              <div class="avatar">SM</div>
-              <div class="author-info">
-                <div class="name">Sarah M.</div>
-                <div class="location">East Nashville (37206)</div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">SM</div>
+              <div class="testimonial-info">
+                <h4>Sarah M.</h4>
+                <span class="testimonial-location">East Nashville (37206)</span>
               </div>
             </div>
           </div>
           
           <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="quote">
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">
               "Inherited a house in Green Hills that needed major repairs. Got 4 offers within 24 hours. No repairs, no cleaning — just handed over the keys and got my check in 2 weeks."
             </p>
-            <div class="author">
-              <div class="avatar">MT</div>
-              <div class="author-info">
-                <div class="name">Michael T.</div>
-                <div class="location">Green Hills (37215)</div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">MT</div>
+              <div class="testimonial-info">
+                <h4>Michael T.</h4>
+                <span class="testimonial-location">Green Hills (37215)</span>
               </div>
             </div>
           </div>
           
           <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="quote">
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">
               "My favorite part was our Marketplace Specialist, who was very quick to respond. Theodore was professional and responsive throughout the entire process. Highly recommend!"
             </p>
-            <div class="author">
-              <div class="avatar">JL</div>
-              <div class="author-info">
-                <div class="name">Jennifer L.</div>
-                <div class="location">Nashville, TN</div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">JL</div>
+              <div class="testimonial-info">
+                <h4>Jennifer L.</h4>
+                <span class="testimonial-location">Nashville, TN</span>
               </div>
             </div>
           </div>
@@ -1177,67 +600,67 @@
     </section>
 
     <!-- SITUATIONS -->
-    <section class="section">
+    <section class="section-lg">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <h2>Common Reasons Nashville Homeowners Need to Sell Fast</h2>
-          <p class="sub">Whatever your situation, our marketplace can help you get competing offers quickly.</p>
+          <p class="text-muted">Whatever your situation, our marketplace can help you get competing offers quickly.</p>
         </div>
         
-        <div class="situations-grid">
-          <div class="situation-card">
+        <div class="grid-3">
+          <div class="card">
             <h4>🏚️ Inherited Property</h4>
-            <p class="sub">Inherited a house in Nashville you don't want to maintain? Get competing offers from investors who specialize in inherited homes.</p>
+            <p>Inherited a house in Nashville you don't want to maintain? Get competing offers from investors who specialize in inherited homes.</p>
           </div>
           
-          <div class="situation-card">
+          <div class="card">
             <h4>💼 Job Relocation</h4>
-            <p class="sub">Moving out of Nashville for work? Sell your house fast without the stress of a traditional sale dragging on for months.</p>
+            <p>Moving out of Nashville for work? Sell your house fast without the stress of a traditional sale dragging on for months.</p>
           </div>
           
-          <div class="situation-card">
+          <div class="card">
             <h4>💔 Divorce</h4>
-            <p class="sub">Need to sell quickly and fairly? Our transparent marketplace makes it easy to divide assets and move forward.</p>
+            <p>Need to sell quickly and fairly? Our transparent marketplace makes it easy to divide assets and move forward.</p>
           </div>
           
-          <div class="situation-card">
+          <div class="card">
             <h4>🔧 Major Repairs Needed</h4>
-            <p class="sub">Foundation issues? Roof damage? Our investors buy Nashville homes in any condition — no repairs required.</p>
+            <p>Foundation issues? Roof damage? Our investors buy Nashville homes in any condition — no repairs required.</p>
           </div>
           
-          <div class="situation-card">
+          <div class="card">
             <h4>💰 Behind on Payments</h4>
-            <p class="sub">Facing foreclosure in Nashville? A fast cash sale may help you avoid it and walk away with money in your pocket.</p>
+            <p>Facing foreclosure in Nashville? A fast cash sale may help you avoid it and walk away with money in your pocket.</p>
           </div>
           
-          <div class="situation-card">
+          <div class="card">
             <h4>🏘️ Problem Tenants</h4>
-            <p class="sub">Tired of dealing with difficult renters? Sell your Nashville rental property with tenants in place — we handle the rest.</p>
+            <p>Tired of dealing with difficult renters? Sell your Nashville rental property with tenants in place — we handle the rest.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- NASHVILLE MARKET CONTEXT -->
-    <section class="section section-alt">
-      <div class="container" style="max-width: 900px;">
-        <div class="section-header">
+    <section class="section-lg bg-secondary">
+      <div class="container container-narrow">
+        <div class="section-header text-center">
           <h2>Selling Your House Fast in Nashville's Competitive Market</h2>
         </div>
         
-        <div style="line-height: 1.8;">
-          <h3 style="font-size: 22px; margin-bottom: 12px;">The Nashville Home Selling Challenge</h3>
-          <p class="sub" style="margin-bottom: 24px;">
-            Nashville's real estate market remains one of the hottest in the country. But even in a seller's market, traditional home sales in Nashville still average <a href="https://listwithclever.com/real-estate-blog/average-time-to-sell-a-house-in-nashville/" target="_blank" rel="noopener noreferrer" style="color: #6b4423; text-decoration: underline;">30 to 90 days</a> between listing, showings, negotiations, and closing. For homeowners who need to sell quickly — whether due to foreclosure, an inherited property, divorce, or job relocation — waiting months isn't an option.
+        <div class="content-block">
+          <h3>The Nashville Home Selling Challenge</h3>
+          <p>
+            Nashville's real estate market remains one of the hottest in the country. But even in a seller's market, traditional home sales in Nashville still average <a href="https://listwithclever.com/real-estate-blog/average-time-to-sell-a-house-in-nashville/" target="_blank" rel="noopener noreferrer">30 to 90 days</a> between listing, showings, negotiations, and closing. For homeowners who need to sell quickly — whether due to foreclosure, an inherited property, divorce, or job relocation — waiting months isn't an option.
           </p>
           
-          <h3 style="font-size: 22px; margin-bottom: 12px;">Why a Marketplace Beats a Single Buyer</h3>
-          <p class="sub" style="margin-bottom: 24px;">
+          <h3>Why a Marketplace Beats a Single Buyer</h3>
+          <p>
             Traditional "we buy houses" companies make you one offer and hope you don't shop around. Propcash flips the script. By connecting your property with 500+ vetted cash investors, we create competition that drives better offers. It's the difference between accepting whatever one buyer offers versus letting the market determine your home's true value.
           </p>
           
-          <h3 style="font-size: 22px; margin-bottom: 12px;">Local Team, National Network</h3>
-          <p class="sub">
+          <h3>Local Team, National Network</h3>
+          <p class="mb-0">
             Our Nashville-based team understands the local market — from East Nashville to Antioch, from Green Hills to Hermitage. But we also have access to a national network of investors, which means more competition for your property regardless of its condition or location.
           </p>
         </div>
@@ -1245,14 +668,14 @@
     </section>
 
     <!-- NEIGHBORHOODS -->
-    <section class="section">
+    <section class="section-lg">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <h2>We Connect Sellers with Investors in Every Nashville Neighborhood</h2>
-          <p class="sub">Our investor network includes buyers interested in properties throughout Nashville and Davidson County.</p>
+          <p class="text-muted">Our investor network includes buyers interested in properties throughout Nashville and Davidson County.</p>
         </div>
         
-        <div class="neighborhoods-grid">
+        <div class="neighborhood-grid">
           <div class="neighborhood-item">📍 <strong>East Nashville</strong> (37206, 37216)</div>
           <div class="neighborhood-item">📍 <strong>Green Hills</strong> (37215)</div>
           <div class="neighborhood-item">📍 <strong>12 South</strong> (37204)</div>
@@ -1274,108 +697,84 @@
     </section>
 
     <!-- FAQ -->
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-header">
+    <section class="section-lg bg-secondary">
+      <div class="container container-narrow">
+        <div class="section-header text-center">
           <h2>Nashville Home Selling FAQs</h2>
         </div>
         
-        <div class="faq-section">
+        <div class="faq-list">
           <details>
             <summary>How is Propcash different from other Nashville cash home buyers?</summary>
-            <div class="content">
-              <p class="sub">Most cash buyers make you one offer and hope you accept. Propcash is a marketplace — we send your property to 500+ competing investors. Competition drives better offers. Our sellers typically receive 3+ offers within 24 hours, so you can choose the best one instead of settling for whatever a single buyer offers.</p>
-            </div>
+            <p>Most cash buyers make you one offer and hope you accept. Propcash is a marketplace — we send your property to 500+ competing investors. Competition drives better offers. Our sellers typically receive 3+ offers within 24 hours, so you can choose the best one instead of settling for whatever a single buyer offers.</p>
           </details>
           
           <details>
             <summary>How fast can you close on a Nashville property?</summary>
-            <div class="content">
-              <p class="sub">We can close in as little as 7 days if you need to sell quickly. Our fastest close was 3 days. If you need more time — to find a new place, coordinate a move, or handle other logistics — that's fine too. You choose the closing date that works for your schedule.</p>
-            </div>
+            <p>We can close in as little as 7 days if you need to sell quickly. Our fastest close was 3 days. If you need more time — to find a new place, coordinate a move, or handle other logistics — that's fine too. You choose the closing date that works for your schedule.</p>
           </details>
           
           <details>
             <summary>How much will investors offer for my Nashville house?</summary>
-            <div class="content">
-              <p class="sub">Offers are based on your property's location, condition, and current Nashville market values. Because multiple investors compete for your property, you typically get better offers than you would from a single buyer. We're transparent about all offers — you see everything and choose what works for you.</p>
-            </div>
+            <p>Offers are based on your property's location, condition, and current Nashville market values. Because multiple investors compete for your property, you typically get better offers than you would from a single buyer. We're transparent about all offers — you see everything and choose what works for you.</p>
           </details>
           
           <details>
             <summary>What if my Nashville home needs major repairs?</summary>
-            <div class="content">
-              <p class="sub">Our investors buy houses in any condition. Foundation issues, roof damage, water damage, outdated everything — it doesn't matter. You don't need to spend a dollar on repairs. In fact, many investors specifically look for properties that need work.</p>
-            </div>
+            <p>Our investors buy houses in any condition. Foundation issues, roof damage, water damage, outdated everything — it doesn't matter. You don't need to spend a dollar on repairs. In fact, many investors specifically look for properties that need work.</p>
           </details>
           
           <details>
             <summary>Are there any fees or commissions?</summary>
-            <div class="content">
-              <p class="sub">Zero. No realtor commissions (which typically cost 5-6%), no closing costs, no hidden fees. Propcash is completely free for sellers. The cash offer you accept is the amount you receive at closing.</p>
-            </div>
+            <p>Zero. No realtor commissions (which typically cost 5-6%), no closing costs, no hidden fees. Propcash is completely free for sellers. The cash offer you accept is the amount you receive at closing.</p>
           </details>
           
           <details>
             <summary>Do you buy houses in all Nashville neighborhoods?</summary>
-            <div class="content">
-              <p class="sub">Yes! Our investor network includes buyers interested in properties throughout Nashville and Davidson County — East Nashville, Green Hills, 12 South, The Gulch, Germantown, Belle Meade, Donelson, Antioch, Hermitage, Madison, and all surrounding areas. Location doesn't limit your options.</p>
-            </div>
+            <p>Yes! Our investor network includes buyers interested in properties throughout Nashville and Davidson County — East Nashville, Green Hills, 12 South, The Gulch, Germantown, Belle Meade, Donelson, Antioch, Hermitage, Madison, and all surrounding areas. Location doesn't limit your options.</p>
           </details>
           
           <details>
             <summary>Can you buy my house if I'm behind on mortgage payments?</summary>
-            <div class="content">
-              <p class="sub">Yes, in many cases we can help Nashville homeowners who are behind on payments. A fast cash sale may help you avoid foreclosure, protect your credit, and potentially walk away with money in your pocket. Contact us to discuss your specific situation.</p>
-            </div>
+            <p>Yes, in many cases we can help Nashville homeowners who are behind on payments. A fast cash sale may help you avoid foreclosure, protect your credit, and potentially walk away with money in your pocket. Contact us to discuss your specific situation.</p>
           </details>
           
           <details>
             <summary>What if I have tenants in my Nashville rental property?</summary>
-            <div class="content">
-              <p class="sub">No problem! Many investors in our network buy rental properties with tenants in place. You don't need to evict anyone or wait for leases to expire. We'll match you with investors who specialize in tenant-occupied properties.</p>
-            </div>
+            <p>No problem! Many investors in our network buy rental properties with tenants in place. You don't need to evict anyone or wait for leases to expire. We'll match you with investors who specialize in tenant-occupied properties.</p>
           </details>
           
           <details>
             <summary>Is Propcash a legitimate company?</summary>
-            <div class="content">
-              <p class="sub">Yes! Propcash operates a marketplace platform connecting property sellers with vetted cash investors. We've been helping Nashville homeowners since 2020. All investors in our network are vetted for proof of funds and track record. Check our reviews from real Nashville sellers above.</p>
-            </div>
+            <p>Yes! Propcash operates a marketplace platform connecting property sellers with vetted cash investors. We've been helping Nashville homeowners since 2020. All investors in our network are vetted for proof of funds and track record. Check our reviews from real Nashville sellers above.</p>
           </details>
           
           <details>
             <summary>Do I need to clean or stage my Nashville house before selling?</summary>
-            <div class="content">
-              <p class="sub">No! We connect you with investors who buy houses in any condition — no cleaning, staging, or repairs required. Whether your house is filled with belongings, needs major updates, or has damage, investors will make offers on it as-is.</p>
-            </div>
+            <p>No! We connect you with investors who buy houses in any condition — no cleaning, staging, or repairs required. Whether your house is filled with belongings, needs major updates, or has damage, investors will make offers on it as-is.</p>
           </details>
           
           <details>
             <summary>How does the marketplace process work?</summary>
-            <div class="content">
-              <p class="sub">It's simple: (1) You submit your property details — takes 2 minutes. (2) We share your property with 500+ vetted cash investors. (3) Investors submit competing offers within 24 hours. (4) Our Marketplace Specialists review all offers and present you with the best options. (5) You choose which offer to accept — or none at all. There's zero obligation.</p>
-            </div>
+            <p>It's simple: (1) You submit your property details — takes 2 minutes. (2) We share your property with 500+ vetted cash investors. (3) Investors submit competing offers within 24 hours. (4) Our Marketplace Specialists review all offers and present you with the best options. (5) You choose which offer to accept — or none at all. There's zero obligation.</p>
           </details>
           
           <details>
             <summary>What types of properties do your investors buy?</summary>
-            <div class="content">
-              <p class="sub">Our investor network buys all types of properties in Nashville: single-family homes, condos, townhouses, duplexes, multi-family properties, and land. Any condition, any situation — there's likely an investor in our network interested in your property.</p>
-            </div>
+            <p>Our investor network buys all types of properties in Nashville: single-family homes, condos, townhouses, duplexes, multi-family properties, and land. Any condition, any situation — there's likely an investor in our network interested in your property.</p>
           </details>
         </div>
       </div>
     </section>
 
     <!-- CTA SECTION -->
-    <section class="cta-section" id="start">
-      <div class="container">
+    <section class="lp-cta" id="start">
+      <div class="container text-center">
         <h2>Ready to Get Competing Cash Offers?</h2>
-        <p class="sub">
+        <p class="text-large">
           Answer a few questions about your Nashville property and see what investors will offer. Takes 2 minutes. Zero obligation.
         </p>
-        <a href="/get-offer" class="btn-white">Get Competing Cash Offers →</a>
+        <a href="/get-offer" class="btn btn-white btn-large">Get Competing Cash Offers →</a>
         <p class="cta-contact">
           Questions? <a href="tel:6155524296">Call (615) 552-4296</a> or <a href="sms:6155524296?&body=Hi%2C%20I%20have%20a%20question%20about%20selling%20my%20Nashville%20property.">Text us</a> — we respond in minutes.
         </p>
@@ -1386,118 +785,95 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 24px; padding-bottom: 48px; border-bottom: 1px solid #e5e0db;">
-
+      <div class="footer-grid">
         <!-- Brand & Tagline -->
-        <div>
-          <a href="/" class="brand" style="display: block; margin-bottom: 12px;">Propcash</a>
-          <p class="text-muted text-small" style="margin: 0; max-width: 300px; line-height: 1.6;">
+        <div class="footer-brand">
+          <a href="/" class="brand">Propcash</a>
+          <p class="text-muted text-small">
             Real estate's first competitive marketplace for cash offers. Powered by 500+ investors nationwide.
           </p>
         </div>
         
         <!-- Column 1: For Sellers -->
-        <div>
-          <h4 style="margin: 0 0 20px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #6b4423; text-align: left;">For Sellers</h4>
-          <nav style="display: flex; flex-direction: column; align-items: left; gap: 12px;">
-            <a href="/get-offer" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">Sell Your Home</a>
-            <a href="/#how-it-works" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">How it Works</a>
-            <a href="/#why-marketplace" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">Why Propcash?</a>
-            <a href="/faq" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">FAQ</a>
+        <div class="footer-col">
+          <h4>For Sellers</h4>
+          <nav>
+            <a href="/get-offer">Sell Your Home</a>
+            <a href="/#how-it-works">How it Works</a>
+            <a href="/#why-marketplace">Why Propcash?</a>
+            <a href="/faq">FAQ</a>
           </nav>
         </div>
         
         <!-- Column 2: Company -->
-        <div>
-          <h4 style="margin: 0 0 20px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #6b4423; text-align: left;">Company</h4>
-          <nav style="display: flex; flex-direction: column; align-items: left; gap: 12px;">
-            <a href="/about" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">About Us</a>
-            <a href="/contact" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">Contact Us</a>
-            <a href="/investors" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">For Investors</a>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <nav>
+            <a href="/about">About Us</a>
+            <a href="/contact">Contact Us</a>
+            <a href="/investors">For Investors</a>
           </nav>
         </div>
         
         <!-- Column 3: Contact -->
-        <div>
-          <h4 style="margin: 0 0 20px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #6b4423; text-align: left;">Contact</h4>
-          <div style="display: flex; flex-direction: column; align-items: left; gap: 12px;">
-            <a href="tel:6155524296" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">
-              <span>(615) 552-4296</span>
-            </a>
-            <a href="mailto:info@propcash.co" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">
-              <span>info@propcash.co</span>
-            </a>
-          </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <nav>
+            <a href="tel:6155524296">(615) 552-4296</a>
+            <a href="mailto:info@propcash.co">info@propcash.co</a>
+          </nav>
         </div>
-        
       </div>
       
       <!-- Bottom Row -->
-      <div class="footer-bottom" style="padding-top: 32px;">
-        <div>
-          <p class="footer-disclaimer" style="margin-bottom: 16px; font-size: 12px; color: #6b625a; line-height: 1.6;">
-            <strong>Disclaimer:</strong> Propcash operates a marketplace platform connecting property sellers with independent investors. We do not purchase properties directly. All offers come from third-party investors in our network. We are not acting as licensed real estate agents or brokers and do not offer legal, tax, or financial advice. Propcash and/or its affiliates may acquire contractual rights to properties listed on the platform and assign those rights to investors in our network.
-          </p>
-          <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; font-size: 13px; color: #6b625a;">
-            <p style="margin: 0;">© <span id="year"></span> Propcash. All rights reserved. | Serving Nashville, TN</p>
-            <a href="/privacy" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">Privacy Policy</a>
-            <a href="/terms" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">Terms of Service</a>
+      <div class="footer-bottom">
+        <p class="footer-disclaimer">
+          <strong>Disclaimer:</strong> Propcash operates a marketplace platform connecting property sellers with independent investors. We do not purchase properties directly. All offers come from third-party investors in our network. We are not acting as licensed real estate agents or brokers and do not offer legal, tax, or financial advice. Propcash and/or its affiliates may acquire contractual rights to properties listed on the platform and assign those rights to investors in our network.
+        </p>
+        <div class="footer-legal">
+          <p>© <span id="year"></span> Propcash. All rights reserved. | Serving Nashville, TN</p>
+          <div class="footer-links">
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
           </div>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Mobile Responsive Styles for Footer -->
-  <style>
-    @media (max-width: 768px) {
-      footer .container > div:first-child {
-        grid-template-columns: 1fr !important;
-        gap: 32px !important;
-      }
-    }
-  </style>
-
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
-  <!-- Mobile Menu Script -->
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const mobileNav = document.getElementById('mobileNav');
     
-    if (mobileMenuToggle && mobileNav) {
-      // Toggle menu on button click
-      mobileMenuToggle.addEventListener('click', function() {
-        const isExpanded = this.getAttribute('aria-expanded') === 'true';
-        
-        mobileNav.classList.toggle('active');
-        this.setAttribute('aria-expanded', !isExpanded);
-        this.textContent = isExpanded ? '☰' : '✕';
-      });
+    // Mobile Menu
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      const mobileNav = document.getElementById('mobileNav');
       
-      // Close menu when clicking a link
-      const mobileLinks = mobileNav.querySelectorAll('a');
-      mobileLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
-          mobileNav.classList.remove('active');
-          mobileMenuToggle.setAttribute('aria-expanded', 'false');
-          mobileMenuToggle.textContent = '☰';
+      if (mobileMenuToggle && mobileNav) {
+        mobileMenuToggle.addEventListener('click', function() {
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+          mobileNav.classList.toggle('active');
+          this.setAttribute('aria-expanded', !isExpanded);
+          this.textContent = isExpanded ? '☰' : '✕';
         });
-      });
-      
-      // Close menu when clicking outside
-      document.addEventListener('click', function(event) {
-        if (!mobileNav.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
-          mobileNav.classList.remove('active');
-          mobileMenuToggle.setAttribute('aria-expanded', 'false');
-          mobileMenuToggle.textContent = '☰';
-        }
-      });
-    }
-  });
+        
+        mobileNav.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            mobileMenuToggle.textContent = '☰';
+          });
+        });
+        
+        document.addEventListener('click', function(event) {
+          if (!mobileNav.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+            mobileNav.classList.remove('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            mobileMenuToggle.textContent = '☰';
+          }
+        });
+      }
+    });
   </script>
 </body>
 </html>
