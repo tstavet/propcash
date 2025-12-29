@@ -27,9 +27,15 @@
   margin-bottom: 0;
 }
 
-/* Add at the top of your file */
+/* Global overflow fix */
 html, body {
   overflow-x: hidden;
+  max-width: 100vw;
+}
+
+.container {
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 /* ==========================================
