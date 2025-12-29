@@ -1493,23 +1493,39 @@ footer {
 /* How It Works Responsive - IMPROVED */
 @media (max-width: 1000px) {
   .how-it-works-layout {
-    grid-template-columns: 1fr;
-    gap: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
   }
   
-  .hiw-intro {
-    padding-right: 0;
+  .hiw-intro,
+  .hiw-steps {
+    display: contents;
+  }
+  
+  /* Reorder elements */
+  .hiw-intro .section-label { order: 1; }
+  .hiw-intro h2 { order: 2; }
+  .hiw-intro .text-large { order: 3; }
+  .hiw-stats { order: 4; }
+  .hiw-step:nth-child(1) { order: 5; }
+  .hiw-step:nth-child(2) { order: 6; }
+  .hiw-step:nth-child(3) { order: 7; }
+  .hiw-intro .btn { order: 8; }
+  
+  /* Center text elements */
+  .hiw-intro .section-label,
+  .hiw-intro h2,
+  .hiw-intro .text-large {
     text-align: center;
-  }
-  
-  .hiw-stats {
-    justify-content: center;
+    width: 100%;
   }
   
   .hiw-intro .btn {
     width: 100%;
     max-width: 320px;
     margin: 0 auto;
+    text-align: center;
   }
 }
 
