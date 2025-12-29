@@ -1727,3 +1727,56 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* Reduce section header bottom margin on mobile */
+@media (max-width: 768px) {
+  .section-header {
+    margin-bottom: var(--space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header {
+    margin-bottom: var(--space-md);
+  }
+}
+
+/* Specifically target How It Works section spacing */
+@media (max-width: 768px) {
+  .how-it-works-layout {
+    margin-bottom: 0;
+  }
+  
+  /* Remove any extra padding from the section containing How It Works */
+  #how-it-works.section-lg,
+  .section-lg:has(.how-it-works-layout) {
+    padding-bottom: 32px;
+  }
+}
+
+/* Specifically target Neighborhoods section spacing */
+@media (max-width: 768px) {
+  .neighborhoods-section.section-lg {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  
+  .neighborhoods-layout {
+    gap: var(--space-lg);
+  }
+  
+  .neighborhoods-content {
+    padding: 0;
+  }
+}
+
+/* Reduce space between all sections on mobile */
+@media (max-width: 480px) {
+  .section-lg + .section-lg {
+    padding-top: 24px;
+  }
+  
+  .section-lg {
+    padding: 32px 0;
+  }
+}
