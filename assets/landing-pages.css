@@ -1285,15 +1285,15 @@ footer {
 }
 
 .neighborhood-tag.tag-highlight {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: white;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text);
 }
 
 .neighborhood-tag.tag-highlight:hover {
-  background: var(--primary-dark);
-  border-color: var(--primary-dark);
-  color: white;
+  border-color: var(--primary);
+  background: white;
+  color: var(--primary);
 }
 
 /* CTA Area */
