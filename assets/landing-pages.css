@@ -984,31 +984,33 @@ html, body {
   }
   
   .visual-card {
-    max-width: 400px;
+    max-width: 100%;
     margin: 0 auto;
   }
 }
 
 @media (max-width: 480px) {
   .visual-card {
-    padding: var(--space-xl);
+    padding: var(--space-lg);
   }
   
   .stat-value {
-    font-size: 48px;
-  }
-}
-
-  @media (max-width: 480px) {
-  .visual-card {
-    padding: var(--space-xl);
+    font-size: 42px;
   }
   
-  .stat-value {
-    font-size: 48px;
+  .stat-dollar {
+    font-size: 22px;
+    margin-top: 6px;
+  }
+  
+  .visual-breakdown {
+    gap: var(--space-xs);
+  }
+  
+  .breakdown-item {
+    font-size: 13px;
   }
 }
-
 /* ==========================================
    CARD ACCENT HEADINGS
    ========================================== */
