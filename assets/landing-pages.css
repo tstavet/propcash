@@ -1,6 +1,7 @@
 /* ==========================================
    LANDING PAGES - EXTENSION STYLESHEET
    Extends styles-v2.css for landing pages
+   Updated with mobile overflow fixes
    ========================================== */
 
 /* ==========================================
@@ -27,15 +28,27 @@
   margin-bottom: 0;
 }
 
-/* Global overflow fix */
-html, body {
+/* Global overflow fix - IMPROVED */
+html {
   overflow-x: hidden;
-  max-width: 100vw;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 .container {
   overflow: hidden;
   box-sizing: border-box;
+}
+
+section,
+main,
+footer {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 /* ==========================================
@@ -303,6 +316,51 @@ html, body {
   }
 }
 
+@media (max-width: 480px) {
+  .lp-hero {
+    padding: 40px var(--space-md) 60px;
+    min-height: auto;
+  }
+  
+  .lp-hero h1 {
+    font-size: clamp(26px, 7vw, 34px);
+    line-height: 1.2;
+  }
+  
+  .hero-subhead {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  
+  .btn-hero-primary {
+    padding: 16px 24px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .hero-badges {
+    gap: 8px;
+  }
+  
+  .hero-badge {
+    padding: 8px 12px;
+    font-size: 12px;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .badge-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .badge-icon svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
 /* ==========================================
    BREADCRUMB
    ========================================== */
@@ -386,7 +444,8 @@ html, body {
 }
 
 /* ==========================================
-   /* Comparison Section - Redesigned */
+   COMPARISON SECTION - REDESIGNED
+   ========================================== */
 .comparison-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -502,13 +561,15 @@ html, body {
   color: #10b981;
 }
 
-/* ---- MOBILE RESPONSIVE ---- */
-@media (max-width: 768px) {
+/* Comparison Responsive - IMPROVED */
+@media (max-width: 900px) {
   .comparison-wrapper {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+}
+
+@media (max-width: 768px) {
   .comparison-column-header {
     padding: 20px;
   }
@@ -540,6 +601,31 @@ html, body {
   .icon-check svg {
     width: 14px;
     height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .comparison-list li {
+    padding: 12px 16px;
+    font-size: 13px;
+    gap: 10px;
+  }
+  
+  .comparison-list li span:last-child {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .icon-x,
+  .icon-check {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .icon-x svg,
+  .icon-check svg {
+    width: 12px;
+    height: 12px;
   }
 }
 
@@ -638,6 +724,30 @@ html, body {
   color: var(--text-muted);
 }
 
+@media (max-width: 600px) {
+  .faq-list summary {
+    padding: var(--space-md) var(--space-lg);
+    font-size: 15px;
+  }
+  
+  .faq-list details p {
+    padding: 0 var(--space-lg) var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-list summary {
+    padding: var(--space-md);
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .faq-list details p {
+    padding: 0 var(--space-md) var(--space-md);
+    font-size: 14px;
+  }
+}
+
 /* ==========================================
    CONTENT BLOCK
    ========================================== */
@@ -663,6 +773,17 @@ html, body {
 
 .content-block a:hover {
   text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .content-block h3 {
+    font-size: 18px;
+  }
+  
+  .content-block p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
 }
 
 /* ==========================================
@@ -701,8 +822,31 @@ html, body {
   text-decoration: underline;
 }
 
+@media (max-width: 480px) {
+  .lp-cta {
+    padding: 48px var(--space-md);
+  }
+  
+  .lp-cta h2 {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+  
+  .lp-cta .text-large {
+    font-size: 15px;
+  }
+  
+  .lp-cta .btn {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .cta-contact {
+    font-size: 14px;
+  }
+}
+
 /* ==========================================
-   FOOTER ENHANCEMENTS
+   FOOTER - IMPROVED FOR MOBILE
    ========================================== */
 .footer-grid {
   display: grid;
@@ -743,9 +887,20 @@ html, body {
   color: var(--primary);
 }
 
+.footer-bottom {
+  padding-top: var(--space-xl);
+}
+
+.footer-disclaimer {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
 .footer-legal {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   gap: var(--space-md);
@@ -757,9 +912,17 @@ html, body {
   margin: 0;
 }
 
-/* ==========================================
-   RESPONSIVE ADJUSTMENTS
-   ========================================== */
+.footer-legal a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.footer-legal a:hover {
+  color: var(--primary);
+}
+
+/* Footer Responsive - IMPROVED */
 @media (max-width: 900px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
@@ -771,49 +934,62 @@ html, body {
   }
 }
 
-@media (max-width: 768px) {
-  .comparison-table {
-    min-width: 500px;
-    font-size: 13px;
-  }
-  
-  .comparison-table th,
-  .comparison-table td {
-    padding: 12px 10px;
-  }
-}
-
 @media (max-width: 600px) {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: var(--space-xl);
+    text-align: center;
+  }
+  
+  .footer-brand p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .footer-col nav {
+    align-items: center;
   }
   
   .footer-legal {
     flex-direction: column;
     text-align: center;
+    gap: 12px;
   }
   
-  .icon-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .footer-disclaimer {
+    font-size: 12px;
   }
-  
-  .neighborhood-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .faq-list summary {
-    padding: var(--space-md) var(--space-lg);
-    font-size: 15px;
-  }
-  
-  .faq-list details p {
-    padding: 0 var(--space-lg) var(--space-md);
-  }
-
-.card-accent h3 {
-  color: var(--primary);
 }
+
+/* Override inline footer styles */
+@media (max-width: 900px) {
+  footer .container > div:first-child {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px !important;
+  }
+  
+  footer .container > div:first-child > div:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  footer .container > div:first-child {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  
+  footer .container > div:first-child > div {
+    text-align: center;
+  }
+  
+  footer .container > div:first-child nav {
+    align-items: center !important;
+  }
+  
+  footer .container > div:first-child a {
+    justify-content: center !important;
+  }
 }
 
 /* ==========================================
@@ -980,13 +1156,19 @@ html, body {
   font-weight: 600;
 }
 
-/* As-Is Responsive */
-@media (max-width: 900px) {
+/* As-Is Responsive - IMPROVED */
+@media (max-width: 1000px) {
   .as-is-layout {
     grid-template-columns: 1fr;
     gap: var(--space-2xl);
   }
   
+  .visual-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
   .visual-card {
     max-width: 100%;
     margin: 0 auto;
@@ -995,6 +1177,22 @@ html, body {
   .as-is-content .btn {
     width: 100%;
     text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .stat-value {
+    font-size: clamp(36px, 12vw, 48px);
+    word-break: break-word;
+  }
+  
+  .stat-dollar {
+    font-size: 20px;
+    margin-top: 4px;
+  }
+  
+  .visual-stat {
+    flex-wrap: wrap;
   }
 }
 
@@ -1094,6 +1292,33 @@ html, body {
   font-size: 15px;
   line-height: 1.65;
   margin: 0;
+}
+
+/* Situation Cards Responsive */
+@media (max-width: 768px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .situation-card {
+    padding: var(--space-md);
+  }
+  
+  .situation-icon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .situation-card h4 {
+    font-size: 16px;
+  }
+  
+  .situation-card p {
+    font-size: 14px;
+  }
 }
 
 /* ==========================================
@@ -1221,13 +1446,15 @@ html, body {
   color: var(--text-muted);
 }
 
-/* Neighborhoods Responsive */
-@media (max-width: 900px) {
+/* Neighborhoods Responsive - IMPROVED */
+@media (max-width: 1000px) {
   .neighborhoods-layout {
     grid-template-columns: 1fr;
     gap: var(--space-2xl);
   }
-  
+}
+
+@media (max-width: 900px) {
   .neighborhoods-image-wrapper {
     max-height: 350px;
   }
@@ -1243,6 +1470,28 @@ html, body {
   }
 }
 
+@media (max-width: 600px) {
+  .neighborhoods-tags {
+    gap: 8px;
+  }
+  
+  .neighborhood-tag {
+    padding: 8px 12px;
+    font-size: 12px;
+    flex: 0 1 auto;
+    max-width: calc(50% - 4px);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .neighborhood-tag.tag-highlight {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+}
+
 @media (max-width: 480px) {
   .neighborhood-tag {
     padding: 8px 14px;
@@ -1250,13 +1499,17 @@ html, body {
   }
   
   .image-overlay-badge {
-    bottom: var(--space-md);
-    left: var(--space-md);
-    padding: var(--space-sm) var(--space-md);
+    bottom: var(--space-sm);
+    left: var(--space-sm);
+    padding: var(--space-xs) var(--space-sm);
   }
   
   .overlay-number {
-    font-size: 26px;
+    font-size: 22px;
+  }
+  
+  .overlay-text {
+    font-size: 11px;
   }
 }
 
@@ -1380,8 +1633,8 @@ html, body {
   opacity: 0.8;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
+/* How It Works Responsive - IMPROVED */
+@media (max-width: 1000px) {
   .how-it-works-layout {
     grid-template-columns: 1fr;
     gap: var(--space-2xl);
@@ -1394,6 +1647,26 @@ html, body {
   
   .hiw-stats {
     justify-content: center;
+  }
+  
+  .hiw-intro .btn {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hiw-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    text-align: center;
+  }
+  
+  .hiw-stat {
+    width: 100%;
+    max-width: 200px;
   }
 }
 
@@ -1409,5 +1682,86 @@ html, body {
     flex-direction: column;
     text-align: center;
     align-items: center;
+    padding: var(--space-md);
+  }
+  
+  .hiw-step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  
+  .hiw-step-content h3 {
+    font-size: 16px;
+  }
+  
+  .hiw-step-content p {
+    font-size: 14px;
+  }
+}
+
+/* ==========================================
+   TESTIMONIALS RESPONSIVE
+   ========================================== */
+@media (max-width: 900px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-card {
+    padding: var(--space-md);
+  }
+  
+  .testimonial-text {
+    font-size: 14px;
+  }
+}
+
+/* ==========================================
+   GENERAL TYPOGRAPHY MOBILE FIXES
+   ========================================== */
+@media (max-width: 480px) {
+  .section-header h2 {
+    font-size: clamp(22px, 6vw, 28px);
+  }
+  
+  .section-header p {
+    font-size: 15px;
+  }
+  
+  .text-large {
+    font-size: 16px;
+  }
+  
+  .section-label {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+  
+  .btn-large {
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+  
+  .btn-primary,
+  .btn {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* ==========================================
+   ICON GRID RESPONSIVE
+   ========================================== */
+@media (max-width: 600px) {
+  .icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .neighborhood-grid {
+    grid-template-columns: 1fr;
   }
 }
