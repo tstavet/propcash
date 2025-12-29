@@ -1305,6 +1305,10 @@ footer {
     grid-template-columns: 1fr;
     gap: var(--space-2xl);
   }
+   
+   .neighborhoods-content {
+    order: -1; /* Moves content above the image */
+  }
 }
 
 @media (max-width: 900px) {
