@@ -1,0 +1,518 @@
+/* ==========================================
+   LANDING PAGES - EXTENSION STYLESHEET
+   Extends styles-v2.css for landing pages
+   ========================================== */
+
+/* ==========================================
+   SECTION UTILITIES
+   ========================================== */
+.section-lg {
+  padding: clamp(60px, 10vw, 100px) 0;
+}
+
+.bg-secondary {
+  background: var(--bg-secondary);
+}
+
+.section-header {
+  max-width: 800px;
+  margin: 0 auto var(--space-2xl);
+}
+
+.section-header h2 {
+  margin-bottom: var(--space-md);
+}
+
+.section-header p {
+  margin-bottom: 0;
+}
+
+/* ==========================================
+   LANDING PAGE HERO
+   ========================================== */
+.lp-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: clamp(550px, 75vh, 85vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(80px, 15vw, 140px) var(--space-lg);
+}
+
+.lp-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.45));
+  z-index: 1;
+}
+
+.lp-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.lp-hero h1 {
+  color: white;
+  font-size: clamp(32px, 6vw, 56px);
+  line-height: 1.15;
+  margin-bottom: clamp(16px, 3vw, 24px);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.lp-hero .text-large {
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: clamp(32px, 5vw, 48px);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+.lp-hero .btn {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Hero Badges */
+.hero-badges {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-top: clamp(24px, 4vw, 32px);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ==========================================
+   BREADCRUMB
+   ========================================== */
+.breadcrumb {
+  padding: 14px var(--space-lg);
+  background: var(--bg-secondary);
+  font-size: 14px;
+}
+
+.breadcrumb ol {
+  list-style: none;
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.breadcrumb a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb .separator {
+  color: var(--text-muted);
+}
+
+.breadcrumb .current {
+  color: var(--text-muted);
+}
+
+/* ==========================================
+   CARD VARIANTS
+   ========================================== */
+.card-accent {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--primary);
+}
+
+.card h4 {
+  color: var(--text);
+}
+
+/* Badge inside cards */
+.badge {
+  display: inline-block;
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* ==========================================
+   PROCESS TIMELINE ENHANCEMENTS
+   ========================================== */
+.step-meta {
+  display: block;
+  margin-top: var(--space-md);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* ==========================================
+   COMPARISON TABLE
+   ========================================== */
+.table-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.comparison-table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.comparison-table thead {
+  background: var(--primary);
+  color: white;
+}
+
+.comparison-table th {
+  padding: 18px var(--space-md);
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.comparison-table td {
+  padding: 18px var(--space-md);
+  font-size: 15px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison-table tr:nth-child(even) {
+  background: var(--bg-secondary);
+}
+
+.comparison-table .highlight {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ==========================================
+   ICON GRID (As-Is Section)
+   ========================================== */
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-md);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.icon-card {
+  background: var(--card);
+  padding: var(--space-xl) var(--space-md);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.icon-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow);
+}
+
+.icon-card-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  color: var(--primary);
+}
+
+.icon-card p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* ==========================================
+   NEIGHBORHOOD GRID
+   ========================================== */
+.neighborhood-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-sm);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.neighborhood-item {
+  background: var(--card);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  font-size: 15px;
+  transition: var(--transition-fast);
+}
+
+.neighborhood-item:hover {
+  border-color: var(--primary);
+}
+
+/* ==========================================
+   FAQ LIST (Landing Page Style)
+   ========================================== */
+.faq-list details {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-sm);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.faq-list details:hover {
+  border-color: var(--primary);
+}
+
+.faq-list summary {
+  padding: var(--space-lg) var(--space-xl);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.faq-list details p {
+  padding: 0 var(--space-xl) var(--space-lg);
+  margin: 0;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* ==========================================
+   CONTENT BLOCK
+   ========================================== */
+.content-block {
+  line-height: 1.8;
+}
+
+.content-block h3 {
+  font-size: clamp(20px, 3vw, 24px);
+  margin-bottom: var(--space-sm);
+  color: var(--text);
+}
+
+.content-block p {
+  margin-bottom: var(--space-xl);
+}
+
+.content-block a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.content-block a:hover {
+  text-decoration: none;
+}
+
+/* ==========================================
+   LANDING PAGE CTA SECTION
+   ========================================== */
+.lp-cta {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  padding: clamp(60px, 10vw, 100px) var(--space-lg);
+}
+
+.lp-cta h2 {
+  color: white;
+  font-size: clamp(28px, 5vw, 40px);
+  margin-bottom: var(--space-md);
+}
+
+.lp-cta .text-large {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
+}
+
+.lp-cta .btn-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.cta-contact {
+  margin-top: var(--space-xl);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 15px;
+}
+
+.cta-contact a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* ==========================================
+   FOOTER ENHANCEMENTS
+   ========================================== */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--space-xl);
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid var(--border);
+}
+
+.footer-brand p {
+  max-width: 300px;
+  line-height: 1.6;
+  margin-top: var(--space-sm);
+}
+
+.footer-col h4 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--primary);
+  margin-bottom: var(--space-lg);
+}
+
+.footer-col nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.footer-col nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.footer-col nav a:hover {
+  color: var(--primary);
+}
+
+.footer-legal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.footer-legal p {
+  margin: 0;
+}
+
+/* ==========================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================== */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+  
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-badges {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .comparison-table {
+    font-size: 14px;
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    padding: 14px var(--space-sm);
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+  
+  .footer-legal {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .neighborhood-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .faq-list summary {
+    padding: var(--space-md) var(--space-lg);
+    font-size: 15px;
+  }
+  
+  .faq-list details p {
+    padding: 0 var(--space-lg) var(--space-md);
+  }
+}
