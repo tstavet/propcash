@@ -1381,7 +1381,6 @@ footer {
     font-size: 11px;
   }
 }
-
 /* ==========================================
    HOW IT WORKS - CONSOLIDATED SECTION
    ========================================== */
@@ -1502,17 +1501,21 @@ footer {
   opacity: 0.8;
 }
 
-/* How It Works Responsive - IMPROVED */
+/* How It Works Responsive - OPTIMIZED FOR MOBILE */
 @media (max-width: 1000px) {
   .how-it-works-layout {
     display: flex;
     flex-direction: column;
-    gap: var(--space-lg);
+    gap: var(--space-md);
   }
   
   .hiw-intro,
   .hiw-steps {
     display: contents;
+  }
+  
+  .hiw-intro {
+    padding-right: 0;
   }
   
   /* Reorder elements */
@@ -1525,66 +1528,140 @@ footer {
   .hiw-step:nth-child(3) { order: 7; }
   .hiw-intro .btn { order: 8; }
   
-  /* Center text elements */
-  .hiw-intro .section-label,
-  .hiw-intro h2,
+  /* Center text elements but keep pill auto-width */
+  .hiw-intro .section-label {
+    align-self: center;
+    width: auto;
+    margin-bottom: var(--space-sm);
+  }
+  
+  .hiw-intro h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: var(--space-sm);
+  }
+  
   .hiw-intro .text-large {
     text-align: center;
     width: 100%;
+    margin-bottom: var(--space-md);
   }
   
   .hiw-intro .btn {
     width: 100%;
     max-width: 320px;
-    margin: 0 auto;
-    text-align: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .hiw-stats {
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-md);
+    margin: var(--space-sm) auto 0;
     text-align: center;
   }
   
+  /* Compact stats - keep side by side */
+  .hiw-stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--space-lg);
+    padding: var(--space-md) 0;
+    margin-bottom: var(--space-md);
+  }
+  
   .hiw-stat {
-    width: 100%;
-    max-width: 200px;
+    text-align: center;
+    flex: 1;
+    max-width: none;
+  }
+  
+  /* Tighter step cards */
+  .hiw-step {
+    gap: var(--space-md);
+    padding: var(--space-md);
+  }
+  
+  .hiw-steps {
+    gap: var(--space-md);
   }
 }
 
 @media (max-width: 600px) {
-  .hiw-stats {
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-lg);
-    text-align: center;
+  .how-it-works-layout {
+    gap: var(--space-sm);
   }
   
+  /* Keep stats horizontal but smaller */
+  .hiw-stats {
+    gap: var(--space-sm);
+    padding: var(--space-sm) 0;
+    margin-bottom: var(--space-sm);
+  }
+  
+  .hiw-stat-number {
+    font-size: 22px;
+  }
+  
+  .hiw-stat-label {
+    font-size: 10px;
+    letter-spacing: 0;
+  }
+  
+  /* Compact step cards - horizontal layout */
   .hiw-step {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    padding: var(--space-md);
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+    padding: var(--space-sm) var(--space-md);
+    gap: var(--space-sm);
   }
   
   .hiw-step-number {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    margin-top: 2px;
   }
   
   .hiw-step-content h3 {
-    font-size: 16px;
+    font-size: 15px;
+    margin-bottom: 4px;
   }
   
   .hiw-step-content p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+  
+  .hiw-step-meta {
+    font-size: 12px;
+  }
+  
+  .hiw-intro h2 {
+    font-size: 24px;
+  }
+  
+  .hiw-intro .text-large {
     font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .hiw-intro .btn {
+    padding: 14px 24px;
+    font-size: 15px;
   }
 }
 
+@media (max-width: 380px) {
+  /* Extra small screens - even more compact stats */
+  .hiw-stat-number {
+    font-size: 18px;
+  }
+  
+  .hiw-stat-label {
+    font-size: 9px;
+  }
+  
+  .hiw-stats {
+    gap: var(--space-xs);
+  }
+}
 /* ==========================================
    TESTIMONIALS RESPONSIVE
    ========================================== */
