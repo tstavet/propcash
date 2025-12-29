@@ -999,8 +999,15 @@ html, body {
 }
 
 @media (max-width: 480px) {
+  .as-is-layout {
+    margin: 0 calc(-1 * var(--space-md));
+    padding: 0 var(--space-md);
+    overflow: hidden;
+  }
+  
   .visual-card {
-    padding: var(--space-lg);
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
   }
   
   .stat-value {
