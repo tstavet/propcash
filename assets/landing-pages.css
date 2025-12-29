@@ -531,7 +531,7 @@ padding-top: clamp(100px, 12vw, 140px);
 .content-block h3 {
   font-size: clamp(20px, 3vw, 24px);
   margin-bottom: var(--space-sm);
-  color: var(--text);
+  color: var(--primary);
 }
 
 .content-block p {
