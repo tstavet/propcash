@@ -691,4 +691,9 @@
   .faq-list details p {
     padding: 0 var(--space-lg) var(--space-md);
   }
+
+.card-accent h3 {
+  color: var(--primary);
 }
+
+   }
