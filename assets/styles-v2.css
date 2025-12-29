@@ -950,7 +950,7 @@ select.success {
 }
 
 .step-content h3 {
-  color: var(--text);
+  color: var(--primary);
   margin-bottom: var(--space-md);
 }
 
