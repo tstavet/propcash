@@ -809,7 +809,8 @@ html, body {
   color: var(--primary);
 }
 }
-   /* ==========================================
+
+/* ==========================================
    AS-IS SECTION REDESIGN
    ========================================== */
 .as-is-layout {
@@ -817,6 +818,7 @@ html, body {
   grid-template-columns: 1fr 420px;
   gap: var(--space-3xl);
   align-items: center;
+  overflow: hidden;
 }
 
 .section-label {
@@ -972,20 +974,21 @@ html, body {
   font-weight: 600;
 }
 
-/* Responsive */
+/* As-Is Responsive */
 @media (max-width: 900px) {
   .as-is-layout {
     grid-template-columns: 1fr;
     gap: var(--space-2xl);
   }
   
-  .as-is-visual {
-    order: -1;
-  }
-  
   .visual-card {
     max-width: 100%;
     margin: 0 auto;
+  }
+  
+  .as-is-content .btn {
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -1010,7 +1013,30 @@ html, body {
   .breakdown-item {
     font-size: 13px;
   }
+  
+  .checklist-item {
+    gap: var(--space-sm);
+  }
+  
+  .check-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .check-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .checklist-item strong {
+    font-size: 15px;
+  }
+  
+  .checklist-item p {
+    font-size: 13px;
+  }
 }
+
 /* ==========================================
    CARD ACCENT HEADINGS
    ========================================== */
