@@ -11,6 +11,18 @@
   padding: clamp(60px, 10vw, 100px) 0;
 }
 
+@media (max-width: 768px) {
+  .section-lg {
+    padding: 48px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-lg {
+    padding: 40px 0;
+  }
+}
+
 .bg-secondary {
   background: var(--bg-secondary);
 }
