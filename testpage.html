@@ -1,7 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Analytics -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Propcash Test Page (Header + Footer)</title>
+  <meta name="description" content="Propcash test page for validating header/footer layout, styling, and scripts." />
+
+  <!-- ✅ No index (prevents indexing) -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+
+  <!-- ✅ Canonical pointing to production home (optional but helpful) -->
+  <link rel="canonical" href="https://propcash.co/" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/mascot-favicon.png" />
+
+  <!-- Styles (keep your real stylesheet so you can test real header/footer styling) -->
+  <link rel="stylesheet" href="/assets/styles-v2.css" />
+
+  <!-- Small test-page helpers -->
+  <style>
+    /* Make it obvious this is a non-prod test page */
+    .test-banner {
+      background: #6b4423;
+      color: white;
+      font-weight: 700;
+      text-align: center;
+      padding: 10px 14px;
+      font-size: 14px;
+    }
+    .test-shell {
+      min-height: 55vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 20px;
+      background: #f8f5f2;
+    }
+    .test-card {
+      background: white;
+      border: 1px solid #e5e0db;
+      border-radius: 16px;
+      padding: 28px;
+      max-width: 820px;
+      width: 100%;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+    .test-card h1 { margin: 0 0 10px; }
+    .test-card p { margin: 0; color: #6b625a; line-height: 1.6; }
+    .test-card code { background: #f8f5f2; padding: 2px 6px; border-radius: 6px; }
+  </style>
+</head>
+
+<body>
+  <!-- Optional: keep GA off test pages by default -->
+  <!-- If you WANT GA on this page, uncomment below -->
+  <!--
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGV6HXQ0RW"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -9,728 +66,165 @@
     gtag('js', new Date());
     gtag('config', 'G-CGV6HXQ0RW');
   </script>
-  
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <title>Propcash | The Cash Offer Marketplace</title>
-  <meta name="description" content="Get multiple competing cash offers from our network of 500+ investors. Sell your house fast with real market competition. Average of 3.2 offers per property." />
-  <link rel="canonical" href="https://propcash.co/" />
-  
-  <!-- Favicon -->
-  <link rel="icon" href="/assets/favicon.png" />
-  
-  <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles-v2.css" />
-  
-  <style>
-    /* Tech-Forward Enhancements */
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
-    }
-    
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-    
-    @keyframes slideIn {
-      from { transform: translateX(-20px); opacity: 0; }
-      to { transform: translateX(0); opacity: 1; }
-    }
-    
-    .float-animation {
-      animation: float 6s ease-in-out infinite;
-    }
-    
-    .pulse-animation {
-      animation: pulse 2s ease-in-out infinite;
-    }
-    
-    .glassmorphism {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(107, 68, 35, 0.1);
-    }
-    
-    .gradient-text {
-      background: linear-gradient(135deg, #6b4423 0%, #8b5e3c 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .network-node {
-      width: 12px;
-      height: 12px;
-      background: #6b4423;
-      border-radius: 50%;
-      position: absolute;
-      box-shadow: 0 0 20px rgba(107, 68, 35, 0.5);
-    }
-    
-    .network-line {
-      position: absolute;
-      height: 1px;
-      background: linear-gradient(90deg, rgba(107, 68, 35, 0.2), rgba(107, 68, 35, 0.05));
-      transform-origin: left center;
-    }
-    
-    .stat-counter {
-      font-variant-numeric: tabular-nums;
-      letter-spacing: -0.05em;
-    }
-    
-    .dashboard-card {
-      background: white;
-      border-radius: 12px;
-      padding: 24px;
-      box-shadow: 0 4px 20px rgba(107, 68, 35, 0.08);
-      border: 1px solid #e5e0db;
-    }
-    
-    .offer-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 16px;
-      background: #f8f5f2;
-      border-radius: 24px;
-      font-size: 14px;
-      font-weight: 600;
-      border: 1px solid #e5e0db;
-    }
-    
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #10b981;
-      animation: pulse 2s ease-in-out infinite;
-    }
-    
-    /* Interactive Elements */
-    .hover-lift {
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    
-    .hover-lift:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(107, 68, 35, 0.15);
-    }
-    
-    /* Process Timeline */
-    .timeline-step {
-      position: relative;
-      padding-left: 60px;
-      margin-bottom: 48px;
-    }
-    
-    .timeline-step::before {
-      content: '';
-      position: absolute;
-      left: 18px;
-      top: 40px;
-      width: 2px;
-      height: calc(100% + 8px);
-      background: linear-gradient(180deg, #6b4423, rgba(107, 68, 35, 0.1));
-    }
-    
-    .timeline-step:last-child::before {
-      display: none;
-    }
-    
-    .timeline-number {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 40px;
-      height: 40px;
-      background: #6b4423;
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 18px;
-      box-shadow: 0 4px 12px rgba(107, 68, 35, 0.3);
-    }
-  </style>
-</head>
+  -->
 
-<body>
+  <div class="test-banner">TEST PAGE — Header + Footer Only (noindex)</div>
+
   <!-- Header -->
   <header>
     <div class="container">
       <nav class="nav">
-        <a href="/" class="brand">Propcash</a>
-        
+        <a href="/" class="brand">
+          <img src="/assets/logo.png" alt="Propcash Logo" class="logo">
+        </a>
+
+        <!-- Desktop Navigation -->
         <div class="desktop-nav">
-          <a href="#how-it-works">How It Works</a>
-          <a href="#network">Our Network</a>
-          <a href="#why-marketplace">Why Marketplace</a>
-          <a href="#reviews">Reviews</a>
+          <a href="/#how-it-works">How it Works</a>
+          <a href="/#why-marketplace">Why Propcash</a>
+          <a href="/faq">FAQ</a>
         </div>
-        
+
+        <!-- Desktop CTA -->
         <div class="header-ctas">
-          <a href="tel:6155524296" class="cta-phone">📞 (615) 552-4296</a>
-          <a href="#start" class="cta-header">Start Your Auction</a>
+          <a href="/get-offer" class="cta-header">Get My Cash Offers →</a>
         </div>
-        
-        <button class="mobile-menu-toggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
       </nav>
     </div>
-    
+
+    <!-- Mobile Navigation -->
     <nav class="mobile-nav" id="mobileNav">
-      <a href="#how-it-works">How It Works</a>
-      <a href="#network">Our Network</a>
-      <a href="#why-marketplace">Why Marketplace</a>
-      <a href="#reviews">Reviews</a>
-      <a href="tel:6155524296" class="mobile-cta">📞 Call Now</a>
+      <a href="/#how-it-works">How it Works</a>
+      <a href="/#why-marketplace">Why Propcash</a>
+      <a href="/faq">FAQ</a>
+      <a href="/get-offer" class="mobile-cta">Get My Cash Offers →</a>
     </nav>
   </header>
 
-  <!-- Hero Section - Marketplace Focus -->
-  <section class="hero" style="background: linear-gradient(135deg, #fdfcfb 0%, #f8f5f2 100%); min-height: auto; padding: 80px 0 120px;">
-    <div class="hero-content" style="max-width: 1200px;">
-      
-      <!-- Status Bar -->
-      <div class="glassmorphism" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 24px; border-radius: 24px; margin-bottom: 32px;">
-        <div class="status-dot"></div>
-        <span style="font-size: 14px; font-weight: 600; color: #6b4423;">
-          <span class="stat-counter" id="activeInvestors">547</span> active investors • 
-          <span class="stat-counter" id="offersToday">23</span> offers made today
-        </span>
-      </div>
-      
-      <h1 style="color: #1a1512; max-width: 900px; margin: 0 auto 24px; font-size: clamp(40px, 6vw, 72px);">
-        The First <span class="gradient-text">Cash Offer Marketplace</span> for Your Home
-      </h1>
-      
-      <p style="font-size: clamp(18px, 2.5vw, 24px); color: #6b625a; max-width: 700px; margin: 0 auto 48px; line-height: 1.6;">
-        Get multiple competing offers from our network of 500+ investors. Real competition. Real transparency. Average 3.2 offers per property.
+  <!-- Test Content Shell (safe placeholder for layout testing) -->
+  <main class="test-shell" role="main">
+    <div class="test-card">
+      <h1>Header/Footer Test Page</h1>
+      <p>
+        Use this page to validate navigation behavior, CSS, and the footer layout.
+        This page includes <code>noindex</code> meta tags to prevent Google indexing.
       </p>
-      
-      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px;">
-        <a href="#start" class="btn btn-primary btn-large">
-          Start Your Auction →
-        </a>
-        <a href="#how-it-works" class="btn btn-secondary btn-large">
-          See How It Works
-        </a>
-      </div>
-      
-      <!-- Real-time Activity Feed -->
-      <div class="dashboard-card" style="max-width: 700px; margin: 0 auto; text-align: left;">
-        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #e5e0db;">
-          <div style="width: 32px; height: 32px; background: #f8f5f2; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px;">📊</div>
-          <div>
-            <div style="font-weight: 700; color: #1a1512;">Live Marketplace Activity</div>
-            <div style="font-size: 13px; color: #6b625a;">Recent offers across our network</div>
-          </div>
-        </div>
-        
-        <div style="display: flex; flex-direction: column; gap: 12px;">
-          <div class="offer-pill">
-            <span style="color: #6b625a;">Austin, TX</span>
-            <span style="color: #1a1512; font-weight: 700;">$342,000</span>
-            <span style="font-size: 12px; color: #10b981;">● 3 offers</span>
-          </div>
-          <div class="offer-pill">
-            <span style="color: #6b625a;">Nashville, TN</span>
-            <span style="color: #1a1512; font-weight: 700;">$289,500</span>
-            <span style="font-size: 12px; color: #10b981;">● 2 offers</span>
-          </div>
-          <div class="offer-pill">
-            <span style="color: #6b625a;">Phoenix, AZ</span>
-            <span style="color: #1a1512; font-weight: 700;">$415,200</span>
-            <span style="font-size: 12px; color: #10b981;">● 4 offers</span>
-          </div>
-        </div>
-      </div>
-      
     </div>
-  </section>
-
-  <!-- Network Visualization Section -->
-  <section id="network" style="background: white; padding: 80px 0; position: relative; overflow: hidden;">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 64px;">
-        <h2 style="margin-bottom: 16px;">Powered by the Largest Cash Buyer Network</h2>
-        <p class="text-large text-muted" style="max-width: 700px; margin: 0 auto;">
-          Our proprietary platform connects you with 500+ vetted investors across all 50 states, creating real competition for your property.
-        </p>
-      </div>
-      
-      <!-- Network Stats Grid -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; max-width: 1000px; margin: 0 auto;">
-        
-        <div class="dashboard-card hover-lift" style="text-align: center;">
-          <div style="font-size: 48px; font-weight: 700; color: #6b4423; margin-bottom: 8px;" class="stat-counter">
-            547
-          </div>
-          <div style="font-weight: 600; color: #1a1512; margin-bottom: 4px;">Active Investors</div>
-          <div style="font-size: 14px; color: #6b625a;">Vetted & Ready to Buy</div>
-        </div>
-        
-        <div class="dashboard-card hover-lift" style="text-align: center;">
-          <div style="font-size: 48px; font-weight: 700; color: #6b4423; margin-bottom: 8px;" class="stat-counter">
-            3.2
-          </div>
-          <div style="font-weight: 600; color: #1a1512; margin-bottom: 4px;">Avg. Offers Per Home</div>
-          <div style="font-size: 14px; color: #6b625a;">Multiple Competing Bids</div>
-        </div>
-        
-        <div class="dashboard-card hover-lift" style="text-align: center;">
-          <div style="font-size: 48px; font-weight: 700; color: #6b4423; margin-bottom: 8px;" class="stat-counter">
-            24hrs
-          </div>
-          <div style="font-weight: 600; color: #1a1512; margin-bottom: 4px;">First Offer Received</div>
-          <div style="font-size: 14px; color: #6b625a;">Lightning Fast Response</div>
-        </div>
-        
-        <div class="dashboard-card hover-lift" style="text-align: center;">
-          <div style="font-size: 48px; font-weight: 700; color: #6b4423; margin-bottom: 8px;">
-            50
-          </div>
-          <div style="font-weight: 600; color: #1a1512; margin-bottom: 4px;">States Covered</div>
-          <div style="font-size: 14px; color: #6b625a;">Nationwide Coverage</div>
-        </div>
-        
-      </div>
-      
-      <!-- Visual Network Map -->
-      <div style="margin-top: 64px; position: relative; height: 200px; background: linear-gradient(135deg, #f8f5f2 0%, #fdfcfb 100%); border-radius: 16px; overflow: hidden; border: 1px solid #e5e0db;">
-        <div id="networkViz" style="position: relative; width: 100%; height: 100%;"></div>
-        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 10;">
-          <div style="font-size: 18px; font-weight: 700; color: #6b4423; margin-bottom: 8px;">Your Property</div>
-          <div style="font-size: 14px; color: #6b625a;">Connected to 500+ investors nationwide</div>
-        </div>
-      </div>
-      
-    </div>
-  </section>
-
-  <!-- How It Works - Dashboard Style -->
-  <section id="how-it-works" style="background: #f8f5f2; padding: 80px 0;">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 64px;">
-        <h2>How the Marketplace Works</h2>
-        <p class="text-large text-muted" style="max-width: 700px; margin: 16px auto 0;">
-          Simple, transparent, and powered by technology. No guesswork—just real offers from real investors.
-        </p>
-      </div>
-      
-      <div style="max-width: 900px; margin: 0 auto;">
-        
-        <!-- Step 1 -->
-        <div class="timeline-step">
-          <div class="timeline-number">1</div>
-          <div class="dashboard-card hover-lift">
-            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
-              <div style="width: 48px; height: 48px; background: #f8f5f2; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 24px;">📝</div>
-              <div>
-                <h3 style="margin: 0 0 4px;">Submit Your Property</h3>
-                <p style="margin: 0; font-size: 14px; color: #6b625a;">Takes 2 minutes. No obligation.</p>
-              </div>
-            </div>
-            <p style="margin: 0; color: #6b625a; line-height: 1.6;">
-              Answer a few basic questions about your property. Our platform instantly distributes your listing to our network of 500+ investors who match your property type and location.
-            </p>
-            <div style="margin-top: 16px; padding: 16px; background: #fdfcfb; border-radius: 8px; border: 1px solid #e5e0db;">
-              <div style="font-size: 13px; color: #6b625a; margin-bottom: 8px;">Platform Status</div>
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <div class="status-dot"></div>
-                <span style="font-size: 14px; font-weight: 600; color: #1a1512;">Property sent to 12 matching investors</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Step 2 -->
-        <div class="timeline-step">
-          <div class="timeline-number">2</div>
-          <div class="dashboard-card hover-lift">
-            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
-              <div style="width: 48px; height: 48px; background: #f8f5f2; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 24px;">📊</div>
-              <div>
-                <h3 style="margin: 0 0 4px;">Investors Compete for Your Property</h3>
-                <p style="margin: 0; font-size: 14px; color: #6b625a;">Real-time competitive bidding.</p>
-              </div>
-            </div>
-            <p style="margin: 0 0 16px; color: #6b625a; line-height: 1.6;">
-              Watch offers come in through your personalized dashboard. Investors compete, which means you get market-driven pricing—not arbitrary lowballs.
-            </p>
-            
-            <!-- Mock Dashboard -->
-            <div style="background: #fdfcfb; border-radius: 12px; padding: 20px; border: 1px solid #e5e0db;">
-              <div style="font-size: 13px; font-weight: 600; color: #6b625a; margin-bottom: 12px;">YOUR OFFERS</div>
-              
-              <div style="display: flex; flex-direction: column; gap: 12px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: white; border-radius: 8px; border: 1px solid #e5e0db;">
-                  <div>
-                    <div style="font-weight: 600; color: #1a1512;">Premier Investments LLC</div>
-                    <div style="font-size: 12px; color: #6b625a;">Phoenix, AZ • Closes in 10 days</div>
-                  </div>
-                  <div style="font-size: 20px; font-weight: 700; color: #6b4423;">$342,000</div>
-                </div>
-                
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: white; border-radius: 8px; border: 1px solid #e5e0db;">
-                  <div>
-                    <div style="font-weight: 600; color: #1a1512;">Rapid Home Buyers</div>
-                    <div style="font-size: 12px; color: #6b625a;">Phoenix, AZ • Closes in 14 days</div>
-                  </div>
-                  <div style="font-size: 20px; font-weight: 700; color: #6b4423;">$338,500</div>
-                </div>
-                
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: white; border-radius: 8px; border: 1px solid #e5e0db;">
-                  <div>
-                    <div style="font-weight: 600; color: #1a1512;">Desert Capital Partners</div>
-                    <div style="font-size: 12px; color: #6b625a;">Phoenix, AZ • Closes in 7 days</div>
-                  </div>
-                  <div style="font-size: 20px; font-weight: 700; color: #6b4423;">$335,000</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 12px; font-size: 12px; color: #6b625a; text-align: center;">
-                💡 <strong>Average increase:</strong> 8.3% vs. single-buyer offers
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Step 3 -->
-        <div class="timeline-step">
-          <div class="timeline-number">3</div>
-          <div class="dashboard-card hover-lift">
-            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
-              <div style="width: 48px; height: 48px; background: #f8f5f2; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 24px;">✅</div>
-              <div>
-                <h3 style="margin: 0 0 4px;">Choose the Best Offer</h3>
-                <p style="margin: 0; font-size: 14px; color: #6b625a;">You're in complete control.</p>
-              </div>
-            </div>
-            <p style="margin: 0; color: #6b625a; line-height: 1.6;">
-              Review all offers side-by-side. Compare price, closing timeline, and investor ratings. Accept the one that works best for you—or decline them all. Zero pressure, zero obligation.
-            </p>
-            <div style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap;">
-              <div style="padding: 12px 20px; background: #fdfcfb; border-radius: 8px; border: 1px solid #e5e0db; font-size: 14px;">
-                <span style="color: #6b625a;">Avg. closing:</span>
-                <strong style="color: #1a1512; margin-left: 4px;">14 days</strong>
-              </div>
-              <div style="padding: 12px 20px; background: #fdfcfb; border-radius: 8px; border: 1px solid #e5e0db; font-size: 14px;">
-                <span style="color: #6b625a;">Fastest close:</span>
-                <strong style="color: #1a1512; margin-left: 4px;">3 days</strong>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Marketplace Model -->
-  <section id="why-marketplace" style="background: white; padding: 80px 0;">
-    <div class="container">
-      <div style="max-width: 1100px; margin: 0 auto;">
-        <div style="text-align: center; margin-bottom: 64px;">
-          <h2>Why the Marketplace Model Wins</h2>
-          <p class="text-large text-muted" style="max-width: 700px; margin: 16px auto 0;">
-            Traditional cash buyers give you one offer. We create competition. The difference is significant.
-          </p>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
-          
-          <div class="card hover-lift">
-            <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px;">💰</div>
-            <h3>Higher Offers</h3>
-            <p style="color: #6b625a; margin-bottom: 16px;">Competition drives prices up. Our data shows marketplace listings receive offers averaging 8.3% higher than single-buyer scenarios.</p>
-            <div style="padding: 12px; background: #f8f5f2; border-radius: 8px; font-size: 14px; font-weight: 600; color: #6b4423;">
-              $25,000+ average increase on $300k homes
-            </div>
-          </div>
-          
-          <div class="card hover-lift">
-            <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px;">⚡</div>
-            <h3>Faster Responses</h3>
-            <p style="color: #6b625a; margin-bottom: 16px;">500+ investors means someone is always ready to bid. Most properties receive their first offer within 24 hours.</p>
-            <div style="padding: 12px; background: #f8f5f2; border-radius: 8px; font-size: 14px; font-weight: 600; color: #6b4423;">
-              Average response time: 18 hours
-            </div>
-          </div>
-          
-          <div class="card hover-lift">
-            <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px;">🔒</div>
-            <h3>Market Validation</h3>
-            <p style="color: #6b625a; margin-bottom: 16px;">Multiple offers prove your property's value. You're not relying on one investor's opinion—you have market consensus.</p>
-            <div style="padding: 12px; background: #f8f5f2; border-radius: 8px; font-size: 14px; font-weight: 600; color: #6b4423;">
-              Real market data, not arbitrary pricing
-            </div>
-          </div>
-          
-          <div class="card hover-lift">
-            <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px;">📊</div>
-            <h3>Full Transparency</h3>
-            <p style="color: #6b625a; margin-bottom: 16px;">See all offers, investor profiles, and closing terms. Make an informed decision with complete information.</p>
-            <div style="padding: 12px; background: #f8f5f2; border-radius: 8px; font-size: 14px; font-weight: 600; color: #6b4423;">
-              Dashboard access included
-            </div>
-          </div>
-          
-          <div class="card hover-lift">
-            <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px;">🛠️</div>
-            <h3>Flexible Terms</h3>
-            <p style="color: #6b625a; margin-bottom: 16px;">Different investors offer different closing timelines. Choose the schedule that works for your situation.</p>
-            <div style="padding: 12px; background: #f8f5f2; border-radius: 8px; font-size: 14px; font-weight: 600; color: #6b4423;">
-              3 days to 90+ days available
-            </div>
-          </div>
-          
-          <div class="card hover-lift">
-            <div style="width: 56px; height: 56px; background: #f8f5f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px;">🤝</div>
-            <h3>Zero Commitment</h3>
-            <p style="color: #6b625a; margin-bottom: 16px;">Receive offers with no obligation to accept. If none work for you, walk away. It's that simple.</p>
-            <div style="padding: 12px; background: #f8f5f2; border-radius: 8px; font-size: 14px; font-weight: 600; color: #6b4423;">
-              100% free, always
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials - Modern Cards -->
-  <section id="reviews" style="background: #f8f5f2; padding: 80px 0;">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 64px;">
-        <h2>Trusted by Thousands of Homeowners</h2>
-        <p class="text-large text-muted">Real stories from real sellers.</p>
-      </div>
-      
-      <div class="testimonials-grid">
-        
-        <div class="testimonial-card hover-lift">
-          <div class="testimonial-rating">★★★★★</div>
-          <p class="testimonial-text">
-            "I received 4 offers within 36 hours. The highest was $18,000 more than the first. The competition was real, and so were the results."
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">DM</div>
-            <div class="testimonial-info">
-              <h4>David M.</h4>
-              <div class="testimonial-location">Austin, TX</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="testimonial-card hover-lift">
-          <div class="testimonial-rating">★★★★★</div>
-          <p class="testimonial-text">
-            "The dashboard made everything so clear. I could see exactly who was bidding, their track record, and closing terms. Made the decision easy."
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">JL</div>
-            <div class="testimonial-info">
-              <h4>Jennifer L.</h4>
-              <div class="testimonial-location">Nashville, TN</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="testimonial-card hover-lift">
-          <div class="testimonial-rating">★★★★★</div>
-          <p class="testimonial-text">
-            "After getting lowballed by local 'we buy houses' companies, Propcash's marketplace gave me 3 competing offers that were all significantly higher."
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">SK</div>
-            <div class="testimonial-info">
-              <h4>Sarah K.</h4>
-              <div class="testimonial-location">Phoenix, AZ</div>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
-  <!-- Final CTA Section -->
-  <section id="start" style="background: #6b4423; color: white; padding: 80px 0; text-align: center;">
-    <div class="container" style="max-width: 800px;">
-      <h2 style="color: white; margin-bottom: 16px;">Ready to See What Your Home Can Attract?</h2>
-      <p style="font-size: 20px; color: rgba(255, 255, 255, 0.9); margin-bottom: 40px; line-height: 1.6;">
-        Submit your property to our marketplace and start receiving competing offers within 24 hours. No risk, no obligation.
-      </p>
-      
-      <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 40px; margin-bottom: 32px; border: 1px solid rgba(255, 255, 255, 0.2);">
-        <form action="https://formspree.io/f/mdkponlo" method="POST" style="display: flex; flex-direction: column; gap: 20px;">
-          <input type="hidden" name="page" value="Tech Forward Homepage" />
-          
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
-            <input 
-              type="text" 
-              name="name" 
-              placeholder="Your Name" 
-              required 
-              style="padding: 16px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.95); color: #1a1512; font-size: 16px;"
-            />
-            <input 
-              type="tel" 
-              name="phone" 
-              placeholder="Phone Number" 
-              required 
-              style="padding: 16px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.95); color: #1a1512; font-size: 16px;"
-            />
-          </div>
-          
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
-            <input 
-              type="email" 
-              name="email" 
-              placeholder="Email Address" 
-              required 
-              style="padding: 16px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.95); color: #1a1512; font-size: 16px;"
-            />
-            <input 
-              type="text" 
-              name="address" 
-              placeholder="Property Address" 
-              required 
-              style="padding: 16px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.95); color: #1a1512; font-size: 16px;"
-            />
-          </div>
-          
-          <button 
-            type="submit" 
-            class="btn btn-white btn-large btn-block"
-            style="background: white; color: #6b4423; font-size: 18px; padding: 20px;"
-          >
-            Start Your Auction →
-          </button>
-          
-          <div style="font-size: 13px; color: rgba(255, 255, 255, 0.7); text-align: center;">
-            🔒 Your information is secure. We'll match you with investors and you'll receive offers in your dashboard.
-          </div>
-        </form>
-      </div>
-      
-      <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; font-size: 14px; color: rgba(255, 255, 255, 0.8);">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="font-size: 20px;">✓</span> 500+ Vetted Investors
-        </div>
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="font-size: 20px;">✓</span> No Fees or Commissions
-        </div>
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="font-size: 20px;">✓</span> Zero Obligation
-        </div>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <!-- Footer -->
   <footer>
     <div class="container">
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 32px; padding-bottom: 32px; border-bottom: 1px solid #e5e0db;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 24px; padding-bottom: 48px; border-bottom: 1px solid #e5e0db;">
+
+        <!-- Brand & Tagline -->
         <div>
           <a href="/" class="brand" style="display: block; margin-bottom: 12px;">Propcash</a>
-          <p class="text-muted text-small" style="margin: 0; max-width: 300px;">
-            The first cash offer marketplace. Powered by 500+ investors nationwide.
+          <p class="text-muted text-small" style="margin: 0; max-width: 300px; line-height: 1.6;">
+            Real estate's first competitive marketplace for cash offers. Powered by 500+ investors nationwide.
           </p>
         </div>
-        <nav style="display: flex; gap: 32px;">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
-        </nav>
-      </div>
-      
-      <div class="footer-bottom">
+
+        <!-- Column 1: For Sellers -->
         <div>
-          <p class="footer-disclaimer">
-            <strong>Disclaimer:</strong> Propcash operates a marketplace platform connecting property sellers with independent investors. We do not purchase properties directly. All offers come from third-party investors in our network. We are not acting as licensed real estate agents or brokers and do not offer legal, tax, or financial advice.
-          </p>
-          <p style="margin: 0;">© <span id="year"></span> Propcash. All rights reserved.</p>
+          <h4 style="margin: 0 0 20px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #6b4423; text-align: left;">For Sellers</h4>
+          <nav style="display: flex; flex-direction: column; align-items: left; gap: 12px;">
+            <a href="/get-offer" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">Sell Your Home</a>
+            <a href="/#how-it-works" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">How it Works</a>
+            <a href="/#why-marketplace" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">Why Propcash?</a>
+            <a href="/faq" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">FAQ</a>
+          </nav>
         </div>
-        <div class="footer-links">
-          <a href="/privacy">Privacy Policy</a>
-          <a href="/terms">Terms of Service</a>
+
+        <!-- Column 2: Company -->
+        <div>
+          <h4 style="margin: 0 0 20px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #6b4423; text-align: left;">Company</h4>
+          <nav style="display: flex; flex-direction: column; align-items: left; gap: 12px;">
+            <a href="/about" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">About Us</a>
+            <a href="/contact" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">Contact Us</a>
+            <a href="/careers" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">Careers</a>
+            <a href="/investors" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">Investors</a>
+          </nav>
+        </div>
+
+        <!-- Column 3: Contact -->
+        <div>
+          <h4 style="margin: 0 0 20px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #6b4423; text-align: left;">Contact</h4>
+          <div style="display: flex; flex-direction: column; align-items: left; gap: 12px;">
+            <a href="tel:6155524296" style="color: #6b625a; text-decoration: none; transition: color 0.2s; display: flex; gap: 8px;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">
+              <span>(615) 552-4296</span>
+            </a>
+            <a href="mailto:info@propcash.co" style="color: #6b625a; text-decoration: none; transition: color 0.2s; display: flex; gap: 8px;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">
+              <span>info@propcash.co</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Row -->
+      <div class="footer-bottom" style="padding-top: 32px;">
+        <div>
+          <p class="footer-disclaimer" style="margin-bottom: 16px;">
+            <strong>Disclaimer:</strong> Propcash operates a marketplace platform connecting property sellers with independent investors. We do not purchase properties directly. All offers come from third-party investors in our network. We are not acting as licensed real estate agents or brokers and do not offer legal, tax, or financial advice. Propcash and/or its affiliates may acquire contractual rights to properties listed on the platform and assign those rights to investors in our network.
+          </p>
+          <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+            <p style="margin: 0;">© <span id="year"></span> Propcash. All rights reserved.</p>
+            <a href="/privacy" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">Privacy Policy</a>
+            <a href="/terms" style="color: #6b625a; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6b4423'" onmouseout="this.style.color='#6b625a'">Terms of Service</a>
+          </div>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Sticky Helper - Tech Style -->
-  <div class="helper-container">
-    <a href="#start" class="helper-phone" aria-label="Start your auction">
-      🚀 Start Auction
-    </a>
-  </div>
-
-  <!-- JavaScript -->
-  <script src="/assets/scripts.js"></script>
-  
+  <!-- Footer Year Script -->
   <script>
-    // Animated Counter for Stats
-    function animateCounter(element, target, duration = 2000) {
-      const start = 0;
-      const increment = target / (duration / 16);
-      let current = start;
-      
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          element.textContent = Math.round(target);
-          clearInterval(timer);
-        } else {
-          element.textContent = Math.round(current);
-        }
-      }, 16);
-    }
-    
-    // Initialize counters on load
-    document.addEventListener('DOMContentLoaded', () => {
-      const activeInvestors = document.getElementById('activeInvestors');
-      const offersToday = document.getElementById('offersToday');
-      
-      if (activeInvestors) animateCounter(activeInvestors, 547);
-      if (offersToday) animateCounter(offersToday, 23);
-      
-      // Randomly update "offers today" every few seconds
-      setInterval(() => {
-        if (offersToday) {
-          const current = parseInt(offersToday.textContent);
-          offersToday.textContent = current + 1;
-        }
-      }, 15000);
-    });
-    
-    // Simple Network Visualization
-    function createNetworkViz() {
-      const container = document.getElementById('networkViz');
-      if (!container) return;
-      
-      const width = container.offsetWidth;
-      const height = 200;
-      
-      // Create random nodes
-      for (let i = 0; i < 20; i++) {
-        const node = document.createElement('div');
-        node.className = 'network-node';
-        node.style.left = `${Math.random() * width}px`;
-        node.style.top = `${Math.random() * height}px`;
-        node.style.animationDelay = `${Math.random() * 2}s`;
-        container.appendChild(node);
-      }
-    }
-    
-    document.addEventListener('DOMContentLoaded', createNetworkViz);
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
+  <!-- Keep only what's needed for header/mobile nav behavior -->
+  <script src="/assets/scripts.js"></script>
+
+  <!-- Mobile Menu Script (kept, since this is what you’ll likely be testing) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      const mobileNav = document.getElementById('mobileNav');
+
+      if (mobileMenuToggle && mobileNav) {
+        mobileMenuToggle.addEventListener('click', function() {
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+          mobileNav.classList.toggle('active');
+          this.setAttribute('aria-expanded', String(!isExpanded));
+          this.textContent = isExpanded ? '☰' : '✕';
+        });
+
+        mobileNav.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            mobileMenuToggle.textContent = '☰';
+          });
+        });
+
+        document.addEventListener('click', function(event) {
+          if (!mobileNav.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+            mobileNav.classList.remove('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            mobileMenuToggle.textContent = '☰';
+          }
+        });
+      }
+    });
+  </script>
+
+  <!-- Optional (best practice): also block indexing via header if you control server/CDN
+       X-Robots-Tag: noindex, nofollow
+       (This cannot be set via HTML; include in server config if possible.) -->
 </body>
 </html>
+
