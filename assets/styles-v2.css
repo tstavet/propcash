@@ -1600,13 +1600,13 @@ footer nav a:hover {
 
 .ma-topo-line {
   fill: none;
-  stroke: var(#3a7d5c);
+  stroke: var(--primary);
   stroke-width: 1;
   opacity: 0.12;
 }
 
 .ma-topo-line.accent {
-  stroke: var(4a9c74);
+  stroke: var(--primary-light);
   stroke-width: 1.5;
   opacity: 0.2;
 }
