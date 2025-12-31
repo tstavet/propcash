@@ -439,301 +439,269 @@ We send your property's details to our national network of 500+ vetted cash inve
  </div> <!-- Close the inner content div -->
 </section> <!-- Close the "How It Works - Dashbo
   
-   <!-- How It Works - Mobile Optimized with Horizontal Scroll -->
-<section id="how-it-works" style="background: #f8f5f2; padding: 60px 0;">
-  <div class="container" style="max-width: 1200px;">
+  <section class="ma-section" id="how-it-works">
+  <div class="ma-header">
+    <div class="ma-live-badge">
+      <div class="ma-pulse-dot"></div>
+      <span>Live Preview</span>
+    </div>
+    <h2>How Propcash Works</h2>
+    <p>Get competing cash offers from 500+ investors in three simple steps</p>
+  </div>
+
+  <div class="ma-stages">
+    <button class="ma-stage-btn active" data-stage="1">
+      <span class="ma-stage-num">1</span>
+      <span class="ma-stage-label">Submit Details</span>
+    </button>
+    <button class="ma-stage-btn" data-stage="2">
+      <span class="ma-stage-num">2</span>
+      <span class="ma-stage-label">Investors Compete</span>
+    </button>
+    <button class="ma-stage-btn" data-stage="3">
+      <span class="ma-stage-num">3</span>
+      <span class="ma-stage-label">Choose Best</span>
+    </button>
+  </div>
+
+  <div class="ma-container">
+    <!-- Topographic Background -->
+    <div class="ma-topo-bg">
+      <svg class="ma-topo-svg" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice">
+        <path class="ma-topo-line" d="M-50,420 Q100,400 200,440 T400,410 T600,450 T750,420" />
+        <path class="ma-topo-line" d="M-50,390 Q120,360 220,400 T420,370 T600,410 T750,380" />
+        <path class="ma-topo-line accent" d="M-50,360 Q140,320 240,360 T440,330 T600,370 T750,340" />
+        <path class="ma-topo-line" d="M-50,330 Q160,280 260,320 T460,290 T600,330 T750,300" />
+        <path class="ma-topo-line" d="M-50,300 Q180,240 280,280 T480,250 T600,290 T750,260" />
+        <path class="ma-topo-line highlight" d="M-50,270 Q200,200 300,240 T500,210 T650,250" />
+        <path class="ma-topo-line accent" d="M-50,240 Q220,160 320,200 T520,170 T650,210" />
+        <path class="ma-topo-line highlight" d="M-50,210 Q240,120 340,160 T540,130 T650,170" />
+        <path class="ma-topo-line" d="M-50,180 Q260,80 360,120 T560,90 T650,130" />
+        <path class="ma-topo-line accent" d="M100,150 Q280,60 380,100 T550,70" />
+        <path class="ma-topo-line" d="M150,120 Q300,40 400,80 T530,50" />
+        <path class="ma-topo-line highlight" d="M200,100 Q320,30 420,60 T500,40" />
+        <path class="ma-topo-line" d="M350,380 Q420,340 500,370 T650,340" />
+        <path class="ma-topo-line accent" d="M380,350 Q450,310 530,340 T650,310" />
+        <path class="ma-topo-line" d="M410,320 Q480,280 560,310 T650,280" />
+        <path class="ma-topo-line" d="M-50,120 Q50,90 100,110 T200,80" />
+        <path class="ma-topo-line accent" d="M-50,90 Q70,60 120,80 T220,50" />
+        <path class="ma-topo-line" d="M-50,480 Q80,450 180,470 T350,440 T500,470 T650,450" />
+        <path class="ma-topo-line accent" d="M-50,450 Q100,410 200,440 T370,400 T520,440 T650,410" />
+        <circle class="ma-topo-marker highlight" cx="300" cy="200" r="5" />
+        <circle class="ma-topo-marker" cx="420" cy="130" r="4" />
+        <circle class="ma-topo-marker" cx="180" cy="290" r="4" />
+        <circle class="ma-topo-marker highlight" cx="500" cy="260" r="5" />
+        <circle class="ma-topo-marker" cx="100" cy="360" r="4" />
+        <circle class="ma-topo-marker" cx="550" cy="390" r="4" />
+        <circle class="ma-topo-marker" cx="450" cy="340" r="4" />
+      </svg>
+    </div>
+    <div class="ma-topo-gradient"></div>
     
-    <!-- Header -->
-    <div style="text-align: center; margin-bottom: 48px;">
-      <h2 style="margin-bottom: 16px;">Here's how it works</h2>
-      <p class="text-large text-muted">Start getting competing cash offers for your property in three simple steps</p>
+    <div class="ma-progress" id="progressBar"></div>
+
+    <!-- Stage 1: Submit Property -->
+    <div class="ma-stage-panel active" data-panel="1">
+      <div class="ma-submit-content">
+        <div class="ma-house-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          <div class="ma-check-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+        </div>
+        <h3>Submit Your Property</h3>
+        <p>Answer a few quick questions so we can share your property with our investor network.</p>
+        <div class="ma-time-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          Takes 2 minutes
+        </div>
+      </div>
     </div>
 
-    <!-- Desktop: 3-Column Grid -->
-    <div class="how-it-works-desktop" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-      
-      <!-- Step 1 -->
-      <div class="step-card" style="background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 12px rgba(107, 68, 35, 0.08); border: 1px solid #e5e0db;">
-        <div style="width: 56px; height: 56px; background: #6b4423; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 24px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(107, 68, 35, 0.3);">
-          1
+    <!-- Stage 2: Notification Stack -->
+    <div class="ma-stage-panel" data-panel="2">
+      <div class="ma-notifications-content">
+        <div class="ma-notif-header">
+          <div class="ma-notif-header-dot"></div>
+          <span>Receiving live offers...</span>
         </div>
-        <h3 style="margin: 0 0 12px; font-size: 22px; color: #1a1512;">Submit your property's details</h3>
-        <p style="margin: 0 0 16px; color: #6b625a; line-height: 1.6; font-size: 15px;">
-          Answer a few questions about your property so we can distribute the information to our pool of 500+ vetted investors.
-        </p>
-        <div style="padding: 12px 16px; background: #f8f5f2; border-radius: 8px; border-left: 3px solid #6b4423; font-size: 13px;">
-          <strong style="color: #1a1512;">Takes 2 minutes</strong>
+
+        <div class="ma-notif-stack">
+          <div class="ma-notification">
+            <div class="ma-notif-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div class="ma-notif-body">
+              <div class="ma-notif-title">
+                <span class="ma-notif-bell">🔔</span> New Offer
+              </div>
+              <div class="ma-notif-amount">$325,000</div>
+              <div class="ma-notif-investor">HomeVest Capital</div>
+            </div>
+            <div class="ma-notif-meta">
+              <span class="ma-notif-time">just now</span>
+              <span class="ma-notif-badge">14 day close</span>
+            </div>
+          </div>
+
+          <div class="ma-notification">
+            <div class="ma-notif-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div class="ma-notif-body">
+              <div class="ma-notif-title">
+                <span class="ma-notif-bell">🔔</span> New Offer
+              </div>
+              <div class="ma-notif-amount">$332,000</div>
+              <div class="ma-notif-investor">Rapid Home Buyers</div>
+            </div>
+            <div class="ma-notif-meta">
+              <span class="ma-notif-time">2s ago</span>
+              <span class="ma-notif-badge">10 day close</span>
+            </div>
+          </div>
+
+          <div class="ma-notification">
+            <div class="ma-notif-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div class="ma-notif-body">
+              <div class="ma-notif-title">
+                <span class="ma-notif-bell">🔔</span> New Offer
+              </div>
+              <div class="ma-notif-amount">$338,000</div>
+              <div class="ma-notif-investor">CashFlow Properties</div>
+            </div>
+            <div class="ma-notif-meta">
+              <span class="ma-notif-time">5s ago</span>
+              <span class="ma-notif-badge">7 day close</span>
+            </div>
+          </div>
+
+          <div class="ma-notification highest">
+            <div class="ma-notif-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div class="ma-notif-body">
+              <div class="ma-notif-title">
+                <span class="ma-notif-bell">🔔</span> New Offer
+              </div>
+              <div class="ma-notif-amount">$342,000</div>
+              <div class="ma-notif-investor">Premier Investments</div>
+            </div>
+            <div class="ma-notif-meta">
+              <span class="ma-notif-time">8s ago</span>
+              <span class="ma-notif-badge">HIGHEST</span>
+            </div>
+          </div>
         </div>
-      </div>
-      
-      <!-- Step 2 -->
-      <div class="step-card" style="background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 12px rgba(107, 68, 35, 0.08); border: 1px solid #e5e0db;">
-        <div style="width: 56px; height: 56px; background: #6b4423; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 24px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(107, 68, 35, 0.3);">
-          2
-        </div>
-        <h3 style="margin: 0 0 12px; font-size: 22px; color: #1a1512;">Investors compete to buy your property</h3>
-        <p style="margin: 0 0 16px; color: #6b625a; line-height: 1.6; font-size: 15px;">
-         Investors submit cash offers to buy your property as-is. No showings or repairs required.
-        </p>
-        
-        <!-- Compact Offer Preview -->
-        <div style="background: #fdfcfb; border-radius: 8px; padding: 12px; border: 1px solid #e5e0db;">
-          <div style="font-size: 11px; font-weight: 600; color: #6b625a; margin-bottom: 8px; text-transform: uppercase;">3 Competing Offers</div>
-          <div style="display: flex; justify-content: space-between; font-size: 14px; color: #6b4423; font-weight: 700;">
-            <span>$342K</span>
-            <span>$338K</span>
-            <span>$335K</span>
+
+        <div class="ma-notif-footer">
+          <div class="ma-notif-footer-text">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            <strong>4 offers</strong> received · Competition drives price up!
           </div>
         </div>
       </div>
-      
-      <!-- Step 3 -->
-      <div class="step-card" style="background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 12px rgba(107, 68, 35, 0.08); border: 1px solid #e5e0db;">
-        <div style="width: 56px; height: 56px; background: #6b4423; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 24px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(107, 68, 35, 0.3);">
-          3
-        </div>
-        <h3 style="margin: 0 0 12px; font-size: 22px; color: #1a1512;">Choose the best offer</h3>
-        <p style="margin: 0 0 16px; color: #6b625a; line-height: 1.6; font-size: 15px;">
-          Our Specialists review all offers and present you with the highest option. You choose if, when, and how to proceed. Zero pressure.
-        </p>
-        <div style="display: flex; gap: 8px;">
-          <div style="flex: 1; padding: 10px; background: #f8f5f2; border-radius: 6px; text-align: center; font-size: 13px;">
-            <div style="color: #6b625a;">Avg. close</div>
-            <div style="font-weight: 700; color: #1a1512;">7 days</div>
-          </div>
-          <div style="flex: 1; padding: 10px; background: #f8f5f2; border-radius: 6px; text-align: center; font-size: 13px;">
-            <div style="color: #6b625a;">Fastest</div>
-            <div style="font-weight: 700; color: #1a1512;">3 days</div>
-          </div>
-        </div>
-      </div>
-      
     </div>
 
-    <!-- Mobile: Horizontal Scroll -->
-    <div class="how-it-works-mobile" style="display: none; position: relative;">
-      
-      <!-- Progress Indicator -->
-      <div style="text-align: center; margin-bottom: 24px;">
-        <div style="display: inline-flex; gap: 8px;">
-          <div class="progress-dot" data-step="1" style="width: 8px; height: 8px; background: #6b4423; border-radius: 50%; transition: all 0.3s;"></div>
-          <div class="progress-dot" data-step="2" style="width: 8px; height: 8px; background: #e5e0db; border-radius: 50%; transition: all 0.3s;"></div>
-          <div class="progress-dot" data-step="3" style="width: 8px; height: 8px; background: #e5e0db; border-radius: 50%; transition: all 0.3s;"></div>
-          <div class="progress-dot" data-step="4" style="width: 8px; height: 8px; background: #e5e0db; border-radius: 50%; transition: all 0.3s;"></div>
+    <!-- Stage 3: Choose Best -->
+    <div class="ma-stage-panel" data-panel="3">
+      <div class="ma-choose-content">
+        <div class="ma-choose-label">Select Your Best Offer</div>
+        <div class="ma-choose-list">
+          <button class="ma-choose-option" data-offer="1">
+            <div class="ma-choose-radio">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="ma-choose-info">
+              <div class="ma-choose-amount">$342,000</div>
+              <div class="ma-choose-details">Premier Investments • 7 days</div>
+            </div>
+            <div class="ma-highest-badge">BEST</div>
+          </button>
+          <button class="ma-choose-option" data-offer="2">
+            <div class="ma-choose-radio">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="ma-choose-info">
+              <div class="ma-choose-amount">$338,000</div>
+              <div class="ma-choose-details">CashFlow Properties • 7 days</div>
+            </div>
+          </button>
+          <button class="ma-choose-option" data-offer="3">
+            <div class="ma-choose-radio">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="ma-choose-info">
+              <div class="ma-choose-amount">$332,000</div>
+              <div class="ma-choose-details">Rapid Home Buyers • 10 days</div>
+            </div>
+          </button>
+        </div>
+        <div class="ma-success-msg">
+          🎉 Great choice! We'll connect you within 24 hours.
         </div>
       </div>
-      
-      <!-- Scrollable Container -->
-      <div class="steps-scroll-container" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; padding: 0 20px; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
-        
-        <!-- Step 1 Mobile Card -->
-        <div class="mobile-step-card" style="flex: 0 0 100%; scroll-snap-align: center; background: white; border-radius: 16px; padding: 40px 24px; box-shadow: 0 4px 20px rgba(107, 68, 35, 0.12); border: 1px solid #e5e0db; text-align: center; position: relative;">
-          <div style="width: 72px; height: 72px; background: #6b4423; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 32px; margin: 0 auto 24px; box-shadow: 0 4px 12px rgba(107, 68, 35, 0.3);">
-            1
-          </div>
-          <div style="font-size: 12px; font-weight: 600; color: #6b625a; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Step 1 of 3</div>
-          <h3 style="margin: 0 0 16px; font-size: 24px; color: #1a1512;">Submit your property</h3>
-          <p style="margin: 0 0 24px; color: #6b625a; line-height: 1.7; font-size: 16px;">
-          Answer a few questions about your property so we can distribute the information to our pool of 500+ vetted investors.
-          </p>
-          <div style="padding: 16px; background: #f8f5f2; border-radius: 12px; border-left: 4px solid #6b4423;">
-            <div style="font-size: 14px; font-weight: 700; color: #1a1512;">⏱️ Takes 2 minutes</div>
-            <div style="font-size: 13px; color: #6b625a; margin-top: 4px;">Zero obligation to accept</div>
-          </div>
-          
-          <!-- Scroll Arrow Hint -->
-          <div class="scroll-arrow" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); animation: bounceRight 1.5s infinite;">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" style="opacity: 0.4;">
-              <path d="M9 18L15 12L9 6" stroke="#6b4423" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
-        
-        <!-- Step 2 Mobile Card -->
-        <div class="mobile-step-card" style="flex: 0 0 100%; scroll-snap-align: center; background: white; border-radius: 16px; padding: 40px 24px; box-shadow: 0 4px 20px rgba(107, 68, 35, 0.12); border: 1px solid #e5e0db; text-align: center; position: relative;">
-          <div style="width: 72px; height: 72px; background: #6b4423; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 32px; margin: 0 auto 24px; box-shadow: 0 4px 12px rgba(107, 68, 35, 0.3);">
-            2
-          </div>
-          <div style="font-size: 12px; font-weight: 600; color: #6b625a; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Step 2 of 3</div>
-          <h3 style="margin: 0 0 16px; font-size: 24px; color: #1a1512;">Investors compete</h3>
-          <p style="margin: 0 0 24px; color: #6b625a; line-height: 1.7; font-size: 16px;">
-          Our Specialists review all offers and present you with the highest option. You choose if, when, and how to proceed. Zero pressure.
-          </p>
-          
-          <!-- Mobile Offer Cards -->
-          <div style="background: #fdfcfb; border-radius: 12px; padding: 16px; border: 1px solid #e5e0db;">
-            <div style="font-size: 11px; font-weight: 600; color: #6b625a; margin-bottom: 12px; text-transform: uppercase;">Live Offers</div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <div style="display: flex; justify-content: space-between; padding: 10px; background: white; border-radius: 8px; border: 1px solid #e5e0db;">
-                <div style="text-align: left;">
-                  <div style="font-weight: 600; font-size: 13px; color: #1a1512;">Premier Investments</div>
-                  <div style="font-size: 11px; color: #6b625a;">10 day close</div>
-                </div>
-                <div style="font-size: 18px; font-weight: 700; color: #6b4423;">$342K</div>
-              </div>
-              <div style="display: flex; justify-content: space-between; padding: 10px; background: white; border-radius: 8px; border: 1px solid #e5e0db;">
-                <div style="text-align: left;">
-                  <div style="font-weight: 600; font-size: 13px; color: #1a1512;">Rapid Home Buyers</div>
-                  <div style="font-size: 11px; color: #6b625a;">14 day close</div>
-                </div>
-                <div style="font-size: 18px; font-weight: 700; color: #6b4423;">$338K</div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Scroll Arrow Hint -->
-          <div class="scroll-arrow" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); animation: bounceRight 1.5s infinite;">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" style="opacity: 0.4;">
-              <path d="M9 18L15 12L9 6" stroke="#6b4423" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
-        
-        <!-- Step 3 Mobile Card -->
-        <div class="mobile-step-card" style="flex: 0 0 100%; scroll-snap-align: center; background: white; border-radius: 16px; padding: 40px 24px; box-shadow: 0 4px 20px rgba(107, 68, 35, 0.12); border: 1px solid #e5e0db; text-align: center; position: relative;">
-          <div style="width: 72px; height: 72px; background: #6b4423; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 32px; margin: 0 auto 24px; box-shadow: 0 4px 12px rgba(107, 68, 35, 0.3);">
-            3
-          </div>
-          <div style="font-size: 12px; font-weight: 600; color: #6b625a; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Step 3 of 3</div>
-          <h3 style="margin: 0 0 16px; font-size: 24px; color: #1a1512;">Choose the best offer</h3>
-          <p style="margin: 0 0 24px; color: #6b625a; line-height: 1.7; font-size: 16px;">
-          Our Specialists review all offers and present you with the highest option. You choose if, when, and how to proceed. Zero pressure.
-          </p>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-            <div style="padding: 16px; background: #f8f5f2; border-radius: 10px; text-align: center;">
-              <div style="font-size: 12px; color: #6b625a; margin-bottom: 4px;">Avg. close</div>
-              <div style="font-weight: 700; color: #1a1512; font-size: 20px;">14 days</div>
-            </div>
-            <div style="padding: 16px; background: #f8f5f2; border-radius: 10px; text-align: center;">
-              <div style="font-size: 12px; color: #6b625a; margin-bottom: 4px;">Fastest</div>
-              <div style="font-weight: 700; color: #1a1512; font-size: 20px;">3 days</div>
-            </div>
-          </div>
-          
-          <!-- Scroll Arrow Hint -->
-          <div class="scroll-arrow" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); animation: bounceRight 1.5s infinite;">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" style="opacity: 0.4;">
-              <path d="M9 18L15 12L9 6" stroke="#6b4423" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
-        
-        <!-- Step 4 CTA Card -->
-        <div class="mobile-step-card" style="flex: 0 0 100%; scroll-snap-align: center; background: linear-gradient(135deg, #6b4423 0%, #8b5e3c 100%); border-radius: 16px; padding: 40px 24px; box-shadow: 0 4px 20px rgba(107, 68, 35, 0.25); text-align: center; position: relative; overflow: hidden;">
-          <!-- Decorative elements -->
-          <div style="position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; background: rgba(255,255,255,0.05); border-radius: 50%;"></div>
-          <div style="position: absolute; bottom: -40px; left: -40px; width: 150px; height: 150px; background: rgba(255,255,255,0.05); border-radius: 50%;"></div>
-          
-          <div style="position: relative; z-index: 2;">
-            <div style="width: 72px; height: 72px; background: white; color: #6b4423; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 36px; margin: 0 auto 24px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);">
-              🚀
-            </div>
-            <h3 style="margin: 0 0 16px; font-size: 26px; color: white; line-height: 1.3;">Ready to get cash offers for your property?</h3>
-            <p style="margin: 0 0 32px; color: rgba(255, 255, 255, 0.95); line-height: 1.7; font-size: 17px;">
-              Answer a few questions below and we'll help you sell fast, as-is, for cash.
-            </p>
-            
-            <a href="#start" style="display: inline-block; padding: 18px 36px; background: white; color: #6b4423; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 18px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); transition: all 0.3s;">
-              Get Started for Free →
-            </a>
-            
-            <div style="margin-top: 24px; font-size: 14px; color: rgba(255, 255, 255, 0.85); display: flex; align-items: center; justify-content: center; gap: 6px;">
-              <span>✓</span> <span>Zero fees</span>
-              <span style="margin: 0 4px;">•</span>
-              <span>✓</span> <span>No obligation</span>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-      
-      <!-- Swipe Hint (appears briefly) -->
-      <div class="swipe-hint" style="text-align: center; margin-top: 20px; color: #6b625a; font-size: 14px; animation: fadeOut 3s forwards;">
-        ← Swipe to see all steps →
-      </div>
-      
     </div>
+  </div>
+
+  <div class="ma-controls">
+    <button class="ma-pause-btn" id="pauseBtn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="#6b4423" id="pauseIcon">
+        <rect x="6" y="4" width="4" height="16"/>
+        <rect x="14" y="4" width="4" height="16"/>
+      </svg>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="#6b4423" id="playIcon" style="display:none;">
+        <polygon points="5 3 19 12 5 21 5 3"/>
+      </svg>
+      <span id="pauseText">Pause</span>
+    </button>
+  </div>
+
+  <div class="ma-cta">
+    <a href="/get-offer" class="ma-cta-btn">
+      Get My Cash Offers
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="5" y1="12" x2="19" y2="12"/>
+        <polyline points="12 5 19 12 12 19"/>
+      </svg>
+    </a>
+    <p class="ma-cta-sub">✓ Free • ✓ No Obligation • ✓ 2 Minutes</p>
+  </div>
 </section>
-
-<!-- Responsive Styles -->
-<style>
-  /* Hide scrollbar for horizontal scroll */
-  .steps-scroll-container::-webkit-scrollbar {
-    display: none;
-  }
   
-  /* Fade out swipe hint */
-  @keyframes fadeOut {
-    0% { opacity: 1; }
-    70% { opacity: 1; }
-    100% { opacity: 0; }
-  }
-  
-  /* Bouncing arrow animation */
-  @keyframes bounceRight {
-    0%, 100% {
-      transform: translateY(-50%) translateX(0);
-    }
-    50% {
-      transform: translateY(-50%) translateX(8px);
-    }
-  }
-  
-  /* Desktop: Show grid, hide scroll */
-  @media (min-width: 769px) {
-    .how-it-works-desktop {
-      display: grid !important;
-    }
-    .how-it-works-mobile {
-      display: none !important;
-    }
-  }
-  
-  /* Mobile: Hide grid, show scroll */
-  @media (max-width: 768px) {
-    .how-it-works-desktop {
-      display: none !important;
-    }
-    .how-it-works-mobile {
-      display: block !important;
-    }
-  }
-  
-  /* Progress dot updates via JavaScript */
-  .progress-dot.active {
-    background: #6b4423 !important;
-    transform: scale(1.2);
-  }
-</style>
-
-<!-- JavaScript for Progress Indicator -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const scrollContainer = document.querySelector('.steps-scroll-container');
-    const progressDots = document.querySelectorAll('.progress-dot');
-    
-    if (scrollContainer && progressDots.length > 0) {
-      scrollContainer.addEventListener('scroll', function() {
-        const scrollPosition = scrollContainer.scrollLeft;
-        const cardWidth = scrollContainer.querySelector('.mobile-step-card').offsetWidth;
-        const currentStep = Math.round(scrollPosition / cardWidth);
-        
-        // Update progress dots
-        progressDots.forEach((dot, index) => {
-          if (index === currentStep) {
-            dot.classList.add('active');
-            dot.style.background = '#6b4423';
-            dot.style.transform = 'scale(1.2)';
-          } else {
-            dot.classList.remove('active');
-            dot.style.background = '#e5e0db';
-            dot.style.transform = 'scale(1)';
-          }
-        });
-      });
-    }
-  });
-</script>
 <!-- Image Section with Overlay Info -->
 <section style="background: white; padding: 80px 0;">
   <div class="container" style="max-width: 1200px; margin: 0 auto; position: relative;">
@@ -1170,5 +1138,82 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+  <script>
+(function() {
+  let currentStage = 1;
+  let isPaused = false;
+  let autoTimer = null;
+  const durations = [4000, 5500, 4000];
+  const totalStages = 3;
+
+  const stageBtns = document.querySelectorAll('.ma-stage-btn');
+  const panels = document.querySelectorAll('.ma-stage-panel');
+  const pauseBtn = document.getElementById('pauseBtn');
+  const pauseIcon = document.getElementById('pauseIcon');
+  const playIcon = document.getElementById('playIcon');
+  const pauseText = document.getElementById('pauseText');
+  const chooseOptions = document.querySelectorAll('.ma-choose-option');
+  const successMsg = document.querySelector('.ma-success-msg');
+  const progressBar = document.getElementById('progressBar');
+
+  function setStage(stage) {
+    currentStage = stage;
+    stageBtns.forEach(btn => {
+      btn.classList.toggle('active', parseInt(btn.dataset.stage) === stage);
+    });
+    panels.forEach(panel => {
+      panel.classList.toggle('active', parseInt(panel.dataset.panel) === stage);
+    });
+    if (stage !== 3) {
+      chooseOptions.forEach(opt => opt.classList.remove('selected'));
+      successMsg.classList.remove('show');
+    }
+    updateProgress();
+    scheduleNext();
+  }
+
+  function updateProgress() {
+    const progress = (currentStage / totalStages) * 100;
+    progressBar.style.width = progress + '%';
+  }
+
+  function scheduleNext() {
+    clearTimeout(autoTimer);
+    if (!isPaused) {
+      autoTimer = setTimeout(() => {
+        const nextStage = currentStage === totalStages ? 1 : currentStage + 1;
+        setStage(nextStage);
+      }, durations[currentStage - 1]);
+    }
+  }
+
+  function togglePause() {
+    isPaused = !isPaused;
+    pauseIcon.style.display = isPaused ? 'none' : 'block';
+    playIcon.style.display = isPaused ? 'block' : 'none';
+    pauseText.textContent = isPaused ? 'Play' : 'Pause';
+    if (!isPaused) { scheduleNext(); } else { clearTimeout(autoTimer); }
+  }
+
+  stageBtns.forEach(btn => {
+    btn.addEventListener('click', () => { setStage(parseInt(btn.dataset.stage)); });
+  });
+
+  pauseBtn.addEventListener('click', togglePause);
+
+  chooseOptions.forEach(opt => {
+    opt.addEventListener('click', () => {
+      chooseOptions.forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      successMsg.classList.add('show');
+      clearTimeout(autoTimer);
+    });
+  });
+
+  updateProgress();
+  scheduleNext();
+})();
+</script>
+  
   </body>
 </html>
