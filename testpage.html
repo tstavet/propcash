@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Propcash Marketplace Animation v2.0</title>
+  <title>Propcash Marketplace Animation v2.1 - 3 Steps</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* ==========================================
-       PROPCASH MARKETPLACE ANIMATION v2.0
-       Standalone component - uses design system vars
+       PROPCASH MARKETPLACE ANIMATION v2.1
+       3-Step Version - Mobile Optimized
        ========================================== */
     
     :root {
@@ -34,7 +34,7 @@
       --font-body: 'Inter', system-ui, sans-serif;
     }
 
-    * {
+    .ma-section * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -43,10 +43,10 @@
     /* ==========================================
        CONTAINER
        ========================================== */
-    .marketplace-animation {
+    .ma-section {
       font-family: var(--font-body);
       background: linear-gradient(180deg, var(--bg) 0%, var(--bg-secondary) 100%);
-      padding: clamp(32px, 6vw, 60px) 20px;
+      padding: clamp(32px, 6vw, 60px) 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -57,7 +57,8 @@
        ========================================== */
     .ma-header {
       text-align: center;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
+      max-width: 500px;
     }
 
     .ma-live-badge {
@@ -65,9 +66,9 @@
       align-items: center;
       gap: 8px;
       background: rgba(107, 68, 35, 0.08);
-      padding: 8px 16px;
+      padding: 6px 14px;
       border-radius: var(--radius-full);
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .ma-pulse-dot {
@@ -79,23 +80,25 @@
     }
 
     .ma-live-badge span {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       color: var(--primary);
     }
 
     .ma-header h2 {
       font-family: var(--font-heading);
-      font-size: clamp(24px, 5vw, 32px);
+      font-size: clamp(22px, 5vw, 30px);
       font-weight: 700;
       color: var(--primary);
       margin-bottom: 8px;
       letter-spacing: -0.02em;
+      line-height: 1.2;
     }
 
     .ma-header p {
-      font-size: 16px;
+      font-size: clamp(14px, 3.5vw, 16px);
       color: var(--text-muted);
+      line-height: 1.5;
     }
 
     /* ==========================================
@@ -103,25 +106,30 @@
        ========================================== */
     .ma-stages {
       display: flex;
-      gap: 8px;
-      margin-bottom: 32px;
-      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 24px;
+      width: 100%;
+      max-width: 500px;
       justify-content: center;
     }
 
     .ma-stage-btn {
-      padding: 10px 16px;
+      flex: 1;
+      max-width: 160px;
+      padding: 10px 12px;
       background: white;
       color: var(--primary);
       border: 2px solid var(--border);
-      border-radius: var(--radius-full);
-      font-size: 13px;
+      border-radius: var(--radius);
+      font-size: 12px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
+      text-align: center;
     }
 
     .ma-stage-btn:hover {
@@ -135,16 +143,17 @@
     }
 
     .ma-stage-num {
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
       background: var(--primary);
       color: white;
       border-radius: 50%;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
     }
 
     .ma-stage-btn.active .ma-stage-num {
@@ -153,13 +162,7 @@
     }
 
     .ma-stage-label {
-      display: none;
-    }
-
-    @media (min-width: 600px) {
-      .ma-stage-label {
-        display: inline;
-      }
+      line-height: 1.3;
     }
 
     /* ==========================================
@@ -168,8 +171,8 @@
     .ma-container {
       position: relative;
       width: 100%;
-      max-width: 700px;
-      height: 400px;
+      max-width: 500px;
+      min-height: 340px;
       background: white;
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow-xl);
@@ -183,7 +186,7 @@
       background-image: 
         linear-gradient(rgba(107, 68, 35, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(107, 68, 35, 0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
+      background-size: 32px 32px;
       pointer-events: none;
     }
 
@@ -199,7 +202,7 @@
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.5s ease, visibility 0.5s ease;
-      padding: 24px;
+      padding: 20px;
     }
 
     .ma-stage-panel.active {
@@ -218,14 +221,14 @@
     }
 
     .ma-house-icon {
-      width: 120px;
-      height: 120px;
+      width: 100px;
+      height: 100px;
       background: linear-gradient(135deg, var(--bg-secondary) 0%, #e8e2db 100%);
-      border-radius: var(--radius-xl);
+      border-radius: var(--radius-lg);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       border: 3px solid var(--primary);
       position: relative;
     }
@@ -236,10 +239,10 @@
 
     .ma-check-badge {
       position: absolute;
-      top: -12px;
-      right: -12px;
-      width: 32px;
-      height: 32px;
+      top: -10px;
+      right: -10px;
+      width: 28px;
+      height: 28px;
       background: var(--success);
       border-radius: 50%;
       display: flex;
@@ -255,219 +258,176 @@
     .ma-submit-content h3 {
       font-family: var(--font-heading);
       color: var(--primary);
-      font-size: 20px;
-      margin-bottom: 8px;
+      font-size: 18px;
+      margin-bottom: 6px;
       font-weight: 700;
     }
 
     .ma-submit-content p {
       color: var(--text-muted);
       font-size: 14px;
-      max-width: 280px;
+      max-width: 260px;
       line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .ma-time-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-secondary);
+      padding: 8px 14px;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
     }
 
     /* ==========================================
-       STAGE 2: BROADCAST NETWORK
+       STAGE 2: INVESTORS COMPETE
        ========================================== */
-    .ma-network-content {
-      position: relative;
-      width: 100%;
-      height: 100%;
+    .ma-compete-content {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
+      width: 100%;
     }
 
-    .ma-center-house {
-      width: 80px;
-      height: 80px;
+    .ma-compete-visual {
+      position: relative;
+      width: 100%;
+      max-width: 320px;
+      height: 180px;
+      margin-bottom: 16px;
+    }
+
+    .ma-center-property {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px;
+      height: 64px;
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-      border-radius: 16px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 10;
-      box-shadow: 0 8px 32px rgba(107, 68, 35, 0.3);
+      box-shadow: 0 6px 24px rgba(107, 68, 35, 0.3);
     }
 
-    .ma-ripple {
+    .ma-offer-bubble {
       position: absolute;
-      border: 2px solid rgba(107, 68, 35, 0.2);
-      border-radius: 50%;
-      opacity: 0;
-    }
-
-    .ma-ripple-1 { width: 120px; height: 120px; }
-    .ma-ripple-2 { width: 200px; height: 200px; }
-    .ma-ripple-3 { width: 280px; height: 280px; }
-
-    .ma-stage-panel.active .ma-ripple-1 { animation: ma-ripple 2s ease-out 0s infinite; }
-    .ma-stage-panel.active .ma-ripple-2 { animation: ma-ripple 2s ease-out 0.3s infinite; }
-    .ma-stage-panel.active .ma-ripple-3 { animation: ma-ripple 2s ease-out 0.6s infinite; }
-
-    .ma-investor {
-      position: absolute;
-      width: 48px;
-      height: 48px;
       background: white;
-      border-radius: 50%;
-      border: 2px solid var(--primary);
+      border: 2px solid;
+      border-radius: var(--radius);
+      padding: 8px 12px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(107, 68, 35, 0.15);
+      gap: 8px;
+      box-shadow: var(--shadow);
       opacity: 0;
+      transform: scale(0.8);
     }
 
-    .ma-investor-1 { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-60deg) translateX(130px) rotate(60deg); }
-    .ma-investor-2 { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-20deg) translateX(130px) rotate(20deg); }
-    .ma-investor-3 { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(20deg) translateX(130px) rotate(-20deg); }
-    .ma-investor-4 { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(60deg) translateX(130px) rotate(-60deg); }
-    .ma-investor-5 { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(100deg) translateX(130px) rotate(-100deg); }
-    .ma-investor-6 { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(140deg) translateX(130px) rotate(-140deg); }
-
-    .ma-stage-panel.active .ma-investor-1 { animation: ma-fade-in 0.5s ease 0s forwards; }
-    .ma-stage-panel.active .ma-investor-2 { animation: ma-fade-in 0.5s ease 0.2s forwards; }
-    .ma-stage-panel.active .ma-investor-3 { animation: ma-fade-in 0.5s ease 0.4s forwards; }
-    .ma-stage-panel.active .ma-investor-4 { animation: ma-fade-in 0.5s ease 0.6s forwards; }
-    .ma-stage-panel.active .ma-investor-5 { animation: ma-fade-in 0.5s ease 0.3s forwards; }
-    .ma-stage-panel.active .ma-investor-6 { animation: ma-fade-in 0.5s ease 0.5s forwards; }
-
-    .ma-network-label {
-      position: absolute;
-      bottom: 24px;
+    .ma-offer-bubble-1 {
+      top: 8px;
       left: 50%;
-      transform: translateX(-50%);
-      background: var(--primary);
-      color: white;
-      padding: 10px 20px;
-      border-radius: var(--radius-full);
-      font-size: 14px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-      opacity: 0;
+      transform: translateX(-50%) scale(0.8);
+      border-color: #6b4423;
     }
 
-    .ma-stage-panel.active .ma-network-label {
-      animation: ma-fade-in-up 0.5s ease 0.5s forwards;
+    .ma-offer-bubble-2 {
+      bottom: 20px;
+      left: 8px;
+      border-color: #8b5e3c;
     }
 
-    /* ==========================================
-       STAGE 3: RECEIVE OFFERS
-       ========================================== */
-    .ma-offers-content {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-      flex-wrap: wrap;
-      justify-content: center;
+    .ma-offer-bubble-3 {
+      bottom: 20px;
+      right: 8px;
+      border-color: #a67c52;
     }
 
-    .ma-property-side {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-    }
+    .ma-stage-panel.active .ma-offer-bubble-1 { animation: ma-bubble-in 0.5s ease 0.2s forwards; }
+    .ma-stage-panel.active .ma-offer-bubble-2 { animation: ma-bubble-in 0.5s ease 0.4s forwards; }
+    .ma-stage-panel.active .ma-offer-bubble-3 { animation: ma-bubble-in 0.5s ease 0.6s forwards; }
 
-    .ma-property-icon {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, var(--bg-secondary) 0%, #e8e2db 100%);
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid var(--primary);
-    }
-
-    .ma-property-label {
-      font-size: 13px;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-
-    .ma-arrow {
-      color: var(--primary);
-    }
-
-    .ma-stage-panel.active .ma-arrow {
-      animation: ma-bounce-x 1s ease infinite;
-    }
-
-    .ma-offers-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .ma-offer-card {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 16px;
-      background: white;
-      border: 2px solid var(--primary-light);
-      border-radius: 12px;
-      min-width: 200px;
-      box-shadow: 0 2px 8px rgba(107, 68, 35, 0.08);
-      opacity: 0;
-      transform: translateX(40px);
-    }
-
-    .ma-offer-card:nth-child(1) { border-color: #6b4423; }
-    .ma-offer-card:nth-child(2) { border-color: #8b5e3c; }
-    .ma-offer-card:nth-child(3) { border-color: #a67c52; }
-    .ma-offer-card:nth-child(4) { border-color: #c4a77d; }
-
-    .ma-stage-panel.active .ma-offer-card:nth-child(1) { animation: ma-slide-in-right 0.4s ease 0s forwards; }
-    .ma-stage-panel.active .ma-offer-card:nth-child(2) { animation: ma-slide-in-right 0.4s ease 0.15s forwards; }
-    .ma-stage-panel.active .ma-offer-card:nth-child(3) { animation: ma-slide-in-right 0.4s ease 0.3s forwards; }
-    .ma-stage-panel.active .ma-offer-card:nth-child(4) { animation: ma-slide-in-right 0.4s ease 0.45s forwards; }
-
-    .ma-offer-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
+    .ma-bubble-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
     }
 
-    .ma-offer-card:nth-child(1) .ma-offer-icon { background: #6b4423; }
-    .ma-offer-card:nth-child(2) .ma-offer-icon { background: #8b5e3c; }
-    .ma-offer-card:nth-child(3) .ma-offer-icon { background: #a67c52; }
-    .ma-offer-card:nth-child(4) .ma-offer-icon { background: #c4a77d; }
+    .ma-offer-bubble-1 .ma-bubble-icon { background: #6b4423; }
+    .ma-offer-bubble-2 .ma-bubble-icon { background: #8b5e3c; }
+    .ma-offer-bubble-3 .ma-bubble-icon { background: #a67c52; }
 
-    .ma-offer-amount {
-      font-size: 16px;
+    .ma-bubble-amount {
+      font-size: 15px;
       font-weight: 700;
       color: var(--text);
     }
 
-    .ma-offer-terms {
+    .ma-bubble-days {
       font-size: 11px;
       color: var(--text-muted);
     }
 
+    /* Connection lines */
+    .ma-connection {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), rgba(107, 68, 35, 0.2));
+      transform-origin: left center;
+      opacity: 0;
+    }
+
+    .ma-connection-1 { transform: translate(32px, -50%) rotate(-90deg); }
+    .ma-connection-2 { transform: translate(32px, -50%) rotate(-145deg); }
+    .ma-connection-3 { transform: translate(32px, -50%) rotate(-35deg); }
+
+    .ma-stage-panel.active .ma-connection-1 { animation: ma-line-grow 0.4s ease 0.1s forwards; }
+    .ma-stage-panel.active .ma-connection-2 { animation: ma-line-grow 0.4s ease 0.3s forwards; }
+    .ma-stage-panel.active .ma-connection-3 { animation: ma-line-grow 0.4s ease 0.5s forwards; }
+
+    .ma-compete-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: white;
+      padding: 10px 16px;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .ma-compete-label svg {
+      flex-shrink: 0;
+    }
+
     /* ==========================================
-       STAGE 4: CHOOSE BEST
+       STAGE 3: CHOOSE BEST
        ========================================== */
     .ma-choose-content {
       text-align: center;
       width: 100%;
-      max-width: 320px;
+      max-width: 300px;
     }
 
     .ma-choose-label {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--text-muted);
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -476,15 +436,15 @@
     .ma-choose-list {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-bottom: 24px;
+      gap: 10px;
+      margin-bottom: 16px;
     }
 
     .ma-choose-option {
       display: flex;
       align-items: center;
-      gap: 16px;
-      padding: 16px 20px;
+      gap: 12px;
+      padding: 14px 16px;
       background: white;
       border: 2px solid var(--border);
       border-radius: var(--radius-lg);
@@ -492,6 +452,8 @@
       transition: all 0.3s ease;
       text-align: left;
       opacity: 0;
+      width: 100%;
+      font-family: inherit;
     }
 
     .ma-stage-panel.active .ma-choose-option:nth-child(1) { animation: ma-fade-in-up 0.4s ease 0s forwards; }
@@ -508,8 +470,8 @@
     }
 
     .ma-choose-radio {
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
       border: 2px solid var(--border);
       display: flex;
@@ -524,12 +486,22 @@
       border-color: white;
     }
 
+    .ma-choose-radio svg {
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .ma-choose-option.selected .ma-choose-radio svg {
+      opacity: 1;
+    }
+
     .ma-choose-info {
       flex: 1;
+      min-width: 0;
     }
 
     .ma-choose-amount {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--text);
       transition: color 0.3s ease;
@@ -540,9 +512,12 @@
     }
 
     .ma-choose-details {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--text-muted);
       transition: color 0.3s ease;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .ma-choose-option.selected .ma-choose-details {
@@ -550,12 +525,13 @@
     }
 
     .ma-highest-badge {
-      padding: 4px 10px;
+      padding: 3px 8px;
       background: var(--success);
       color: white;
       border-radius: var(--radius-full);
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
+      flex-shrink: 0;
     }
 
     .ma-choose-option.selected .ma-highest-badge {
@@ -563,11 +539,12 @@
     }
 
     .ma-success-msg {
-      padding: 16px 24px;
+      padding: 12px 16px;
       background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
-      border-radius: 12px;
+      border-radius: var(--radius);
       color: white;
       font-weight: 600;
+      font-size: 14px;
       display: none;
     }
 
@@ -580,22 +557,23 @@
        CONTROLS & CTA
        ========================================== */
     .ma-controls {
-      margin-top: 24px;
+      margin-top: 20px;
     }
 
     .ma-pause-btn {
-      padding: 12px 24px;
+      padding: 10px 20px;
       background: transparent;
       border: 2px solid var(--border);
       border-radius: var(--radius-full);
       color: var(--primary);
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       cursor: pointer;
       display: flex;
       align-items: center;
       gap: 8px;
       transition: all 0.3s ease;
+      font-family: inherit;
     }
 
     .ma-pause-btn:hover {
@@ -603,21 +581,26 @@
     }
 
     .ma-cta {
-      margin-top: 32px;
+      margin-top: 24px;
       text-align: center;
+      width: 100%;
+      max-width: 500px;
     }
 
     .ma-cta-btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
-      padding: 18px 36px;
+      width: 100%;
+      max-width: 320px;
+      padding: 16px 28px;
       background: var(--primary);
       color: white;
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 700;
       font-family: var(--font-heading);
-      border-radius: 12px;
+      border-radius: var(--radius);
       text-decoration: none;
       box-shadow: 0 8px 24px rgba(107, 68, 35, 0.25);
       transition: all 0.3s ease;
@@ -633,6 +616,7 @@
 
     .ma-cta-btn svg {
       transition: transform 0.3s ease;
+      flex-shrink: 0;
     }
 
     .ma-cta-btn:hover svg {
@@ -642,7 +626,7 @@
     .ma-cta-sub {
       font-size: 13px;
       color: var(--text-muted);
-      margin-top: 12px;
+      margin-top: 10px;
     }
 
     /* ==========================================
@@ -659,7 +643,7 @@
 
     @keyframes ma-house-pulse {
       0%, 100% { box-shadow: 0 0 0 0 rgba(107, 68, 35, 0.3); }
-      50% { box-shadow: 0 0 0 15px rgba(107, 68, 35, 0); }
+      50% { box-shadow: 0 0 0 12px rgba(107, 68, 35, 0); }
     }
 
     @keyframes ma-scale-in {
@@ -673,94 +657,176 @@
     }
 
     @keyframes ma-fade-in-up {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(16px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes ma-slide-in-right {
-      from { opacity: 0; transform: translateX(40px); }
-      to { opacity: 1; transform: translateX(0); }
+    @keyframes ma-bubble-in {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
     }
 
-    @keyframes ma-ripple {
-      0% { transform: scale(0.8); opacity: 0.8; }
-      100% { transform: scale(1.5); opacity: 0; }
+    @keyframes ma-bubble-in-center {
+      from { opacity: 0; transform: translateX(-50%) scale(0.8); }
+      to { opacity: 1; transform: translateX(-50%) scale(1); }
     }
 
-    @keyframes ma-bounce-x {
-      0%, 100% { transform: translateX(0); }
-      50% { transform: translateX(8px); }
+    .ma-offer-bubble-1.animated {
+      animation-name: ma-bubble-in-center !important;
+    }
+
+    @keyframes ma-line-grow {
+      from { opacity: 0; width: 0; }
+      to { opacity: 1; width: 60px; }
     }
 
     /* ==========================================
-       RESPONSIVE
+       MOBILE OPTIMIZATIONS
        ========================================== */
-    @media (max-width: 600px) {
+    @media (max-width: 400px) {
+      .ma-section {
+        padding: 24px 12px;
+      }
+
+      .ma-stages {
+        gap: 4px;
+      }
+
+      .ma-stage-btn {
+        padding: 8px 8px;
+        font-size: 11px;
+      }
+
+      .ma-stage-num {
+        width: 20px;
+        height: 20px;
+        font-size: 11px;
+      }
+
       .ma-container {
-        height: 450px;
+        min-height: 320px;
+        border-radius: var(--radius-lg);
       }
 
-      .ma-offers-content {
-        flex-direction: column;
-        gap: 16px;
+      .ma-stage-panel {
+        padding: 16px;
       }
 
-      .ma-arrow {
-        transform: rotate(90deg);
+      .ma-house-icon {
+        width: 80px;
+        height: 80px;
       }
 
-      .ma-offer-card {
-        min-width: 180px;
-      }
-
-      .ma-investor {
+      .ma-house-icon svg {
         width: 40px;
         height: 40px;
       }
 
-      .ma-investor-1 { transform: translate(-50%, -50%) rotate(-60deg) translateX(100px) rotate(60deg); }
-      .ma-investor-2 { transform: translate(-50%, -50%) rotate(-20deg) translateX(100px) rotate(20deg); }
-      .ma-investor-3 { transform: translate(-50%, -50%) rotate(20deg) translateX(100px) rotate(-20deg); }
-      .ma-investor-4 { transform: translate(-50%, -50%) rotate(60deg) translateX(100px) rotate(-60deg); }
-      .ma-investor-5 { transform: translate(-50%, -50%) rotate(100deg) translateX(100px) rotate(-100deg); }
-      .ma-investor-6 { transform: translate(-50%, -50%) rotate(140deg) translateX(100px) rotate(-140deg); }
-
-      .ma-network-label {
-        font-size: 12px;
-        padding: 8px 16px;
+      .ma-submit-content h3 {
+        font-size: 16px;
       }
+
+      .ma-submit-content p {
+        font-size: 13px;
+      }
+
+      .ma-compete-visual {
+        height: 160px;
+      }
+
+      .ma-center-property {
+        width: 52px;
+        height: 52px;
+      }
+
+      .ma-center-property svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .ma-offer-bubble {
+        padding: 6px 10px;
+      }
+
+      .ma-bubble-icon {
+        width: 24px;
+        height: 24px;
+      }
+
+      .ma-bubble-amount {
+        font-size: 13px;
+      }
+
+      .ma-bubble-days {
+        font-size: 10px;
+      }
+
+      .ma-compete-label {
+        font-size: 12px;
+        padding: 8px 14px;
+      }
+
+      .ma-choose-option {
+        padding: 12px 14px;
+        gap: 10px;
+      }
+
+      .ma-choose-amount {
+        font-size: 15px;
+      }
+
+      .ma-choose-details {
+        font-size: 11px;
+      }
+
+      .ma-choose-radio {
+        width: 20px;
+        height: 20px;
+      }
+
+      .ma-cta-btn {
+        padding: 14px 24px;
+        font-size: 15px;
+      }
+    }
+
+    /* Progress bar at bottom of container */
+    .ma-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 0 2px 0 0;
+      transition: width 0.3s ease;
     }
   </style>
 </head>
 <body>
 
-<section class="marketplace-animation">
+<section class="ma-section">
   <!-- Header -->
   <div class="ma-header">
     <div class="ma-live-badge">
       <div class="ma-pulse-dot"></div>
-      <span>Live Marketplace Preview</span>
+      <span>Live Preview</span>
     </div>
-    <h2>How Our Marketplace Works</h2>
-    <p>Watch investors compete for your property in real-time</p>
+    <h2>How Propcash Works</h2>
+    <p>Get competing cash offers from 500+ investors in three simple steps</p>
   </div>
 
   <!-- Stage Navigation -->
   <div class="ma-stages">
     <button class="ma-stage-btn active" data-stage="1">
       <span class="ma-stage-num">1</span>
-      <span class="ma-stage-label">Submit Property</span>
+      <span class="ma-stage-label">Submit Details</span>
     </button>
     <button class="ma-stage-btn" data-stage="2">
       <span class="ma-stage-num">2</span>
-      <span class="ma-stage-label">Broadcast to Network</span>
+      <span class="ma-stage-label">Investors Compete</span>
     </button>
     <button class="ma-stage-btn" data-stage="3">
       <span class="ma-stage-num">3</span>
-      <span class="ma-stage-label">Receive Offers</span>
-    </button>
-    <button class="ma-stage-btn" data-stage="4">
-      <span class="ma-stage-num">4</span>
       <span class="ma-stage-label">Choose Best</span>
     </button>
   </div>
@@ -768,164 +834,110 @@
   <!-- Main Animation Container -->
   <div class="ma-container">
     <div class="ma-grid-bg"></div>
+    <div class="ma-progress" id="progressBar"></div>
 
     <!-- Stage 1: Submit Property -->
     <div class="ma-stage-panel active" data-panel="1">
       <div class="ma-submit-content">
         <div class="ma-house-icon">
-          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
             <polyline points="9 22 9 12 15 12 15 22"/>
           </svg>
           <div class="ma-check-badge">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
               <polyline points="20 6 9 17 4 12"/>
             </svg>
           </div>
         </div>
-        <h3>Your Property</h3>
-        <p>Submit your property details in 2 minutes. No obligation, completely free.</p>
-      </div>
-    </div>
-
-    <!-- Stage 2: Broadcast Network -->
-    <div class="ma-stage-panel" data-panel="2">
-      <div class="ma-network-content">
-        <div class="ma-center-house">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-            <polyline points="9 22 9 12 15 12 15 22"/>
-          </svg>
-        </div>
-        <div class="ma-ripple ma-ripple-1"></div>
-        <div class="ma-ripple ma-ripple-2"></div>
-        <div class="ma-ripple ma-ripple-3"></div>
-        
-        <div class="ma-investor ma-investor-1">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#6b4423">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-        </div>
-        <div class="ma-investor ma-investor-2">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#6b4423">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-        </div>
-        <div class="ma-investor ma-investor-3">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#6b4423">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-        </div>
-        <div class="ma-investor ma-investor-4">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#6b4423">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-        </div>
-        <div class="ma-investor ma-investor-5">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#6b4423">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-        </div>
-        <div class="ma-investor ma-investor-6">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#6b4423">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-        </div>
-
-        <div class="ma-network-label">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <h3>Submit Your Property</h3>
+        <p>Answer a few quick questions so we can share your property with our investor network.</p>
+        <div class="ma-time-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="10"/>
-            <line x1="2" y1="12" x2="22" y2="12"/>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            <polyline points="12 6 12 12 16 14"/>
           </svg>
-          Broadcasting to 500+ Investors
+          Takes 2 minutes
         </div>
       </div>
     </div>
 
-    <!-- Stage 3: Receive Offers -->
-    <div class="ma-stage-panel" data-panel="3">
-      <div class="ma-offers-content">
-        <div class="ma-property-side">
-          <div class="ma-property-icon">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2">
+    <!-- Stage 2: Investors Compete -->
+    <div class="ma-stage-panel" data-panel="2">
+      <div class="ma-compete-content">
+        <div class="ma-compete-visual">
+          <!-- Connection lines -->
+          <div class="ma-connection ma-connection-1"></div>
+          <div class="ma-connection ma-connection-2"></div>
+          <div class="ma-connection ma-connection-3"></div>
+          
+          <!-- Center Property -->
+          <div class="ma-center-property">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
               <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
               <polyline points="9 22 9 12 15 12 15 22"/>
             </svg>
           </div>
-          <span class="ma-property-label">Your Property</span>
+
+          <!-- Offer Bubbles -->
+          <div class="ma-offer-bubble ma-offer-bubble-1">
+            <div class="ma-bubble-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div>
+              <div class="ma-bubble-amount">$342K</div>
+              <div class="ma-bubble-days">7 days</div>
+            </div>
+          </div>
+
+          <div class="ma-offer-bubble ma-offer-bubble-2">
+            <div class="ma-bubble-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div>
+              <div class="ma-bubble-amount">$338K</div>
+              <div class="ma-bubble-days">14 days</div>
+            </div>
+          </div>
+
+          <div class="ma-offer-bubble ma-offer-bubble-3">
+            <div class="ma-bubble-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div>
+              <div class="ma-bubble-amount">$335K</div>
+              <div class="ma-bubble-days">10 days</div>
+            </div>
+          </div>
         </div>
 
-        <svg class="ma-arrow" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="7 13 12 18 17 13"/>
-          <polyline points="7 6 12 11 17 6"/>
-        </svg>
-
-        <div class="ma-offers-list">
-          <div class="ma-offer-card">
-            <div class="ma-offer-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                <line x1="12" y1="1" x2="12" y2="23"/>
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-              </svg>
-            </div>
-            <div>
-              <div class="ma-offer-amount">$342,000</div>
-              <div class="ma-offer-terms">7 day close</div>
-            </div>
-          </div>
-          <div class="ma-offer-card">
-            <div class="ma-offer-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                <line x1="12" y1="1" x2="12" y2="23"/>
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-              </svg>
-            </div>
-            <div>
-              <div class="ma-offer-amount">$338,000</div>
-              <div class="ma-offer-terms">14 day close</div>
-            </div>
-          </div>
-          <div class="ma-offer-card">
-            <div class="ma-offer-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                <line x1="12" y1="1" x2="12" y2="23"/>
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-              </svg>
-            </div>
-            <div>
-              <div class="ma-offer-amount">$335,000</div>
-              <div class="ma-offer-terms">10 day close</div>
-            </div>
-          </div>
-          <div class="ma-offer-card">
-            <div class="ma-offer-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                <line x1="12" y1="1" x2="12" y2="23"/>
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-              </svg>
-            </div>
-            <div>
-              <div class="ma-offer-amount">$328,000</div>
-              <div class="ma-offer-terms">21 day close</div>
-            </div>
-          </div>
+        <div class="ma-compete-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          Investors compete for your property
         </div>
       </div>
     </div>
 
-    <!-- Stage 4: Choose Best -->
-    <div class="ma-stage-panel" data-panel="4">
+    <!-- Stage 3: Choose Best -->
+    <div class="ma-stage-panel" data-panel="3">
       <div class="ma-choose-content">
         <div class="ma-choose-label">Select Your Best Offer</div>
         <div class="ma-choose-list">
-          <div class="ma-choose-option" data-offer="1">
+          <button class="ma-choose-option" data-offer="1">
             <div class="ma-choose-radio">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
                 <polyline points="20 6 9 17 4 12"/>
@@ -933,11 +945,11 @@
             </div>
             <div class="ma-choose-info">
               <div class="ma-choose-amount">$342,000</div>
-              <div class="ma-choose-details">Premier Investments • 7 day close</div>
+              <div class="ma-choose-details">Premier Investments • 7 days</div>
             </div>
-            <div class="ma-highest-badge">HIGHEST</div>
-          </div>
-          <div class="ma-choose-option" data-offer="2">
+            <div class="ma-highest-badge">BEST</div>
+          </button>
+          <button class="ma-choose-option" data-offer="2">
             <div class="ma-choose-radio">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
                 <polyline points="20 6 9 17 4 12"/>
@@ -945,10 +957,10 @@
             </div>
             <div class="ma-choose-info">
               <div class="ma-choose-amount">$338,000</div>
-              <div class="ma-choose-details">Rapid Home Buyers • 14 day close</div>
+              <div class="ma-choose-details">Rapid Home Buyers • 14 days</div>
             </div>
-          </div>
-          <div class="ma-choose-option" data-offer="3">
+          </button>
+          <button class="ma-choose-option" data-offer="3">
             <div class="ma-choose-radio">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
                 <polyline points="20 6 9 17 4 12"/>
@@ -956,12 +968,12 @@
             </div>
             <div class="ma-choose-info">
               <div class="ma-choose-amount">$335,000</div>
-              <div class="ma-choose-details">CashFlow Properties • 10 day close</div>
+              <div class="ma-choose-details">CashFlow Properties • 10 days</div>
             </div>
-          </div>
+          </button>
         </div>
         <div class="ma-success-msg">
-          🎉 Offer Selected! Our team will reach out within 24 hours.
+          🎉 Great choice! We'll connect you within 24 hours.
         </div>
       </div>
     </div>
@@ -970,14 +982,14 @@
   <!-- Controls -->
   <div class="ma-controls">
     <button class="ma-pause-btn" id="pauseBtn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="#6b4423" id="pauseIcon">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="#6b4423" id="pauseIcon">
         <rect x="6" y="4" width="4" height="16"/>
         <rect x="14" y="4" width="4" height="16"/>
       </svg>
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="#6b4423" id="playIcon" style="display:none;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="#6b4423" id="playIcon" style="display:none;">
         <polygon points="5 3 19 12 5 21 5 3"/>
       </svg>
-      <span id="pauseText">Pause Animation</span>
+      <span id="pauseText">Pause</span>
     </button>
   </div>
 
@@ -985,12 +997,12 @@
   <div class="ma-cta">
     <a href="/get-offer" class="ma-cta-btn">
       Get My Cash Offers
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <line x1="5" y1="12" x2="19" y2="12"/>
         <polyline points="12 5 19 12 12 19"/>
       </svg>
     </a>
-    <p class="ma-cta-sub">✓ 100% Free • ✓ No Obligation • ✓ 2 Minutes</p>
+    <p class="ma-cta-sub">✓ Free • ✓ No Obligation • ✓ 2 Minutes</p>
   </div>
 </section>
 
@@ -1000,7 +1012,9 @@
   let currentStage = 1;
   let isPaused = false;
   let autoTimer = null;
-  const durations = [3500, 4000, 4500, 3000];
+  let progressTimer = null;
+  const durations = [4000, 4500, 4000]; // Duration for each stage
+  const totalStages = 3;
 
   // Elements
   const stageBtns = document.querySelectorAll('.ma-stage-btn');
@@ -1011,6 +1025,7 @@
   const pauseText = document.getElementById('pauseText');
   const chooseOptions = document.querySelectorAll('.ma-choose-option');
   const successMsg = document.querySelector('.ma-success-msg');
+  const progressBar = document.getElementById('progressBar');
 
   // Functions
   function setStage(stage) {
@@ -1026,21 +1041,29 @@
       panel.classList.toggle('active', parseInt(panel.dataset.panel) === stage);
     });
     
-    // Reset selections on stage 4
-    if (stage !== 4) {
+    // Reset selections on stage change
+    if (stage !== 3) {
       chooseOptions.forEach(opt => opt.classList.remove('selected'));
       successMsg.classList.remove('show');
     }
     
-    // Reset and restart auto-advance
+    // Update progress bar
+    updateProgress();
+    
+    // Schedule next stage
     scheduleNext();
+  }
+
+  function updateProgress() {
+    const progress = (currentStage / totalStages) * 100;
+    progressBar.style.width = progress + '%';
   }
 
   function scheduleNext() {
     clearTimeout(autoTimer);
     if (!isPaused) {
       autoTimer = setTimeout(() => {
-        const nextStage = currentStage === 4 ? 1 : currentStage + 1;
+        const nextStage = currentStage === totalStages ? 1 : currentStage + 1;
         setStage(nextStage);
       }, durations[currentStage - 1]);
     }
@@ -1050,7 +1073,7 @@
     isPaused = !isPaused;
     pauseIcon.style.display = isPaused ? 'none' : 'block';
     playIcon.style.display = isPaused ? 'block' : 'none';
-    pauseText.textContent = isPaused ? 'Resume Animation' : 'Pause Animation';
+    pauseText.textContent = isPaused ? 'Play' : 'Pause';
     
     if (!isPaused) {
       scheduleNext();
@@ -1080,6 +1103,7 @@
   });
 
   // Initialize
+  updateProgress();
   scheduleNext();
 })();
 </script>
