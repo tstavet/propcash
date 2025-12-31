@@ -2877,3 +2877,441 @@ footer nav a:hover {
     font-size: 15px;
   }
 }
+
+ /* ==========================================
+       HERO 2.0
+       ========================================== */
+    .hero-v2 {
+      position: relative;
+      min-height: 100vh;
+      padding: 100px 24px 80px;
+      background-image: url('/assets/nashville-house.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Dark overlay for readability */
+    .hero-v2::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0.3) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero-v2-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 900px;
+    }
+
+    /* Badge */
+    .hero-v2-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      margin-bottom: 24px;
+    }
+
+    .hero-v2-badge-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--success);
+      border-radius: 50%;
+      animation: hero-pulse 2s infinite;
+    }
+
+    .hero-v2-badge span {
+      font-size: 13px;
+      font-weight: 600;
+      color: white;
+    }
+
+    /* Headline */
+    .hero-v2-headline {
+      font-family: var(--font-heading);
+      font-size: clamp(36px, 7vw, 72px);
+      font-weight: 800;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-v2-headline .highlight {
+      color: var(--success);
+      position: relative;
+    }
+
+    /* Subheadline */
+    .hero-v2-subheadline {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    /* ==========================================
+       CTA AREA WITH FLOATING CARDS
+       ========================================== */
+    .hero-v2-cta-area {
+      position: relative;
+      display: inline-block;
+      padding: 60px 80px;
+    }
+
+    /* Floating Offer Cards */
+    .floating-card {
+      position: absolute;
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 14px 18px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      opacity: 0;
+      animation: float-in 0.6s ease forwards;
+      pointer-events: none;
+    }
+
+    .floating-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      border-radius: 4px 0 0 4px;
+      background: var(--primary);
+    }
+
+    .floating-card.winner::before {
+      background: var(--success);
+    }
+
+    .floating-card-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .floating-card.winner .floating-card-icon {
+      background: var(--success);
+    }
+
+    .floating-card.winner .floating-card-icon svg {
+      stroke: white;
+    }
+
+    .floating-card-amount {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .floating-card.winner .floating-card-amount {
+      color: #059669;
+    }
+
+    .floating-card-investor {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .floating-card-badge {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: var(--success);
+      color: white;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+    }
+
+    /* Card Positions */
+    .floating-card-1 {
+      top: 0;
+      left: -40px;
+      animation-delay: 0.2s;
+      transform: rotate(-6deg);
+    }
+
+    .floating-card-2 {
+      top: -20px;
+      right: -30px;
+      animation-delay: 0.4s;
+      transform: rotate(4deg);
+    }
+
+    .floating-card-3 {
+      bottom: 10px;
+      left: -60px;
+      animation-delay: 0.6s;
+      transform: rotate(-3deg);
+    }
+
+    .floating-card-4 {
+      bottom: -10px;
+      right: -50px;
+      animation-delay: 0.8s;
+      transform: rotate(5deg);
+    }
+
+    /* Subtle float animation */
+    .floating-card-1 { animation: float-in 0.6s ease 0.2s forwards, gentle-float-1 4s ease-in-out 1s infinite; }
+    .floating-card-2 { animation: float-in 0.6s ease 0.4s forwards, gentle-float-2 5s ease-in-out 1.2s infinite; }
+    .floating-card-3 { animation: float-in 0.6s ease 0.6s forwards, gentle-float-3 4.5s ease-in-out 1.4s infinite; }
+    .floating-card-4 { animation: float-in 0.6s ease 0.8s forwards, gentle-float-4 5.5s ease-in-out 1.6s infinite; }
+
+    /* CTA Buttons */
+    .hero-v2-cta-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .hero-v2-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px 40px;
+      background: var(--primary);
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      box-shadow: 0 8px 30px rgba(107, 68, 35, 0.4);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hero-v2-cta-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(107, 68, 35, 0.5);
+    }
+
+    .hero-v2-cta-primary svg {
+      transition: transform 0.3s ease;
+    }
+
+    .hero-v2-cta-primary:hover svg {
+      transform: translateX(4px);
+    }
+
+    .hero-v2-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: transparent;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .hero-v2-cta-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Trust Bar */
+    .hero-v2-trust {
+      margin-top: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .hero-v2-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .hero-v2-trust-item svg {
+      color: var(--success);
+    }
+
+    /* ==========================================
+       ANIMATIONS
+       ========================================== */
+    @keyframes hero-pulse {
+      0%, 100% { 
+        box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.5);
+        opacity: 1;
+      }
+      50% { opacity: 0.7; }
+      100% { box-shadow: 0 0 0 8px rgba(52, 211, 153, 0); }
+    }
+
+    @keyframes float-in {
+      from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes gentle-float-1 {
+      0%, 100% { transform: translateY(0) rotate(-6deg); }
+      50% { transform: translateY(-8px) rotate(-4deg); }
+    }
+
+    @keyframes gentle-float-2 {
+      0%, 100% { transform: translateY(0) rotate(4deg); }
+      50% { transform: translateY(-10px) rotate(6deg); }
+    }
+
+    @keyframes gentle-float-3 {
+      0%, 100% { transform: translateY(0) rotate(-3deg); }
+      50% { transform: translateY(-6px) rotate(-5deg); }
+    }
+
+    @keyframes gentle-float-4 {
+      0%, 100% { transform: translateY(0) rotate(5deg); }
+      50% { transform: translateY(-12px) rotate(3deg); }
+    }
+
+    /* ==========================================
+       MOBILE RESPONSIVE
+       ========================================== */
+    @media (max-width: 768px) {
+      .hero-v2 {
+        padding: 80px 20px 60px;
+        min-height: auto;
+      }
+
+      .hero-v2-headline {
+        font-size: clamp(32px, 8vw, 48px);
+      }
+
+      .hero-v2-subheadline {
+        font-size: 16px;
+        margin-bottom: 32px;
+      }
+
+      .hero-v2-cta-area {
+        padding: 40px 20px;
+      }
+
+      .floating-card {
+        padding: 10px 14px;
+        gap: 8px;
+      }
+
+      .floating-card-icon {
+        width: 28px;
+        height: 28px;
+      }
+
+      .floating-card-amount {
+        font-size: 14px;
+      }
+
+      .floating-card-investor {
+        font-size: 10px;
+      }
+
+      .floating-card-1 {
+        top: -10px;
+        left: -10px;
+      }
+
+      .floating-card-2 {
+        top: -30px;
+        right: -10px;
+      }
+
+      .floating-card-3 {
+        bottom: 0;
+        left: -20px;
+      }
+
+      .floating-card-4 {
+        bottom: -20px;
+        right: -10px;
+      }
+
+      .hero-v2-cta-primary {
+        padding: 18px 32px;
+        font-size: 16px;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .hero-v2-trust {
+        gap: 16px;
+      }
+
+      .hero-v2-trust-item {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .floating-card-1,
+      .floating-card-3 {
+        left: 0;
+      }
+
+      .floating-card-2,
+      .floating-card-4 {
+        right: 0;
+      }
+
+      .floating-card-investor {
+        display: none;
+      }
+
+      .hero-v2-trust {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
