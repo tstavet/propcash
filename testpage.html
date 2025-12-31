@@ -54,66 +54,1087 @@
     .test-card code { background: #f8f5f2; padding: 2px 6px; border-radius: 6px; }
   </style>
 </head>
+  <body>
 
+  /* ==========================================
+       PROPCASH MARKETPLACE ANIMATION v2.0
+       Standalone component - uses design system vars
+       ========================================== */
+    
+    :root {
+      --primary: #6b4423;
+      --primary-dark: #5a371c;
+      --primary-light: #8b5e3c;
+      --bg: #fdfcfb;
+      --bg-secondary: #f8f5f2;
+      --card: #ffffff;
+      --text: #1a1512;
+      --text-muted: #6b625a;
+      --border: #e5e0db;
+      --border-light: #f0ebe6;
+      --success: #34d399;
+      --shadow: 0 4px 12px rgba(107, 68, 35, 0.08);
+      --shadow-lg: 0 8px 24px rgba(107, 68, 35, 0.12);
+      --shadow-xl: 0 12px 40px rgba(107, 68, 35, 0.15);
+      --radius: 10px;
+      --radius-lg: 14px;
+      --radius-xl: 20px;
+      --radius-full: 9999px;
+      --font-heading: 'DM Sans', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ==========================================
+       CONTAINER
+       ========================================== */
+    .marketplace-animation {
+      font-family: var(--font-body);
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-secondary) 100%);
+      padding: clamp(32px, 6vw, 60px) 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ==========================================
+       HEADER
+       ========================================== */
+    .ma-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .ma-live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(107, 68, 35, 0.08);
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      margin-bottom: 16px;
+    }
+
+    .ma-pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--success);
+      border-radius: 50%;
+      animation: ma-pulse 2s infinite;
+    }
+
+    .ma-live-badge span {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .ma-header h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(24px, 5vw, 32px);
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .ma-header p {
+      font-size: 16px;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================
+       STAGE NAVIGATION
+       ========================================== */
+    .ma-stages {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .ma-stage-btn {
+      padding: 10px 16px;
+      background: white;
+      color: var(--primary);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ma-stage-btn:hover {
+      border-color: var(--primary);
+    }
+
+    .ma-stage-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .ma-stage-num {
+      width: 20px;
+      height: 20px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ma-stage-btn.active .ma-stage-num {
+      background: white;
+      color: var(--primary);
+    }
+
+    .ma-stage-label {
+      display: none;
+    }
+
+    @media (min-width: 600px) {
+      .ma-stage-label {
+        display: inline;
+      }
+    }
+
+    /* ==========================================
+       MAIN ANIMATION CONTAINER
+       ========================================== */
+    .ma-container {
+      position: relative;
+      width: 100%;
+      max-width: 700px;
+      height: 400px;
+      background: white;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xl);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .ma-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(107, 68, 35, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(107, 68, 35, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    /* ==========================================
+       STAGE PANELS
+       ========================================== */
+    .ma-stage-panel {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+      padding: 24px;
+    }
+
+    .ma-stage-panel.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* ==========================================
+       STAGE 1: SUBMIT PROPERTY
+       ========================================== */
+    .ma-submit-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .ma-house-icon {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, #e8e2db 100%);
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      border: 3px solid var(--primary);
+      position: relative;
+    }
+
+    .ma-stage-panel.active .ma-house-icon {
+      animation: ma-house-pulse 2s ease-in-out infinite;
+    }
+
+    .ma-check-badge {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      width: 32px;
+      height: 32px;
+      background: var(--success);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: scale(0);
+    }
+
+    .ma-stage-panel.active .ma-check-badge {
+      animation: ma-scale-in 0.5s ease 0.3s forwards;
+    }
+
+    .ma-submit-content h3 {
+      font-family: var(--font-heading);
+      color: var(--primary);
+      font-size: 20px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .ma-submit-content p {
+      color: var(--text-muted);
+      font-size: 14px;
+      max-width: 280px;
+      line-height: 1.5;
+    }
+
+    /* ==========================================
+       STAGE 2: BROADCAST NETWORK
+       ========================================== */
+    .ma-network-content {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ma-center-house {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      box-shadow: 0 8px 32px rgba(107, 68, 35, 0.3);
+    }
+
+    .ma-ripple {
+      position: absolute;
+      border: 2px solid rgba(107, 68, 35, 0.2);
+      border-radius: 50%;
+      opacity: 0;
+    }
+
+    .ma-ripple-1 { width: 120px; height: 120px; }
+    .ma-ripple-2 { width: 200px; height: 200px; }
+    .ma-ripple-3 { width: 280px; height: 280px; }
+
+    .ma-stage-panel.active .ma-ripple-1 { animation: ma-ripple 2s ease-out 0s infinite; }
+    .ma-stage-panel.active .ma-ripple-2 { animation: ma-ripple 2s ease-out 0.3s infinite; }
+    .ma-stage-panel.active .ma-ripple-3 { animation: ma-ripple 2s ease-out 0.6s infinite; }
+
+    .ma-investor {
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      background: white;
+      border-radius: 50%;
+      border: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(107, 68, 35, 0.15);
+      opacity: 0;
+    }
+
+    .ma-investor-1 { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-60deg) translateX(130px) rotate(60deg); }
+    .ma-investor-2 { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-20deg) translateX(130px) rotate(20deg); }
+    .ma-investor-3 { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(20deg) translateX(130px) rotate(-20deg); }
+    .ma-investor-4 { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(60deg) translateX(130px) rotate(-60deg); }
+    .ma-investor-5 { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(100deg) translateX(130px) rotate(-100deg); }
+    .ma-investor-6 { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(140deg) translateX(130px) rotate(-140deg); }
+
+    .ma-stage-panel.active .ma-investor-1 { animation: ma-fade-in 0.5s ease 0s forwards; }
+    .ma-stage-panel.active .ma-investor-2 { animation: ma-fade-in 0.5s ease 0.2s forwards; }
+    .ma-stage-panel.active .ma-investor-3 { animation: ma-fade-in 0.5s ease 0.4s forwards; }
+    .ma-stage-panel.active .ma-investor-4 { animation: ma-fade-in 0.5s ease 0.6s forwards; }
+    .ma-stage-panel.active .ma-investor-5 { animation: ma-fade-in 0.5s ease 0.3s forwards; }
+    .ma-stage-panel.active .ma-investor-6 { animation: ma-fade-in 0.5s ease 0.5s forwards; }
+
+    .ma-network-label {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      opacity: 0;
+    }
+
+    .ma-stage-panel.active .ma-network-label {
+      animation: ma-fade-in-up 0.5s ease 0.5s forwards;
+    }
+
+    /* ==========================================
+       STAGE 3: RECEIVE OFFERS
+       ========================================== */
+    .ma-offers-content {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .ma-property-side {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .ma-property-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, #e8e2db 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--primary);
+    }
+
+    .ma-property-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .ma-arrow {
+      color: var(--primary);
+    }
+
+    .ma-stage-panel.active .ma-arrow {
+      animation: ma-bounce-x 1s ease infinite;
+    }
+
+    .ma-offers-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .ma-offer-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: white;
+      border: 2px solid var(--primary-light);
+      border-radius: 12px;
+      min-width: 200px;
+      box-shadow: 0 2px 8px rgba(107, 68, 35, 0.08);
+      opacity: 0;
+      transform: translateX(40px);
+    }
+
+    .ma-offer-card:nth-child(1) { border-color: #6b4423; }
+    .ma-offer-card:nth-child(2) { border-color: #8b5e3c; }
+    .ma-offer-card:nth-child(3) { border-color: #a67c52; }
+    .ma-offer-card:nth-child(4) { border-color: #c4a77d; }
+
+    .ma-stage-panel.active .ma-offer-card:nth-child(1) { animation: ma-slide-in-right 0.4s ease 0s forwards; }
+    .ma-stage-panel.active .ma-offer-card:nth-child(2) { animation: ma-slide-in-right 0.4s ease 0.15s forwards; }
+    .ma-stage-panel.active .ma-offer-card:nth-child(3) { animation: ma-slide-in-right 0.4s ease 0.3s forwards; }
+    .ma-stage-panel.active .ma-offer-card:nth-child(4) { animation: ma-slide-in-right 0.4s ease 0.45s forwards; }
+
+    .ma-offer-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .ma-offer-card:nth-child(1) .ma-offer-icon { background: #6b4423; }
+    .ma-offer-card:nth-child(2) .ma-offer-icon { background: #8b5e3c; }
+    .ma-offer-card:nth-child(3) .ma-offer-icon { background: #a67c52; }
+    .ma-offer-card:nth-child(4) .ma-offer-icon { background: #c4a77d; }
+
+    .ma-offer-amount {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .ma-offer-terms {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================
+       STAGE 4: CHOOSE BEST
+       ========================================== */
+    .ma-choose-content {
+      text-align: center;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .ma-choose-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .ma-choose-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .ma-choose-option {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: white;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: left;
+      opacity: 0;
+    }
+
+    .ma-stage-panel.active .ma-choose-option:nth-child(1) { animation: ma-fade-in-up 0.4s ease 0s forwards; }
+    .ma-stage-panel.active .ma-choose-option:nth-child(2) { animation: ma-fade-in-up 0.4s ease 0.1s forwards; }
+    .ma-stage-panel.active .ma-choose-option:nth-child(3) { animation: ma-fade-in-up 0.4s ease 0.2s forwards; }
+
+    .ma-choose-option:hover {
+      border-color: var(--primary);
+    }
+
+    .ma-choose-option.selected {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .ma-choose-radio {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+
+    .ma-choose-option.selected .ma-choose-radio {
+      background: var(--success);
+      border-color: white;
+    }
+
+    .ma-choose-info {
+      flex: 1;
+    }
+
+    .ma-choose-amount {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      transition: color 0.3s ease;
+    }
+
+    .ma-choose-option.selected .ma-choose-amount {
+      color: white;
+    }
+
+    .ma-choose-details {
+      font-size: 13px;
+      color: var(--text-muted);
+      transition: color 0.3s ease;
+    }
+
+    .ma-choose-option.selected .ma-choose-details {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .ma-highest-badge {
+      padding: 4px 10px;
+      background: var(--success);
+      color: white;
+      border-radius: var(--radius-full);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .ma-choose-option.selected .ma-highest-badge {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .ma-success-msg {
+      padding: 16px 24px;
+      background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+      border-radius: 12px;
+      color: white;
+      font-weight: 600;
+      display: none;
+    }
+
+    .ma-success-msg.show {
+      display: block;
+      animation: ma-fade-in-up 0.4s ease;
+    }
+
+    /* ==========================================
+       CONTROLS & CTA
+       ========================================== */
+    .ma-controls {
+      margin-top: 24px;
+    }
+
+    .ma-pause-btn {
+      padding: 12px 24px;
+      background: transparent;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-full);
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .ma-pause-btn:hover {
+      border-color: var(--primary);
+    }
+
+    .ma-cta {
+      margin-top: 32px;
+      text-align: center;
+    }
+
+    .ma-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 36px;
+      background: var(--primary);
+      color: white;
+      font-size: 17px;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(107, 68, 35, 0.25);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .ma-cta-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(107, 68, 35, 0.3);
+    }
+
+    .ma-cta-btn svg {
+      transition: transform 0.3s ease;
+    }
+
+    .ma-cta-btn:hover svg {
+      transform: translateX(4px);
+    }
+
+    .ma-cta-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+
+    /* ==========================================
+       ANIMATIONS
+       ========================================== */
+    @keyframes ma-pulse {
+      0%, 100% { 
+        box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.5);
+        opacity: 1;
+      }
+      50% { opacity: 0.8; }
+      100% { box-shadow: 0 0 0 8px rgba(52, 211, 153, 0); }
+    }
+
+    @keyframes ma-house-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(107, 68, 35, 0.3); }
+      50% { box-shadow: 0 0 0 15px rgba(107, 68, 35, 0); }
+    }
+
+    @keyframes ma-scale-in {
+      from { transform: scale(0); }
+      to { transform: scale(1); }
+    }
+
+    @keyframes ma-fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes ma-fade-in-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes ma-slide-in-right {
+      from { opacity: 0; transform: translateX(40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes ma-ripple {
+      0% { transform: scale(0.8); opacity: 0.8; }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+
+    @keyframes ma-bounce-x {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(8px); }
+    }
+
+    /* ==========================================
+       RESPONSIVE
+       ========================================== */
+    @media (max-width: 600px) {
+      .ma-container {
+        height: 450px;
+      }
+
+      .ma-offers-content {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .ma-arrow {
+        transform: rotate(90deg);
+      }
+
+      .ma-offer-card {
+        min-width: 180px;
+      }
+
+      .ma-investor {
+        width: 40px;
+        height: 40px;
+      }
+
+      .ma-investor-1 { transform: translate(-50%, -50%) rotate(-60deg) translateX(100px) rotate(60deg); }
+      .ma-investor-2 { transform: translate(-50%, -50%) rotate(-20deg) translateX(100px) rotate(20deg); }
+      .ma-investor-3 { transform: translate(-50%, -50%) rotate(20deg) translateX(100px) rotate(-20deg); }
+      .ma-investor-4 { transform: translate(-50%, -50%) rotate(60deg) translateX(100px) rotate(-60deg); }
+      .ma-investor-5 { transform: translate(-50%, -50%) rotate(100deg) translateX(100px) rotate(-100deg); }
+      .ma-investor-6 { transform: translate(-50%, -50%) rotate(140deg) translateX(100px) rotate(-140deg); }
+
+      .ma-network-label {
+        font-size: 12px;
+        padding: 8px 16px;
+      }
+    }
+  </style>
+</head>
 <body>
-  <!-- Optional: keep GA off test pages by default -->
-  <!-- If you WANT GA on this page, uncomment below -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGV6HXQ0RW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-CGV6HXQ0RW');
-  </script>
-  -->
 
-  <div class="test-banner">TEST PAGE — Header + Footer Only (noindex)</div>
-
+<section class="marketplace-animation">
   <!-- Header -->
-  <header>
-    <div class="container">
-      <nav class="nav">
-        <a href="/" class="brand">
-          <img src="/assets/logo.png" alt="Propcash Logo" class="logo">
-        </a>
+  <div class="ma-header">
+    <div class="ma-live-badge">
+      <div class="ma-pulse-dot"></div>
+      <span>Live Marketplace Preview</span>
+    </div>
+    <h2>How Our Marketplace Works</h2>
+    <p>Watch investors compete for your property in real-time</p>
+  </div>
 
-        <!-- Desktop Navigation -->
-        <div class="desktop-nav">
-          <a href="/#how-it-works">How it Works</a>
-          <a href="/#why-marketplace">Why Propcash</a>
-          <a href="/faq">FAQ</a>
+  <!-- Stage Navigation -->
+  <div class="ma-stages">
+    <button class="ma-stage-btn active" data-stage="1">
+      <span class="ma-stage-num">1</span>
+      <span class="ma-stage-label">Submit Property</span>
+    </button>
+    <button class="ma-stage-btn" data-stage="2">
+      <span class="ma-stage-num">2</span>
+      <span class="ma-stage-label">Broadcast to Network</span>
+    </button>
+    <button class="ma-stage-btn" data-stage="3">
+      <span class="ma-stage-num">3</span>
+      <span class="ma-stage-label">Receive Offers</span>
+    </button>
+    <button class="ma-stage-btn" data-stage="4">
+      <span class="ma-stage-num">4</span>
+      <span class="ma-stage-label">Choose Best</span>
+    </button>
+  </div>
+
+  <!-- Main Animation Container -->
+  <div class="ma-container">
+    <div class="ma-grid-bg"></div>
+
+    <!-- Stage 1: Submit Property -->
+    <div class="ma-stage-panel active" data-panel="1">
+      <div class="ma-submit-content">
+        <div class="ma-house-icon">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          <div class="ma-check-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
         </div>
-
-        <!-- Desktop CTA -->
-        <div class="header-ctas">
-          <a href="/get-offer" class="cta-header">Get My Cash Offers →</a>
-        </div>
-
-        <!-- Mobile Menu Toggle -->
-        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
-      </nav>
+        <h3>Your Property</h3>
+        <p>Submit your property details in 2 minutes. No obligation, completely free.</p>
+      </div>
     </div>
 
-    <!-- Mobile Navigation -->
-    <nav class="mobile-nav" id="mobileNav">
-      <a href="/#how-it-works">How it Works</a>
-      <a href="/#why-marketplace">Why Propcash</a>
-      <a href="/faq">FAQ</a>
-      <a href="/get-offer" class="mobile-cta">Get My Cash Offers →</a>
-    </nav>
-  </header>
+    <!-- Stage 2: Broadcast Network -->
+    <div class="ma-stage-panel" data-panel="2">
+      <div class="ma-network-content">
+        <div class="ma-center-house">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+        <div class="ma-ripple ma-ripple-1"></div>
+        <div class="ma-ripple ma-ripple-2"></div>
+        <div class="ma-ripple ma-ripple-3"></div>
+        
+        <div class="ma-investor ma-investor-1">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#6b4423">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <div class="ma-investor ma-investor-2">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#6b4423">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <div class="ma-investor ma-investor-3">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#6b4423">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <div class="ma-investor ma-investor-4">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#6b4423">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <div class="ma-investor ma-investor-5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#6b4423">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <div class="ma-investor ma-investor-6">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#6b4423">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
 
-  <!-- Test Content Shell (safe placeholder for layout testing) -->
-  <main class="test-shell" role="main">
-    <div class="test-card">
-      <h1>Header/Footer Test Page</h1>
-      <p>
-        Use this page to validate navigation behavior, CSS, and the footer layout.
-        This page includes <code>noindex</code> meta tags to prevent Google indexing.
-      </p>
+        <div class="ma-network-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          Broadcasting to 500+ Investors
+        </div>
+      </div>
     </div>
-  </main>
+
+    <!-- Stage 3: Receive Offers -->
+    <div class="ma-stage-panel" data-panel="3">
+      <div class="ma-offers-content">
+        <div class="ma-property-side">
+          <div class="ma-property-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <span class="ma-property-label">Your Property</span>
+        </div>
+
+        <svg class="ma-arrow" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="7 13 12 18 17 13"/>
+          <polyline points="7 6 12 11 17 6"/>
+        </svg>
+
+        <div class="ma-offers-list">
+          <div class="ma-offer-card">
+            <div class="ma-offer-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div>
+              <div class="ma-offer-amount">$342,000</div>
+              <div class="ma-offer-terms">7 day close</div>
+            </div>
+          </div>
+          <div class="ma-offer-card">
+            <div class="ma-offer-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div>
+              <div class="ma-offer-amount">$338,000</div>
+              <div class="ma-offer-terms">14 day close</div>
+            </div>
+          </div>
+          <div class="ma-offer-card">
+            <div class="ma-offer-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div>
+              <div class="ma-offer-amount">$335,000</div>
+              <div class="ma-offer-terms">10 day close</div>
+            </div>
+          </div>
+          <div class="ma-offer-card">
+            <div class="ma-offer-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div>
+              <div class="ma-offer-amount">$328,000</div>
+              <div class="ma-offer-terms">21 day close</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stage 4: Choose Best -->
+    <div class="ma-stage-panel" data-panel="4">
+      <div class="ma-choose-content">
+        <div class="ma-choose-label">Select Your Best Offer</div>
+        <div class="ma-choose-list">
+          <div class="ma-choose-option" data-offer="1">
+            <div class="ma-choose-radio">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="ma-choose-info">
+              <div class="ma-choose-amount">$342,000</div>
+              <div class="ma-choose-details">Premier Investments • 7 day close</div>
+            </div>
+            <div class="ma-highest-badge">HIGHEST</div>
+          </div>
+          <div class="ma-choose-option" data-offer="2">
+            <div class="ma-choose-radio">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="ma-choose-info">
+              <div class="ma-choose-amount">$338,000</div>
+              <div class="ma-choose-details">Rapid Home Buyers • 14 day close</div>
+            </div>
+          </div>
+          <div class="ma-choose-option" data-offer="3">
+            <div class="ma-choose-radio">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="ma-choose-info">
+              <div class="ma-choose-amount">$335,000</div>
+              <div class="ma-choose-details">CashFlow Properties • 10 day close</div>
+            </div>
+          </div>
+        </div>
+        <div class="ma-success-msg">
+          🎉 Offer Selected! Our team will reach out within 24 hours.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="ma-controls">
+    <button class="ma-pause-btn" id="pauseBtn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#6b4423" id="pauseIcon">
+        <rect x="6" y="4" width="4" height="16"/>
+        <rect x="14" y="4" width="4" height="16"/>
+      </svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#6b4423" id="playIcon" style="display:none;">
+        <polygon points="5 3 19 12 5 21 5 3"/>
+      </svg>
+      <span id="pauseText">Pause Animation</span>
+    </button>
+  </div>
+
+  <!-- CTA -->
+  <div class="ma-cta">
+    <a href="/get-offer" class="ma-cta-btn">
+      Get My Cash Offers
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="5" y1="12" x2="19" y2="12"/>
+        <polyline points="12 5 19 12 12 19"/>
+      </svg>
+    </a>
+    <p class="ma-cta-sub">✓ 100% Free • ✓ No Obligation • ✓ 2 Minutes</p>
+  </div>
+</section>
+
+<script>
+(function() {
+  // State
+  let currentStage = 1;
+  let isPaused = false;
+  let autoTimer = null;
+  const durations = [3500, 4000, 4500, 3000];
+
+  // Elements
+  const stageBtns = document.querySelectorAll('.ma-stage-btn');
+  const panels = document.querySelectorAll('.ma-stage-panel');
+  const pauseBtn = document.getElementById('pauseBtn');
+  const pauseIcon = document.getElementById('pauseIcon');
+  const playIcon = document.getElementById('playIcon');
+  const pauseText = document.getElementById('pauseText');
+  const chooseOptions = document.querySelectorAll('.ma-choose-option');
+  const successMsg = document.querySelector('.ma-success-msg');
+
+  // Functions
+  function setStage(stage) {
+    currentStage = stage;
+    
+    // Update buttons
+    stageBtns.forEach(btn => {
+      btn.classList.toggle('active', parseInt(btn.dataset.stage) === stage);
+    });
+    
+    // Update panels
+    panels.forEach(panel => {
+      panel.classList.toggle('active', parseInt(panel.dataset.panel) === stage);
+    });
+    
+    // Reset selections on stage 4
+    if (stage !== 4) {
+      chooseOptions.forEach(opt => opt.classList.remove('selected'));
+      successMsg.classList.remove('show');
+    }
+    
+    // Reset and restart auto-advance
+    scheduleNext();
+  }
+
+  function scheduleNext() {
+    clearTimeout(autoTimer);
+    if (!isPaused) {
+      autoTimer = setTimeout(() => {
+        const nextStage = currentStage === 4 ? 1 : currentStage + 1;
+        setStage(nextStage);
+      }, durations[currentStage - 1]);
+    }
+  }
+
+  function togglePause() {
+    isPaused = !isPaused;
+    pauseIcon.style.display = isPaused ? 'none' : 'block';
+    playIcon.style.display = isPaused ? 'block' : 'none';
+    pauseText.textContent = isPaused ? 'Resume Animation' : 'Pause Animation';
+    
+    if (!isPaused) {
+      scheduleNext();
+    } else {
+      clearTimeout(autoTimer);
+    }
+  }
+
+  // Event Listeners
+  stageBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      setStage(parseInt(btn.dataset.stage));
+    });
+  });
+
+  pauseBtn.addEventListener('click', togglePause);
+
+  chooseOptions.forEach(opt => {
+    opt.addEventListener('click', () => {
+      chooseOptions.forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      successMsg.classList.add('show');
+      
+      // Pause auto-advance when user selects
+      clearTimeout(autoTimer);
+    });
+  });
+
+  // Initialize
+  scheduleNext();
+})();
+</script>
+
+</body>
 
   <!-- Footer -->
   <footer>
