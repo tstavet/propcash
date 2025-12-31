@@ -1602,19 +1602,19 @@ footer nav a:hover {
   fill: none;
   stroke: var(--primary);
   stroke-width: 1;
-  opacity: 0.06;
+  opacity: 0.12;
 }
 
 .ma-topo-line.accent {
   stroke: var(--primary-light);
   stroke-width: 1.5;
-  opacity: 0.1;
+  opacity: 0.2;
 }
 
 .ma-topo-line.highlight {
   stroke: var(--success);
   stroke-width: 1;
-  opacity: 0.12;
+  opacity: 0.24;
   animation: ma-topo-pulse 5s ease-in-out infinite;
 }
 
@@ -1625,12 +1625,12 @@ footer nav a:hover {
 
 .ma-topo-marker {
   fill: var(--primary);
-  opacity: 0.12;
+  opacity: 0.25;
 }
 
 .ma-topo-marker.highlight {
   fill: var(--success);
-  opacity: 0.25;
+  opacity: 0.50;
   animation: ma-marker-pulse 4s ease-in-out infinite;
 }
 
@@ -1644,9 +1644,9 @@ footer nav a:hover {
   inset: 0;
   background: radial-gradient(
     ellipse at center,
-    rgba(253, 252, 251, 0.4) 0%,
-    rgba(253, 252, 251, 0.75) 50%,
-    rgba(253, 252, 251, 0.95) 100%
+    rgba(253, 252, 251, 0.2) 0%,
+    rgba(253, 252, 251, 0.5) 50%,
+    rgba(253, 252, 251, 0.8) 100%
   );
   pointer-events: none;
 }
