@@ -61,30 +61,36 @@
     </script>
 </head>
 <body>
-    <!-- ========== HEADER ========== -->
-    <header class="header">
-        <nav class="nav-container">
-            <a href="/" class="logo">
-                <img src="/assets/logo.png" alt="Propcash Logo">
-            </a>
-            <div class="nav-links">
-                <a href="/#how-it-works">How it Works</a>
-                <a href="/#why-marketplace">Why Propcash</a>
-                <a href="/blog/">Blog</a>
-                <a href="/faq">FAQ</a>
-            </div>
-            <a href="/get-offer" class="nav-cta">Get My Cash Offers →</a>
-            <button class="mobile-menu-btn" aria-label="Menu">☰</button>
-        </nav>
-        <div class="mobile-menu">
-            <a href="/#how-it-works">How it Works</a>
-            <a href="/#why-marketplace">Why Propcash</a>
-            <a href="/blog/">Blog</a>
-            <a href="/faq">FAQ</a>
-            <a href="/get-offer" class="nav-cta">Get My Cash Offers →</a>
-        </div>
-    </header>
+   <header>
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="brand">
+        <img src="/assets/logo.png" alt="Propcash Logo" class="logo">
+      </a>
+      
+      <div class="desktop-nav">
+        <a href="/#how-it-works">How it Works</a>
+        <a href="/#why-marketplace">Why Propcash</a>
+        <a href="/blog/" class="active">Blog</a>
+        <a href="/faq">FAQ</a>
+      </div>
 
+      <div class="header-ctas">
+        <a href="/get-offer" class="cta-header">Get My Cash Offers →</a>
+      </div>
+      
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
+    </nav>
+  </div>
+  
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="/#how-it-works">How it Works</a>
+    <a href="/#why-marketplace">Why Propcash</a>
+    <a href="/blog/">Blog</a>
+    <a href="/faq">FAQ</a>
+    <a href="/get-offer" class="mobile-cta">Get My Cash Offers →</a>
+  </nav>
+</header>
     <!-- ========== BLOG POST HEADER ========== -->
     <!-- UPDATE: category, title, date, read time -->
     <header class="blog-post-header">
