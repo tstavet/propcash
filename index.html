@@ -195,124 +195,113 @@
 
 </header>
 
-<!-- Hero Section - Marketplace Focus with Background Image -->
-<section class="hero" style="
-  position: relative;
-  min-height: auto; 
-  padding: 80px 0 120px;
-  background-image: url('/assets/nashville-house.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-">
-  
-  <!-- Overlay for text readability - ADJUST OPACITY IN THE rgba() VALUES -->
-  <div style="
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(253, 252, 251, 0.0) 0%, rgba(248, 245, 242, 0.0) 100%);
-    z-index: 1;
-  "></div>
-  
-  <!-- Content (sits above overlay) -->
-  <div class="hero-content" style="max-width: 1200px; position: relative; z-index: 2;">
-    
-    <h1 style="
-      color: white; 
-      max-width: 900px; 
-      margin: 0 auto 24px; 
-      font-size: clamp(40px, 6vw, 72px);
-      text-shadow: 
-        -1px -1px 0 rgba(0, 0, 0, 0.3),
-        1px -1px 0 rgba(0, 0, 0, 0.3),
-        -1px 1px 0 rgba(0, 0, 0, 0.3),
-        1px 1px 0 rgba(0, 0, 0, 0.3),
-        0 2px 8px rgba(0, 0, 0, 0.2);
-    ">
-      Where Cash Buyers Compete For Your Property
+<section class="hero-v2 animate" id="hero">
+  <div class="hero-v2-content">
+
+    <!-- Headline -->
+    <h1 class="hero-v2-headline">
+      Get <span class="highlight">$50K+ More</span> Than<br>Traditional Cash Buyers
     </h1>
-    
-   <div style="display: flex; gap: 0; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; max-width: 650px; margin-left: auto; margin-right: auto;">
-  
-  <form action="/get-offer" method="GET" style="display: flex; gap: 0; width: 100%; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); border-radius: 12px; overflow: hidden;">
-    
-    <!-- Address Input Field -->
-    <input 
-      type="text" 
-      name="address" 
-      placeholder="Enter your property address"
-      required
-      style="
-        flex: 1;
-        padding: 20px 24px;
-        font-size: 16px;
-        border: none;
-        background: white;
-        color: #1a1512;
-        font-family: inherit;
-        outline: none;
-      "
-    />
-    
-    <!-- Submit Button -->
-    <button 
-      type="submit"
-      style="
-        padding: 20px 32px;
-        background: #6b4423;
-        color: white;
-        border: none;
-        font-size: 16px;
-        font-weight: 700;
-        cursor: pointer;
-        white-space: nowrap;
-        transition: background 0.3s ease;
-        font-family: inherit;
-      "
-      onmouseover="this.style.background='#5a371c'"
-      onmouseout="this.style.background='#6b4423'"
-    >
-      Get My Cash Offers →
-    </button>
-    
-  </form>
-  
-</div>
 
-<!-- Mobile Responsive Styling -->
-<style>
-@media (max-width: 600px) {
-  form[action="/get-offer"] {
-    flex-direction: column !important;
-    border-radius: 12px !important;
-  }
-  
-  form[action="#start"] input {
-    border-radius: 12px 12px 0 0 !important;
-    text-align: center;
-  }
-  
-  form[action="/get-offer"] button {
-    border-radius: 0 0 12px 12px !important;
-    padding: 18px 24px !important;
-  }
-}
-</style>
+    <!-- Subheadline -->
+    <p class="hero-v2-subheadline">
+      500+ vetted investors compete for your property. More bidders, higher offers. All cash, as-is — no repairs, no hassle.
+    </p>
 
-    <!-- Status Bar -->
-    <div class="glassmorphism" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 24px; border-radius: 24px; margin-bottom: 32px;">
-      <div class="status-dot"></div>
-      <span style="font-size: 14px; font-weight: 600; color: #6b4423;">
-        <span class="stat-counter" id="activeInvestors">547</span> active investors • 
-        <span class="stat-counter" id="offersToday">3</span> offers per property
-      </span>
+    <!-- CTA Area with Sequential Climb Cards -->
+    <div class="hero-v2-cta-area">
+      
+      <!-- Offer Cards - Sequential Climb -->
+      <div class="offer-cards-container">
+        
+        <!-- Card 1 - Bottom -->
+        <div class="climb-card climb-card-1">
+          <div class="climb-card-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div class="climb-card-content">
+            <div class="climb-card-amount">$318,000</div>
+            <div class="climb-card-investor">HomeVest Capital</div>
+          </div>
+        </div>
+
+        <!-- Card 2 - Middle -->
+        <div class="climb-card climb-card-2">
+          <div class="climb-card-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div class="climb-card-content">
+            <div class="climb-card-amount">$331,000</div>
+            <div class="climb-card-investor">Rapid Home Buyers</div>
+          </div>
+        </div>
+
+        <!-- Card 3 - Top (Winner) -->
+        <div class="climb-card climb-card-3 winner">
+          <div class="climb-card-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div class="climb-card-content">
+            <div class="climb-card-amount">$342,000</div>
+            <div class="climb-card-investor">Premier Investments</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="hero-v2-cta-buttons">
+        <a href="/get-offer" class="hero-v2-cta-primary">
+          Get My Cash Offers
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+        <a href="#how-it-works" class="hero-v2-cta-secondary">
+          See How It Works
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </a>
+      </div>
+
     </div>
-    
+
+    <!-- Trust Bar -->
+    <div class="hero-v2-trust">
+      <div class="hero-v2-trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        Free, No Obligation
+      </div>
+      <div class="hero-v2-trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        Offers in 24 Hours
+      </div>
+      <div class="hero-v2-trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        Sell As-Is
+      </div>
+    </div>
+
   </div>
 </section>
+
 
   <!-- Network Map -->
   <section id="network-map" style="background: #f8f5f2; padding: 80px 0;">
@@ -1416,6 +1405,29 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 })();
 </script>
+
+  <script>
+(function() {
+  const hero = document.querySelector('.hero-v2');
+  
+  function replayAnimation() {
+    hero.classList.remove('animate');
+    void hero.offsetWidth;
+    hero.classList.add('animate');
+  }
+
+  // Uncomment below to replay animation when scrolling back to hero
+  // const observer = new IntersectionObserver((entries) => {
+  //   entries.forEach(entry => {
+  //     if (entry.isIntersecting) {
+  //       replayAnimation();
+  //     }
+  //   });
+  // }, { threshold: 0.5 });
+  // observer.observe(hero);
+})();
+</script>
+
   
   </body>
 </html>
