@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn | Propcash - Cash Sale Guides & Tennessee Real Estate Insights</title>
-    <meta name="description" content="Expert guides on selling your house for cash, navigating probate sales, and understanding Tennessee real estate. Learn how to get the best cash offer for your property.">
+    <title>Learn | Propcash - Cash Sale Guides & Real Estate Insights</title>
+    <meta name="description" content="Expert guides on selling your house for cash, navigating probate sales, and understanding real estate. Learn how to get the best cash offer for your property.">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Propcash Learn - Cash Sale Guides & Real Estate Insights">
-    <meta property="og:description" content="Expert guides on selling your house for cash in Tennessee. Learn how marketplace competition gets you better offers.">
+    <meta property="og:description" content="Expert guides on selling your house for cash. Learn how marketplace competition gets you better offers.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://propcash.co/learn/">
     <meta property="og:image" content="https://propcash.co/assets/og-blog.jpg">
@@ -23,7 +23,231 @@
     
     <!-- Styles -->
     <link rel="stylesheet" href="/assets/styles-v2.css">
-    <link rel="stylesheet" href="/assets/blog.css">
+    
+    <style>
+      /* Learn Page Specific Styles */
+      
+      .learn-hero {
+        background: linear-gradient(135deg, #6b4423 0%, #4a2f18 100%);
+        padding: 80px 20px;
+        text-align: center;
+      }
+      
+      .learn-hero h1 {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 3rem;
+        font-weight: 700;
+        color: white;
+        margin: 0 0 16px;
+      }
+      
+      .learn-hero p {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.2rem;
+        color: rgba(255,255,255,0.9);
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+      
+      .learn-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+      
+      /* Category Section */
+      .category-section {
+        margin-bottom: 64px;
+      }
+      
+      .category-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+        border-bottom: 2px solid #6b4423;
+      }
+      
+      .category-header h2 {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #6b4423;
+        margin: 0;
+      }
+      
+      .category-header a {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #6b4423;
+        text-decoration: none;
+      }
+      
+      .category-header a:hover {
+        text-decoration: underline;
+      }
+      
+      .category-description {
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        color: #6b625a;
+        margin: -16px 0 24px;
+        max-width: 700px;
+      }
+      
+      /* Post Cards Grid */
+      .posts-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      
+      @media (max-width: 900px) {
+        .posts-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      
+      @media (max-width: 600px) {
+        .posts-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        .learn-hero h1 {
+          font-size: 2.25rem;
+        }
+      }
+      
+      /* Post Card */
+      .post-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .post-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      }
+      
+      .post-card-image {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        background: #f5f3ef;
+      }
+      
+      .post-card-content {
+        padding: 20px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .post-card-tag {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #8B7355;
+        margin-bottom: 8px;
+      }
+      
+      .post-card-title {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #333;
+        margin: 0 0 8px;
+        line-height: 1.3;
+      }
+      
+      .post-card-excerpt {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.9rem;
+        color: #6b625a;
+        line-height: 1.5;
+        margin: 0;
+        flex: 1;
+      }
+      
+      .post-card-meta {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.8rem;
+        color: #999;
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid #f0ebe6;
+      }
+      
+      /* Empty State */
+      .coming-soon {
+        background: #f5f3ef;
+        border-radius: 12px;
+        padding: 40px;
+        text-align: center;
+        grid-column: 1 / -1;
+      }
+      
+      .coming-soon p {
+        font-family: 'Inter', sans-serif;
+        color: #6b625a;
+        margin: 0;
+      }
+      
+      /* CTA Section */
+      .learn-cta {
+        background: linear-gradient(135deg, #6b4423 0%, #4a2f18 100%);
+        padding: 80px 20px;
+        text-align: center;
+      }
+      
+      .learn-cta-inner {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      
+      .learn-cta h2 {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: white;
+        margin: 0 0 16px;
+      }
+      
+      .learn-cta p {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.1rem;
+        color: rgba(255,255,255,0.9);
+        margin: 0 0 24px;
+      }
+      
+      .learn-cta-button {
+        display: inline-block;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #6b4423;
+        background: white;
+        padding: 16px 32px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background 0.2s ease;
+      }
+      
+      .learn-cta-button:hover {
+        background: #f5f3ef;
+      }
+    </style>
 </head>
 <body>
   <header>
@@ -57,135 +281,195 @@
   </nav>
 </header>
 
-    <!-- ========== BLOG HERO ========== -->
-    <section class="blog-hero">
+    <!-- ========== HERO ========== -->
+    <section class="learn-hero">
         <h1>Propcash Learn</h1>
-        <p>Expert guides on selling your house for cash, navigating Tennessee real estate, and getting the best offer through marketplace competition.</p>
+        <p>Everything you need to know about selling your home for cash—from understanding the process to protecting yourself from bad deals.</p>
     </section>
 
-    <!-- ========== BLOG CONTENT ========== -->
-    <main class="blog-container">
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="learn-container">
         
-        <!-- Featured Post -->
-        <section class="blog-featured">
-            <a href="/learn/sell-inherited-house-tennessee/" class="blog-card">
-                <img src="/assets/learn/inherited-house-tn.jpg" alt="Inherited house in Tennessee" class="blog-card-image">
-                <div class="blog-card-content">
-                    <span class="blog-card-category">Tennessee Guide</span>
-                    <h2 class="blog-card-title">How to Sell an Inherited House in Tennessee (Complete Guide)</h2>
-                    <p class="blog-card-excerpt">Everything you need to know about selling inherited property in Tennessee — from probate requirements to tax implications to your selling options. A comprehensive guide for heirs navigating this process.</p>
-                    <div class="blog-card-meta">
-                        <span>📅 January 2025</span>
-                        <span>⏱️ 12 min read</span>
-                    </div>
-                </div>
-            </a>
-        </section>
-
-        <!-- Blog Grid -->
-        <section class="blog-grid">
+        <!-- ===== CASH SALE GUIDES ===== -->
+        <section class="category-section" id="cash-sale-guides">
+            <div class="category-header">
+                <h2>Cash Sale Guides</h2>
+                <!-- <a href="/learn/cash-sale-guides/">View All →</a> -->
+            </div>
+            <p class="category-description">Understand how cash home sales work, what to expect at closing, and how to get the best price for your property.</p>
             
-            <!-- Post 2 -->
-            <a href="/learn/problem-we-buy-houses-companies/" class="blog-card">
-                <img src="/assets/learn/we-buy-houses.jpg" alt="We buy houses sign" class="blog-card-image">
-                <div class="blog-card-content">
-                    <span class="blog-card-category">Marketplace Advantage</span>
-                    <h3 class="blog-card-title">The Problem with "We Buy Houses" Companies (And the Alternative)</h3>
-                    <p class="blog-card-excerpt">Why single-offer cash buyers often mean lowball offers, and how marketplace competition changes the equation for sellers.</p>
-                    <div class="blog-card-meta">
-                        <span>📅 January 2025</span>
-                        <span>⏱️ 8 min read</span>
+            <div class="posts-grid">
+                
+                <a href="/learn/why-competing-offers-beat-we-buy-houses/" class="post-card">
+                    <img src="/assets/learn/competing-offers.jpg" alt="Competing cash offers" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-card-tag">Cash Sale Guides</span>
+                        <h3 class="post-card-title">Why Competing Offers Beat the "We Buy Houses" Guys</h3>
+                        <p class="post-card-excerpt">Learn why marketplace competition gets you 15-30% more than single-offer cash buyers.</p>
+                        <div class="post-card-meta">8 min read</div>
                     </div>
-                </div>
-            </a>
-
-            <!-- Post 3 -->
-            <a href="/learn/sell-house-fast-nashville-guide/" class="blog-card">
-                <img src="/assets/learn/nashville-skyline.jpg" alt="Nashville Tennessee skyline" class="blog-card-image">
-                <div class="blog-card-content">
-                    <span class="blog-card-category">Nashville</span>
-                    <h3 class="blog-card-title">Selling Your House Fast in Nashville: 2025 Market Guide</h3>
-                    <p class="blog-card-excerpt">Nashville market data, neighborhood insights, and your options for a fast sale in Tennessee's hottest real estate market.</p>
-                    <div class="blog-card-meta">
-                        <span>📅 January 2025</span>
-                        <span>⏱️ 10 min read</span>
+                </a>
+                
+                <a href="/learn/how-cash-home-sales-work/" class="post-card">
+                    <img src="/assets/learn/cash-sale-process.jpg" alt="Cash home sale process" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-card-tag">Cash Sale Guides</span>
+                        <h3 class="post-card-title">How Cash Home Sales Work: A Complete Guide</h3>
+                        <p class="post-card-excerpt">From offer to closing—everything you need to know about selling your house for cash.</p>
+                        <div class="post-card-meta">9 min read</div>
                     </div>
-                </div>
-            </a>
-
-            <!-- Post 4 -->
-            <a href="/learn/how-cash-home-sales-work/" class="blog-card">
-                <img src="/assets/learn/cash-sale-process.jpg" alt="Cash home sale process" class="blog-card-image">
-                <div class="blog-card-content">
-                    <span class="blog-card-category">Cash Sale Process</span>
-                    <h3 class="blog-card-title">How Cash Home Sales Work: A Complete Guide</h3>
-                    <p class="blog-card-excerpt">Understand the cash sale process from start to finish — who buys houses for cash, how offers work, and what to expect at closing.</p>
-                    <div class="blog-card-meta">
-                        <span>📅 January 2025</span>
-                        <span>⏱️ 9 min read</span>
+                </a>
+                
+                <a href="/learn/cash-sale-closing-costs/" class="post-card">
+                    <img src="/assets/learn/closing-costs.jpg" alt="Closing costs explained" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-card-tag">Cash Sale Guides</span>
+                        <h3 class="post-card-title">Cash Sale Closing Costs: What Sellers Actually Pay</h3>
+                        <p class="post-card-excerpt">A clear breakdown of fees, who pays what, and how to calculate your net proceeds.</p>
+                        <div class="post-card-meta">6 min read</div>
                     </div>
-                </div>
-            </a>
-
-            <!-- Post 5 -->
-            <a href="/learn/sell-house-foreclosure-options/" class="blog-card">
-                <img src="/assets/learn/foreclosure-help.jpg" alt="Foreclosure help options" class="blog-card-image">
-                <div class="blog-card-content">
-                    <span class="blog-card-category">Seller Situations</span>
-                    <h3 class="blog-card-title">Can You Sell a House in Foreclosure? Your Options Explained</h3>
-                    <p class="blog-card-excerpt">If you're facing foreclosure, you may have more options than you think. Here's how to potentially sell before the auction.</p>
-                    <div class="blog-card-meta">
-                        <span>📅 January 2025</span>
-                        <span>⏱️ 7 min read</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Post 6 -->
-            <a href="/learn/questions-ask-cash-home-buyer/" class="blog-card">
-                <img src="/assets/blog/questions-ask.jpg" alt="Questions to ask cash buyers" class="blog-card-image">
-                <div class="blog-card-content">
-                    <span class="blog-card-category">Seller Education</span>
-                    <h3 class="blog-card-title">Questions to Ask Any Cash Home Buyer (Protect Yourself)</h3>
-                    <p class="blog-card-excerpt">Before you accept any cash offer, ask these critical questions to verify legitimacy and protect your interests.</p>
-                    <div class="blog-card-meta">
-                        <span>📅 January 2025</span>
-                        <span>⏱️ 6 min read</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Post 7 -->
-            <a href="/learn/selling-house-probate-tennessee/" class="blog-card">
-                <img src="/assets/blog/probate-guide.jpg" alt="Probate sale guide" class="blog-card-image">
-                <div class="blog-card-content">
-                    <span class="blog-card-category">Tennessee Guide</span>
-                    <h3 class="blog-card-title">Selling a House in Probate: What Tennessee Heirs Need to Know</h3>
-                    <p class="blog-card-excerpt">Navigate Tennessee's probate process and understand your options for selling inherited real estate.</p>
-                    <div class="blog-card-meta">
-                        <span>📅 January 2025</span>
-                        <span>⏱️ 8 min read</span>
-                    </div>
-                </div>
-            </a>
-
+                </a>
+                
+            </div>
         </section>
 
-        <!-- Load More (optional, for future use) -->
-        <!--
-        <div class="text-center" style="margin-top: 48px;">
-            <a href="#" class="blog-cta-button" style="background: var(--brand-cream); color: var(--brand-brown); border: 2px solid var(--brand-brown);">Load More Articles</a>
-        </div>
-        -->
+        <!-- ===== MARKETS ===== -->
+        <section class="category-section" id="markets">
+            <div class="category-header">
+                <h2>Markets</h2>
+                <!-- <a href="/learn/markets/">View All →</a> -->
+            </div>
+            <p class="category-description">Location-specific guides, market data, and insights for sellers in Tennessee and beyond.</p>
+            
+            <div class="posts-grid">
+                
+                <a href="/learn/sell-house-fast-nashville/" class="post-card">
+                    <img src="/assets/learn/nashville-skyline.jpg" alt="Nashville Tennessee skyline" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-card-tag">Markets</span>
+                        <h3 class="post-card-title">Selling Your House Fast in Nashville: 2025 Guide</h3>
+                        <p class="post-card-excerpt">Nashville market data, neighborhood insights, and your options for a fast cash sale.</p>
+                        <div class="post-card-meta">10 min read</div>
+                    </div>
+                </a>
+                
+                <a href="/learn/tennessee-cash-home-sales/" class="post-card">
+                    <img src="/assets/learn/tennessee-map.jpg" alt="Tennessee real estate" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-card-tag">Markets</span>
+                        <h3 class="post-card-title">Cash Home Sales in Tennessee: What Sellers Need to Know</h3>
+                        <p class="post-card-excerpt">State-specific laws, disclosure requirements, and market conditions for Tennessee sellers.</p>
+                        <div class="post-card-meta">8 min read</div>
+                    </div>
+                </a>
+                
+                <a href="/learn/memphis-cash-home-buyers/" class="post-card">
+                    <img src="/assets/learn/memphis.jpg" alt="Memphis Tennessee" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-card-tag">Markets</span>
+                        <h3 class="post-card-title">Selling Your House for Cash in Memphis</h3>
+                        <p class="post-card-excerpt">Memphis market trends, investor activity, and how to get the best cash offer.</p>
+                        <div class="post-card-meta">7 min read</div>
+                    </div>
+                </a>
+                
+            </div>
+        </section>
+
+        <!-- ===== SELLER SCENARIOS ===== -->
+        <section class="category-section" id="seller-scenarios">
+            <div class="category-header">
+                <h2>Seller Scenarios</h2>
+                <!-- <a href="/learn/seller-scenarios/">View All →</a> -->
+            </div>
+            <p class="category-description">Guides for specific situations—inherited property, foreclosure, divorce, and other circumstances that call for a fast sale.</p>
+            
+            <div class="posts-grid">
+                
+                <a href="/learn/sell-inherited-house-tennessee/" class="post-card">
+                    <img src="/assets/learn/inherited-house-tn.jpg" alt="Inherited house in Tennessee" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-card-tag">Seller Scenarios</span>
+                        <h3 class="post-card-title">How to Sell an Inherited House in Tennessee</h3>
+                        <p class="post-card-excerpt">From probate to closing—a complete guide for heirs selling inherited property.</p>
+                        <div class="post-card-meta">12 min read</div>
+                    </div>
+                </a>
+                
+                <a href="/learn/sell-house-foreclosure/" class="post-card">
+                    <img src="/assets/learn/foreclosure-help.jpg" alt="Foreclosure help options" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-card-tag">Seller Scenarios</span>
+                        <h3 class="post-card-title">Can You Sell a House in Foreclosure?</h3>
+                        <p class="post-card-excerpt">Your options when facing foreclosure, and how to potentially sell before the auction.</p>
+                        <div class="post-card-meta">7 min read</div>
+                    </div>
+                </a>
+                
+                <a href="/learn/selling-house-divorce/" class="post-card">
+                    <img src="/assets/learn/divorce-sale.jpg" alt="Selling house during divorce" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-card-tag">Seller Scenarios</span>
+                        <h3 class="post-card-title">Selling Your House During a Divorce</h3>
+                        <p class="post-card-excerpt">How to navigate property division, get both parties aligned, and close quickly.</p>
+                        <div class="post-card-meta">8 min read</div>
+                    </div>
+                </a>
+                
+            </div>
+        </section>
+
+        <!-- ===== SELLER RESOURCES ===== -->
+        <section class="category-section" id="seller-resources">
+            <div class="category-header">
+                <h2>Seller Resources</h2>
+                <!-- <a href="/learn/seller-resources/">View All →</a> -->
+            </div>
+            <p class="category-description">Protect yourself from bad deals. Learn what to look for, what to ask, and how to spot red flags.</p>
+            
+            <div class="posts-grid">
+                
+                <a href="/learn/questions-ask-cash-home-buyer/" class="post-card">
+                    <img src="/assets/learn/questions-ask.jpg" alt="Questions to ask cash buyers" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-card-tag">Seller Resources</span>
+                        <h3 class="post-card-title">10 Questions to Ask Any Cash Home Buyer</h3>
+                        <p class="post-card-excerpt">Before you accept any offer, ask these questions to verify legitimacy and protect yourself.</p>
+                        <div class="post-card-meta">6 min read</div>
+                    </div>
+                </a>
+                
+                <a href="/learn/cash-buyer-red-flags/" class="post-card">
+                    <img src="/assets/learn/red-flags.jpg" alt="Cash buyer red flags" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-card-tag">Seller Resources</span>
+                        <h3 class="post-card-title">Red Flags When Selling to Cash Buyers</h3>
+                        <p class="post-card-excerpt">Warning signs that a cash buyer isn't legitimate—and when to walk away.</p>
+                        <div class="post-card-meta">5 min read</div>
+                    </div>
+                </a>
+                
+                <a href="/learn/how-to-spot-lowball-offer/" class="post-card">
+                    <img src="/assets/learn/lowball-offer.jpg" alt="Spotting lowball offers" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-card-tag">Seller Resources</span>
+                        <h3 class="post-card-title">How to Spot a Lowball Cash Offer</h3>
+                        <p class="post-card-excerpt">What fair offers look like, and how to know if you're leaving money on the table.</p>
+                        <div class="post-card-meta">6 min read</div>
+                    </div>
+                </a>
+                
+            </div>
+        </section>
 
     </main>
 
     <!-- ========== CTA SECTION ========== -->
-    <section style="background: linear-gradient(135deg, #6b4423 0%, #4a2f18 100%); padding: 80px 20px; text-align: center;">
-        <div style="max-width: 600px; margin: 0 auto;">
-            <h2 style="font-family: 'DM Sans', sans-serif; font-size: 2rem; font-weight: 600; color: white; margin-bottom: 16px;">Ready to See What Your Property Is Worth?</h2>
-            <p style="font-family: 'Inter', sans-serif; font-size: 1.1rem; color: rgba(255,255,255,0.9); margin-bottom: 24px;">Get competing cash offers from 500+ investors. Takes 2 minutes, no obligation.</p>
-            <a href="/get-offer" style="display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 1.1rem; font-weight: 600; color: #6b4423; background: white; padding: 16px 32px; border-radius: 8px; text-decoration: none;">Get My Cash Offers →</a>
+    <section class="learn-cta">
+        <div class="learn-cta-inner">
+            <h2>Ready to See What Your Property Is Worth?</h2>
+            <p>Get competing cash offers from 500+ investors. Takes 2 minutes, no obligation.</p>
+            <a href="/get-offer" class="learn-cta-button">Get My Cash Offers →</a>
         </div>
     </section>
 
@@ -255,11 +539,25 @@
   </div>
 </footer>
 
-    <!-- Mobile Menu Script -->
+    <!-- Scripts -->
     <script>
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('.mobile-menu').classList.toggle('active');
-        });
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        if (mobileMenuToggle && mobileNav) {
+            mobileMenuToggle.addEventListener('click', function() {
+                mobileNav.classList.toggle('active');
+                const isExpanded = mobileNav.classList.contains('active');
+                mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+            });
+        }
+        
+        // Set current year in footer
+        const yearSpan = document.getElementById('year');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
     </script>
 </body>
 </html>
