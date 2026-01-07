@@ -449,30 +449,6 @@
     </section>
 
  <div id="footer-placeholder"></div>
-
-    <!-- Scripts -->
-    <script>
-        // Mobile menu toggle
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const mobileNav = document.getElementById('mobileNav');
-        
-        if (mobileMenuToggle && mobileNav) {
-            mobileMenuToggle.addEventListener('click', function() {
-                mobileNav.classList.toggle('active');
-                const isExpanded = mobileNav.classList.contains('active');
-                mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
-            });
-        }
-        
-        // Set current year in footer
-        const yearSpan = document.getElementById('year');
-        if (yearSpan) {
-            yearSpan.textContent = new Date().getFullYear();
-        }
-    </script>
-
     <script src="/includes/load-includes.js"></script>
-
-    
 </body>
 </html>
