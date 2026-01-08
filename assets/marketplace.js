@@ -11,10 +11,11 @@
   // ==========================================
 
   const PROPERTY_TYPES = [
-    '3BR Ranch', '4BR Colonial', '2BR Bungalow', '3BR Split-Level',
-    '4BR Traditional', '2BR Cottage', '3BR Cape Cod', '5BR Estate',
-    '3BR Craftsman', '4BR Victorian', '2BR Condo', '3BR Townhouse',
-    '4BR Modern', '3BR Tudor', '2BR Duplex'
+    '3BR Fixer-Upper', '2BR Handyman Special', '3BR Needs TLC',
+    '4BR Estate Sale', '2BR Distressed', '3BR As-Is Sale',
+    '2BR Investor Special', '3BR Fire Damage', '4BR Foreclosure',
+    '2BR Probate Sale', '3BR Inherited Home', '3BR Vacant Property',
+    '2BR Foundation Issues', '3BR Code Violations', '4BR REO Property'
   ];
 
   const INVESTOR_NAMES = [
@@ -68,15 +69,16 @@
     { id: 'closed', text: 'Closed', class: 'status-closed' }
   ];
 
+  // Distressed/fixer-upper property images - older homes needing work
   const PROPERTY_IMAGES = [
-    'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=600&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1554995207-c18c203602cb?w=600&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&h=400&fit=crop'
+    'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&h=400&fit=crop', // older suburban home
+    'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=600&h=400&fit=crop', // simple ranch house
+    'https://images.unsplash.com/photo-1494526585095-c41746248156?w=600&h=400&fit=crop', // basic house
+    'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop', // modest home
+    'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=600&h=400&fit=crop', // older property
+    'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600&h=400&fit=crop', // basic suburban
+    'https://images.unsplash.com/photo-1449844908441-8829872d2607?w=600&h=400&fit=crop', // older style home
+    'https://images.unsplash.com/photo-1430285561322-7808604715df?w=600&h=400&fit=crop'  // dated exterior
   ];
 
   // ==========================================
@@ -128,7 +130,8 @@
   function generateDeal(forceStatus = null) {
     const market = randomFrom(MARKETS);
     const status = forceStatus ? STATUSES.find(s => s.id === forceStatus) : randomFrom(STATUSES);
-    const basePrice = randomBetween(180, 550) * 1000;
+    // Distressed property price range: $55k - $185k
+    const basePrice = randomBetween(55, 185) * 1000;
     const offerCount = status.id === 'new' ? randomBetween(0, 1) : randomBetween(2, 7);
     const offers = generateOffers(offerCount, basePrice);
     const minutesAgo = randomBetween(5, 4320); // Up to 3 days
@@ -151,9 +154,9 @@
       timeAgo: formatTimeAgo(minutesAgo),
       investorsViewing: investorsViewing,
       daysToClose: status.id === 'closed' ? randomBetween(7, 21) : null,
-      sqft: randomBetween(1200, 3500),
-      beds: randomBetween(2, 5),
-      baths: randomBetween(1, 4)
+      sqft: randomBetween(900, 2200),  // Smaller, older homes
+      beds: randomBetween(2, 4),
+      baths: randomBetween(1, 2)
     };
   }
 
