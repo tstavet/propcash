@@ -1,141 +1,776 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGV6HXQ0RW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-CGV6HXQ0RW');
-  </script>
-
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- SEO OPTIMIZED TITLE -->
-  <title>Sell My House Fast Texas | Cash Offers in Dallas, Houston & San Antonio</title>
-
-  <!-- SEO OPTIMIZED META DESCRIPTION -->
-  <meta name="description" content="Sell your house fast anywhere in Texas. Get competing cash offers from investors in Dallas-Fort Worth, Houston, San Antonio & statewide. No repairs, no fees. Close in 7-14 days." />
-
-  <!-- LAST UPDATED -->
-  <meta property="article:modified_time" content="2026-01-08" />
-
-  <!-- CANONICAL URL -->
-  <link rel="canonical" href="https://propcash.co/texas" />
-
-  <!-- BREADCRUMB SCHEMA -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sell Your House Fast in Texas | Cash Offers from 500+ Investors | Propcash</title>
+  <meta name="description" content="Get competing cash offers for your Texas home. 500+ investors fighting for your property means more money in your pocket. Close in as few as 7 days.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sell Your House Fast in Texas | Propcash">
+  <meta property="og:description" content="Get competing cash offers from 500+ Texas investors. Close in 7 days, no fees, no repairs needed.">
+  <meta property="og:type" content="website">
+  
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [{
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://propcash.co/"
-    },{
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Texas",
-      "item": "https://propcash.co/texas"
-    }]
+    "@type": "RealEstateAgent",
+    "name": "Propcash Texas",
+    "description": "Cash offer marketplace connecting Texas homeowners with competing investors",
+    "areaServed": {
+      "@type": "State",
+      "name": "Texas"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "456"
+    }
   }
   </script>
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Sell Your House Fast in Texas | Competing Cash Offers Statewide" />
-  <meta property="og:description" content="Texas investor marketplace. Get cash buyers competing for your home in Dallas, Houston, San Antonio & beyond. Close in as few as 7 days." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://propcash.co/texas" />
-  <meta property="og:image" content="https://propcash.co/assets/og-mascot.jpg" />
-  <meta property="og:locale" content="en_US" />
-
-  <!-- Geographic targeting -->
-  <meta name="geo.region" content="US-TX" />
-  <meta name="geo.placename" content="Texas" />
-
-  <!-- Favicon -->
-  <link rel="icon" href="/assets/mascot-favicon.png" />
-  <link rel="apple-touch-icon" href="/assets/mascot-apple-touch.png" />
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles-v2.css" />
-  <link rel="stylesheet" href="/assets/landing-pages.css" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles-v2.css">
+  <link rel="stylesheet" href="/assets/landing-pages.css">
+  
+  <style>
+    /* ==========================================
+       STATE PAGE SPECIFIC STYLES
+       These extend landing-pages.css for state pages
+       ========================================== */
+    
+    /* Stats Bar */
+    .state-stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      background: transparent;
+      padding: 0;
+    }
+    
+    @media (max-width: 768px) {
+      .state-stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+    
+    .state-stat {
+      text-align: center;
+    }
+    
+    .state-stat-value {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+    
+    .state-stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    
+    /* Benefits Grid */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    
+    @media (max-width: 768px) {
+      .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+    
+    .benefit-card {
+      text-align: center;
+      padding: 32px;
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+    
+    .benefit-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--bg-secondary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    
+    .benefit-icon svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--primary);
+    }
+    
+    .benefit-card h3 {
+      font-size: 20px;
+      margin: 0 0 12px;
+      color: var(--text);
+    }
+    
+    .benefit-card p {
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+    
+    /* City Cards */
+    .city-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    
+    @media (max-width: 900px) {
+      .city-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .city-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .city-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .city-card-image {
+      height: 160px;
+      background-size: cover;
+      background-position: center;
+      background-color: var(--bg-secondary);
+      position: relative;
+    }
+    
+    .city-card-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--primary);
+      color: white;
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: 600;
+    }
+    
+    .city-card-content {
+      padding: 24px;
+    }
+    
+    .city-card h3 {
+      font-size: 22px;
+      margin: 0 0 8px;
+      color: var(--text);
+    }
+    
+    .city-card-stats {
+      display: flex;
+      gap: 16px;
+      margin: 16px 0;
+      padding: 16px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .city-stat {
+      flex: 1;
+    }
+    
+    .city-stat-value {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .city-stat-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .city-card > .city-card-content > p {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0 0 16px;
+    }
+    
+    .city-card .btn {
+      width: 100%;
+      text-align: center;
+      display: block;
+    }
+    
+    .btn-coming-soon {
+      background: var(--bg-secondary);
+      color: var(--text-muted);
+      cursor: default;
+      box-shadow: none;
+    }
+    
+    .btn-coming-soon:hover {
+      transform: none;
+      box-shadow: none;
+      background: var(--bg-secondary);
+    }
+    
+    /* Regional Coverage */
+    .regions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    
+    @media (max-width: 768px) {
+      .regions-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .region-card {
+      background: var(--bg-secondary);
+      border-radius: var(--radius);
+      padding: 24px;
+      border-left: 4px solid var(--primary);
+    }
+    
+    .region-card h4 {
+      font-size: 18px;
+      margin: 0 0 8px;
+      color: var(--text);
+    }
+    
+    .region-card .region-cities {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin: 0;
+      line-height: 1.6;
+    }
+    
+    /* Simple Steps Grid for State Pages */
+    .simple-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    
+    @media (max-width: 768px) {
+      .simple-steps {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+    
+    .simple-step {
+      text-align: center;
+      padding: 32px 24px;
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+    }
+    
+    .simple-step-number {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 auto 20px;
+    }
+    
+    .simple-step h3 {
+      font-size: 18px;
+      margin: 0 0 8px;
+      color: var(--primary);
+    }
+    
+    .simple-step p {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin: 0;
+      line-height: 1.6;
+    }
+    
+    /* Footer for State Pages */
+    .state-footer {
+      background: var(--primary);
+      color: white;
+      padding: 64px 0 32px;
+    }
+    
+    .state-footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    
+    @media (max-width: 900px) {
+      .state-footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .state-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+    
+    .state-footer-brand p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 16px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    
+    .state-footer-links h4 {
+      color: white;
+      font-size: 16px;
+      margin: 0 0 16px;
+      font-weight: 600;
+    }
+    
+    .state-footer-links a {
+      display: block;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      padding: 6px 0;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+    
+    .state-footer-links a:hover {
+      color: white;
+    }
+    
+    .state-footer-bottom {
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-
-  <div id="header-placeholder"></div>
-
-  <!-- Breadcrumb -->
-  <nav class="breadcrumb" aria-label="Breadcrumb">
+  <!-- HEADER - Using existing styles-v2.css classes -->
+  <header>
     <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="separator">›</li>
-        <li class="current" aria-current="page">Texas</li>
-      </ol>
+      <nav class="nav">
+        <a href="/" class="brand">
+          <img src="/assets/propcash-logo.svg" alt="Propcash" class="logo">
+        </a>
+        <div class="desktop-nav">
+          <a href="/how-it-works">How It Works</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+        </div>
+        <div class="header-ctas">
+          <a href="/get-offer" class="cta-header">Get My Cash Offer</a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Menu">☰</button>
+      </nav>
+      <nav class="mobile-nav">
+        <a href="/how-it-works">How It Works</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/get-offer" class="mobile-cta">Get My Cash Offer</a>
+      </nav>
     </div>
+  </header>
+
+  <!-- BREADCRUMB - Using correct structure from landing-pages.css -->
+  <nav class="breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li class="separator">/</li>
+      <li class="current">Texas</li>
+    </ol>
   </nav>
 
-  <main>
-    <!-- COMING SOON HERO -->
-    <section class="lp-hero">
-      <div class="lp-hero-content">
-        <span class="section-label">Coming Soon</span>
-        <h1>Sell Your House Fast Anywhere in Texas</h1>
-        <p class="hero-subhead">
-          We're expanding to Texas! Soon you'll be able to get competing cash offers from investors in Dallas-Fort Worth, Houston, San Antonio, and statewide.
-        </p>
+  <!-- HERO SECTION -->
+  <section class="lp-hero" style="background-image: url('/assets/texas-hero.jpg');">
+    <div class="lp-hero-content">
+      <h1>Sell Your House Fast Anywhere in Texas</h1>
+      
+      <p class="hero-subhead">
+        Texas attracts more corporate relocations than any other state. When 500+ cash buyers compete for your property, you get the best offer—not a lowball price.
+      </p>
+      
+      <!-- Dual CTA Buttons -->
+      <div class="hero-ctas">
         <a href="/get-offer" class="btn-hero-primary">
-          <span>Join the Waitlist</span>
+          <span>Get My Cash Offers</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
+        <a href="tel:6155524296" class="btn-hero-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>(615) 552-4296</span>
+        </a>
       </div>
-    </section>
-
-    <!-- CITY PREVIEW -->
-    <section class="section-lg">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2>Markets Coming Soon</h2>
-          <p class="text-muted">We're building our investor network in these Texas markets</p>
+      
+      <p class="hero-microcopy">Get your first offer in 24 hours • No fees, no obligation</p>
+      
+      <!-- Hero Badges -->
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <span class="badge-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <span>500+ TX investors</span>
         </div>
+        <div class="hero-badge">
+          <span class="badge-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
+          <span>Close in 7 days</span>
+        </div>
+        <div class="hero-badge">
+          <span class="badge-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </span>
+          <span>No fees or costs</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="grid-3">
-          <div class="card">
+  <!-- STATE STATS BAR -->
+  <section style="background: var(--bg-secondary); padding: 48px 0;">
+    <div class="container">
+      <div class="state-stats-bar">
+        <div class="state-stat">
+          <div class="state-stat-value">7 Days</div>
+          <div class="state-stat-label">Average Time to Close</div>
+        </div>
+        <div class="state-stat">
+          <div class="state-stat-value">$0</div>
+          <div class="state-stat-label">Fees & Commissions</div>
+        </div>
+        <div class="state-stat">
+          <div class="state-stat-value">456</div>
+          <div class="state-stat-label">TX Homes Sold</div>
+        </div>
+        <div class="state-stat">
+          <div class="state-stat-value">500+</div>
+          <div class="state-stat-label">Competing Investors</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY TEXAS SECTION -->
+  <section class="section-lg">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">Why Texas Sellers Win</span>
+        <h2>High Investor Demand = Better Offers for You</h2>
+        <p class="text-muted">Texas leads the nation in corporate relocations. That business-friendly environment attracts investors who pay premium prices.</p>
+      </div>
+      
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>No State Income Tax</h3>
+          <p>Texas's tax-friendly environment attracts businesses and residents alike. Investors compete aggressively knowing renters and buyers keep more of their income.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Corporate Headquarters Hub</h3>
+          <p>100+ corporate HQs relocated to DFW between 2018-2024. AT&T, ExxonMobil, American Airlines—major employers driving housing demand.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Strong Rental Market</h3>
+          <p>45% of DFW households rent. Average rent $1,577/month creates strong cash flow for investors, driving competitive offers for rental properties.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CITY MARKETS SECTION -->
+  <section class="section-lg bg-secondary">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">Texas Markets</span>
+        <h2>Cash Offers Available Statewide</h2>
+        <p class="text-muted">From Dallas-Fort Worth to Houston, San Antonio, and beyond—our investor network covers all of Texas.</p>
+      </div>
+      
+      <div class="city-cards">
+        <!-- Dallas-Fort Worth -->
+        <div class="city-card">
+          <div class="city-card-image" style="background-image: url('/assets/dallas-skyline.jpg');">
+            <span class="city-card-badge">#1 Market for 2026</span>
+          </div>
+          <div class="city-card-content">
             <h3>Dallas-Fort Worth</h3>
-            <p>Texas's largest metropolitan area</p>
-            <span class="badge">Coming Soon</span>
+            <div class="city-card-stats">
+              <div class="city-stat">
+                <div class="city-stat-value">$418K</div>
+                <div class="city-stat-label">Median Price</div>
+              </div>
+              <div class="city-stat">
+                <div class="city-stat-value">89 Days</div>
+                <div class="city-stat-label">Avg. On Market</div>
+              </div>
+            </div>
+            <p>Ranked #1 real estate market for 2026. 8 million+ metro population and 100+ corporate HQs drive intense investor competition.</p>
+            <a href="/texas/dallas/sell-house-fast" class="btn btn-primary">Get Dallas Offers</a>
           </div>
-          <div class="card">
+        </div>
+        
+        <!-- Houston -->
+        <div class="city-card">
+          <div class="city-card-image" style="background-image: url('/assets/houston-skyline.jpg');">
+            <span class="city-card-badge">Energy Capital</span>
+          </div>
+          <div class="city-card-content">
             <h3>Houston</h3>
-            <p>Energy capital and diverse economy</p>
-            <span class="badge">Coming Soon</span>
+            <div class="city-card-stats">
+              <div class="city-stat">
+                <div class="city-stat-value">$340K</div>
+                <div class="city-stat-label">Median Price</div>
+              </div>
+              <div class="city-stat">
+                <div class="city-stat-value">7.2M</div>
+                <div class="city-stat-label">Metro Pop.</div>
+              </div>
+            </div>
+            <p>Texas's largest city and energy industry hub. Diverse price points attract investors seeking both appreciation and cash flow.</p>
+            <span class="btn btn-coming-soon">Coming Soon</span>
           </div>
-          <div class="card">
+        </div>
+        
+        <!-- San Antonio -->
+        <div class="city-card">
+          <div class="city-card-image" style="background-image: url('/assets/sanantonio-skyline.jpg');">
+            <span class="city-card-badge">Military Strong</span>
+          </div>
+          <div class="city-card-content">
             <h3>San Antonio</h3>
-            <p>Historic Texas market with strong growth</p>
-            <span class="badge">Coming Soon</span>
+            <div class="city-card-stats">
+              <div class="city-stat">
+                <div class="city-stat-value">$290K</div>
+                <div class="city-stat-label">Median Price</div>
+              </div>
+              <div class="city-stat">
+                <div class="city-stat-value">2.6M</div>
+                <div class="city-stat-label">Metro Pop.</div>
+              </div>
+            </div>
+            <p>Major military presence creates consistent rental demand. Affordable entry points attract investors nationwide.</p>
+            <span class="btn btn-coming-soon">Coming Soon</span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CTA SECTION -->
-    <section class="lp-cta">
-      <div class="container text-center">
-        <h2>Want to Sell Your Texas Property?</h2>
-        <p class="text-large">
-          Join our waitlist to be notified when we launch in Texas.
-        </p>
-        <a href="/get-offer" class="btn btn-white btn-large">Join Waitlist</a>
+  <!-- REGIONAL COVERAGE -->
+  <section class="section-lg">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">Statewide Coverage</span>
+        <h2>We Buy Houses Across Texas</h2>
+        <p class="text-muted">No matter where your property is located, our investor network has buyers ready to compete.</p>
       </div>
-    </section>
-  </main>
+      
+      <div class="regions-grid">
+        <div class="region-card">
+          <h4>Dallas-Fort Worth Metro</h4>
+          <p class="region-cities">Dallas, Fort Worth, Plano, Arlington, Frisco, McKinney, Irving, Garland, Grand Prairie, Denton, Rockwall</p>
+        </div>
+        <div class="region-card">
+          <h4>Houston & Gulf Coast</h4>
+          <p class="region-cities">Houston, The Woodlands, Sugar Land, Pearland, League City, Katy, Pasadena, Galveston, Beaumont</p>
+        </div>
+        <div class="region-card">
+          <h4>Central & South Texas</h4>
+          <p class="region-cities">San Antonio, Austin, New Braunfels, Round Rock, Georgetown, Temple, Waco, Killeen, Corpus Christi</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <div id="footer-placeholder"></div>
-  <script src="/includes/load-includes.js"></script>
+  <!-- HOW IT WORKS - Using simple-steps (self-contained) -->
+  <section class="section-lg bg-secondary">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">How It Works</span>
+        <h2>Three Steps to Your Best Cash Offer</h2>
+        <p class="text-muted">Texas title company closings are straightforward. We handle the paperwork—you just pick your offer.</p>
+      </div>
+      
+      <div class="simple-steps">
+        <div class="simple-step">
+          <div class="simple-step-number">1</div>
+          <h3>Tell Us About Your Property</h3>
+          <p>Share your address and basic details. Takes less than 2 minutes.</p>
+        </div>
+        <div class="simple-step">
+          <div class="simple-step-number">2</div>
+          <h3>Investors Compete</h3>
+          <p>We send your property to 500+ qualified Texas investors who submit competing offers.</p>
+        </div>
+        <div class="simple-step">
+          <div class="simple-step-number">3</div>
+          <h3>Choose Your Best Offer</h3>
+          <p>Review offers, pick your favorite, and close on your timeline. Average closing: 7 days.</p>
+        </div>
+      </div>
+      
+      <div class="text-center" style="margin-top: 48px;">
+        <a href="/get-offer" class="btn btn-primary btn-large">Get My Cash Offers</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="section-lg">
+    <div class="container container-narrow">
+      <div class="section-header text-center">
+        <span class="section-label">Common Questions</span>
+        <h2>Texas Home Selling FAQ</h2>
+      </div>
+      
+      <div class="faq-list">
+        <details>
+          <summary>How fast can I sell my Texas house?</summary>
+          <p>Most Texas sellers receive multiple cash offers within 24-48 hours. Once you accept an offer, closing typically takes 7-14 days through a title company. No drawn-out listing periods or waiting for buyer financing.</p>
+        </details>
+        
+        <details>
+          <summary>Which Texas cities do you cover?</summary>
+          <p>Our investor network covers all of Texas, including Dallas-Fort Worth, Houston, San Antonio, Austin, and smaller markets throughout the state. If you have a property in Texas, we have investors interested.</p>
+        </details>
+        
+        <details>
+          <summary>Why are investors so interested in Texas properties?</summary>
+          <p>Texas has no state income tax, attracts 100+ corporate relocations annually, and has strong population growth. Investors pay premium prices knowing Texas properties offer both appreciation and strong rental returns.</p>
+        </details>
+        
+        <details>
+          <summary>Do I need to make repairs before selling?</summary>
+          <p>No. Our investors buy Texas properties as-is. Whether your home needs foundation work (common in Texas clay soil), roof repairs, or cosmetic updates, you'll receive cash offers based on current condition.</p>
+        </details>
+        
+        <details>
+          <summary>Are there any fees or commissions?</summary>
+          <p>Zero fees. Unlike traditional real estate sales where you'd pay 5-6% in agent commissions plus closing costs, Propcash charges nothing. The offer you accept is the amount you receive.</p>
+        </details>
+        
+        <details>
+          <summary>How is Propcash different from "We Buy Houses" companies?</summary>
+          <p>Traditional cash buyers make you a single lowball offer. Propcash is a marketplace where 500+ investors compete for your property. Competition drives prices up, not down. You choose from multiple offers.</p>
+        </details>
+        
+        <details>
+          <summary>What about Texas property taxes?</summary>
+          <p>Texas property taxes are handled at closing through the title company. Taxes are prorated so you only pay for the portion of the year you owned the property. We handle all the paperwork.</p>
+        </details>
+        
+        <details>
+          <summary>Can I sell my Texas rental property with tenants?</summary>
+          <p>Yes. Many of our investors specifically seek tenant-occupied properties. Sell your rental as-is without disrupting tenants or waiting for leases to expire.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA - Using lp-cta from landing-pages.css -->
+  <section class="lp-cta text-center">
+    <div class="container">
+      <h2>Ready to See What Texas Investors Will Pay?</h2>
+      <p class="text-large">Get competing cash offers in 24 hours. No obligation, no fees.</p>
+      <a href="/get-offer" class="btn btn-white btn-large">Get My Cash Offers</a>
+      <div class="cta-contact">
+        <span>Or call us: </span>
+        <a href="tel:6155524296">(615) 552-4296</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER - Self-contained styles -->
+  <footer class="state-footer">
+    <div class="container">
+      <div class="state-footer-grid">
+        <div class="state-footer-brand">
+          <img src="/assets/propcash-logo-white.svg" alt="Propcash" height="28">
+          <p>The marketplace where cash buyers compete for your home.</p>
+        </div>
+        <div class="state-footer-links">
+          <h4>Company</h4>
+          <a href="/about">About Us</a>
+          <a href="/how-it-works">How It Works</a>
+          <a href="/contact">Contact</a>
+        </div>
+        <div class="state-footer-links">
+          <h4>Texas Markets</h4>
+          <a href="/texas/dallas/sell-house-fast">Dallas-Fort Worth</a>
+          <a href="#">Houston (Coming Soon)</a>
+          <a href="#">San Antonio (Coming Soon)</a>
+        </div>
+        <div class="state-footer-links">
+          <h4>Contact Us</h4>
+          <a href="tel:6155524296">(615) 552-4296</a>
+          <a href="mailto:hello@propcash.com">hello@propcash.com</a>
+        </div>
+      </div>
+      <div class="state-footer-bottom">
+        <p>&copy; 2025 Propcash. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Toggle Script -->
+  <script>
+    document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+      document.querySelector('.mobile-nav')?.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
