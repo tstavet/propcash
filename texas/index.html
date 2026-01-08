@@ -389,31 +389,10 @@
 </head>
 <body>
   <!-- HEADER - Using existing styles-v2.css classes -->
-  <header>
-    <div class="container">
-      <nav class="nav">
-        <a href="/" class="brand">
-          <img src="/assets/propcash-logo.svg" alt="Propcash" class="logo">
-        </a>
-        <div class="desktop-nav">
-          <a href="/how-it-works">How It Works</a>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
-        </div>
-        <div class="header-ctas">
-          <a href="/get-offer" class="cta-header">Get My Cash Offer</a>
-        </div>
-        <button class="mobile-menu-toggle" aria-label="Menu">☰</button>
-      </nav>
-      <nav class="mobile-nav">
-        <a href="/how-it-works">How It Works</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-        <a href="/get-offer" class="mobile-cta">Get My Cash Offer</a>
-      </nav>
-    </div>
-  </header>
 
+    <div id="header-placeholder"></div>
+
+  
   <!-- BREADCRUMB - Using correct structure from landing-pages.css -->
   <nav class="breadcrumb">
     <ol>
@@ -734,43 +713,11 @@
     </div>
   </section>
 
-  <!-- FOOTER - Self-contained styles -->
-  <footer class="state-footer">
-    <div class="container">
-      <div class="state-footer-grid">
-        <div class="state-footer-brand">
-          <img src="/assets/propcash-logo-white.svg" alt="Propcash" height="28">
-          <p>The marketplace where cash buyers compete for your home.</p>
-        </div>
-        <div class="state-footer-links">
-          <h4>Company</h4>
-          <a href="/about">About Us</a>
-          <a href="/how-it-works">How It Works</a>
-          <a href="/contact">Contact</a>
-        </div>
-        <div class="state-footer-links">
-          <h4>Texas Markets</h4>
-          <a href="/texas/dallas/sell-house-fast">Dallas-Fort Worth</a>
-          <a href="#">Houston (Coming Soon)</a>
-          <a href="#">San Antonio (Coming Soon)</a>
-        </div>
-        <div class="state-footer-links">
-          <h4>Contact Us</h4>
-          <a href="tel:6155524296">(615) 552-4296</a>
-          <a href="mailto:hello@propcash.com">hello@propcash.com</a>
-        </div>
-      </div>
-      <div class="state-footer-bottom">
-        <p>&copy; 2025 Propcash. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+  
+ <div id="footer-placeholder"></div>
 
-  <!-- Mobile Menu Toggle Script -->
-  <script>
-    document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
-      document.querySelector('.mobile-nav')?.classList.toggle('active');
-    });
-  </script>
+<!-- Load Header/Footer Includes -->
+<script src="/includes/load-includes.js"></script>
+
 </body>
 </html>
