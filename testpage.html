@@ -37,21 +37,23 @@
   <link rel="stylesheet" href="/assets/landing-pages.css">
   
   <style>
-    /* State Page Specific Styles */
+    /* ==========================================
+       STATE PAGE SPECIFIC STYLES
+       These extend landing-pages.css for state pages
+       ========================================== */
+    
+    /* Stats Bar */
     .state-stats-bar {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 24px;
-      background: white;
-      padding: 32px 40px;
-      border-radius: 16px;
-      box-shadow: 0 4px 24px rgba(107, 68, 35, 0.08);
+      background: transparent;
+      padding: 0;
     }
     
     @media (max-width: 768px) {
       .state-stats-bar {
         grid-template-columns: repeat(2, 1fr);
-        padding: 24px;
         gap: 20px;
       }
     }
@@ -61,19 +63,20 @@
     }
     
     .state-stat-value {
+      font-family: var(--font-heading);
       font-size: 32px;
       font-weight: 700;
-      color: #6b4423;
+      color: var(--primary);
       line-height: 1.2;
     }
     
     .state-stat-label {
       font-size: 13px;
-      color: #6b625a;
+      color: var(--text-muted);
       margin-top: 4px;
     }
     
-    /* Why Section Benefits */
+    /* Benefits Grid */
     .benefits-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -84,21 +87,22 @@
     @media (max-width: 768px) {
       .benefits-grid {
         grid-template-columns: 1fr;
+        gap: 24px;
       }
     }
     
     .benefit-card {
       text-align: center;
       padding: 32px;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 4px 24px rgba(107, 68, 35, 0.08);
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
     }
     
     .benefit-icon {
       width: 64px;
       height: 64px;
-      background: #faf8f5;
+      background: var(--bg-secondary);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -109,17 +113,17 @@
     .benefit-icon svg {
       width: 32px;
       height: 32px;
-      stroke: #6b4423;
+      stroke: var(--primary);
     }
     
     .benefit-card h3 {
       font-size: 20px;
       margin: 0 0 12px;
-      color: #1a1a1a;
+      color: var(--text);
     }
     
     .benefit-card p {
-      color: #6b625a;
+      color: var(--text-muted);
       margin: 0;
       line-height: 1.6;
     }
@@ -132,29 +136,30 @@
       margin-top: 48px;
     }
     
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       .city-cards {
         grid-template-columns: 1fr;
       }
     }
     
     .city-card {
-      background: white;
-      border-radius: 16px;
+      background: var(--card);
+      border-radius: var(--radius-lg);
       overflow: hidden;
-      box-shadow: 0 4px 24px rgba(107, 68, 35, 0.08);
+      box-shadow: var(--shadow);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     
     .city-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 32px rgba(107, 68, 35, 0.12);
+      box-shadow: var(--shadow-lg);
     }
     
     .city-card-image {
       height: 160px;
       background-size: cover;
       background-position: center;
+      background-color: var(--bg-secondary);
       position: relative;
     }
     
@@ -162,10 +167,10 @@
       position: absolute;
       top: 12px;
       left: 12px;
-      background: #6b4423;
+      background: var(--primary);
       color: white;
       padding: 6px 12px;
-      border-radius: 20px;
+      border-radius: var(--radius-full);
       font-size: 12px;
       font-weight: 600;
     }
@@ -177,7 +182,7 @@
     .city-card h3 {
       font-size: 22px;
       margin: 0 0 8px;
-      color: #1a1a1a;
+      color: var(--text);
     }
     
     .city-card-stats {
@@ -185,8 +190,8 @@
       gap: 16px;
       margin: 16px 0;
       padding: 16px 0;
-      border-top: 1px solid #f0ebe4;
-      border-bottom: 1px solid #f0ebe4;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
     
     .city-stat {
@@ -194,20 +199,21 @@
     }
     
     .city-stat-value {
+      font-family: var(--font-heading);
       font-size: 18px;
       font-weight: 700;
-      color: #6b4423;
+      color: var(--primary);
     }
     
     .city-stat-label {
       font-size: 11px;
-      color: #6b625a;
+      color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
     
-    .city-card p {
-      color: #6b625a;
+    .city-card > .city-card-content > p {
+      color: var(--text-muted);
       font-size: 14px;
       line-height: 1.6;
       margin: 0 0 16px;
@@ -216,12 +222,20 @@
     .city-card .btn {
       width: 100%;
       text-align: center;
+      display: block;
     }
     
     .btn-coming-soon {
-      background: #f0ebe4;
-      color: #6b625a;
+      background: var(--bg-secondary);
+      color: var(--text-muted);
       cursor: default;
+      box-shadow: none;
+    }
+    
+    .btn-coming-soon:hover {
+      transform: none;
+      box-shadow: none;
+      background: var(--bg-secondary);
     }
     
     /* Regional Coverage */
@@ -239,54 +253,178 @@
     }
     
     .region-card {
-      background: #faf8f5;
-      border-radius: 12px;
+      background: var(--bg-secondary);
+      border-radius: var(--radius);
       padding: 24px;
-      border-left: 4px solid #6b4423;
+      border-left: 4px solid var(--primary);
     }
     
     .region-card h4 {
       font-size: 18px;
       margin: 0 0 8px;
-      color: #1a1a1a;
+      color: var(--text);
     }
     
     .region-card .region-cities {
-      color: #6b625a;
+      color: var(--text-muted);
       font-size: 14px;
       margin: 0;
       line-height: 1.6;
     }
+    
+    /* Simple Steps Grid for State Pages */
+    .simple-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    
+    @media (max-width: 768px) {
+      .simple-steps {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+    
+    .simple-step {
+      text-align: center;
+      padding: 32px 24px;
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+    }
+    
+    .simple-step-number {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 auto 20px;
+    }
+    
+    .simple-step h3 {
+      font-size: 18px;
+      margin: 0 0 8px;
+      color: var(--primary);
+    }
+    
+    .simple-step p {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin: 0;
+      line-height: 1.6;
+    }
+    
+    /* Footer for State Pages */
+    .state-footer {
+      background: var(--primary);
+      color: white;
+      padding: 64px 0 32px;
+    }
+    
+    .state-footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    
+    @media (max-width: 900px) {
+      .state-footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .state-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+    
+    .state-footer-brand p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 16px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    
+    .state-footer-links h4 {
+      color: white;
+      font-size: 16px;
+      margin: 0 0 16px;
+      font-weight: 600;
+    }
+    
+    .state-footer-links a {
+      display: block;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      padding: 6px 0;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+    
+    .state-footer-links a:hover {
+      color: white;
+    }
+    
+    .state-footer-bottom {
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
+  <!-- HEADER - Using existing styles-v2.css classes -->
+  <header>
     <div class="container">
-      <a href="/" class="logo">
-        <img src="/assets/propcash-logo.svg" alt="Propcash" height="32">
-      </a>
-      <nav class="main-nav">
+      <nav class="nav">
+        <a href="/" class="brand">
+          <img src="/assets/propcash-logo.svg" alt="Propcash" class="logo">
+        </a>
+        <div class="desktop-nav">
+          <a href="/how-it-works">How It Works</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+        </div>
+        <div class="header-ctas">
+          <a href="/get-offer" class="cta-header">Get My Cash Offer</a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Menu">☰</button>
+      </nav>
+      <nav class="mobile-nav">
         <a href="/how-it-works">How It Works</a>
         <a href="/about">About</a>
         <a href="/contact">Contact</a>
+        <a href="/get-offer" class="mobile-cta">Get My Cash Offer</a>
       </nav>
-      <a href="/get-offer" class="btn btn-primary btn-sm">Get My Cash Offer</a>
     </div>
   </header>
 
-  <!-- BREADCRUMB -->
+  <!-- BREADCRUMB - Using correct structure from landing-pages.css -->
   <nav class="breadcrumb">
-    <div class="container">
-      <a href="/">Home</a>
-      <span>/</span>
-      <span>Texas</span>
-    </div>
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li class="separator">/</li>
+      <li class="current">Texas</li>
+    </ol>
   </nav>
 
   <!-- HERO SECTION -->
   <section class="lp-hero" style="background-image: url('/assets/texas-hero.jpg');">
-    <div class="lp-hero-overlay"></div>
     <div class="lp-hero-content">
       <h1>Sell Your House Fast Anywhere in Texas</h1>
       
@@ -333,9 +471,9 @@
   </section>
 
   <!-- STATE STATS BAR -->
-  <section style="background: #faf8f5; padding: 48px 0;">
+  <section style="background: var(--bg-secondary); padding: 48px 0;">
     <div class="container">
-      <div class="state-stats-bar" style="margin-top: 0; box-shadow: none; background: transparent;">
+      <div class="state-stats-bar">
         <div class="state-stat">
           <div class="state-stat-value">7 Days</div>
           <div class="state-stat-label">Average Time to Close</div>
@@ -443,7 +581,7 @@
               </div>
             </div>
             <p>Texas's largest city and energy industry hub. Diverse price points attract investors seeking both appreciation and cash flow.</p>
-            <a href="#" class="btn btn-coming-soon">Coming Soon</a>
+            <span class="btn btn-coming-soon">Coming Soon</span>
           </div>
         </div>
         
@@ -465,7 +603,7 @@
               </div>
             </div>
             <p>Major military presence creates consistent rental demand. Affordable entry points attract investors nationwide.</p>
-            <a href="#" class="btn btn-coming-soon">Coming Soon</a>
+            <span class="btn btn-coming-soon">Coming Soon</span>
           </div>
         </div>
       </div>
@@ -498,7 +636,7 @@
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
+  <!-- HOW IT WORKS - Using simple-steps (self-contained) -->
   <section class="section-lg bg-secondary">
     <div class="container">
       <div class="section-header text-center">
@@ -507,33 +645,33 @@
         <p class="text-muted">Texas title company closings are straightforward. We handle the paperwork—you just pick your offer.</p>
       </div>
       
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-number">1</div>
+      <div class="simple-steps">
+        <div class="simple-step">
+          <div class="simple-step-number">1</div>
           <h3>Tell Us About Your Property</h3>
           <p>Share your address and basic details. Takes less than 2 minutes.</p>
         </div>
-        <div class="step-card">
-          <div class="step-number">2</div>
+        <div class="simple-step">
+          <div class="simple-step-number">2</div>
           <h3>Investors Compete</h3>
           <p>We send your property to 500+ qualified Texas investors who submit competing offers.</p>
         </div>
-        <div class="step-card">
-          <div class="step-number">3</div>
+        <div class="simple-step">
+          <div class="simple-step-number">3</div>
           <h3>Choose Your Best Offer</h3>
           <p>Review offers, pick your favorite, and close on your timeline. Average closing: 7 days.</p>
         </div>
       </div>
       
       <div class="text-center" style="margin-top: 48px;">
-        <a href="/get-offer" class="btn btn-primary btn-lg">Get My Cash Offers</a>
+        <a href="/get-offer" class="btn btn-primary btn-large">Get My Cash Offers</a>
       </div>
     </div>
   </section>
 
   <!-- FAQ SECTION -->
   <section class="section-lg">
-    <div class="container">
+    <div class="container container-narrow">
       <div class="section-header text-center">
         <span class="section-label">Common Questions</span>
         <h2>Texas Home Selling FAQ</h2>
@@ -583,51 +721,56 @@
     </div>
   </section>
 
-  <!-- FINAL CTA -->
-  <section class="lp-cta">
+  <!-- FINAL CTA - Using lp-cta from landing-pages.css -->
+  <section class="lp-cta text-center">
     <div class="container">
       <h2>Ready to See What Texas Investors Will Pay?</h2>
-      <p>Get competing cash offers in 24 hours. No obligation, no fees.</p>
-      <div class="cta-buttons">
-        <a href="/get-offer" class="btn btn-light btn-lg">Get My Cash Offers</a>
-        <div class="cta-contact">
-          <span>Or call us:</span>
-          <a href="tel:6155524296">(615) 552-4296</a>
-        </div>
+      <p class="text-large">Get competing cash offers in 24 hours. No obligation, no fees.</p>
+      <a href="/get-offer" class="btn btn-white btn-large">Get My Cash Offers</a>
+      <div class="cta-contact">
+        <span>Or call us: </span>
+        <a href="tel:6155524296">(615) 552-4296</a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
+  <!-- FOOTER - Self-contained styles -->
+  <footer class="state-footer">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
+      <div class="state-footer-grid">
+        <div class="state-footer-brand">
           <img src="/assets/propcash-logo-white.svg" alt="Propcash" height="28">
           <p>The marketplace where cash buyers compete for your home.</p>
         </div>
-        <div class="footer-links">
+        <div class="state-footer-links">
           <h4>Company</h4>
           <a href="/about">About Us</a>
           <a href="/how-it-works">How It Works</a>
           <a href="/contact">Contact</a>
         </div>
-        <div class="footer-links">
+        <div class="state-footer-links">
           <h4>Texas Markets</h4>
           <a href="/texas/dallas/sell-house-fast">Dallas-Fort Worth</a>
           <a href="#">Houston (Coming Soon)</a>
           <a href="#">San Antonio (Coming Soon)</a>
         </div>
-        <div class="footer-contact">
+        <div class="state-footer-links">
           <h4>Contact Us</h4>
           <a href="tel:6155524296">(615) 552-4296</a>
           <a href="mailto:hello@propcash.com">hello@propcash.com</a>
         </div>
       </div>
-      <div class="footer-bottom">
+      <div class="state-footer-bottom">
         <p>&copy; 2025 Propcash. All rights reserved.</p>
       </div>
     </div>
   </footer>
+
+  <!-- Mobile Menu Toggle Script -->
+  <script>
+    document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+      document.querySelector('.mobile-nav')?.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
