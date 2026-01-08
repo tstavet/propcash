@@ -3,638 +3,631 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Propcash Hero 2.0 - Sequential Climb</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Sell Your House Fast in Texas | Cash Offers from 500+ Investors | Propcash</title>
+  <meta name="description" content="Get competing cash offers for your Texas home. 500+ investors fighting for your property means more money in your pocket. Close in as few as 7 days.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sell Your House Fast in Texas | Propcash">
+  <meta property="og:description" content="Get competing cash offers from 500+ Texas investors. Close in 7 days, no fees, no repairs needed.">
+  <meta property="og:type" content="website">
+  
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Propcash Texas",
+    "description": "Cash offer marketplace connecting Texas homeowners with competing investors",
+    "areaServed": {
+      "@type": "State",
+      "name": "Texas"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "456"
+    }
+  }
+  </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles-v2.css">
+  <link rel="stylesheet" href="/assets/landing-pages.css">
+  
   <style>
-    :root {
-      --primary: #6b4423;
-      --primary-dark: #5a371c;
-      --primary-light: #8b5e3c;
-      --bg: #fdfcfb;
-      --bg-secondary: #f8f5f2;
-      --text: #1a1512;
-      --text-muted: #6b625a;
-      --border: #e5e0db;
-      --success: #34d399;
-      --success-dark: #059669;
-      --radius: 10px;
-      --radius-lg: 14px;
-      --radius-xl: 20px;
-      --radius-full: 9999px;
-      --font-heading: 'DM Sans', system-ui, sans-serif;
-      --font-body: 'Inter', system-ui, sans-serif;
+    /* State Page Specific Styles */
+    .state-stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      background: white;
+      padding: 32px 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(107, 68, 35, 0.08);
     }
-
-    * {
-      box-sizing: border-box;
+    
+    @media (max-width: 768px) {
+      .state-stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 24px;
+        gap: 20px;
+      }
+    }
+    
+    .state-stat {
+      text-align: center;
+    }
+    
+    .state-stat-value {
+      font-size: 32px;
+      font-weight: 700;
+      color: #6b4423;
+      line-height: 1.2;
+    }
+    
+    .state-stat-label {
+      font-size: 13px;
+      color: #6b625a;
+      margin-top: 4px;
+    }
+    
+    /* Why Section Benefits */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    
+    @media (max-width: 768px) {
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .benefit-card {
+      text-align: center;
+      padding: 32px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(107, 68, 35, 0.08);
+    }
+    
+    .benefit-icon {
+      width: 64px;
+      height: 64px;
+      background: #faf8f5;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    
+    .benefit-icon svg {
+      width: 32px;
+      height: 32px;
+      stroke: #6b4423;
+    }
+    
+    .benefit-card h3 {
+      font-size: 20px;
+      margin: 0 0 12px;
+      color: #1a1a1a;
+    }
+    
+    .benefit-card p {
+      color: #6b625a;
       margin: 0;
-      padding: 0;
+      line-height: 1.6;
     }
-
-    body {
-      font-family: var(--font-body);
-      background: var(--bg);
+    
+    /* City Cards */
+    .city-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
     }
-
-    /* ==========================================
-       HERO 2.0 - SEQUENTIAL CLIMB
-       ========================================== */
-    .hero-v2 {
-      position: relative;
-      min-height: 100vh;
-      padding: 120px 24px 100px;
-      background-image: url('/assets/nashville-house.jpg');
+    
+    @media (max-width: 768px) {
+      .city-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .city-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(107, 68, 35, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .city-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(107, 68, 35, 0.12);
+    }
+    
+    .city-card-image {
+      height: 160px;
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    /* Refined overlay - darker for contrast */
-    .hero-v2::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        160deg,
-        rgba(0, 0, 0, 0.55) 0%,
-        rgba(0, 0, 0, 0.4) 100%
-      );
-      z-index: 1;
-    }
-
-    .hero-v2-content {
       position: relative;
-      z-index: 10;
-      text-align: center;
-      max-width: 800px;
-      width: 100%;
     }
-
-    /* Badge - subtle */
-    .hero-v2-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      padding: 10px 18px;
-      border-radius: var(--radius-full);
-      margin-bottom: 28px;
-    }
-
-    .hero-v2-badge-dot {
-      width: 8px;
-      height: 8px;
-      background: var(--success);
-      border-radius: 50%;
-      animation: soft-pulse 3s ease-in-out infinite;
-    }
-
-    .hero-v2-badge span {
-      font-size: 13px;
-      font-weight: 600;
-      color: rgba(255, 255, 255, 0.95);
-      letter-spacing: 0.01em;
-    }
-
-    /* Headline - clean typography */
-    .hero-v2-headline {
-      font-family: var(--font-heading);
-      font-size: clamp(38px, 6.5vw, 64px);
-      font-weight: 800;
+    
+    .city-card-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #6b4423;
       color: white;
-      line-height: 1.08;
-      margin-bottom: 20px;
-      letter-spacing: -0.03em;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
     }
-
-    .hero-v2-headline .highlight {
-      color: var(--success);
+    
+    .city-card-content {
+      padding: 24px;
     }
-
-    /* Subheadline - restrained */
-    .hero-v2-subheadline {
-      font-size: clamp(16px, 2.2vw, 19px);
-      color: rgba(255, 255, 255, 0.85);
-      max-width: 540px;
-      margin: 0 auto;
-      line-height: 1.6;
-      font-weight: 400;
+    
+    .city-card h3 {
+      font-size: 22px;
+      margin: 0 0 8px;
+      color: #1a1a1a;
     }
-
-    /* ==========================================
-       CTA AREA - GENEROUS WHITESPACE
-       ========================================== */
-    .hero-v2-cta-area {
-      position: relative;
-      margin-top: 56px;
-      padding: 0 20px;
-    }
-
-    /* Offer Cards Container */
-    .offer-cards-container {
-      position: relative;
-      width: 100%;
-      max-width: 340px;
-      height: 200px;
-      margin: 0 auto 40px;
-    }
-
-    /* Sequential Climb Cards */
-    .climb-card {
-      position: absolute;
-      left: 50%;
-      background: white;
-      border-radius: var(--radius-lg);
-      padding: 16px 20px;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    
+    .city-card-stats {
       display: flex;
-      align-items: center;
-      gap: 14px;
-      width: 280px;
-      transform: translateX(-50%) translateY(100px);
-      opacity: 0;
+      gap: 16px;
+      margin: 16px 0;
+      padding: 16px 0;
+      border-top: 1px solid #f0ebe4;
+      border-bottom: 1px solid #f0ebe4;
     }
-
-    .climb-card::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      border-radius: 4px 0 0 4px;
-      background: var(--primary-light);
-      opacity: 0.6;
-    }
-
-    /* Winner card styling - subtle green accent */
-    .climb-card.winner {
-      box-shadow: 0 8px 32px rgba(52, 211, 153, 0.2), 0 4px 24px rgba(0, 0, 0, 0.1);
-    }
-
-    .climb-card.winner::before {
-      background: var(--success);
-      opacity: 1;
-    }
-
-    .climb-card-icon {
-      width: 40px;
-      height: 40px;
-      background: var(--bg-secondary);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .climb-card.winner .climb-card-icon {
-      background: rgba(52, 211, 153, 0.15);
-    }
-
-    .climb-card.winner .climb-card-icon svg {
-      stroke: var(--success-dark);
-    }
-
-    .climb-card-content {
+    
+    .city-stat {
       flex: 1;
     }
-
-    .climb-card-amount {
-      font-family: var(--font-heading);
-      font-size: 22px;
+    
+    .city-stat-value {
+      font-size: 18px;
       font-weight: 700;
-      color: var(--text);
-      letter-spacing: -0.01em;
+      color: #6b4423;
     }
-
-    .climb-card.winner .climb-card-amount {
-      color: var(--success-dark);
+    
+    .city-stat-label {
+      font-size: 11px;
+      color: #6b625a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
-
-    .climb-card-investor {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    /* Card positions - stacked with offset */
-    .climb-card-1 { z-index: 1; }
-    .climb-card-2 { z-index: 2; }
-    .climb-card-3 { z-index: 3; }
-
-    /* Sequential climb animation - slow and premium */
-    .hero-v2.animate .climb-card-1 {
-      animation: climb-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
-      --end-y: 140px;
-    }
-
-    .hero-v2.animate .climb-card-2 {
-      animation: climb-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.7s forwards;
-      --end-y: 70px;
-    }
-
-    .hero-v2.animate .climb-card-3 {
-      animation: climb-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.1s forwards;
-      --end-y: 0px;
-    }
-
-    @keyframes climb-in {
-      0% {
-        opacity: 0;
-        transform: translateX(-50%) translateY(calc(var(--end-y) + 60px)) scale(0.95);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(-50%) translateY(var(--end-y)) scale(1);
-      }
-    }
-
-    /* Subtle idle float on winner - very gentle */
-    .hero-v2.animate .climb-card-3 {
-      animation: climb-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.1s forwards,
-                 gentle-lift 4s ease-in-out 2.2s infinite;
-    }
-
-    @keyframes gentle-lift {
-      0%, 100% { transform: translateX(-50%) translateY(0px); }
-      50% { transform: translateX(-50%) translateY(-4px); }
-    }
-
-    /* CTA Buttons */
-    .hero-v2-cta-buttons {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .hero-v2-cta-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 18px 36px;
-      background: var(--primary);
-      color: white;
-      font-size: 16px;
-      font-weight: 700;
-      font-family: var(--font-heading);
-      border-radius: var(--radius);
-      text-decoration: none;
-      box-shadow: 0 4px 20px rgba(107, 68, 35, 0.35);
-      transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-      border: none;
-      cursor: pointer;
-      letter-spacing: 0.01em;
-    }
-
-    .hero-v2-cta-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(107, 68, 35, 0.4);
-    }
-
-    .hero-v2-cta-primary svg {
-      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .hero-v2-cta-primary:hover svg {
-      transform: translateX(3px);
-    }
-
-    .hero-v2-cta-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 10px 20px;
-      background: transparent;
-      color: rgba(255, 255, 255, 0.9);
+    
+    .city-card p {
+      color: #6b625a;
       font-size: 14px;
-      font-weight: 500;
-      border: none;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      cursor: pointer;
+      line-height: 1.6;
+      margin: 0 0 16px;
     }
-
-    .hero-v2-cta-secondary:hover {
-      color: white;
+    
+    .city-card .btn {
+      width: 100%;
+      text-align: center;
     }
-
-    .hero-v2-cta-secondary svg {
-      transition: transform 0.3s ease;
+    
+    .btn-coming-soon {
+      background: #f0ebe4;
+      color: #6b625a;
+      cursor: default;
     }
-
-    .hero-v2-cta-secondary:hover svg {
-      transform: translateY(2px);
+    
+    /* Regional Coverage */
+    .regions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
     }
-
-    /* Trust Bar - minimal */
-    .hero-v2-trust {
-      margin-top: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 32px;
-    }
-
-    .hero-v2-trust-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 13px;
-      font-weight: 500;
-    }
-
-    .hero-v2-trust-item svg {
-      color: var(--success);
-      opacity: 0.9;
-    }
-
-    /* ==========================================
-       ANIMATIONS
-       ========================================== */
-    @keyframes soft-pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-
-    /* ==========================================
-       MOBILE RESPONSIVE
-       ========================================== */
+    
     @media (max-width: 768px) {
-      .hero-v2 {
-        padding: 100px 20px 80px;
-        min-height: auto;
-      }
-
-      .hero-v2-badge {
-        padding: 8px 14px;
-        margin-bottom: 24px;
-      }
-
-      .hero-v2-badge span {
-        font-size: 12px;
-      }
-
-      .hero-v2-headline {
-        font-size: clamp(32px, 9vw, 44px);
-        margin-bottom: 16px;
-      }
-
-      .hero-v2-subheadline {
-        font-size: 15px;
-        line-height: 1.5;
-      }
-
-      .hero-v2-cta-area {
-        margin-top: 44px;
-      }
-
-      .offer-cards-container {
-        height: 180px;
-        margin-bottom: 32px;
-      }
-
-      .climb-card {
-        width: 260px;
-        padding: 14px 16px;
-        gap: 12px;
-      }
-
-      .climb-card-icon {
-        width: 36px;
-        height: 36px;
-      }
-
-      .climb-card-amount {
-        font-size: 19px;
-      }
-
-      .climb-card-investor {
-        font-size: 12px;
-      }
-
-      .hero-v2.animate .climb-card-1 { --end-y: 120px; }
-      .hero-v2.animate .climb-card-2 { --end-y: 60px; }
-      .hero-v2.animate .climb-card-3 { --end-y: 0px; }
-
-      .hero-v2-cta-primary {
-        padding: 16px 32px;
-        font-size: 15px;
-        width: 100%;
-        max-width: 280px;
-      }
-
-      .hero-v2-trust {
-        margin-top: 44px;
-        gap: 20px;
-        flex-wrap: wrap;
-      }
-
-      .hero-v2-trust-item {
-        font-size: 12px;
+      .regions-grid {
+        grid-template-columns: 1fr;
       }
     }
-
-    @media (max-width: 480px) {
-      .hero-v2 {
-        padding: 90px 16px 60px;
-      }
-
-      .hero-v2-headline {
-        font-size: 32px;
-      }
-
-      .hero-v2-subheadline {
-        font-size: 14px;
-      }
-
-      .offer-cards-container {
-        height: 160px;
-        margin-bottom: 28px;
-      }
-
-      .climb-card {
-        width: 240px;
-        padding: 12px 14px;
-      }
-
-      .climb-card-icon {
-        width: 32px;
-        height: 32px;
-      }
-
-      .climb-card-icon svg {
-        width: 14px;
-        height: 14px;
-      }
-
-      .climb-card-amount {
-        font-size: 17px;
-      }
-
-      .climb-card-investor {
-        font-size: 11px;
-      }
-
-      .hero-v2.animate .climb-card-1 { --end-y: 105px; }
-      .hero-v2.animate .climb-card-2 { --end-y: 52px; }
-      .hero-v2.animate .climb-card-3 { --end-y: 0px; }
-
-      .hero-v2-trust {
-        flex-direction: column;
-        gap: 12px;
-      }
+    
+    .region-card {
+      background: #faf8f5;
+      border-radius: 12px;
+      padding: 24px;
+      border-left: 4px solid #6b4423;
+    }
+    
+    .region-card h4 {
+      font-size: 18px;
+      margin: 0 0 8px;
+      color: #1a1a1a;
+    }
+    
+    .region-card .region-cities {
+      color: #6b625a;
+      font-size: 14px;
+      margin: 0;
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
-
-<section class="hero-v2 animate" id="hero">
-  <div class="hero-v2-content">
-    
-    <!-- Badge -->
-    <div class="hero-v2-badge">
-      <div class="hero-v2-badge-dot"></div>
-      <span>500+ Active Investors</span>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="/assets/propcash-logo.svg" alt="Propcash" height="32">
+      </a>
+      <nav class="main-nav">
+        <a href="/how-it-works">How It Works</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <a href="/get-offer" class="btn btn-primary btn-sm">Get My Cash Offer</a>
     </div>
+  </header>
 
-    <!-- Headline -->
-    <h1 class="hero-v2-headline">
-      Where Cash Buyers <span class="highlight">Compete</span> For Your Property
-    </h1>
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb">
+    <div class="container">
+      <a href="/">Home</a>
+      <span>/</span>
+      <span>Texas</span>
+    </div>
+  </nav>
 
-    <!-- Subheadline -->
-    <p class="hero-v2-subheadline">
-    Our maketplace of 500+ vetted investors want to buy your property, as is, for cash. It's 100% free & there's no obligation to accept an offer.
-    </p>
-
-    <!-- CTA Area with Sequential Climb Cards -->
-    <div class="hero-v2-cta-area">
+  <!-- HERO SECTION -->
+  <section class="lp-hero" style="background-image: url('/assets/texas-hero.jpg');">
+    <div class="lp-hero-overlay"></div>
+    <div class="lp-hero-content">
+      <h1>Sell Your House Fast Anywhere in Texas</h1>
       
-      <!-- Offer Cards - Sequential Climb -->
-      <div class="offer-cards-container">
+      <p class="hero-subhead">
+        Texas attracts more corporate relocations than any other state. When 500+ cash buyers compete for your property, you get the best offer—not a lowball price.
+      </p>
+      
+      <!-- Dual CTA Buttons -->
+      <div class="hero-ctas">
+        <a href="/get-offer" class="btn-hero-primary">
+          <span>Get My Cash Offers</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="tel:6155524296" class="btn-hero-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>(615) 552-4296</span>
+        </a>
+      </div>
+      
+      <p class="hero-microcopy">Get your first offer in 24 hours • No fees, no obligation</p>
+      
+      <!-- Hero Badges -->
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <span class="badge-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <span>500+ TX investors</span>
+        </div>
+        <div class="hero-badge">
+          <span class="badge-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
+          <span>Close in 7 days</span>
+        </div>
+        <div class="hero-badge">
+          <span class="badge-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </span>
+          <span>No fees or costs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATE STATS BAR -->
+  <section style="background: #faf8f5; padding: 48px 0;">
+    <div class="container">
+      <div class="state-stats-bar" style="margin-top: 0; box-shadow: none; background: transparent;">
+        <div class="state-stat">
+          <div class="state-stat-value">7 Days</div>
+          <div class="state-stat-label">Average Time to Close</div>
+        </div>
+        <div class="state-stat">
+          <div class="state-stat-value">$0</div>
+          <div class="state-stat-label">Fees & Commissions</div>
+        </div>
+        <div class="state-stat">
+          <div class="state-stat-value">456</div>
+          <div class="state-stat-label">TX Homes Sold</div>
+        </div>
+        <div class="state-stat">
+          <div class="state-stat-value">500+</div>
+          <div class="state-stat-label">Competing Investors</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY TEXAS SECTION -->
+  <section class="section-lg">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">Why Texas Sellers Win</span>
+        <h2>High Investor Demand = Better Offers for You</h2>
+        <p class="text-muted">Texas leads the nation in corporate relocations. That business-friendly environment attracts investors who pay premium prices.</p>
+      </div>
+      
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>No State Income Tax</h3>
+          <p>Texas's tax-friendly environment attracts businesses and residents alike. Investors compete aggressively knowing renters and buyers keep more of their income.</p>
+        </div>
         
-        <!-- Card 1 - Bottom -->
-        <div class="climb-card climb-card-1">
-          <div class="climb-card-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2">
-              <line x1="12" y1="1" x2="12" y2="23"/>
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-            </svg>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <div class="climb-card-content">
-            <div class="climb-card-amount">$318,000</div>
-            <div class="climb-card-investor">HomeVest Capital</div>
-          </div>
+          <h3>Corporate Headquarters Hub</h3>
+          <p>100+ corporate HQs relocated to DFW between 2018-2024. AT&T, ExxonMobil, American Airlines—major employers driving housing demand.</p>
         </div>
-
-        <!-- Card 2 - Middle -->
-        <div class="climb-card climb-card-2">
-          <div class="climb-card-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2">
-              <line x1="12" y1="1" x2="12" y2="23"/>
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-            </svg>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
-          <div class="climb-card-content">
-            <div class="climb-card-amount">$331,000</div>
-            <div class="climb-card-investor">Rapid Home Buyers</div>
-          </div>
+          <h3>Strong Rental Market</h3>
+          <p>45% of DFW households rent. Average rent $1,577/month creates strong cash flow for investors, driving competitive offers for rental properties.</p>
         </div>
-
-        <!-- Card 3 - Top (Winner) -->
-        <div class="climb-card climb-card-3 winner">
-          <div class="climb-card-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b4423" stroke-width="2">
-              <line x1="12" y1="1" x2="12" y2="23"/>
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-            </svg>
-          </div>
-          <div class="climb-card-content">
-            <div class="climb-card-amount">$342,000</div>
-            <div class="climb-card-investor">Premier Investments</div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- CTA Buttons -->
-      <div class="hero-v2-cta-buttons">
-        <a href="/get-offer" class="hero-v2-cta-primary">
-          Get My Cash Offers
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="5" y1="12" x2="19" y2="12"/>
-            <polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </a>
-        <a href="#how-it-works" class="hero-v2-cta-secondary">
-          See How It Works
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="6 9 12 15 18 9"/>
-          </svg>
-        </a>
-      </div>
-
-    </div>
-
-    <!-- Trust Bar -->
-    <div class="hero-v2-trust">
-      <div class="hero-v2-trust-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        Free, No Obligation
-      </div>
-      <div class="hero-v2-trust-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        Offers in 24 Hours
-      </div>
-      <div class="hero-v2-trust-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        Sell As-Is
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- CITY MARKETS SECTION -->
+  <section class="section-lg bg-secondary">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">Texas Markets</span>
+        <h2>Cash Offers Available Statewide</h2>
+        <p class="text-muted">From Dallas-Fort Worth to Houston, San Antonio, and beyond—our investor network covers all of Texas.</p>
+      </div>
+      
+      <div class="city-cards">
+        <!-- Dallas-Fort Worth -->
+        <div class="city-card">
+          <div class="city-card-image" style="background-image: url('/assets/dallas-skyline.jpg');">
+            <span class="city-card-badge">#1 Market for 2026</span>
+          </div>
+          <div class="city-card-content">
+            <h3>Dallas-Fort Worth</h3>
+            <div class="city-card-stats">
+              <div class="city-stat">
+                <div class="city-stat-value">$418K</div>
+                <div class="city-stat-label">Median Price</div>
+              </div>
+              <div class="city-stat">
+                <div class="city-stat-value">89 Days</div>
+                <div class="city-stat-label">Avg. On Market</div>
+              </div>
+            </div>
+            <p>Ranked #1 real estate market for 2026. 8 million+ metro population and 100+ corporate HQs drive intense investor competition.</p>
+            <a href="/texas/dallas/sell-house-fast" class="btn btn-primary">Get Dallas Offers</a>
+          </div>
+        </div>
+        
+        <!-- Houston -->
+        <div class="city-card">
+          <div class="city-card-image" style="background-image: url('/assets/houston-skyline.jpg');">
+            <span class="city-card-badge">Energy Capital</span>
+          </div>
+          <div class="city-card-content">
+            <h3>Houston</h3>
+            <div class="city-card-stats">
+              <div class="city-stat">
+                <div class="city-stat-value">$340K</div>
+                <div class="city-stat-label">Median Price</div>
+              </div>
+              <div class="city-stat">
+                <div class="city-stat-value">7.2M</div>
+                <div class="city-stat-label">Metro Pop.</div>
+              </div>
+            </div>
+            <p>Texas's largest city and energy industry hub. Diverse price points attract investors seeking both appreciation and cash flow.</p>
+            <a href="#" class="btn btn-coming-soon">Coming Soon</a>
+          </div>
+        </div>
+        
+        <!-- San Antonio -->
+        <div class="city-card">
+          <div class="city-card-image" style="background-image: url('/assets/sanantonio-skyline.jpg');">
+            <span class="city-card-badge">Military Strong</span>
+          </div>
+          <div class="city-card-content">
+            <h3>San Antonio</h3>
+            <div class="city-card-stats">
+              <div class="city-stat">
+                <div class="city-stat-value">$290K</div>
+                <div class="city-stat-label">Median Price</div>
+              </div>
+              <div class="city-stat">
+                <div class="city-stat-value">2.6M</div>
+                <div class="city-stat-label">Metro Pop.</div>
+              </div>
+            </div>
+            <p>Major military presence creates consistent rental demand. Affordable entry points attract investors nationwide.</p>
+            <a href="#" class="btn btn-coming-soon">Coming Soon</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script>
-// Optional: Replay animation on scroll into view
-(function() {
-  const hero = document.querySelector('.hero-v2');
-  
-  function replayAnimation() {
-    hero.classList.remove('animate');
-    void hero.offsetWidth;
-    hero.classList.add('animate');
-  }
+  <!-- REGIONAL COVERAGE -->
+  <section class="section-lg">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">Statewide Coverage</span>
+        <h2>We Buy Houses Across Texas</h2>
+        <p class="text-muted">No matter where your property is located, our investor network has buyers ready to compete.</p>
+      </div>
+      
+      <div class="regions-grid">
+        <div class="region-card">
+          <h4>Dallas-Fort Worth Metro</h4>
+          <p class="region-cities">Dallas, Fort Worth, Plano, Arlington, Frisco, McKinney, Irving, Garland, Grand Prairie, Denton, Rockwall</p>
+        </div>
+        <div class="region-card">
+          <h4>Houston & Gulf Coast</h4>
+          <p class="region-cities">Houston, The Woodlands, Sugar Land, Pearland, League City, Katy, Pasadena, Galveston, Beaumont</p>
+        </div>
+        <div class="region-card">
+          <h4>Central & South Texas</h4>
+          <p class="region-cities">San Antonio, Austin, New Braunfels, Round Rock, Georgetown, Temple, Waco, Killeen, Corpus Christi</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  // Uncomment to enable scroll-triggered replay
-  // const observer = new IntersectionObserver((entries) => {
-  //   entries.forEach(entry => {
-  //     if (entry.isIntersecting) {
-  //       replayAnimation();
-  //     }
-  //   });
-  // }, { threshold: 0.5 });
-  // observer.observe(hero);
-})();
-</script>
+  <!-- HOW IT WORKS -->
+  <section class="section-lg bg-secondary">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">How It Works</span>
+        <h2>Three Steps to Your Best Cash Offer</h2>
+        <p class="text-muted">Texas title company closings are straightforward. We handle the paperwork—you just pick your offer.</p>
+      </div>
+      
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Tell Us About Your Property</h3>
+          <p>Share your address and basic details. Takes less than 2 minutes.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Investors Compete</h3>
+          <p>We send your property to 500+ qualified Texas investors who submit competing offers.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Choose Your Best Offer</h3>
+          <p>Review offers, pick your favorite, and close on your timeline. Average closing: 7 days.</p>
+        </div>
+      </div>
+      
+      <div class="text-center" style="margin-top: 48px;">
+        <a href="/get-offer" class="btn btn-primary btn-lg">Get My Cash Offers</a>
+      </div>
+    </div>
+  </section>
 
+  <!-- FAQ SECTION -->
+  <section class="section-lg">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">Common Questions</span>
+        <h2>Texas Home Selling FAQ</h2>
+      </div>
+      
+      <div class="faq-list">
+        <details>
+          <summary>How fast can I sell my Texas house?</summary>
+          <p>Most Texas sellers receive multiple cash offers within 24-48 hours. Once you accept an offer, closing typically takes 7-14 days through a title company. No drawn-out listing periods or waiting for buyer financing.</p>
+        </details>
+        
+        <details>
+          <summary>Which Texas cities do you cover?</summary>
+          <p>Our investor network covers all of Texas, including Dallas-Fort Worth, Houston, San Antonio, Austin, and smaller markets throughout the state. If you have a property in Texas, we have investors interested.</p>
+        </details>
+        
+        <details>
+          <summary>Why are investors so interested in Texas properties?</summary>
+          <p>Texas has no state income tax, attracts 100+ corporate relocations annually, and has strong population growth. Investors pay premium prices knowing Texas properties offer both appreciation and strong rental returns.</p>
+        </details>
+        
+        <details>
+          <summary>Do I need to make repairs before selling?</summary>
+          <p>No. Our investors buy Texas properties as-is. Whether your home needs foundation work (common in Texas clay soil), roof repairs, or cosmetic updates, you'll receive cash offers based on current condition.</p>
+        </details>
+        
+        <details>
+          <summary>Are there any fees or commissions?</summary>
+          <p>Zero fees. Unlike traditional real estate sales where you'd pay 5-6% in agent commissions plus closing costs, Propcash charges nothing. The offer you accept is the amount you receive.</p>
+        </details>
+        
+        <details>
+          <summary>How is Propcash different from "We Buy Houses" companies?</summary>
+          <p>Traditional cash buyers make you a single lowball offer. Propcash is a marketplace where 500+ investors compete for your property. Competition drives prices up, not down. You choose from multiple offers.</p>
+        </details>
+        
+        <details>
+          <summary>What about Texas property taxes?</summary>
+          <p>Texas property taxes are handled at closing through the title company. Taxes are prorated so you only pay for the portion of the year you owned the property. We handle all the paperwork.</p>
+        </details>
+        
+        <details>
+          <summary>Can I sell my Texas rental property with tenants?</summary>
+          <p>Yes. Many of our investors specifically seek tenant-occupied properties. Sell your rental as-is without disrupting tenants or waiting for leases to expire.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="lp-cta">
+    <div class="container">
+      <h2>Ready to See What Texas Investors Will Pay?</h2>
+      <p>Get competing cash offers in 24 hours. No obligation, no fees.</p>
+      <div class="cta-buttons">
+        <a href="/get-offer" class="btn btn-light btn-lg">Get My Cash Offers</a>
+        <div class="cta-contact">
+          <span>Or call us:</span>
+          <a href="tel:6155524296">(615) 552-4296</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/assets/propcash-logo-white.svg" alt="Propcash" height="28">
+          <p>The marketplace where cash buyers compete for your home.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <a href="/about">About Us</a>
+          <a href="/how-it-works">How It Works</a>
+          <a href="/contact">Contact</a>
+        </div>
+        <div class="footer-links">
+          <h4>Texas Markets</h4>
+          <a href="/texas/dallas/sell-house-fast">Dallas-Fort Worth</a>
+          <a href="#">Houston (Coming Soon)</a>
+          <a href="#">San Antonio (Coming Soon)</a>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <a href="tel:6155524296">(615) 552-4296</a>
+          <a href="mailto:hello@propcash.com">hello@propcash.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Propcash. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
