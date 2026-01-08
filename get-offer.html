@@ -29,6 +29,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Google Places API for Address Autocomplete -->
+  <!-- IMPORTANT: Replace YOUR_API_KEY with your actual Google Maps API key -->
+  <!-- Enable these APIs in Google Cloud Console: Places API, Maps JavaScript API, Street View Static API -->
+  <script>
+    // Configuration - Replace with your API key
+    const GOOGLE_MAPS_API_KEY = 'YOUR_API_KEY';
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initAutocomplete">
+  </script>
   
   <style>
     * {
@@ -955,6 +966,209 @@
     padding: 12px 16px;
   }
 }
+    /* Property Preview Card */
+.property-preview {
+  display: none;
+  background: white;
+  border-radius: 16px;
+  border: 2px solid #10b981;
+  overflow: hidden;
+  margin-bottom: 20px;
+  animation: slideUp 0.4s ease;
+  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.15);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.property-preview.visible {
+  display: block;
+}
+
+.property-preview-image {
+  width: 100%;
+  height: 180px;
+  background: #f0ebe6;
+  position: relative;
+  overflow: hidden;
+}
+
+.property-preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.property-preview-image .loading-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8f5f2 0%, #f0ebe6 100%);
+}
+
+.property-preview-image .loading-placeholder svg {
+  animation: pulse 1.5s ease infinite;
+  color: #9e9691;
+}
+
+.property-preview-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(16, 185, 129, 0.95);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  backdrop-filter: blur(4px);
+}
+
+.property-preview-content {
+  padding: 20px;
+}
+
+.property-preview-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.property-preview-address {
+  flex: 1;
+}
+
+.property-preview-street {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1512;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.property-preview-city {
+  font-size: 14px;
+  color: #6b625a;
+}
+
+.property-preview-check {
+  width: 32px;
+  height: 32px;
+  background: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.property-preview-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: rgba(107, 68, 35, 0.06);
+  border-radius: 10px;
+  font-size: 13px;
+  color: #6b625a;
+}
+
+.property-preview-note svg {
+  flex-shrink: 0;
+  color: #6b4423;
+}
+
+.property-preview-edit {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: #6b4423;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.2s;
+}
+
+.property-preview-edit:hover {
+  opacity: 0.7;
+}
+
+/* Autocomplete dropdown styling */
+.pac-container {
+  border-radius: 12px;
+  border: 1px solid #e5e0db;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  margin-top: 8px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  z-index: 10000;
+}
+
+.pac-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0ebe6;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.pac-item:hover {
+  background: #fdfcfb;
+}
+
+.pac-item-selected {
+  background: #f8f5f2;
+}
+
+.pac-icon {
+  display: none;
+}
+
+.pac-item-query {
+  font-weight: 600;
+  color: #1a1512;
+}
+
+.pac-matched {
+  font-weight: 700;
+}
+
+/* Mobile adjustments for property preview */
+@media (max-width: 600px) {
+  .property-preview-image {
+    height: 140px;
+  }
+
+  .property-preview-content {
+    padding: 16px;
+  }
+
+  .property-preview-street {
+    font-size: 16px;
+  }
+}
+
     /* Contact Box */
 .contact-box {
   background: #f8f5f2;
@@ -1106,13 +1320,13 @@
         <h2 class="question">What's your property's address?</h2>
               
         <!-- Input with Validation Checkmark -->
-        <div class="input-container">
-          <input 
-            type="text" 
-            id="address" 
-            class="form-input large" 
-            placeholder="e.g., 742 Evergreen Terrace, Nashville, TN"
-            autocomplete="street-address"
+        <div class="input-container" id="addressInputContainer">
+          <input
+            type="text"
+            id="address"
+            class="form-input large"
+            placeholder="Start typing your address..."
+            autocomplete="off"
           />
           <div class="input-check" id="addressCheck">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
@@ -1120,9 +1334,56 @@
             </svg>
           </div>
         </div>
-        
+
+        <!-- Property Preview Card -->
+        <div class="property-preview" id="propertyPreview">
+          <div class="property-preview-image" id="propertyPreviewImage">
+            <div class="loading-placeholder" id="streetViewLoading">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <img id="streetViewImg" src="" alt="Property street view" style="display: none;" />
+            <div class="property-preview-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Property Found
+            </div>
+          </div>
+          <div class="property-preview-content">
+            <div class="property-preview-header">
+              <div class="property-preview-address">
+                <div class="property-preview-street" id="previewStreet">123 Main Street</div>
+                <div class="property-preview-city" id="previewCity">Nashville, TN 37203</div>
+              </div>
+              <div class="property-preview-check">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="property-preview-note">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 16v-4"></path>
+                <path d="M12 8h.01"></path>
+              </svg>
+              <span>Is this your property? We'll use this address to get you offers.</span>
+            </div>
+            <button type="button" class="property-preview-edit" onclick="editAddress()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+              </svg>
+              Edit address
+            </button>
+          </div>
+        </div>
+
         <!-- Privacy Note -->
-        <div class="privacy-note">
+        <div class="privacy-note" id="addressPrivacyNote">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
             <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
@@ -1575,12 +1836,173 @@
       return hasNumber && hasComma && minLength;
     }
     
-    // Update address checkmark
+    // ==========================================
+    // GOOGLE PLACES AUTOCOMPLETE INTEGRATION
+    // ==========================================
+
+    let autocomplete;
+    let selectedPlace = null;
+
+    // Initialize Google Places Autocomplete
+    function initAutocomplete() {
+      const addressInput = document.getElementById('address');
+
+      // Create autocomplete instance restricted to addresses in US
+      autocomplete = new google.maps.places.Autocomplete(addressInput, {
+        types: ['address'],
+        componentRestrictions: { country: 'us' },
+        fields: ['address_components', 'formatted_address', 'geometry', 'name']
+      });
+
+      // When user selects a place from dropdown
+      autocomplete.addListener('place_changed', handlePlaceSelect);
+    }
+
+    // Handle when user selects a place
+    function handlePlaceSelect() {
+      const place = autocomplete.getPlace();
+
+      if (!place.geometry) {
+        // User pressed enter without selecting from dropdown
+        return;
+      }
+
+      selectedPlace = place;
+
+      // Parse address components
+      const addressData = parseAddressComponents(place.address_components);
+
+      // Update the input with formatted address
+      const addressInput = document.getElementById('address');
+      addressInput.value = place.formatted_address;
+
+      // Show validation checkmark
+      addressInput.classList.add('valid');
+      document.getElementById('addressCheck').classList.add('visible');
+
+      // Show property preview card
+      showPropertyPreview(addressData, place.geometry.location);
+    }
+
+    // Parse Google's address components into usable data
+    function parseAddressComponents(components) {
+      const data = {
+        streetNumber: '',
+        streetName: '',
+        city: '',
+        state: '',
+        stateShort: '',
+        zip: '',
+        country: ''
+      };
+
+      components.forEach(component => {
+        const type = component.types[0];
+        switch(type) {
+          case 'street_number':
+            data.streetNumber = component.long_name;
+            break;
+          case 'route':
+            data.streetName = component.long_name;
+            break;
+          case 'locality':
+            data.city = component.long_name;
+            break;
+          case 'administrative_area_level_1':
+            data.state = component.long_name;
+            data.stateShort = component.short_name;
+            break;
+          case 'postal_code':
+            data.zip = component.long_name;
+            break;
+          case 'country':
+            data.country = component.long_name;
+            break;
+        }
+      });
+
+      return data;
+    }
+
+    // Show the property preview card with Street View
+    function showPropertyPreview(addressData, location) {
+      const preview = document.getElementById('propertyPreview');
+      const streetView = document.getElementById('streetViewImg');
+      const loading = document.getElementById('streetViewLoading');
+      const previewStreet = document.getElementById('previewStreet');
+      const previewCity = document.getElementById('previewCity');
+      const inputContainer = document.getElementById('addressInputContainer');
+      const privacyNote = document.getElementById('addressPrivacyNote');
+
+      // Format street address
+      const street = `${addressData.streetNumber} ${addressData.streetName}`.trim();
+      const cityStateZip = `${addressData.city}, ${addressData.stateShort} ${addressData.zip}`.trim();
+
+      // Update preview text
+      previewStreet.textContent = street || 'Property Address';
+      previewCity.textContent = cityStateZip;
+
+      // Hide input, show preview
+      inputContainer.style.display = 'none';
+      privacyNote.style.display = 'none';
+      preview.classList.add('visible');
+
+      // Load Street View image
+      const lat = location.lat();
+      const lng = location.lng();
+      const streetViewUrl = `https://maps.googleapis.com/maps/api/streetview?size=600x400&location=${lat},${lng}&fov=80&heading=0&pitch=0&key=${GOOGLE_MAPS_API_KEY}`;
+
+      // Check if Street View is available, otherwise use static map
+      streetView.onload = function() {
+        loading.style.display = 'none';
+        streetView.style.display = 'block';
+      };
+
+      streetView.onerror = function() {
+        // Fall back to static map if Street View not available
+        const staticMapUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${lat},${lng}&zoom=18&size=600x400&maptype=satellite&key=${GOOGLE_MAPS_API_KEY}`;
+        streetView.src = staticMapUrl;
+      };
+
+      streetView.src = streetViewUrl;
+    }
+
+    // Edit address - hide preview and show input
+    function editAddress() {
+      const preview = document.getElementById('propertyPreview');
+      const inputContainer = document.getElementById('addressInputContainer');
+      const privacyNote = document.getElementById('addressPrivacyNote');
+      const addressInput = document.getElementById('address');
+
+      // Hide preview, show input
+      preview.classList.remove('visible');
+      inputContainer.style.display = 'block';
+      privacyNote.style.display = 'flex';
+
+      // Clear and focus
+      addressInput.value = '';
+      addressInput.classList.remove('valid');
+      document.getElementById('addressCheck').classList.remove('visible');
+      addressInput.focus();
+
+      selectedPlace = null;
+    }
+
+    // Fallback validation for manual entry (no autocomplete)
+    function validateAddressManual(value) {
+      const hasNumber = /\d/.test(value);
+      const hasComma = value.includes(',');
+      const minLength = value.trim().length >= 10;
+      return hasNumber && hasComma && minLength;
+    }
+
+    // Update address checkmark for manual typing
     addressInput.addEventListener('input', function() {
-      if (validateAddress(this.value)) {
+      // Only validate if autocomplete hasn't selected a place
+      if (!selectedPlace && validateAddressManual(this.value)) {
         this.classList.add('valid');
         addressCheck.classList.add('visible');
-      } else {
+      } else if (!selectedPlace) {
         this.classList.remove('valid');
         addressCheck.classList.remove('visible');
       }
@@ -1592,7 +2014,9 @@
         case 1:
           return document.getElementById('name').value.trim().length > 1;
         case 2:
-          return document.getElementById('address').value.trim().length > 5;
+          // Accept if autocomplete was used OR manual entry is valid
+          const addressValue = document.getElementById('address').value.trim();
+          return selectedPlace !== null || validateAddressManual(addressValue);
         case 3:
           const phone = document.getElementById('phone').value.replace(/\D/g, '');
           return phone.length >= 10;
@@ -1830,6 +2254,16 @@ document.querySelectorAll('.option-btn').forEach(btn => {
     
     // Initialize
     updateProgress();
+
+    // Fallback if Google API doesn't load
+    window.initAutocomplete = window.initAutocomplete || function() {
+      console.warn('Google Places API not loaded. Manual address entry is enabled.');
+    };
+
+    // If API already loaded, init. Otherwise, the callback handles it.
+    if (typeof google !== 'undefined' && google.maps && google.maps.places) {
+      initAutocomplete();
+    }
   </script>
 
 </body>
