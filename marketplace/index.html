@@ -27,7 +27,7 @@
     /* Marketplace Page Specific Styles */
     .marketplace-hero {
       background: linear-gradient(135deg, #1a1512 0%, #2d251f 50%, #3d3028 100%);
-      padding: 100px 0 80px;
+      padding: 80px 0 60px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -41,7 +41,7 @@
       right: 0;
       bottom: 0;
       background: url('/assets/google-earth_jph.png') center/cover no-repeat;
-      opacity: 0.15;
+      opacity: 0.1;
       z-index: 0;
     }
 
@@ -81,131 +81,16 @@
 
     .marketplace-hero h1 {
       color: white;
-      font-size: clamp(36px, 6vw, 56px);
-      margin-bottom: 20px;
+      font-size: clamp(32px, 5vw, 48px);
+      margin-bottom: 16px;
       font-weight: 800;
     }
 
     .marketplace-hero p {
       color: rgba(255, 255, 255, 0.8);
-      font-size: clamp(16px, 2.5vw, 20px);
-      max-width: 600px;
-      margin: 0 auto 32px;
-    }
-
-    .marketplace-hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: 48px;
-      flex-wrap: wrap;
-      margin-top: 48px;
-    }
-
-    .hero-stat {
-      text-align: center;
-    }
-
-    .hero-stat-value {
-      font-size: 32px;
-      font-weight: 800;
-      color: white;
-      font-family: 'DM Sans', sans-serif;
-    }
-
-    .hero-stat-label {
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.6);
-      margin-top: 4px;
-    }
-
-    /* How It Works Section */
-    .how-it-works {
-      background: white;
-      padding: 80px 0;
-    }
-
-    .how-it-works h2 {
-      text-align: center;
-      margin-bottom: 16px;
-    }
-
-    .how-it-works > .container > p {
-      text-align: center;
-      color: #6b625a;
-      max-width: 600px;
-      margin: 0 auto 48px;
-    }
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 32px;
-    }
-
-    .step-card {
-      text-align: center;
-      padding: 32px 24px;
-      background: #f8f5f2;
-      border-radius: 16px;
-      position: relative;
-    }
-
-    .step-number {
-      width: 48px;
-      height: 48px;
-      background: #6b4423;
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 20px;
-      margin: 0 auto 20px;
-      font-family: 'DM Sans', sans-serif;
-    }
-
-    .step-card h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .step-card p {
-      font-size: 14px;
-      color: #6b625a;
-      margin: 0;
-    }
-
-    .step-arrow {
-      position: absolute;
-      right: -20px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #6b4423;
-      font-size: 24px;
-      z-index: 2;
-    }
-
-    .step-card:last-child .step-arrow {
-      display: none;
-    }
-
-    @media (max-width: 900px) {
-      .steps-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .step-arrow {
-        display: none;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .steps-grid {
-        grid-template-columns: 1fr;
-      }
-      .marketplace-hero-stats {
-        gap: 32px;
-      }
+      font-size: clamp(16px, 2.5vw, 18px);
+      max-width: 550px;
+      margin: 0 auto 28px;
     }
 
     /* CTA Section */
@@ -281,7 +166,6 @@
     </div>
     <h1>The Cash Offer Marketplace</h1>
     <p>Watch real-time activity as 500+ professional investors compete to buy properties across the nation.</p>
-
     <a href="/get-offer" class="btn btn-white btn-large">
       List Your Property
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 10px; vertical-align: middle;">
@@ -289,24 +173,117 @@
         <polyline points="12 5 19 12 12 19"/>
       </svg>
     </a>
+  </div>
+</section>
 
-    <div class="marketplace-hero-stats">
-      <div class="hero-stat">
-        <div class="hero-stat-value">500+</div>
-        <div class="hero-stat-label">Active Investors</div>
+<!-- Interactive State Map -->
+<section class="map-section">
+  <div class="container">
+    <div class="map-container">
+      <div class="map-header">
+        <h2>Active Markets</h2>
+        <p>Click a state to filter properties in that market</p>
       </div>
-      <div class="hero-stat">
-        <div class="hero-stat-value">24 hrs</div>
-        <div class="hero-stat-label">Avg. Time to Offers</div>
+      <div class="state-map">
+        <div class="map-state" data-state="TX">
+          <div class="map-state-pulse"></div>
+          <div class="map-state-code">TX</div>
+          <div class="map-state-name">Texas</div>
+          <div class="map-state-deals">127 deals</div>
+        </div>
+        <div class="map-state" data-state="FL">
+          <div class="map-state-pulse"></div>
+          <div class="map-state-code">FL</div>
+          <div class="map-state-name">Florida</div>
+          <div class="map-state-deals">98 deals</div>
+        </div>
+        <div class="map-state" data-state="GA">
+          <div class="map-state-pulse"></div>
+          <div class="map-state-code">GA</div>
+          <div class="map-state-name">Georgia</div>
+          <div class="map-state-deals">64 deals</div>
+        </div>
+        <div class="map-state" data-state="AZ">
+          <div class="map-state-pulse"></div>
+          <div class="map-state-code">AZ</div>
+          <div class="map-state-name">Arizona</div>
+          <div class="map-state-deals">52 deals</div>
+        </div>
+        <div class="map-state" data-state="TN">
+          <div class="map-state-pulse"></div>
+          <div class="map-state-code">TN</div>
+          <div class="map-state-name">Tennessee</div>
+          <div class="map-state-deals">41 deals</div>
+        </div>
+        <div class="map-state" data-state="NC">
+          <div class="map-state-pulse"></div>
+          <div class="map-state-code">NC</div>
+          <div class="map-state-name">N. Carolina</div>
+          <div class="map-state-deals">38 deals</div>
+        </div>
       </div>
-      <div class="hero-stat">
-        <div class="hero-stat-value">3.4</div>
-        <div class="hero-stat-label">Avg. Offers Per Property</div>
+    </div>
+  </div>
+</section>
+
+<!-- Filter Bar -->
+<section class="filter-section">
+  <div class="container">
+    <div class="filter-bar" id="filter-bar">
+      <div class="filter-group">
+        <label class="filter-label">State</label>
+        <select class="filter-select" id="filter-state">
+          <option value="all">All States</option>
+          <option value="TX">Texas</option>
+          <option value="FL">Florida</option>
+          <option value="GA">Georgia</option>
+          <option value="AZ">Arizona</option>
+          <option value="TN">Tennessee</option>
+          <option value="NC">North Carolina</option>
+        </select>
       </div>
-      <div class="hero-stat">
-        <div class="hero-stat-value">7 days</div>
-        <div class="hero-stat-label">Fastest Closing</div>
+      <div class="filter-group">
+        <label class="filter-label">Property Type</label>
+        <select class="filter-select" id="filter-type">
+          <option value="all">All Types</option>
+          <option value="ranch">Ranch</option>
+          <option value="colonial">Colonial</option>
+          <option value="bungalow">Bungalow</option>
+          <option value="condo">Condo</option>
+          <option value="townhouse">Townhouse</option>
+        </select>
       </div>
+      <div class="filter-group">
+        <label class="filter-label">Status</label>
+        <select class="filter-select" id="filter-status">
+          <option value="all">All Statuses</option>
+          <option value="new">New Listing</option>
+          <option value="active">Receiving Offers</option>
+          <option value="hot">Multiple Offers</option>
+          <option value="pending">Under Review</option>
+          <option value="closed">Closed</option>
+        </select>
+      </div>
+      <div class="filter-results">
+        <span class="results-count" id="results-count">18 properties</span>
+        <button class="clear-filters-btn" id="clear-filters">Clear Filters</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Deals Grid -->
+<section class="deals-section">
+  <div class="container">
+    <div class="deals-header">
+      <h2>Browse Properties</h2>
+      <div class="deals-live-indicator">
+        <span class="deals-live-dot"></span>
+        Updating live
+      </div>
+    </div>
+    <div id="deals-grid">
+      <!-- Populated by marketplace.js -->
     </div>
   </div>
 </section>
@@ -317,7 +294,7 @@
     <div class="stats-header">
       <div class="stats-header-label">
         <span class="stats-header-dot"></span>
-        Live Marketplace Data
+        Marketplace Performance
       </div>
       <h2>Real deals. Real competition.</h2>
       <p>See why thousands of sellers choose Propcash over traditional cash buyers</p>
@@ -331,7 +308,7 @@
             <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
           </svg>
         </div>
-        <div class="stat-value" data-counter="47200000" data-prefix="$" data-stat="offers">$47.2M+</div>
+        <div class="stat-value" data-counter="47200000" data-prefix="$">$47.2M+</div>
         <div class="stat-label">Cash Offers Made</div>
         <div class="stat-trend">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -349,7 +326,7 @@
             <polyline points="9 22 9 12 15 12 15 22"/>
           </svg>
         </div>
-        <div class="stat-value" data-counter="1247" data-stat="properties">1,247</div>
+        <div class="stat-value" data-counter="1247">1,247</div>
         <div class="stat-label">Properties Listed</div>
         <div class="stat-trend">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -386,8 +363,8 @@
             <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
           </svg>
         </div>
-        <div class="stat-value" data-counter="3.4" data-suffix=" avg">3.4 avg</div>
-        <div class="stat-label">Offers Per Property</div>
+        <div class="stat-value" data-counter="3.4">3.4</div>
+        <div class="stat-label">Avg Offers Per Property</div>
         <div class="stat-trend">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
@@ -395,59 +372,6 @@
           </svg>
           Up from 2.8 last year
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Recent Marketplace Activity -->
-<section class="recent-deals-section" id="recent-activity">
-  <div class="container">
-    <div class="recent-deals-header">
-      <h2>Recent marketplace activity</h2>
-      <div class="recent-deals-live">
-        <span class="recent-deals-live-dot"></span>
-        Updating live
-      </div>
-    </div>
-    <div id="recent-deals-list">
-      <!-- Populated by marketplace.js -->
-    </div>
-  </div>
-</section>
-
-<!-- How the Marketplace Works -->
-<section class="how-it-works">
-  <div class="container">
-    <h2>How the marketplace works</h2>
-    <p>Our competitive marketplace puts you in control, with multiple investors bidding on your property.</p>
-
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-number">1</div>
-        <h3>Submit Your Property</h3>
-        <p>Tell us about your home in under 2 minutes. No fees, no obligation.</p>
-        <span class="step-arrow">→</span>
-      </div>
-
-      <div class="step-card">
-        <div class="step-number">2</div>
-        <h3>Investors Compete</h3>
-        <p>Your listing goes to 500+ vetted cash investors who bid against each other.</p>
-        <span class="step-arrow">→</span>
-      </div>
-
-      <div class="step-card">
-        <div class="step-number">3</div>
-        <h3>Compare Offers</h3>
-        <p>Review competing cash offers within 24 hours. Average of 3.4 offers per property.</p>
-        <span class="step-arrow">→</span>
-      </div>
-
-      <div class="step-card">
-        <div class="step-number">4</div>
-        <h3>Close On Your Terms</h3>
-        <p>Accept the best offer and close in as little as 7 days. We handle everything.</p>
       </div>
     </div>
   </div>
