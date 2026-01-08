@@ -21,6 +21,7 @@
   
   <!-- Styles -->
   <link rel="stylesheet" href="/assets/styles-v2.css" />
+  <link rel="stylesheet" href="/assets/marketplace.css" />
   
   <style>
     /* Tech-Forward Enhancements */
@@ -162,6 +163,21 @@
 
 <body>
 <div id="header-placeholder"></div>
+
+<!-- Living Marketplace Activity Ticker -->
+<div class="marketplace-ticker" id="marketplace-ticker">
+  <div class="ticker-wrapper">
+    <div class="ticker-label">
+      <span class="ticker-label-dot"></span>
+      Live Activity
+    </div>
+    <div class="ticker-track">
+      <div id="ticker-content">
+        <!-- Populated by marketplace.js -->
+      </div>
+    </div>
+  </div>
+</div>
 
 <section class="hero-v2 animate" id="hero">
   <div class="hero-v2-content">
@@ -374,6 +390,95 @@ Our maketplace of 500+ vetted investors want to buy your property, as is, for ca
  </div> <!-- Close the inner content div -->
 
   </section>
+
+<!-- Marketplace Stats Dashboard -->
+<section class="marketplace-stats" id="marketplace-stats">
+  <div class="container">
+    <div class="stats-header">
+      <div class="stats-header-label">
+        <span class="stats-header-dot"></span>
+        Live Marketplace Data
+      </div>
+      <h2>Real deals. Real competition.</h2>
+      <p>See why thousands of sellers choose Propcash over traditional cash buyers</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <div class="stat-value" data-counter="47200000" data-prefix="$" data-stat="offers">$47.2M+</div>
+        <div class="stat-label">Cash Offers Made</div>
+        <div class="stat-trend">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+            <polyline points="17 6 23 6 23 12"/>
+          </svg>
+          +12% this month
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+        <div class="stat-value" data-counter="1247" data-stat="properties">1,247</div>
+        <div class="stat-label">Properties Listed</div>
+        <div class="stat-trend">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+            <polyline points="17 6 23 6 23 12"/>
+          </svg>
+          +8% this month
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div class="stat-value" data-counter="523">523</div>
+        <div class="stat-label">Active Investors</div>
+        <div class="stat-trend">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+            <polyline points="17 6 23 6 23 12"/>
+          </svg>
+          +15 new this week
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        <div class="stat-value" data-counter="3.4" data-suffix=" avg">3.4 avg</div>
+        <div class="stat-label">Offers Per Property</div>
+        <div class="stat-trend">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+            <polyline points="17 6 23 6 23 12"/>
+          </svg>
+          Up from 2.8 last year
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <section class="h2h-section animate" id="comparison">
   <div class="h2h-header">
@@ -1042,6 +1147,31 @@ Most "we buy houses" companies send you one "take it or leave it" offer. Propcas
   </div>
 </section>
 
+<!-- Recent Marketplace Activity -->
+<section class="recent-deals-section" id="recent-activity">
+  <div class="container">
+    <div class="recent-deals-header">
+      <h2>Recent marketplace activity</h2>
+      <div class="recent-deals-live">
+        <span class="recent-deals-live-dot"></span>
+        Updating live
+      </div>
+    </div>
+    <div id="recent-deals-list">
+      <!-- Populated by marketplace.js -->
+    </div>
+    <div style="text-align: center; margin-top: 32px;">
+      <a href="/get-offer" class="btn btn-primary">
+        List Your Property
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 8px; vertical-align: middle;">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
   <!-- Testimonials - Modern Cards -->
   <section id="reviews" style="background: #f8f5f2; padding: 80px 0;">
     <div class="container">
@@ -1233,6 +1363,7 @@ Most "we buy houses" companies send you one "take it or leave it" offer. Propcas
 
 <!-- JavaScript -->
 <script src="/assets/scripts.js"></script>
+<script src="/assets/marketplace.js"></script>
 
   <script>
 (function() {

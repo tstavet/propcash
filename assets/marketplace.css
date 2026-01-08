@@ -1,0 +1,628 @@
+/* ==========================================
+   PROPCASH LIVING MARKETPLACE STYLES
+   Activity ticker, toast notifications, stats dashboard
+   ========================================== */
+
+/* ==========================================
+   ACTIVITY TICKER
+   ========================================== */
+.marketplace-ticker {
+  background: linear-gradient(135deg, #1a1512 0%, #2d251f 100%);
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  border-bottom: 1px solid rgba(107, 68, 35, 0.3);
+}
+
+.ticker-wrapper {
+  display: flex;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.ticker-label {
+  background: #6b4423;
+  color: white;
+  padding: 12px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.ticker-label-dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: ticker-pulse 2s ease-in-out infinite;
+}
+
+@keyframes ticker-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+.ticker-track {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+}
+
+#ticker-content {
+  display: flex;
+  animation: ticker-scroll 60s linear infinite;
+  width: max-content;
+}
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 32px;
+  white-space: nowrap;
+  border-right: 1px solid rgba(107, 68, 35, 0.2);
+}
+
+.ticker-icon {
+  color: #8b5e3c;
+  display: flex;
+  align-items: center;
+}
+
+.ticker-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+}
+
+.ticker-text strong {
+  color: white;
+  font-weight: 600;
+}
+
+.ticker-status {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.ticker-status.status-new {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+.ticker-status.status-offers {
+  background: rgba(107, 68, 35, 0.3);
+  color: #d4a574;
+}
+
+.ticker-status.status-hot {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+}
+
+.ticker-status.status-review {
+  background: rgba(99, 102, 241, 0.2);
+  color: #818cf8;
+}
+
+.ticker-status.status-closed {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+.ticker-meta {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 11px;
+}
+
+/* Pause on hover */
+.marketplace-ticker:hover #ticker-content {
+  animation-play-state: paused;
+}
+
+/* Mobile ticker adjustments */
+@media (max-width: 768px) {
+  .ticker-label {
+    padding: 10px 14px;
+    font-size: 10px;
+  }
+
+  .ticker-item {
+    padding: 10px 20px;
+  }
+
+  .ticker-text {
+    font-size: 12px;
+  }
+}
+
+/* ==========================================
+   TOAST NOTIFICATIONS
+   ========================================== */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.marketplace-toast {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  max-width: 380px;
+  min-width: 320px;
+  pointer-events: auto;
+  transform: translateX(120%);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  border-left: 4px solid #6b4423;
+}
+
+.marketplace-toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.toast-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: #f8f5f2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toast-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.toast-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #1a1512;
+  margin-bottom: 4px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.toast-message {
+  font-size: 13px;
+  color: #6b625a;
+  line-height: 1.4;
+}
+
+.toast-close {
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #a09890;
+  transition: color 0.2s;
+  border-radius: 4px;
+}
+
+.toast-close:hover {
+  color: #1a1512;
+  background: #f8f5f2;
+}
+
+/* Mobile toast adjustments */
+@media (max-width: 480px) {
+  .toast-container {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+  }
+
+  .marketplace-toast {
+    max-width: 100%;
+    min-width: auto;
+  }
+}
+
+/* ==========================================
+   MARKETPLACE STATS DASHBOARD
+   ========================================== */
+.marketplace-stats {
+  background: linear-gradient(135deg, #fdfcfb 0%, #f8f5f2 100%);
+  padding: 60px 0;
+  border-top: 1px solid #e5e0db;
+  border-bottom: 1px solid #e5e0db;
+}
+
+.stats-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.stats-header-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(107, 68, 35, 0.1);
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6b4423;
+  margin-bottom: 16px;
+}
+
+.stats-header-dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: ticker-pulse 2s ease-in-out infinite;
+}
+
+.stats-header h2 {
+  margin-bottom: 8px;
+}
+
+.stats-header p {
+  color: #6b625a;
+  font-size: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(107, 68, 35, 0.06);
+  border: 1px solid #e5e0db;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(107, 68, 35, 0.12);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  background: #f8f5f2;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: #6b4423;
+}
+
+.stat-value {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  color: #6b4423;
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #6b625a;
+  font-weight: 500;
+}
+
+.stat-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #10b981;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+/* Stats grid responsive */
+@media (max-width: 900px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    padding: 24px 20px;
+  }
+
+  .stat-value {
+    font-size: 32px;
+  }
+}
+
+/* ==========================================
+   RECENT DEALS SECTION
+   ========================================== */
+.recent-deals-section {
+  background: white;
+  padding: 80px 0;
+}
+
+.recent-deals-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.recent-deals-header h2 {
+  margin: 0;
+}
+
+.recent-deals-live {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #6b625a;
+  font-weight: 500;
+}
+
+.recent-deals-live-dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: ticker-pulse 2s ease-in-out infinite;
+}
+
+#recent-deals-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.recent-deal-card {
+  background: #f8f5f2;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e5e0db;
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+  animation: deal-fade-in 0.5s ease;
+}
+
+@keyframes deal-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.recent-deal-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(107, 68, 35, 0.1);
+}
+
+.recent-deal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.recent-deal-type {
+  font-weight: 700;
+  color: #1a1512;
+  font-size: 15px;
+}
+
+.recent-deal-time {
+  font-size: 12px;
+  color: #a09890;
+}
+
+.recent-deal-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #6b625a;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.recent-deal-location svg {
+  color: #6b4423;
+}
+
+.recent-deal-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid #e5e0db;
+}
+
+.recent-deal-offers {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b4423;
+}
+
+.recent-deal-status {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* Recent deals responsive */
+@media (max-width: 900px) {
+  #recent-deals-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  #recent-deals-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================
+   HERO ACTIVITY INDICATOR
+   ========================================== */
+.hero-activity-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 10px 18px;
+  border-radius: 24px;
+  font-size: 13px;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-activity-dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: ticker-pulse 2s ease-in-out infinite;
+}
+
+/* ==========================================
+   NETWORK MAP ACTIVITY PULSES
+   ========================================== */
+.map-activity-pulse {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.4);
+  animation: map-pulse 3s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes map-pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* ==========================================
+   FORM PAGE ACTIVITY INDICATOR
+   ========================================== */
+.form-activity-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+}
+
+.form-activity-avatars {
+  display: flex;
+}
+
+.form-activity-avatar {
+  width: 28px;
+  height: 28px;
+  background: #6b4423;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  margin-left: -8px;
+}
+
+.form-activity-avatar:first-child {
+  margin-left: 0;
+}
+
+.form-activity-text {
+  font-size: 13px;
+  color: #166534;
+}
+
+.form-activity-text strong {
+  font-weight: 700;
+}
+
+/* ==========================================
+   ANIMATED NUMBER COUNTERS
+   ========================================== */
+.counter-animated {
+  font-variant-numeric: tabular-nums;
+  transition: transform 0.2s;
+}
+
+.counter-animated.updating {
+  transform: scale(1.05);
+}
