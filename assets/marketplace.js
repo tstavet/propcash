@@ -70,6 +70,7 @@
   ];
 
   // Distressed/fixer-upper property images - older homes needing work
+  // 24 unique images to ensure no duplicates across listings
   const PROPERTY_IMAGES = [
     'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&h=400&fit=crop', // older suburban home
     'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=600&h=400&fit=crop', // simple ranch house
@@ -78,8 +79,27 @@
     'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=600&h=400&fit=crop', // older property
     'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600&h=400&fit=crop', // basic suburban
     'https://images.unsplash.com/photo-1449844908441-8829872d2607?w=600&h=400&fit=crop', // older style home
-    'https://images.unsplash.com/photo-1430285561322-7808604715df?w=600&h=400&fit=crop'  // dated exterior
+    'https://images.unsplash.com/photo-1430285561322-7808604715df?w=600&h=400&fit=crop', // dated exterior
+    'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&h=400&fit=crop', // modest suburban home
+    'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&h=400&fit=crop', // simple family home
+    'https://images.unsplash.com/photo-1576941089067-2de3c901e126?w=600&h=400&fit=crop', // basic two-story
+    'https://images.unsplash.com/photo-1598228723793-52759bba239c?w=600&h=400&fit=crop', // older brick home
+    'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&h=400&fit=crop', // basic ranch style
+    'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop', // simple residential
+    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop', // modest exterior
+    'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=400&fit=crop', // suburban property
+    'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&h=400&fit=crop', // older home front
+    'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=600&h=400&fit=crop', // basic house exterior
+    'https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?w=600&h=400&fit=crop', // simple home front
+    'https://images.unsplash.com/photo-1558036117-15d82a90b9b1?w=600&h=400&fit=crop', // modest dwelling
+    'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&h=400&fit=crop', // older residential
+    'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&h=400&fit=crop', // basic home yard
+    'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop', // simple property
+    'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&h=400&fit=crop'  // dated home exterior
   ];
+
+  // Track used images to prevent duplicates
+  let usedImageIndices = [];
 
   // ==========================================
   // UTILITY FUNCTIONS
@@ -87,6 +107,22 @@
 
   function randomFrom(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  function getUniqueImage() {
+    // Reset if all images have been used
+    if (usedImageIndices.length >= PROPERTY_IMAGES.length) {
+      usedImageIndices = [];
+    }
+
+    // Find an unused image index
+    let index;
+    do {
+      index = Math.floor(Math.random() * PROPERTY_IMAGES.length);
+    } while (usedImageIndices.includes(index));
+
+    usedImageIndices.push(index);
+    return PROPERTY_IMAGES[index];
   }
 
   function randomBetween(min, max) {
@@ -149,7 +185,7 @@
       offerCount: offerCount,
       offers: offers,
       finalPrice: offers.length > 0 ? offers[offers.length - 1].amount : null,
-      image: randomFrom(PROPERTY_IMAGES),
+      image: getUniqueImage(),
       minutesAgo: minutesAgo,
       timeAgo: formatTimeAgo(minutesAgo),
       investorsViewing: investorsViewing,
