@@ -1,0 +1,49 @@
+# Robots.txt for propcash.co
+# Real estate cash offer marketplace
+
+# Allow all standard search engine crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://propcash.co/sitemap.xml
+
+# AI Crawler Policies
+# Allow AI crawlers to index content for better AI-powered search results
+
+# OpenAI GPTBot
+User-agent: GPTBot
+Allow: /
+
+# Anthropic Claude
+User-agent: Claude-Web
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+
+# Google AI (Bard/Gemini)
+User-agent: Google-Extended
+Allow: /
+
+# Common Crawl (used by many AI training datasets)
+User-agent: CCBot
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Microsoft Bing AI
+User-agent: Bingbot
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# LLMs.txt reference
+# See https://propcash.co/llms.txt for AI-optimized site information
